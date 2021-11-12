@@ -530,8 +530,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 392367836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.83, y: -4.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.24, y: -11.31, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 1594219251}
@@ -875,11 +875,7 @@ MonoBehaviour:
   weaponPickDropButtonText: {fileID: 1060228526}
   weapons:
   - {fileID: 392367839}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   pickRange: 5
-  pickRotation: 0
   buttonActiveTime: 3
   throwForce: 30
 --- !u!1 &1703912174
@@ -2601,7 +2597,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 43.63803}
+  m_Offset: {x: 0, y: 39.773964}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2612,7 +2608,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 106.5838}
+  m_Size: {x: 1, y: 114.311935}
   m_EdgeRadius: 0
 --- !u!4 &4791949599537147
 Transform:

@@ -7,11 +7,6 @@ public class Grab : MonoBehaviour
 
     private void Update()
     {
-        // if ((!((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0))) && !WeaponPickDrop.isWeaponPicked)
-        // {
-        //     DeAttachObject();
-        // }
-        
         if ((!((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0))))
         {
             DeAttachObject();
@@ -20,13 +15,9 @@ public class Grab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // if (((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0)) && !WeaponPickDrop.isWeaponPicked)
-        // {
-        //     Rigidbody2D rigidbody2D = collision.transform.GetComponent<Rigidbody2D>();
-        //     AttachObject(rigidbody2D);
-        // }
+        if(WeaponPickThrow.isWeaponPicked) return;
 
-         if (((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0)))
+        if (((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0)))
         {
             Rigidbody2D rigidbody2D = collision.transform.GetComponent<Rigidbody2D>();
             AttachObject(rigidbody2D);

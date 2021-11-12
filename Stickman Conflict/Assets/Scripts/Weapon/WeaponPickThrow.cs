@@ -1,7 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class PickUpThrowManager : MonoBehaviour
+public class WeaponPickThrow : MonoBehaviour
 {
     [Header("Refrence")]
     [SerializeField] Transform player;
@@ -10,22 +10,17 @@ public class PickUpThrowManager : MonoBehaviour
     [SerializeField] Text weaponPickDropButtonText;
     [SerializeField] Rigidbody2D[] weapons;
     private Rigidbody2D closestWeapon;
-    
+
     [Header("PickUp")]
     [SerializeField] float pickRange;
-    [SerializeField] float pickRotation;
-    private bool isWeaponPicked, isReturning, isDistCalcAllow;
+    public static bool isWeaponPicked;
+    private bool isReturning, isDistCalcAllow = !isWeaponPicked;
     private Vector3 oldPosition;
     private float time = 0;
-    
+
     [Header("Throw")]
     [SerializeField] float buttonActiveTime;
     [SerializeField] float throwForce;
-
-    private void Start()
-    {
-        isDistCalcAllow = !isWeaponPicked;
-    }
 
     private void Update()
     {
@@ -42,14 +37,11 @@ public class PickUpThrowManager : MonoBehaviour
         }
 
         // Pick Up Object
-        if (isReturning)
+        if (isReturning && (time < 1))
         {
-            if (time < 1)
-            {
-                closestWeapon.transform.position = ((1 - time) * (1 - time) * oldPosition) + (2 * (1 - time) * time * grabLeft.transform.position) + (time * time * grabLeft.transform.position);
-                closestWeapon.transform.rotation = Quaternion.Slerp(closestWeapon.transform.rotation, grabLeft.transform.rotation, pickRotation * Time.deltaTime);
-                time += Time.deltaTime;
-            }
+            closestWeapon.transform.position = ((1 - time) * (1 - time) * oldPosition) + (2 * (1 - time) * time * grabLeft.transform.position) + (time * time * grabLeft.transform.position);
+            closestWeapon.transform.rotation = Quaternion.Slerp(closestWeapon.transform.rotation, grabLeft.transform.rotation, 0);
+            time += Time.deltaTime;
         }
     }
 
@@ -76,7 +68,7 @@ public class PickUpThrowManager : MonoBehaviour
         if (IsInvoking("DesableWeaponButton")) CancelInvoke("DesableWeaponButton");
         isWeaponPicked = true;
         isDistCalcAllow = false;
-       
+
         time = 0;
         oldPosition = closestWeapon.transform.position;
         closestWeapon.transform.parent = grabLeft.transform;
@@ -98,8 +90,8 @@ public class PickUpThrowManager : MonoBehaviour
         grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        closestWeapon.AddForce((closestWeapon.transform.forward + 
-        new Vector3(-Mathf.Sign(PlayerMovement.weaponRotation.z), 0.25f, 0)) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce((closestWeapon.transform.forward +
+        new Vector3(-Mathf.Sign(PlayerMovement.weaponRotation.z), 0.5f, 0)) * throwForce, ForceMode2D.Impulse);
     }
 
     private void DesableWeaponButton()
