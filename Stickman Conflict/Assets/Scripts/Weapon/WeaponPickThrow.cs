@@ -90,8 +90,7 @@ public class WeaponPickThrow : MonoBehaviour
         grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        closestWeapon.AddForce((closestWeapon.transform.forward +
-        new Vector3(-Mathf.Sign(PlayerMovement.weaponRotation.z), 0.5f, 0)) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce(new Vector3(-Mathf.Sign(PlayerMovement.weaponRotation.z), 0.8f, 0) * throwForce, ForceMode2D.Impulse);
     }
 
     private void DesableWeaponButton()

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] CapsuleCollider2D legCollider;
-    [SerializeField] SpriteRenderer headRenderer;
+    [SerializeField] Transform head;
     [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight;
 
     [Header("Attributes")]
@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float downForce;
     [SerializeField] float moveSpeed;
     public static Vector3 weaponRotation = new Vector3(0, 0, -90);
-   // public static Vector3 weaponThrowPosition = new Vector3(1, 0.25f, 0);
 
     private void Update()
     {
@@ -36,8 +35,7 @@ public class PlayerMovement : MonoBehaviour
                 //rigidBody.AddForce(Vector2.right * playerSpeed * moveJoystick.Horizontal());
                 moveVelocity = new Vector2(moveSpeed * moveJoystick.Horizontal(), rigidBody.velocity.y);
                 weaponRotation = new Vector3(0, 0, -90);
-              //  weaponThrowPosition = new Vector3(1, 0.25f, 0);
-                headRenderer.flipX = false;
+                head.localScale = new Vector3(0.67f, 0.7f, 1);
             }
             else if (moveJoystick.Horizontal() < -0.4F) // Move Back
             {
@@ -46,8 +44,7 @@ public class PlayerMovement : MonoBehaviour
                 //rigidBody.AddForce(Vector2.right * playerSpeed * moveJoystick.Horizontal());
                 moveVelocity = new Vector2(moveSpeed * moveJoystick.Horizontal(), rigidBody.velocity.y);
                 weaponRotation = new Vector3(0, 0, 90);
-               // weaponThrowPosition = new Vector3(-1, 0.25f, 0);
-                headRenderer.flipX = true;
+                head.localScale = new Vector3(-0.67f, 0.7f, 1);
             }
 
 
