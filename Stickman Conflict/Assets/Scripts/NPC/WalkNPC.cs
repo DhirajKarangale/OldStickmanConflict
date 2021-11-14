@@ -79,7 +79,7 @@ public class WalkNPC : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(new Vector3(leftDist, -8, 0), 1);
