@@ -26824,9 +26824,9 @@ MonoBehaviour:
   head: {fileID: 1063791340552430897}
   dustEffectLeft: {fileID: 1486054271235189602}
   dustEffectRight: {fileID: 1486054271159531888}
-  jumpForce: 15
+  jumpForce: 400
   downForce: 999999
-  moveSpeed: 10
+  moveSpeed: 500
 --- !u!1 &1063791341289058039
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,15 +25,16 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Vector2 moveVelocity = rigidBody.velocity;
+            rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), Mathf.Clamp(rigidBody.velocity.y, -10, 12));
+            // Vector2 moveVelocity = rigidBody.velocity;
 
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
             {
                 animator.Play("Walk");
                 DustEffect();
-                //rigidBody.AddForce(Vector2.right * playerSpeed * moveJoystick.Horizontal());
-                moveVelocity = new Vector2(moveSpeed * moveJoystick.Horizontal(), rigidBody.velocity.y);
+                rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
+                // moveVelocity = new Vector2(moveSpeed * moveJoystick.Horizontal(), rigidBody.velocity.y);
                 weaponRotation = new Vector3(0, 0, -90);
                 head.localScale = new Vector3(0.67f, 0.7f, 1);
             }
@@ -41,27 +42,26 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.Play("Walk Back");
                 DustEffect();
-                //rigidBody.AddForce(Vector2.right * playerSpeed * moveJoystick.Horizontal());
-                moveVelocity = new Vector2(moveSpeed * moveJoystick.Horizontal(), rigidBody.velocity.y);
+                rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
+                // moveVelocity = new Vector2(moveSpeed * moveJoystick.Horizontal(), rigidBody.velocity.y);
                 weaponRotation = new Vector3(0, 0, 90);
                 head.localScale = new Vector3(-0.67f, 0.7f, 1);
             }
-
 
 
             // Jump & Crounch
             if ((moveJoystick.Vertical() > 0.6f) && (Physics2D.IsTouchingLayers(legCollider, 64))) // Jump 
             {                                                                             // 64 is Layer Mask Of Ground
                 DustEffect();
-                //rigidBody.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
-                moveVelocity = new Vector2(rigidBody.velocity.x, moveJoystick.Vertical() * jumpForce);
+                rigidBody.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
+                //  moveVelocity = new Vector2(rigidBody.velocity.x, moveJoystick.Vertical() * jumpForce);
             }
             else if (moveJoystick.Vertical() < -0.95f) // Crounch
             {
                 rigidBody.AddForce(Vector2.down * downForce * Time.deltaTime);
             }
 
-            rigidBody.velocity = moveVelocity;
+            //  rigidBody.velocity = moveVelocity;
         }
     }
 
