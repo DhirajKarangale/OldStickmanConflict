@@ -15,6 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float downForce;
     [SerializeField] float moveSpeed;
+    [SerializeField] GameObject eff;
+    [SerializeField] Transform pos;
+    [SerializeField] float rate;
+    private float currTime;
     public static Vector3 weaponRotation = new Vector3(0, 0, -90);
 
     private void Update()
@@ -27,9 +31,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), Mathf.Clamp(rigidBody.velocity.y, -10, 12));
 
+            
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
             {
+                if (Time.time > currTime)
+                {
+                    Destroy(Instantiate(eff, pos.position, pos.rotation), 1);
+                    currTime = Time.time + 1 / rate;
+                }
                 animator.Play("Walk");
                 DustEffect();
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
