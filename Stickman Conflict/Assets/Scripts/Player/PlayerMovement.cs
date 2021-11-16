@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
             {
-                animator.speed = 1.3f;
                 animator.Play("Walk");
                 DustEffect();
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
@@ -39,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (moveJoystick.Horizontal() < -0.4F) // Move Back
             {
-                animator.speed = 1.3f;
                 animator.Play("Walk Back");
                 DustEffect();
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
@@ -51,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             // Jump & Crounch
             if ((moveJoystick.Vertical() > 0.6f) && (Physics2D.IsTouchingLayers(legCollider, 64))) // Jump 
             {                                                                             // 64 is Layer Mask Of Ground     
-                animator.speed = 0.2f;                                                           
+                animator.speed = 0.3f;
                 DustEffect();
                 rigidBody.AddForce(jumpForce * Vector2.up * moveJoystick.Vertical(), ForceMode2D.Impulse);
             }
@@ -59,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 rigidBody.AddForce(Vector2.down * downForce * Time.deltaTime);
             }
+
+            if (moveJoystick.Vertical() < 0.3f) animator.speed = 1;
         }
     }
 

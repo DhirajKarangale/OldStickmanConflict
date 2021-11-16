@@ -14,18 +14,19 @@ public class WalkNPC : MonoBehaviour
     private bool moveFront = true;
 
     [Header("Dialogue")]
+    [SerializeField] bool isDialogueActive;
     [SerializeField] DialogueManager dialogueManager;
     [SerializeField] string[] sentences1, sentences2, sentences3;
-    private bool allowDialogue = true;
+    private bool isDialogueAllow = true;
 
     private void Start()
     {
-        animator.speed = 0.4f;
+        animator.speed = 0.3f;
     }
 
     private void Update()
     {
-        if (dialogueManager.endDialogue)
+        if (dialogueManager.endDialogue || !isDialogueActive)
         {
             Move();
             return;
@@ -33,7 +34,7 @@ public class WalkNPC : MonoBehaviour
 
         if (Mathf.Abs(player.transform.position.x - transform.position.x) < 10)
         {
-            if (allowDialogue)
+            if (isDialogueAllow)
             {
                 int randSent = Random.Range(1, 5);
                 string[] sentences;
@@ -43,15 +44,15 @@ public class WalkNPC : MonoBehaviour
 
                 animator.Play("Idel");
                 dialogueManager.StartDialogue(sentences);
-                allowDialogue = false;
+                isDialogueAllow = false;
             }
         }
         else
         {
-            if (!allowDialogue)
+            if (!isDialogueAllow)
             {
                 dialogueManager.EndDialogue();
-                allowDialogue = true;
+                isDialogueAllow = true;
             }
             Move();
         }
