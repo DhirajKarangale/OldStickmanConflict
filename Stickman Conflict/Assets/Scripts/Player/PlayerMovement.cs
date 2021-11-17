@@ -15,10 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float downForce;
     [SerializeField] float moveSpeed;
-    [SerializeField] GameObject eff;
-    [SerializeField] Transform pos;
-    [SerializeField] float rate;
-    private float currTime;
     public static Vector3 weaponRotation = new Vector3(0, 0, -90);
 
     private void Update()
@@ -35,21 +31,16 @@ public class PlayerMovement : MonoBehaviour
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
             {
-                if (Time.time > currTime)
-                {
-                    Destroy(Instantiate(eff, pos.position, pos.rotation), 1);
-                    currTime = Time.time + 1 / rate;
-                }
-                animator.Play("Walk");
                 DustEffect();
+                animator.Play("Walk");
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
                 weaponRotation = new Vector3(0, 0, -90);
                 head.localScale = new Vector3(0.67f, 0.7f, 1);
             }
             else if (moveJoystick.Horizontal() < -0.4F) // Move Back
             {
-                animator.Play("Walk Back");
                 DustEffect();
+                animator.Play("Walk Back");
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
                 weaponRotation = new Vector3(0, 0, 90);
                 head.localScale = new Vector3(-0.67f, 0.7f, 1);
