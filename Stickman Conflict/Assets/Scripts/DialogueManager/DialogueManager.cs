@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TMP_Text dialogueText;
     private Queue<string> sentencesQue;
   
-    public bool endDialogue;
+    public bool isEndDialogue = false;
     private bool isDialogueStart;
 
     private void Start()
@@ -65,13 +65,13 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         isDialogueStart = false;
-        endDialogue = true;
+        isEndDialogue = true;
         animator.Play("DialogueClose");
         Invoke("DeactiveEndDialogue", 10);
     }
 
     private void DeactiveEndDialogue()
     {
-        endDialogue = false;
+        isEndDialogue = false;
     }
 }

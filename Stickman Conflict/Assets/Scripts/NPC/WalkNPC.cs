@@ -3,21 +3,15 @@ using UnityEngine;
 public class WalkNPC : MonoBehaviour
 {
     [Header("Refrence")]
-    [SerializeField] Transform player;
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] Transform head;
 
     [Header("Attributes")]
+    [SerializeField] bool isOnlyMove;
     [SerializeField] float moveSpeed;
     [SerializeField] float leftDist, rightDist;
     private bool moveFront = true;
-
-    [Header("Dialogue")]
-    [SerializeField] bool isDialogueActive;
-    [SerializeField] DialogueManager dialogueManager;
-    [SerializeField] string[] sentences1, sentences2, sentences3;
-    private bool isDialogueAllow = true;
 
     private void Start()
     {
@@ -26,39 +20,10 @@ public class WalkNPC : MonoBehaviour
 
     private void Update()
     {
-        if (dialogueManager.endDialogue || !isDialogueActive)
-        {
-            Move();
-            return;
-        }
-
-        if (Mathf.Abs(player.transform.position.x - transform.position.x) < 10)
-        {
-            if (isDialogueAllow)
-            {
-                int randSent = Random.Range(1, 5);
-                string[] sentences;
-                if (randSent == 1) sentences = sentences1;
-                else if (randSent == 2) sentences = sentences2;
-                else sentences = sentences3;
-
-                animator.Play("Idel");
-                dialogueManager.StartDialogue(sentences);
-                isDialogueAllow = false;
-            }
-        }
-        else
-        {
-            if (!isDialogueAllow)
-            {
-                dialogueManager.EndDialogue();
-                isDialogueAllow = true;
-            }
-            Move();
-        }
+        if(isOnlyMove) Move();
     }
 
-    private void Move()
+    public void Move()
     {
         // Move
         if (transform.position.x > rightDist) moveFront = false;     // Move Back
