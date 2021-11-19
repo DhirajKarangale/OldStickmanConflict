@@ -31,7 +31,7 @@ public class WeaponPickThrow : MonoBehaviour
         if (isWeaponPicked)
         {
             closestWeapon.transform.localPosition = Vector3.zero;
-            closestWeapon.transform.localRotation = Quaternion.Euler(PlayerMovement.weaponRotation);
+            closestWeapon.transform.localRotation = Quaternion.Euler(0,0,-90);
             grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
             grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
@@ -90,7 +90,7 @@ public class WeaponPickThrow : MonoBehaviour
         grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        closestWeapon.AddForce(new Vector3(-Mathf.Sign(PlayerMovement.weaponRotation.z), 0.8f, 0) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce(new Vector3(PlayerMovement.weaponRotation, 0.8f, 0) * throwForce, ForceMode2D.Impulse);
     }
 
     private void DesableWeaponButton()

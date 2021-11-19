@@ -60,6 +60,11 @@ namespace EasyJoystick
 
         public void OnPointerUp(PointerEventData e)
         {
+            MouseUp();
+        }
+
+        public void MouseUp()
+        {
             _isTouching = false;
             normalizedPoint = Vector3.zero;
             handle.anchoredPosition = Vector3.zero;

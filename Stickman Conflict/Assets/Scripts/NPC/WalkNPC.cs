@@ -5,7 +5,6 @@ public class WalkNPC : MonoBehaviour
     [Header("Refrence")]
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rigidBody;
-    [SerializeField] Transform head;
 
     [Header("Attributes")]
     [SerializeField] bool isOnlyMove;
@@ -34,14 +33,14 @@ public class WalkNPC : MonoBehaviour
             moveFront = true;
             animator.Play("Walk");
             rigidBody.velocity = new Vector2(moveSpeed, rigidBody.velocity.y);
-            head.localScale = new Vector3(0.67f, 0.7f, 1);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x),transform.localScale.y,transform.localScale.z);
         }
         else
         {
             moveFront = false;
             animator.Play("Walk Back");
             rigidBody.velocity = new Vector2(-moveSpeed, rigidBody.velocity.y);
-            head.localScale = new Vector3(-0.67f, 0.7f, 1);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),transform.localScale.y,transform.localScale.z);
         }
     }
 

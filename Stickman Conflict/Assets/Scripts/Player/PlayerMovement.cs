@@ -4,18 +4,17 @@ using EasyJoystick;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Refrence")]
-    [SerializeField] Joystick moveJoystick;
+    public Joystick moveJoystick;
     [SerializeField] Animator animator;
-    [SerializeField] Rigidbody2D rigidBody;
+    public Rigidbody2D rigidBody;
     [SerializeField] CapsuleCollider2D legCollider;
-    [SerializeField] Transform head;
     [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight;
 
     [Header("Attributes")]
     [SerializeField] float jumpForce;
     [SerializeField] float downForce;
     [SerializeField] float moveSpeed;
-    public static Vector3 weaponRotation = new Vector3(0, 0, -90);
+    public static int weaponRotation = 1;
 
     private void Update()
     {
@@ -27,23 +26,23 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), Mathf.Clamp(rigidBody.velocity.y, -10, 12));
 
-            
+
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
             {
                 DustEffect();
                 animator.Play("Walk");
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
-                weaponRotation = new Vector3(0, 0, -90);
-                head.localScale = new Vector3(0.67f, 0.7f, 1);
+                weaponRotation = 1;
+                transform.localScale = new Vector3(1, 1, 1);
             }
             else if (moveJoystick.Horizontal() < -0.4F) // Move Back
             {
                 DustEffect();
                 animator.Play("Walk Back");
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
-                weaponRotation = new Vector3(0, 0, 90);
-                head.localScale = new Vector3(-0.67f, 0.7f, 1);
+                weaponRotation = -1;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
 
 
