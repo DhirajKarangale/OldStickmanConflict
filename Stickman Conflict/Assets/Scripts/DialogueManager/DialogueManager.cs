@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] TMP_Text dialogueText;
     private Queue<string> sentencesQue;
+    private string sentence;
   
     public bool isEndDialogue = false;
     private bool isDialogueStart;
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentencesQue.Dequeue();
+        sentence = sentencesQue.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }

@@ -5,11 +5,14 @@ public class OldManTalk : MonoBehaviour
     private int firstTalk;
     [SerializeField] PlayerMovement player;
     [SerializeField] NPCDialogue npcDialogue;
+    [SerializeField] Dialogue dialogue;
+    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] GameObject powersGetEffect;
     [SerializeField] GameObject controlCanvas;
     [SerializeField] GameObject helmet, sward;
     [SerializeField] SpriteRenderer leftHand, rightHand;
     [SerializeField] Color oldHandColor, powerHandColor;
+    private bool isStartTalkAllow;
 
     private void Start()
     {
@@ -17,25 +20,39 @@ public class OldManTalk : MonoBehaviour
         firstTalk = PlayerPrefs.GetInt("FirstTalk", 0);
         if (firstTalk == 0)
         {
+            npcDialogue.enabled = false;
+            isStartTalkAllow = true;
             helmet.SetActive(false);
             sward.SetActive(false);
             leftHand.color = oldHandColor;
             rightHand.color = oldHandColor;
         }
-        else GivePowers();
+        else 
+        {
+            Destroy(gameObject);
+            GivePowers();
+        }
     }
 
     private void Update()
     {
         if ((firstTalk == 0) && (transform.position.x - player.transform.position.x) <= 0)
         {
-            if (npcDialogue.dialogueManager.isEndDialogue) TalkEnd();
-            else TalkStart();
+            if (dialogueManager.isEndDialogue) TalkEnd();
+            else
+            {
+                if (isStartTalkAllow)
+                {
+                    TalkStart();
+                }
+            }
         }
     }
 
     private void TalkStart()
     {
+        isStartTalkAllow = false;
+        dialogueManager.StartDialogue(dialogue.sentences);
         player.moveJoystick.MouseUp();
         controlCanvas.SetActive(false);
         player.rigidBody.constraints = RigidbodyConstraints2D.FreezePositionX;
@@ -49,6 +66,7 @@ public class OldManTalk : MonoBehaviour
         controlCanvas.SetActive(true);
         Destroy(Instantiate(powersGetEffect, player.transform.position, Quaternion.identity), 10);
         player.rigidBody.constraints = RigidbodyConstraints2D.None;
+        Invoke("EnableDialogue", 45);
         Destroy(this.gameObject, 50);
     }
 
@@ -58,5 +76,10 @@ public class OldManTalk : MonoBehaviour
         sward.SetActive(true);
         leftHand.color = powerHandColor;
         rightHand.color = powerHandColor;
+    }
+
+    private void EnableDialogue()
+    {
+        npcDialogue.enabled = true;
     }
 }

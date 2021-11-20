@@ -16,7 +16,7 @@ public class WeaponPickThrow : MonoBehaviour
     public static bool isWeaponPicked;
     private bool isReturning, isDistCalcAllow = !isWeaponPicked;
     private Vector3 oldPosition;
-    private float time = 0;
+    private float shortestDistance,distance, time = 0;
 
     [Header("Throw")]
     [SerializeField] float buttonActiveTime;
@@ -47,11 +47,11 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void CalculateDistance()
     {
-        float shortestDistance = Mathf.Infinity;
+        shortestDistance = Mathf.Infinity;
         closestWeapon = weapons[0];
         for (var i = 0; i < weapons.Length; i++)
         {
-            float distance = Mathf.Abs(player.position.x - weapons[i].transform.position.x);
+            distance = Mathf.Abs(player.position.x - weapons[i].transform.position.x);
             if (distance < shortestDistance)
             {
                 shortestDistance = distance;

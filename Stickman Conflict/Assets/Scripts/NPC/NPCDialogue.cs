@@ -8,11 +8,12 @@ public class NPCDialogue : MonoBehaviour
 
     [Header("Dialogues")]
     [SerializeField] bool isRandomDialogue;
-    public DialogueManager dialogueManager;
+    [SerializeField] DialogueManager dialogueManager;
     [SerializeField] Dialogue[] dialogues;
-    private bool isDialogueAllow;
+    private Dialogue pickedDialogue;
     private int[] rarity;
     static int dialoguePicker;
+    private bool isDialogueAllow;
 
     private void Start()
     {
@@ -46,7 +47,7 @@ public class NPCDialogue : MonoBehaviour
 
     private Dialogue DialogueToSent(Dialogue[] dialogues)
     {
-        Dialogue dialogue = dialogues[dialoguePicker];
+        pickedDialogue = dialogues[dialoguePicker];
         if (isRandomDialogue)
         {
             dialoguePicker = Random.Range(0, 100);
@@ -54,7 +55,7 @@ public class NPCDialogue : MonoBehaviour
             {
                 if (dialoguePicker <= rarity[i])
                 {
-                    dialogue = dialogues[i];
+                    pickedDialogue = dialogues[i];
                     break;
                 }
                 else
@@ -70,6 +71,6 @@ public class NPCDialogue : MonoBehaviour
             else dialoguePicker = 0;
         }
 
-        return dialogue;
+        return pickedDialogue;
     }
 }
