@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 161891376}
   - component: {fileID: 161891375}
   - component: {fileID: 161891379}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: 1Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,7 +2016,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: -7684412949682010179, guid: 7c4355dda1e247f44906f997549a60ee, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -4806,7 +4806,7 @@ GameObject:
   - component: {fileID: 551814790}
   - component: {fileID: 551814789}
   - component: {fileID: 551814793}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5879,8 +5879,8 @@ GameObject:
   - component: {fileID: 670078504}
   - component: {fileID: 670078503}
   - component: {fileID: 670078507}
-  m_Layer: 7
-  m_Name: 2Front
+  m_Layer: 9
+  m_Name: 2Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5898,7 +5898,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 698187260}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!233 &670078503
 HingeJoint2D:
@@ -6001,7 +6001,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 9168642218371075729, guid: 7c4355dda1e247f44906f997549a60ee, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -6465,8 +6465,8 @@ GameObject:
   - component: {fileID: 690618417}
   - component: {fileID: 690618416}
   - component: {fileID: 690618420}
-  m_Layer: 7
-  m_Name: 2Back
+  m_Layer: 9
+  m_Name: 2Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6484,7 +6484,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 698187260}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!233 &690618416
 HingeJoint2D:
@@ -6587,7 +6587,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -5759391129204909480, guid: 7c4355dda1e247f44906f997549a60ee, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -6626,7 +6626,7 @@ GameObject:
   - component: {fileID: 698187259}
   - component: {fileID: 698187261}
   - component: {fileID: 698187262}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6670,8 +6670,8 @@ Transform:
   - {fileID: 1651627231}
   - {fileID: 161891374}
   - {fileID: 1296944265}
-  - {fileID: 670078502}
   - {fileID: 690618415}
+  - {fileID: 670078502}
   m_Father: {fileID: 1177456776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6709,7 +6709,7 @@ MonoBehaviour:
   animator: {fileID: 698187261}
   rigidBody: {fileID: 698187259}
   isOnlyMove: 1
-  moveSpeed: 2
+  moveSpeed: 5
   leftDist: 0
   rightDist: 40
 --- !u!1 &702026275
@@ -16300,7 +16300,7 @@ GameObject:
   - component: {fileID: 1296944267}
   - component: {fileID: 1296944266}
   - component: {fileID: 1296944270}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: 1Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16422,7 +16422,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -5848913593153792136, guid: 7c4355dda1e247f44906f997549a60ee, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -17439,7 +17439,7 @@ GameObject:
   - component: {fileID: 1450246923}
   - component: {fileID: 1450246922}
   - component: {fileID: 1450246926}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28667,7 +28667,7 @@ GameObject:
   - component: {fileID: 1651627233}
   - component: {fileID: 1651627232}
   - component: {fileID: 1651627236}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
