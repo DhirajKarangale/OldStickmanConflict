@@ -4,7 +4,7 @@ public class NPCDialogue : MonoBehaviour
 {
     [Header("Refrence")]
     [SerializeField] Transform player;
-    [SerializeField] WalkNPC walkNPC;
+    [SerializeField] MoveNPC walkNPC;
 
     [Header("Dialogues")]
     [SerializeField] bool isRandomDialogue;
