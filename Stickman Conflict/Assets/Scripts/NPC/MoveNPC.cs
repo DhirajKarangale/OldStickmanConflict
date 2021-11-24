@@ -12,10 +12,12 @@ public class MoveNPC : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float leftDist, rightDist;
     private bool moveFront = true;
+    private float startPosX;
 
     private void Start()
     {
         animator.speed = 0.3f;
+        startPosX = transform.position.x;
     }
 
     private void Update()
@@ -23,34 +25,27 @@ public class MoveNPC : MonoBehaviour
         if (isOnlyMove) Move();
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 7)
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0.5f) * impactForce, ForceMode2D.Force);
-        }
-
-    }
-
     public void Move()
     {
         // Move
-        if (transform.localPosition.x > rightDist) moveFront = false;     // Move Back
-        else if (transform.localPosition.x < leftDist) moveFront = true;  // Move Front
+        if (transform.localPosition.x > (rightDist + startPosX)) moveFront = false;     // Move Back
+        else if (transform.position.x < (leftDist + startPosX)) moveFront = true;  // Move Front
 
-        if (moveFront)
+
+        rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -10, 10), Mathf.Clamp(rigidBody.velocity.y, -10, 12));
+
+
+        // Move
+        if (moveFront) // Move Front
         {
-            moveFront = true;
             animator.Play("Walk");
-            rigidBody.velocity = new Vector2(moveSpeed, rigidBody.velocity.y);
+            rigidBody.AddForce(Vector2.right * moveSpeed);
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        else
+        else // Move Back
         {
-            moveFront = false;
             animator.Play("Walk Back");
-            rigidBody.velocity = new Vector2(-moveSpeed, rigidBody.velocity.y);
+            rigidBody.AddForce(Vector2.right * -moveSpeed);
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
     }
@@ -58,7 +53,7 @@ public class MoveNPC : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(new Vector3(leftDist, -8, 0), 1);
-        Gizmos.DrawSphere(new Vector3(rightDist, -8, 0), 1);
+        Gizmos.DrawSphere(new Vector3(leftDist + transform.localPosition.x, transform.localPosition.y + 4, 0), 1);
+        Gizmos.DrawSphere(new Vector3(rightDist + transform.localPosition.x, transform.localPosition.y + 4, 0), 1);
     }
 }

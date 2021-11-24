@@ -4,9 +4,11 @@ using EasyJoystick;
 public class Grab : MonoBehaviour
 {
     [SerializeField] Joystick joystickHandRotate;
+    [SerializeField] PlayerHealth playerHealth;
 
     private void Update()
     {
+        if ((playerHealth != null) && playerHealth.isPlayerDye) return;
         if ((!((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0))))
         {
             DeAttachObject();
@@ -15,7 +17,8 @@ public class Grab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(WeaponPickThrow.isWeaponPicked) return;
+        if ((playerHealth != null) && playerHealth.isPlayerDye) return;
+        if (WeaponPickThrow.isWeaponPicked) return;
 
         if (((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0)))
         {

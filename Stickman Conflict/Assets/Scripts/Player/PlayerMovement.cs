@@ -5,19 +5,23 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Refrence")]
     public Joystick moveJoystick;
+    [SerializeField] PlayerHealth playerHealth;
     [SerializeField] Animator animator;
     public Rigidbody2D rigidBody;
     [SerializeField] CapsuleCollider2D legCollider;
-    [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight;
+    [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight, fallEffect;
 
     [Header("Attributes")]
     [SerializeField] float jumpForce;
     [SerializeField] float downForce;
     [SerializeField] float moveSpeed;
+    [SerializeField] float fallDamage;
     public static int weaponRotation = 1;
 
     private void Update()
     {
+        if ((playerHealth != null) && playerHealth.isPlayerDye) return;
+
         if ((moveJoystick.Horizontal() == 0) && (moveJoystick.Vertical() == 0))
         {
             animator.Play("Idel");
@@ -59,6 +63,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (moveJoystick.Vertical() < 0.3f) animator.speed = 1;
+        }
+
+        if (rigidBody.velocity.y < -25)
+        {
+            fallEffect.Play();
+            playerHealth.TakeDamage(fallDamage);
         }
     }
 

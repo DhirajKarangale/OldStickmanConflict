@@ -5,11 +5,13 @@ public class HandsRotate : MonoBehaviour
 {
     [SerializeField] Joystick joystickHandRotate;
     [SerializeField] Balance balanceScript;
+    [SerializeField] PlayerHealth playerHealth;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] float offset;
 
     private void Update()
     {
+        if ((playerHealth != null) && playerHealth.isPlayerDye) return;
         if ((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0))
         {
             balanceScript.enabled = false;
