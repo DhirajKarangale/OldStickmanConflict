@@ -8,7 +8,6 @@ public class MoveNPC : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] bool isOnlyMove;
-    [SerializeField] float impactForce;
     [SerializeField] float moveSpeed;
     [SerializeField] float leftDist, rightDist;
     private bool moveFront = true;

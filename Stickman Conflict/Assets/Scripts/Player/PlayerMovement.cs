@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float fallDamage;
     public static int weaponRotation = 1;
+    private float velocity = 0;
 
     private void Update()
     {
@@ -65,10 +66,15 @@ public class PlayerMovement : MonoBehaviour
             if (moveJoystick.Vertical() < 0.3f) animator.speed = 1;
         }
 
-        if (rigidBody.velocity.y < -25)
+        if (!Physics2D.IsTouchingLayers(legCollider, 64))
+        {
+            velocity = rigidBody.velocity.y;
+        }
+        if ((velocity < -20) && (Physics2D.IsTouchingLayers(legCollider, 64)))
         {
             fallEffect.Play();
             playerHealth.TakeDamage(fallDamage);
+            velocity = 0;
         }
     }
 
