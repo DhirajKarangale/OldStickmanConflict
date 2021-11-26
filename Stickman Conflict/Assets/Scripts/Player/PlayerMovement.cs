@@ -19,6 +19,18 @@ public class PlayerMovement : MonoBehaviour
     public static int weaponRotation = 1;
     private float velocity = 0;
 
+    private void Start()
+    {
+        if (SaveManager.instance.isDataLoaded)
+        {
+            transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0], SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
+        }
+        else
+        {
+            transform.position = new Vector3(-27, -5, 0);
+        }
+    }
+
     private void Update()
     {
         if ((playerHealth != null) && playerHealth.isPlayerDye) return;

@@ -10,7 +10,7 @@ public class PlatformAnimals : MonoBehaviour
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] Animator animator;
     [SerializeField] PlayerHealth playerHealth;
-    [SerializeField] Rigidbody2D playerRIgidBody;
+    [SerializeField] Rigidbody2D playerRB;
 
     [Header("Move")]
     [SerializeField] float moveSpeed;
@@ -58,7 +58,7 @@ public class PlatformAnimals : MonoBehaviour
         
         if (collision.gameObject.layer == 7)
         {
-            playerRIgidBody.AddForce(new Vector2(transform.localScale.x, 0.5f) * impactForce, ForceMode2D.Force);
+            playerRB.AddForce(new Vector2(transform.localScale.x, 0.5f) * impactForce, ForceMode2D.Force);
             playerHealth.TakeDamage(damage);
             Destroy(Instantiate(playerBloodEffect,collision.transform.position,Quaternion.identity),2);
         }
