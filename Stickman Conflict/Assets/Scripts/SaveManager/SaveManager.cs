@@ -16,6 +16,7 @@ public class SaveManager : MonoBehaviour
 
     public SaveData saveData;
     public bool isDataLoaded;
+    [SerializeField] GameObject firstTalk;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class SaveManager : MonoBehaviour
 
         instance = this;
         Load();
+        if (PlayerPrefs.GetInt("FirstTalk") == 1) Destroy(firstTalk);
     }
 
     private void Update()
@@ -87,5 +89,8 @@ public class SaveManager : MonoBehaviour
 public class SaveData
 {
     public float[] playerSpwanPos = new float[3];
+    public float[][] weaponsPos = new float[1][];
+    public bool isWeaponPicked;
+    public string pickedWeaponName;
     public float currHealth;
 }

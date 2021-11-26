@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OldManTalk : MonoBehaviour
+public class FirstTalk : MonoBehaviour
 {
     private int firstTalk;
     [SerializeField] PlayerMovement player;

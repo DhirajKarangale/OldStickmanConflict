@@ -16,11 +16,46 @@ public class WeaponPickThrow : MonoBehaviour
     public static bool isWeaponPicked;
     private bool isReturning, isDistCalcAllow = !isWeaponPicked;
     private Vector3 oldPosition;
-    private float shortestDistance,distance, time = 0;
+    private float shortestDistance, distance, time = 0;
 
     [Header("Throw")]
     [SerializeField] float buttonActiveTime;
     [SerializeField] float throwForce;
+
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("FirstTalk", 0) == 1)
+        {
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                SaveManager.instance.saveData.weaponsPos[i][0] = weapons[1].transform.position.x;
+                SaveManager.instance.saveData.weaponsPos[i][0] = weapons[1].transform.position.y;
+                SaveManager.instance.saveData.weaponsPos[i][0] = weapons[1].transform.position.z;
+            }
+            if (SaveManager.instance.isDataLoaded)
+            {
+                for (int i = 0; i < weapons.Length; i++)
+                {
+                    weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPos[i][0], SaveManager.instance.saveData.weaponsPos[i][1], SaveManager.instance.saveData.weaponsPos[i][2]);
+                }
+
+                if (SaveManager.instance.saveData.isWeaponPicked)
+                {
+                    for (int i = 0; i < weapons.Length; i++)
+                    {
+                        if (weapons[i].name == SaveManager.instance.saveData.pickedWeaponName)
+                        {
+                            closestWeapon = weapons[i];
+                            break;
+                        }
+                    }
+                    PickUp();
+                }
+            }
+        }
+    }
+
 
     private void Update()
     {
@@ -31,7 +66,7 @@ public class WeaponPickThrow : MonoBehaviour
         if (isWeaponPicked)
         {
             closestWeapon.transform.localPosition = Vector3.zero;
-            closestWeapon.transform.localRotation = Quaternion.Euler(0,0,-90);
+            closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
             grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
             grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
@@ -71,13 +106,16 @@ public class WeaponPickThrow : MonoBehaviour
 
         time = 0;
         oldPosition = closestWeapon.transform.position;
-        closestWeapon.transform.parent = grabLeft.transform;
         isReturning = true;
+        closestWeapon.transform.parent = grabLeft.transform;
         grabLeft.AttachObject(closestWeapon);
         grabRight.AttachObject(closestWeapon);
 
         weaponPickDropButton.SetActive(true);
         weaponPickDropButtonText.text = "Drop";
+
+        SaveManager.instance.saveData.isWeaponPicked = isWeaponPicked;
+        SaveManager.instance.saveData.pickedWeaponName = closestWeapon.name;
     }
 
     private void Throw()
@@ -91,6 +129,8 @@ public class WeaponPickThrow : MonoBehaviour
         closestWeapon.transform.parent = transform;
 
         closestWeapon.AddForce(new Vector3(PlayerMovement.weaponRotation, 0.8f, 0) * throwForce, ForceMode2D.Impulse);
+
+        SaveManager.instance.saveData.isWeaponPicked = isWeaponPicked;
     }
 
     private void DesableWeaponButton()
