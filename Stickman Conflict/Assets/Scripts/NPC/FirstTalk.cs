@@ -16,7 +16,7 @@ public class FirstTalk : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteKey("FirstTalk");
+        //PlayerPrefs.DeleteKey("FirstTalk");
         firstTalk = PlayerPrefs.GetInt("FirstTalk", 0);
         if (firstTalk == 0)
         {

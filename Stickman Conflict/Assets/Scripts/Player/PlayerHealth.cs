@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float health;
-
     [SerializeField] GameObject controlCanvas, gameOverPanel;
     [SerializeField] Slider healthSlider;
     [SerializeField] Color low, high;
@@ -13,17 +12,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        if(SaveManager.instance.isDataLoaded)
-        {
-            currHealth = SaveManager.instance.saveData.currHealth;
-        }
-        else
-        {
-            currHealth = health;
-        }
+        if (SaveManager.instance.isDataLoaded) currHealth = SaveManager.instance.saveData.currHealth;
+        else currHealth = health;
         SaveManager.instance.saveData.currHealth = currHealth;
+
         isPlayerDye = false;
-       // currHealth = health;
         healthSlider.value = currHealth / health;
         healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
     }

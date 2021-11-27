@@ -3,8 +3,8 @@ using UnityEngine;
 public class MoveNPC : MonoBehaviour
 {
     [Header("Refrence")]
-    [SerializeField] Animator animator;
-    [SerializeField] Rigidbody2D rigidBody;
+    public Animator animator;
+    public Rigidbody2D rigidBody;
 
     [Header("Attributes")]
     [SerializeField] bool isOnlyMove;
@@ -21,7 +21,11 @@ public class MoveNPC : MonoBehaviour
 
     private void Update()
     {
-        if (isOnlyMove) Move();
+        if (isOnlyMove)
+        {
+            Move();
+            return;
+        }
     }
 
     public void Move()
@@ -32,8 +36,6 @@ public class MoveNPC : MonoBehaviour
 
 
         rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -10, 10), Mathf.Clamp(rigidBody.velocity.y, -10, 12));
-
-
         // Move
         if (moveFront) // Move Front
         {

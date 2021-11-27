@@ -6,34 +6,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
-    // public static SaveManager Instance
-    // {
-    //     get
-    //     {
-    //         return instance;
-    //     }
-    // }
 
     public SaveData saveData;
     public bool isDataLoaded;
-    [SerializeField] GameObject firstTalk;
 
     private void Awake()
     {
-        // if (instance != null && instance != this)
-        // {
-        //     Destroy(this.gameObject);
-        //     return;
-        // }
-        // else
-        // {
-        //     instance = this;
-        // }
-        // DontDestroyOnLoad(this.gameObject);
-
         instance = this;
         Load();
-        if (PlayerPrefs.GetInt("FirstTalk") == 1) Destroy(firstTalk);
     }
 
     private void Update()
@@ -89,7 +69,7 @@ public class SaveManager : MonoBehaviour
 public class SaveData
 {
     public float[] playerSpwanPos = new float[3];
-    public float[][] weaponsPos = new float[1][];
+    public float[,] weaponsPosition;
     public bool isWeaponPicked;
     public string pickedWeaponName;
     public float currHealth;

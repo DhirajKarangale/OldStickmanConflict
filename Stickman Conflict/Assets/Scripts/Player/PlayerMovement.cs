@@ -5,9 +5,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Refrence")]
     public Joystick moveJoystick;
-    [SerializeField] PlayerHealth playerHealth;
-    [SerializeField] Animator animator;
+    public PlayerHealth playerHealth;
     public Rigidbody2D rigidBody;
+    [SerializeField] Animator animator;
     [SerializeField] CapsuleCollider2D legCollider;
     [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight, fallEffect;
 
@@ -21,14 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        if (SaveManager.instance.isDataLoaded)
-        {
-            transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0], SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
-        }
-        else
-        {
-            transform.position = new Vector3(-27, -5, 0);
-        }
+        if (SaveManager.instance.isDataLoaded) transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0], SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
     }
 
     private void Update()

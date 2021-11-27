@@ -25,31 +25,14 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("FirstTalk", 0) == 1)
+        if (SaveManager.instance.isDataLoaded)
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                SaveManager.instance.saveData.weaponsPos[i][0] = weapons[1].transform.position.x;
-                SaveManager.instance.saveData.weaponsPos[i][0] = weapons[1].transform.position.y;
-                SaveManager.instance.saveData.weaponsPos[i][0] = weapons[1].transform.position.z;
-            }
-            if (SaveManager.instance.isDataLoaded)
-            {
-                for (int i = 0; i < weapons.Length; i++)
+                weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], SaveManager.instance.saveData.weaponsPosition[i, 2]);
+                if ((SaveManager.instance.saveData.pickedWeaponName == weapons[i].name) && (SaveManager.instance.saveData.isWeaponPicked))
                 {
-                    weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPos[i][0], SaveManager.instance.saveData.weaponsPos[i][1], SaveManager.instance.saveData.weaponsPos[i][2]);
-                }
-
-                if (SaveManager.instance.saveData.isWeaponPicked)
-                {
-                    for (int i = 0; i < weapons.Length; i++)
-                    {
-                        if (weapons[i].name == SaveManager.instance.saveData.pickedWeaponName)
-                        {
-                            closestWeapon = weapons[i];
-                            break;
-                        }
-                    }
+                    closestWeapon = weapons[i];
                     PickUp();
                 }
             }
