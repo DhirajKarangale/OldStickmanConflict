@@ -16,7 +16,7 @@ public class FirstTalk : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.DeleteKey("FirstTalk");
+       // PlayerPrefs.DeleteKey("FirstTalk");
         firstTalk = PlayerPrefs.GetInt("FirstTalk", 0);
         if (firstTalk == 0)
         {
@@ -27,7 +27,7 @@ public class FirstTalk : MonoBehaviour
             leftHand.color = oldHandColor;
             rightHand.color = oldHandColor;
         }
-        else 
+        else
         {
             Destroy(gameObject);
             GivePowers();

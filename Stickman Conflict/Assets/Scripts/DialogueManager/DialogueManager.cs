@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] TMP_Text dialogueText;
+    [SerializeField] UnityEngine.UI.Text dialogueText;
     private Queue<string> sentencesQue;
     private string sentence;
   

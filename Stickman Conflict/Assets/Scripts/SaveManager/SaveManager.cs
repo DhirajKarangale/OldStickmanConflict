@@ -73,4 +73,5 @@ public class SaveData
     public bool isWeaponPicked;
     public string pickedWeaponName;
     public float currHealth;
+    public int coin;
 }

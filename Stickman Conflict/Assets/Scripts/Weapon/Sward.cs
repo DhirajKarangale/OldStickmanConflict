@@ -4,8 +4,8 @@ public class Sward : MonoBehaviour
 {
     [SerializeField] float impactForce;
     [SerializeField] float damage;
+    [SerializeField] GameObject enemyBloodEffect;
     private EmenyHealth emenyHealth;
-    private float applideDamage;
     private bool isCollisionAllow = true;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,10 +16,10 @@ public class Sward : MonoBehaviour
         if (collision.gameObject.layer == 9 && isCollisionAllow)
         {
             isCollisionAllow = false;
-            applideDamage = (int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, 30);
+            Destroy(Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation), 2);
 
             emenyHealth = collision.gameObject.GetComponent<EmenyHealth>();
-            if ((emenyHealth != null) && (emenyHealth.currState != EmenyHealth.State.Dead)) emenyHealth.TakeDamage(applideDamage);
+            if ((emenyHealth != null) && (emenyHealth.currState != EmenyHealth.State.Dead)) emenyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, 30));
             Invoke("ActiveColision", 0.5f);
         }
     }

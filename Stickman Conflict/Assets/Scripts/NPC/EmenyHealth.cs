@@ -11,7 +11,6 @@ public class EmenyHealth : MonoBehaviour
     [SerializeField] MoveNPC moveNPC;
     [SerializeField] TMP_Text damageText;
     [SerializeField] SpriteRenderer spriteRenderer;
-    [SerializeField] GameObject enemyBloodEffect;
 
     [Header("Health")]
     [SerializeField] Slider healthSlider;
@@ -48,7 +47,6 @@ public class EmenyHealth : MonoBehaviour
         currState = State.Hurt;
         moveNPC.animator.Play("Hurt");
         Invoke("ExitHurt", 0.5f);
-        Destroy(Instantiate(enemyBloodEffect, transform.position + new Vector3(0, 0.5f, 0), transform.rotation), 2);
     }
 
     private void ExitHurt()
