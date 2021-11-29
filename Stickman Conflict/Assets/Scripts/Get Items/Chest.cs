@@ -11,7 +11,7 @@ public class Chest : MonoBehaviour
 
     private void Start()
     {
-       // PlayerPrefs.DeleteKey("Chest" + transform.name);
+        PlayerPrefs.DeleteKey("Chest" + transform.name);
         chestOpen = PlayerPrefs.GetInt("Chest" + transform.name, 0);
         if (chestOpen == 0) animator.Play("Close");
         else if (chestOpen == 1) animator.Play("Open");

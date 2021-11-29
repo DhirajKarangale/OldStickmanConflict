@@ -8,7 +8,12 @@ public class PowerUps : MonoBehaviour
     private ParticleSystem currEffect;
     [SerializeField] Color effectColor;
     [SerializeField] float healthIncreaseAmount;
-    private bool isHealthIncreaseAllow = false;
+    private bool isHealthIncreaseAllow;
+
+    private void Start()
+    {
+        isHealthIncreaseAllow = !rigidBody.isKinematic;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

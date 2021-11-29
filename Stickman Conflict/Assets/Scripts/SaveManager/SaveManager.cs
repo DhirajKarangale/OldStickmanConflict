@@ -74,4 +74,5 @@ public class SaveData
     public string pickedWeaponName;
     public float currHealth;
     public int coin;
+    public int key;
 }

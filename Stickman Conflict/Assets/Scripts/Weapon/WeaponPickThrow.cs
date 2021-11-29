@@ -111,7 +111,7 @@ public class WeaponPickThrow : MonoBehaviour
         grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        closestWeapon.AddForce(new Vector3(PlayerMovement.weaponRotation, 0.8f, 0) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce(new Vector3(player.localScale.x, 1.5f, 0) * throwForce, ForceMode2D.Impulse);
 
         SaveManager.instance.saveData.isWeaponPicked = isWeaponPicked;
     }
