@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (SaveManager.instance.isDataLoaded)
         {
-            transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0], SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
+            transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0] + 5, SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
         }
     }
 
@@ -37,8 +37,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), Mathf.Clamp(rigidBody.velocity.y, -10, 12));
-
+            //rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), Mathf.Clamp(rigidBody.velocity.y, -15, 25));
+            rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), rigidBody.velocity.y);
 
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
@@ -61,7 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
             // Jump & Crounch
             if ((moveJoystick.Vertical() > 0.6f) && (Physics2D.IsTouchingLayers(legCollider, 64))) // Jump 
-            {                                                                             // 64 is Layer Mask Of Ground     
+            {
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -15, 12));
                 animator.speed = 0.3f;
                 DustEffect();
                 rigidBody.AddForce(jumpForce * Vector2.up * moveJoystick.Vertical(), ForceMode2D.Impulse);
@@ -74,15 +75,18 @@ public class PlayerMovement : MonoBehaviour
             if (moveJoystick.Vertical() < 0.3f) animator.speed = 1;
         }
 
-        if (!Physics2D.IsTouchingLayers(legCollider, 64))
+        if (Physics2D.IsTouchingLayers(legCollider, 64))
+        {
+            if (velocity < -30)
+            {
+                fallEffect.Play();
+                playerHealth.TakeDamage(fallDamage);
+                velocity = 0;
+            }
+        }
+        else
         {
             velocity = rigidBody.velocity.y;
-        }
-        if ((velocity < -20) && (Physics2D.IsTouchingLayers(legCollider, 64)))
-        {
-            fallEffect.Play();
-            playerHealth.TakeDamage(fallDamage);
-            velocity = 0;
         }
     }
 

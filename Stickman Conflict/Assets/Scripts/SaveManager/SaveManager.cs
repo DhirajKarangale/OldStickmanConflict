@@ -32,7 +32,7 @@ public class SaveManager : MonoBehaviour
 
         binaryFormatter.Serialize(stream, saveData);
         stream.Close();
-        Debug.Log("Data Save");
+       // Debug.Log("Data Save");
     }
 
     public void Load()
@@ -45,12 +45,12 @@ public class SaveManager : MonoBehaviour
 
             saveData = binaryFormatter.Deserialize(stream) as SaveData;
             stream.Close();
-            Debug.Log("Data Load");
             isDataLoaded = true;
+           // Debug.Log("Data Load");
         }
         else
         {
-            Debug.Log("Data not found");
+          //  Debug.Log("Data not found");
         }
     }
 
@@ -60,7 +60,7 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-            Debug.Log("Data Delete");
+          //  Debug.Log("Data Delete");
         }
     }
 }
