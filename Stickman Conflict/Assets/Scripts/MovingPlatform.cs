@@ -3,24 +3,24 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] Transform player;
-    [SerializeField] Transform pos1, pos2;
     [SerializeField] float speed;
+    [SerializeField] Vector3 pos1, pos2;
     private Vector3 nextPos;
 
     private void Start()
     {
-        nextPos = pos1.position;
+        nextPos = pos1;
     }
 
     private void Update()
     {
-        if (transform.position == pos1.position)
+        if (transform.position == pos1)
         {
-            nextPos = pos2.position;
+            nextPos = pos2;
         }
-        if (transform.position == pos2.position)
+        if (transform.position == pos2)
         {
-            nextPos = pos1.position;
+            nextPos = pos1;
         }
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
@@ -34,11 +34,18 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    // private void OnCollisionExit2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.layer == 7)
+    //     {
+    //         player.parent = null;
+    //     }
+    // }
+
+    private void OnDrawGizmosSelected()
     {
-        if (collision.gameObject.layer == 7)
-        {
-            player.parent = null;
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(pos1, 1);
+        Gizmos.DrawSphere(pos2, 1);
     }
 }
