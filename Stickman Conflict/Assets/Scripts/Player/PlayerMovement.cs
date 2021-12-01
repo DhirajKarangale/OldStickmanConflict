@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((playerHealth != null) && playerHealth.isPlayerDye) return;
 
-         rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -7, 25));
         if ((moveJoystick.Horizontal() == 0) && (moveJoystick.Vertical() == 0))
         {
             animator.Play("Idel");
