@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject controlCanvas, gameOverPanel;
     [SerializeField] Slider healthSlider;
     [SerializeField] Color low, high;
-    public float currHealth;
+    private float currHealth;
     public bool isPlayerDye;
 
     private void Start()
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
     }
 
-    private void Died()
+    public void Died()
     {
         isPlayerDye = true;
         controlCanvas.SetActive(false);

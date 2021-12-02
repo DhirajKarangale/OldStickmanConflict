@@ -6,6 +6,12 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] Transform[] weapons;
     private bool isDataSaveAllow = true;
 
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Close");
+        else animator.Play("Open");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7 && isDataSaveAllow)
@@ -27,7 +33,8 @@ public class CheckPoint : MonoBehaviour
 
             SaveManager.instance.Save();
             Invoke("ActiveDataSave", 10);
-            animator.Play("Cross");
+            if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Cross");
+            PlayerPrefs.SetInt("PointCross" + transform.name, 1);
         }
     }
 

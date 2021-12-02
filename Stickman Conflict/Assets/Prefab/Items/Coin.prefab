@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5487701361250643185}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Coin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 0ca730ce7de6c6a44a736e6d5fb08ecc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1e3a8c05ba4b8e442b5e728109eb1765, type: 3}
+  m_Color: {r: 1, g: 0.9653129, b: 0.8820755, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d23d62288d945c46beb6a9102a101a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedItem: 0
   effect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
 --- !u!1 &7771779645229163907
 GameObject:
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0
-  m_Color: {r: 1, g: 0.92589796, b: 0, a: 0.5882353}
+  m_Color: {r: 1, g: 0.5309945, b: 0, a: 0.5882353}
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0

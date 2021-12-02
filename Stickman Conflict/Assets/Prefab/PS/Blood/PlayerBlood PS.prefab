@@ -4894,7 +4894,7 @@ GameObject:
   - component: {fileID: 4294334105745123876}
   - component: {fileID: 5839052588404457386}
   m_Layer: 0
-  m_Name: Blood PS
+  m_Name: PlayerBlood PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5454,7 +5454,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.8
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5507,7 +5507,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 10
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -5713,7 +5713,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 50
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5823,7 +5823,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 12
+        scalar: 25
         minScalar: 30
         maxCurve:
           serializedVersion: 2
