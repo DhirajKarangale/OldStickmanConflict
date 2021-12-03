@@ -1,7 +1,103 @@
 fileFormatVersion: 2
 guid: d08c68c6047e3d44ab93e1ee327c6635
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5819808594157487358
+    second: x32-florest-tileset_0
+  - first:
+      213: 501578743537695064
+    second: x32-florest-tileset_1
+  - first:
+      213: 5245666474974427201
+    second: x32-florest-tileset_2
+  - first:
+      213: -49704501026036727
+    second: x32-florest-tileset_3
+  - first:
+      213: 866435190997956911
+    second: x32-florest-tileset_4
+  - first:
+      213: -4158855342389281263
+    second: x32-florest-tileset_5
+  - first:
+      213: 1096193451196761745
+    second: x32-florest-tileset_6
+  - first:
+      213: -7940408963376102979
+    second: x32-florest-tileset_7
+  - first:
+      213: 6477934928231695225
+    second: x32-florest-tileset_8
+  - first:
+      213: 6059766437558849898
+    second: x32-florest-tileset_9
+  - first:
+      213: 845891409704185694
+    second: x32-florest-tileset_10
+  - first:
+      213: 8654047277023659727
+    second: x32-florest-tileset_11
+  - first:
+      213: 216253624256047602
+    second: x32-florest-tileset_12
+  - first:
+      213: 2835313620087532613
+    second: x32-florest-tileset_13
+  - first:
+      213: 4070743473502558719
+    second: x32-florest-tileset_14
+  - first:
+      213: 4056737842525143877
+    second: x32-florest-tileset_15
+  - first:
+      213: -2593063685247161848
+    second: x32-florest-tileset_16
+  - first:
+      213: 5915880170621421863
+    second: x32-florest-tileset_17
+  - first:
+      213: -4580644131948271914
+    second: x32-florest-tileset_18
+  - first:
+      213: -1362360395878337987
+    second: x32-florest-tileset_19
+  - first:
+      213: -336909834362218902
+    second: x32-florest-tileset_20
+  - first:
+      213: -1579184053497567214
+    second: x32-florest-tileset_21
+  - first:
+      213: -3127471169215565397
+    second: x32-florest-tileset_22
+  - first:
+      213: 5674399026787742439
+    second: x32-florest-tileset_23
+  - first:
+      213: 5445920667177371854
+    second: x32-florest-tileset_24
+  - first:
+      213: 1636054166449647955
+    second: x32-florest-tileset_25
+  - first:
+      213: -210915165460692604
+    second: x32-florest-tileset_26
+  - first:
+      213: -3017618098618321700
+    second: x32-florest-tileset_27
+  - first:
+      213: 4496007452485567526
+    second: x32-florest-tileset_28
+  - first:
+      213: -7474301526306989687
+    second: x32-florest-tileset_29
+  - first:
+      213: 3078794684374680796
+    second: x32-florest-tileset_30
+  - first:
+      213: -2241722550839060665
+    second: x32-florest-tileset_31
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +137,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +171,201 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: x32-florest-tileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b3a741be2eb3fa0800000000000000
+      internalID: -5819808594157487358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8597373b537f5f600800000000000000
+      internalID: 501578743537695064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148b603cdd95cc840800000000000000
+      internalID: 5245666474974427201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904ea98050a6f4ff0800000000000000
+      internalID: -49704501026036727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29b4543732360c00800000000000000
+      internalID: 866435190997956911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11eb6a4c917c846c0800000000000000
+      internalID: -4158855342389281263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19641bfc226763f00800000000000000
+      internalID: 1096193451196761745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: x32-florest-tileset_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1c3ae2e100ec190800000000000000
+      internalID: -7940408963376102979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class EmenyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public enum State { Move, Hurt, Dead }
     public State currState;
@@ -14,6 +14,7 @@ public class EmenyHealth : MonoBehaviour
 
     [Header("Health")]
     [SerializeField] Slider healthSlider;
+    [SerializeField] GameObject destroyEffect;
     [SerializeField] float health;
     private float currHealth;
 
@@ -29,7 +30,7 @@ public class EmenyHealth : MonoBehaviour
         switch (currState)
         {
             case State.Move:
-                moveNPC.Move();
+                if (moveNPC) moveNPC.Move();
                 break;
             case State.Hurt:
                 Hurt();
@@ -42,10 +43,10 @@ public class EmenyHealth : MonoBehaviour
 
     private void Hurt()
     {
+        currState = State.Hurt;
         healthSlider.gameObject.SetActive(true);
         healthSlider.value = currHealth / health;
-        currState = State.Hurt;
-        moveNPC.animator.Play("Hurt");
+        if (moveNPC) moveNPC.animator.Play("Hurt");
         Invoke("ExitHurt", 0.5f);
     }
 
@@ -58,11 +59,19 @@ public class EmenyHealth : MonoBehaviour
     private void Dead()
     {
         currState = State.Dead;
-        moveNPC.rigidBody.velocity = Vector2.zero;
         healthSlider.gameObject.SetActive(false);
-        moveNPC.animator.Play("Dead");
-        moveNPC.rigidBody.isKinematic = true;
-        Destroy(this.gameObject, 20);
+        if (moveNPC)
+        {
+            moveNPC.rigidBody.velocity = Vector2.zero;
+            moveNPC.animator.Play("Dead");
+            moveNPC.rigidBody.isKinematic = true;
+            Destroy(this.gameObject, 20);
+        }
+        else
+        {
+            Destroy(Instantiate(destroyEffect, transform.position, Quaternion.identity), 1.5f);
+            Destroy(this.gameObject);
+        }
     }
 
     public void TakeDamage(float damage)
