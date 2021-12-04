@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public Joystick moveJoystick;
     public PlayerHealth playerHealth;
     public Rigidbody2D rigidBody;
-    [SerializeField] Transform deathPlatform;
     [SerializeField] Animator animator;
     [SerializeField] CapsuleCollider2D legCollider;
     [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight, fallEffect;
@@ -31,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         if ((playerHealth != null) && playerHealth.isPlayerDye) return;
-        deathPlatform.position = new Vector3(transform.position.x, deathPlatform.position.y, deathPlatform.position.z);
+        if(transform.position.x < 817) playerHealth.Died();
+      
         if ((moveJoystick.Horizontal() == 0) && (moveJoystick.Vertical() == 0))
         {
             animator.Play("Idel");
