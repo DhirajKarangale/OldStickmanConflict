@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] float health;
+    public float health;
     [SerializeField] GameObject controlCanvas, gameOverPanel;
     [SerializeField] Slider healthSlider;
     [SerializeField] Color low, high;
-    private float currHealth;
+    public float currHealth;
     public bool isPlayerDye;
 
     private void Start()

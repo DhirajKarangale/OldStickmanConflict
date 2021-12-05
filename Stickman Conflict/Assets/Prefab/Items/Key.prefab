@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8498303636209708658}
   - component: {fileID: -8488372636811597095}
   - component: {fileID: 8498303636209708652}
-  - component: {fileID: 9087305464173149000}
+  - component: {fileID: -4730575787837226299}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -133,7 +133,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.812256, y: 5.838005}
   m_EdgeRadius: 0
---- !u!114 &9087305464173149000
+--- !u!114 &-4730575787837226299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +142,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8498303636209708657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d23d62288d945c46beb6a9102a101a1, type: 3}
+  m_Script: {fileID: 11500000, guid: d669251a282f90f45890902f390f05f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickedItem: 1
-  effect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
+  itemPick: 1
+  pickEffect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
+  rigidBody: {fileID: 0}
+  playerHealth: {fileID: 0}
+  healthEffect: {fileID: 0}
+  effectColor: {r: 0, g: 0, b: 0, a: 0}
+  healthIncreaseAmount: 0

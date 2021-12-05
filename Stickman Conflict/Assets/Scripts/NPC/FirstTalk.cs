@@ -64,7 +64,7 @@ public class FirstTalk : MonoBehaviour
         PlayerPrefs.SetInt("FirstTalk", firstTalk);
         GivePowers();
         controlCanvas.SetActive(true);
-        Destroy(Instantiate(powersGetEffect, player.transform.position, Quaternion.identity), 10);
+        Instantiate(powersGetEffect, player.transform.position, Quaternion.identity);
         player.rigidBody.constraints = RigidbodyConstraints2D.None;
         Invoke("EnableDialogue", 45);
         Destroy(this.gameObject, 50);

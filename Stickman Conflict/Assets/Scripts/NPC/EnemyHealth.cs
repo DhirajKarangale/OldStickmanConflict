@@ -69,7 +69,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            Destroy(Instantiate(destroyEffect, transform.position, Quaternion.identity), 1.5f);
+            Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

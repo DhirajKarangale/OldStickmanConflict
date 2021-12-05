@@ -38,6 +38,7 @@ public class Grab : MonoBehaviour
         {
             FixedJoint2D fixedJoint2D = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
             fixedJoint2D.connectedBody = rigidbody2D;
+            fixedJoint2D.autoConfigureConnectedAnchor = false;
         }
         else
         {

@@ -28,7 +28,7 @@ public class Interact : MonoBehaviour
             if (item != null)
             {
                 animator.Play("Play");
-                Destroy(Instantiate(effect, transform.position, Quaternion.identity), 1);
+                Instantiate(effect, transform.position, Quaternion.identity);
                 for (int i = 0; i < numberOfItem; i++)
                 {
                     Instantiate(item, new Vector3(Random.Range(transform.position.x - 1, transform.position.x + 1), Random.Range(transform.position.y + 3, transform.position.y + 6), transform.position.z), Quaternion.identity);

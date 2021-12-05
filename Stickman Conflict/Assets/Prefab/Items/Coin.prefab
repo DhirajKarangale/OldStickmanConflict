@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7693392802796873482}
   - component: {fileID: 6059953428915184230}
   - component: {fileID: 1455904849503479108}
-  - component: {fileID: -5487701361250643185}
+  - component: {fileID: 1470056871326125087}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5487701361250643185
+--- !u!114 &1470056871326125087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +133,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4683496239335396906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d23d62288d945c46beb6a9102a101a1, type: 3}
+  m_Script: {fileID: 11500000, guid: d669251a282f90f45890902f390f05f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickedItem: 0
-  effect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
+  itemPick: 0
+  pickEffect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
+  rigidBody: {fileID: 0}
+  playerHealth: {fileID: 0}
+  healthEffect: {fileID: 0}
+  effectColor: {r: 0, g: 0, b: 0, a: 0}
+  healthIncreaseAmount: 0
 --- !u!1 &7771779645229163907
 GameObject:
   m_ObjectHideFlags: 0
