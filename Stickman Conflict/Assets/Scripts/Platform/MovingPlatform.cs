@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    [SerializeField] Animator animator;
     [SerializeField] Transform player;
     [SerializeField] float speed;
-    [SerializeField] Vector3 leftPos, rightPos;
-    private Vector3 currleftPos, currrightPos;
+    [SerializeField] float leftStandPos, rightStandPos;
     [SerializeField] Vector3 pos1, pos2;
     private Vector3 nextPos;
 
     private void Start()
     {
+      //  animator.enabled = false;
         nextPos = pos1;
-        currleftPos = leftPos;
-        currrightPos = rightPos;
     }
 
     private void Update()
@@ -29,7 +28,7 @@ public class MovingPlatform : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
 
-        if ((player.position.x > currleftPos.x) && (player.position.x < currrightPos.x))
+        if ((player.position.x > (transform.localPosition.x + leftStandPos)) && (player.position.x < (transform.localPosition.x + rightStandPos)))
         {
             player.parent = this.transform;
         }
@@ -39,22 +38,6 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.layer == 7)
-    //     {
-    //         player.parent = this.transform;
-    //     }
-    // }
-
-    // private void OnCollisionExit2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.layer == 7)
-    //     {
-    //         player.parent = null;
-    //     }
-    // }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -62,7 +45,7 @@ public class MovingPlatform : MonoBehaviour
         Gizmos.DrawSphere(pos2, 1);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(leftPos, 1);
-        Gizmos.DrawSphere(rightPos, 1);
+        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + leftStandPos, transform.position.y, 0), 1);
+        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + rightStandPos, transform.position.y, 0), 1);
     }
 }

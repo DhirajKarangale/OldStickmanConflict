@@ -1,10 +1,12 @@
 using UnityEngine;
+using System;
 
 public class CheckPoint : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Transform[] weapons;
     private bool isDataSaveAllow = true;
+    public static event Action onCheckPointCross;
 
     private void Start()
     {
@@ -34,6 +36,7 @@ public class CheckPoint : MonoBehaviour
             SaveManager.instance.Save();
             Invoke("ActiveDataSave", 10);
             if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Cross");
+            onCheckPointCross();
             PlayerPrefs.SetInt("PointCross" + transform.name, 1);
         }
     }

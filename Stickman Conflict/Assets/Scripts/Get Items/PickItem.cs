@@ -36,15 +36,18 @@ public class PickItem : MonoBehaviour
                     currEffect = Instantiate(healthEffect, transform.position, Quaternion.identity).main;
                     currEffect.startColor = effectColor;
                     playerHealth.IncreaseHralth(healthIncreaseAmount);
+                    Destroy(gameObject);
                     break;
                 case Item.Coin:
                     SaveManager.instance.saveData.coin++;
+                    Destroy(gameObject);
                     break;
                 case Item.Key:
                     SaveManager.instance.saveData.key++;
+                    Destroy(gameObject);
                     break;
             }
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 
         if (!isPickAllow)
@@ -52,12 +55,12 @@ public class PickItem : MonoBehaviour
             if (rigidBody.isKinematic)
             {
                 rigidBody.isKinematic = false;
-                Invoke("AllowHealthIncrease", 0.5f);
+                Invoke("AllowPick", 0.5f);
             }
         }
     }
 
-    private void AllowHealthIncrease()
+    private void AllowPick()
     {
         isPickAllow = true;
     }

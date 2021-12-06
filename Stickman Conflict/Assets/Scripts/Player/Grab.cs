@@ -23,7 +23,7 @@ public class Grab : MonoBehaviour
         if (((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0)))
         {
             Rigidbody2D rigidbody2D = collision.transform.GetComponent<Rigidbody2D>();
-            AttachObject(rigidbody2D);
+            if(GetComponent<FixedJoint2D>() == null) AttachObject(rigidbody2D);
         }
     }
 

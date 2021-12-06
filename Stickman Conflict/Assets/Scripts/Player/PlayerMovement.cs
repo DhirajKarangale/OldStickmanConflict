@@ -25,13 +25,33 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0] + 5, SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
         }
+
+        AudioManager.instance.Stop("MenuBG");
+        AudioManager.instance.Play("IdelBG");
     }
 
     private void Update()
     {
         if ((playerHealth != null) && playerHealth.isPlayerDye) return;
-        if(transform.position.y < -100) playerHealth.Died();
-      
+        if (transform.position.y < -100) playerHealth.Died();
+
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            DustEffect();
+            animator.Play("Walk");
+            rigidBody.AddForce(Vector2.right * moveSpeed * Input.GetAxis("Horizontal"));
+            weaponRotation = 1;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            DustEffect();
+            animator.speed = 0.3f;
+            rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -15, 12));
+            rigidBody.AddForce(jumpForce * Vector2.up * Input.GetAxis("Vertical"), ForceMode2D.Impulse);
+        }
+
         if ((moveJoystick.Horizontal() == 0) && (moveJoystick.Vertical() == 0))
         {
             animator.Play("Idel");
@@ -63,9 +83,10 @@ public class PlayerMovement : MonoBehaviour
             // Jump & Crounch
             if ((moveJoystick.Vertical() > 0.6f) && (Physics2D.IsTouchingLayers(legCollider, 64))) // Jump 
             {
-                rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -15, 12));
-                animator.speed = 0.3f;
                 DustEffect();
+                animator.speed = 0.3f;
+                AudioManager.instance.Play("Jump");
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -15, 12));
                 rigidBody.AddForce(jumpForce * Vector2.up * moveJoystick.Vertical(), ForceMode2D.Impulse);
             }
             else if (moveJoystick.Vertical() < -0.95f) // Crounch
