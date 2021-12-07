@@ -25,9 +25,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0] + 5, SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
         }
-
-        AudioManager.instance.Stop("MenuBG");
-        AudioManager.instance.Play("IdelBG");
     }
 
     private void Update()
@@ -102,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
             if (velocity < -30)
             {
                 fallEffect.Play();
+                AudioManager.instance.Play("Fall");
                 playerHealth.TakeDamage(fallDamage);
                 velocity = 0;
             }

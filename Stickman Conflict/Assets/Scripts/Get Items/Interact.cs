@@ -13,7 +13,7 @@ public class Interact : MonoBehaviour
 
     private void Start()
     {
-      //  PlayerPrefs.DeleteKey("Interact" + transform.name);
+        PlayerPrefs.DeleteKey("Interact" + transform.name);
         CheckPoint.onCheckPointCross += OnCheckPointCross;
         open = PlayerPrefs.GetInt("Interact" + transform.name, 0);
         if (open == 0) animator.Play("Close");
@@ -26,6 +26,7 @@ public class Interact : MonoBehaviour
         {
             if (item != null)
             {
+                AudioManager.instance.Play("Chest");
                 animator.Play("Play");
                 Instantiate(effect, transform.position, Quaternion.identity);
                 for (int i = 0; i < numberOfItem; i++)
@@ -34,17 +35,16 @@ public class Interact : MonoBehaviour
                 }
                 dialogueManager.StartDialogue(getDialogue);
                 open = 1;
-                //PlayerPrefs.SetInt("Interact" + transform.name, open);
             }
             else
             {
                 if (SaveManager.instance.saveData.key > 0)
                 {
+                    AudioManager.instance.Play("Key");
                     dialogueManager.StartDialogue(getDialogue);
                     SaveManager.instance.saveData.key--;
                     animator.Play("Play");
                     open = 1;
-                    //PlayerPrefs.SetInt("Interact" + transform.name, open);
                 }
                 else
                 {

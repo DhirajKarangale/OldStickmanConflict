@@ -8,7 +8,6 @@ public class Sound
 
     public float volume = 1;
     public float pitch = 1;
-    public bool loop;
 
     [HideInInspector]
     public AudioSource audioSource;

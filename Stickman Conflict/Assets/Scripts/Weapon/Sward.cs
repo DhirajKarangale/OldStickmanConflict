@@ -21,12 +21,14 @@ public class Sward : MonoBehaviour
         emenyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (emenyHealth != null && (emenyHealth.currState != EnemyHealth.State.Dead))
         {
+            AudioManager.instance.Play("Hit");
             Instantiate(hitEffect, collision.transform.position, Quaternion.identity);
             emenyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, 30));
         }
 
         if (collision.gameObject.layer == 9)
         {
+            AudioManager.instance.Play("NPCHurt");
             Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
         }
 

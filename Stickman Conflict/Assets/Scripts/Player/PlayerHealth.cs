@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Died()
     {
+        AudioManager.instance.Play("GaveOver");
         isPlayerDye = true;
         controlCanvas.SetActive(false);
         Invoke("SetGameOverActive", 2);
@@ -30,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        AudioManager.instance.Play("PlayerHurt");
         if (currHealth <= 0) Died();
         else
         {

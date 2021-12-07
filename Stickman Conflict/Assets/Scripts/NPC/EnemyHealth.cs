@@ -69,6 +69,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("Destroy");
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

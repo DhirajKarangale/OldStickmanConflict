@@ -33,6 +33,7 @@ public class PickItem : MonoBehaviour
             {
                 case Item.PowerUps:
                     if (playerHealth.currHealth >= playerHealth.health) return;
+                    AudioManager.instance.Play("HealthIncrease");
                     currEffect = Instantiate(healthEffect, transform.position, Quaternion.identity).main;
                     currEffect.startColor = effectColor;
                     playerHealth.IncreaseHralth(healthIncreaseAmount);
@@ -40,10 +41,12 @@ public class PickItem : MonoBehaviour
                     break;
                 case Item.Coin:
                     SaveManager.instance.saveData.coin++;
+                    AudioManager.instance.Play("Coin");
                     Destroy(gameObject);
                     break;
                 case Item.Key:
                     SaveManager.instance.saveData.key++;
+                    AudioManager.instance.Play("Key");
                     Destroy(gameObject);
                     break;
             }

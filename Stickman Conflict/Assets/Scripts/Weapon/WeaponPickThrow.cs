@@ -25,6 +25,7 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Start()
     {
+        isWeaponPicked = false;
         if (SaveManager.instance.isDataLoaded)
         {
             for (int i = 0; i < weapons.Length; i++)
@@ -83,6 +84,7 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void PickUp()
     {
+        AudioManager.instance.Play("Pick");
         if (IsInvoking("DesableWeaponButton")) CancelInvoke("DesableWeaponButton");
         isWeaponPicked = true;
         isDistCalcAllow = false;
@@ -103,6 +105,7 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Throw()
     {
+        AudioManager.instance.Play("Throw");
         weaponPickDropButtonText.text = "Pick Up";
         isWeaponPicked = false;
         Invoke("DesableWeaponButton", buttonActiveTime);

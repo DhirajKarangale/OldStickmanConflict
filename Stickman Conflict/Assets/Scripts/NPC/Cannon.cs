@@ -31,6 +31,7 @@ public class Cannon : MonoBehaviour
 
     private void Shoot()
     {
+        AudioManager.instance.Play("Cannon");
         currBullet = Instantiate(bullet, attackPoint.position, attackPoint.rotation);
         currBullet.GetComponent<Rigidbody2D>().AddForce(attackPoint.right * bulletForce);
         Destroy(currBullet, 1);

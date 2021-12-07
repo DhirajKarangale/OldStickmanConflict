@@ -10,6 +10,7 @@ public class JumpPlatform : MonoBehaviour
     {
         if (collision.gameObject.layer == 7 && isForceAllow)
         {
+            AudioManager.instance.Play("BigJump");
             isForceAllow = false;
             playerRB.AddForce(Vector2.up * throwForce, ForceMode2D.Impulse);
             Invoke("ActiveForce", 5);
