@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.instance.StopBG();
-        AudioManager.instance.Play("IdelBG");
+      //  AudioManager.instance.StopBG();
+     //   AudioManager.instance.Play("IdelBG");
 
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);

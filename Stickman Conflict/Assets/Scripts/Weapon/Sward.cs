@@ -15,7 +15,7 @@ public class Sward : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(PlayerMovement.weaponRotation, 0, 0) * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 7, 20), ForceMode2D.Impulse);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(PlayerMovement.weaponRotation, 0, 0) * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 9, 25), ForceMode2D.Impulse);
         }
 
         emenyHealth = collision.gameObject.GetComponent<EnemyHealth>();

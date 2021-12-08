@@ -424,6 +424,36 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     audioSource: {fileID: 0}
+  - name: Boss
+    clip: {fileID: 8300000, guid: 0c9ae98715a55f6418e1efe012811b2c, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Desert
+    clip: {fileID: 8300000, guid: a7e5fc410b5a56e42a635bd3b0a925a2, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Dungeon
+    clip: {fileID: 8300000, guid: a67db28f08d3a164195bd02313d9b014, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: GrassLand
+    clip: {fileID: 8300000, guid: ecfcd6c058ba1e84a84606f4fd4c5c02, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Iceland
+    clip: {fileID: 8300000, guid: 74cf01eaa5917494da7108bfef28b1e0, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Mushroom
+    clip: {fileID: 8300000, guid: 00b145df4e8cc0c49b34ebec61359fe3, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
   sounds:
   - name: Button
     clip: {fileID: 8300000, guid: 0c118605b90598c4e9e98aea7af5f84a, type: 3}
@@ -506,8 +536,8 @@ MonoBehaviour:
     pitch: 1
     audioSource: {fileID: 0}
   - name: NPCHurt
-    clip: {fileID: 8300000, guid: b52b0d4b668545341a096da9a720527b, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 4571d04acde21be41b67ee107e81f613, type: 3}
+    volume: 0.5
     pitch: 1
     audioSource: {fileID: 0}
   - name: Cannon

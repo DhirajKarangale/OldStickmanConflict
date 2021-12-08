@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(string[] sentences)
     {
+        AudioManager.instance.Play("Button");
         isDialogueStart = true;
         animator.Play("DialogueOpen");
         sentencesQue.Clear();

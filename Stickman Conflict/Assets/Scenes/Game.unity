@@ -2266,7 +2266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 77733011}
   - component: {fileID: 77733012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3476,7 +3476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 116543923}
   - component: {fileID: 116543924}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9783,7 +9783,7 @@ GameObject:
   - component: {fileID: 324637543}
   - component: {fileID: 324637544}
   - component: {fileID: 324637545}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Old Man
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12653,7 +12653,7 @@ GameObject:
   - component: {fileID: 392367839}
   - component: {fileID: 392367838}
   - component: {fileID: 392367841}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Sward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12787,7 +12787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60605637efefe04b8e44737539d243e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactForce: 0.006
+  impactForce: 0.04
   damage: 0.01
   hitEffect: {fileID: 2571799540916514908, guid: a9dc99ae3f5222d41834afe7befa9d92, type: 3}
   enemyBloodEffect: {fileID: 3697530900228688425, guid: c050914dc59bf17498bc0beffe7a72a2, type: 3}
@@ -15243,7 +15243,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21617,7 +21617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 729535580}
   - component: {fileID: 729535581}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30040,7 +30040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1023596046
 Transform:
   m_ObjectHideFlags: 0
@@ -31183,7 +31183,7 @@ GameObject:
   - component: {fileID: 1071878513}
   - component: {fileID: 1071878515}
   - component: {fileID: 1071878514}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Trail PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40070,7 +40070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1217172214}
   - component: {fileID: 1217172215}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50239,7 +50239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390492675}
   - component: {fileID: 1390492676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52908,7 +52908,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60082,7 +60082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594219251}
   - component: {fileID: 1594219252}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60853,7 +60853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1603040838}
   - component: {fileID: 1603040839}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61667,7 +61667,7 @@ GameObject:
   - component: {fileID: 1623796244}
   - component: {fileID: 1623796246}
   - component: {fileID: 1623796245}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Glow PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68628,7 +68628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.037249997, y: 0.90200007}
   m_AnchorMax: {x: 0.115520835, y: 0.94600004}
-  m_AnchoredPosition: {x: 390.60004, y: 0.7560997}
+  m_AnchoredPosition: {x: 390.60004, y: 0.7561035}
   m_SizeDelta: {x: 154.9518, y: 59.1111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1686038494
@@ -69428,7 +69428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.037249997, y: 0.90200007}
   m_AnchorMax: {x: 0.115520835, y: 0.94600004}
-  m_AnchoredPosition: {x: 16.604097, y: 0.7560997}
+  m_AnchoredPosition: {x: 16.604095, y: 0.7561035}
   m_SizeDelta: {x: 154.9518, y: 59.1111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1705049370
@@ -78599,7 +78599,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97469,12 +97469,12 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 4
+      minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.39215687}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 0.5058824}
+        key0: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
         key1: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0.11764706}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -97490,7 +97490,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 21781
+        atime0: 21588
         atime1: 65535
         atime2: 65535
         atime3: 0
@@ -102199,7 +102199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6482518549842819789
 Transform:
   m_ObjectHideFlags: 0
@@ -102748,7 +102748,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
