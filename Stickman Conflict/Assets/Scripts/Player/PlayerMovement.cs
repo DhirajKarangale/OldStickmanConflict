@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float fallDamage;
     public static int weaponRotation = 1;
     private float velocity = 0;
+    public bool isLegUp;
 
     private void Start()
     {
@@ -55,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), Mathf.Clamp(rigidBody.velocity.y, -15, 25));
             rigidBody.velocity = new Vector2(Mathf.Clamp(rigidBody.velocity.x, -15, 12), rigidBody.velocity.y);
 
             // Move
@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
                 weaponRotation = 1;
                 transform.localScale = new Vector3(1, 1, 1);
+                WalkSound();
             }
             else if (moveJoystick.Horizontal() < -0.4F) // Move Back
             {
@@ -74,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
                 weaponRotation = -1;
                 transform.localScale = new Vector3(-1, 1, 1);
+                WalkSound();
             }
 
 
@@ -107,6 +109,20 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             velocity = rigidBody.velocity.y;
+        }
+    }
+
+    private void WalkSound()
+    {
+        if (!Physics2D.IsTouchingLayers(legCollider, 64))
+        {
+            isLegUp = true;
+        }
+
+        if (isLegUp && Physics2D.IsTouchingLayers(legCollider, 64))
+        {
+            isLegUp = false;
+            AudioManager.instance.Play("Walk");
         }
     }
 

@@ -30,11 +30,14 @@ public class WeaponPickThrow : MonoBehaviour
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], SaveManager.instance.saveData.weaponsPosition[i, 2]);
-                if (SaveManager.instance.saveData.isWeaponPicked && (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name))
+                if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
                 {
                     closestWeapon = weapons[i];
                     PickUp();
+                }
+                else
+                {
+                    weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], SaveManager.instance.saveData.weaponsPosition[i, 2]);
                 }
             }
         }
@@ -99,7 +102,6 @@ public class WeaponPickThrow : MonoBehaviour
         weaponPickDropButton.SetActive(true);
         weaponPickDropButtonText.text = "Drop";
 
-        SaveManager.instance.saveData.isWeaponPicked = isWeaponPicked;
         SaveManager.instance.saveData.pickedWeaponName = closestWeapon.name;
     }
 
@@ -116,7 +118,7 @@ public class WeaponPickThrow : MonoBehaviour
 
         closestWeapon.AddForce(new Vector3(player.localScale.x, 1.5f, 0) * throwForce, ForceMode2D.Impulse);
 
-        SaveManager.instance.saveData.isWeaponPicked = isWeaponPicked;
+        SaveManager.instance.saveData.pickedWeaponName = null;
     }
 
     private void DesableWeaponButton()

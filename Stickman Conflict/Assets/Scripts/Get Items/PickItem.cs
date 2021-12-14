@@ -46,20 +46,17 @@ public class PickItem : MonoBehaviour
                     break;
                 case Item.Key:
                     SaveManager.instance.saveData.key++;
-                    AudioManager.instance.Play("Key");
+                    AudioManager.instance.Play("Coin");
                     Destroy(gameObject);
                     break;
             }
             Destroy(gameObject);
         }
 
-        if (!isPickAllow)
+        if (!isPickAllow && rigidBody.isKinematic)
         {
-            if (rigidBody.isKinematic)
-            {
-                rigidBody.isKinematic = false;
-                Invoke("AllowPick", 0.5f);
-            }
+            rigidBody.isKinematic = false;
+            Invoke("AllowPick", 0.5f);
         }
     }
 

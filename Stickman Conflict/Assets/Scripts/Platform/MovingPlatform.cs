@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    [SerializeField] Animator animator;
     [SerializeField] Transform player;
     [SerializeField] float speed;
     [SerializeField] float leftStandPos, rightStandPos;
     [SerializeField] Vector3 pos1, pos2;
     private Vector3 nextPos;
+    [SerializeField] AudioSource movingPlatform;
 
     private void Start()
     {
-      //  animator.enabled = false;
         nextPos = pos1;
     }
 
@@ -30,6 +29,7 @@ public class MovingPlatform : MonoBehaviour
 
         if ((player.position.x > (transform.localPosition.x + leftStandPos)) && (player.position.x < (transform.localPosition.x + rightStandPos)))
         {
+            if (!movingPlatform.isPlaying) movingPlatform.Play();
             player.parent = this.transform;
         }
         else
@@ -45,7 +45,7 @@ public class MovingPlatform : MonoBehaviour
         Gizmos.DrawSphere(pos2, 1);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + leftStandPos, transform.position.y, 0), 1);
-        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + rightStandPos, transform.position.y, 0), 1);
+        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + leftStandPos, transform.localPosition.y, 0), 1);
+        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + rightStandPos, transform.localPosition.y, 0), 1);
     }
 }

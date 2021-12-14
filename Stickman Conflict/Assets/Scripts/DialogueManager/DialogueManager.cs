@@ -6,9 +6,10 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] UnityEngine.UI.Text dialogueText;
+    [SerializeField] AudioSource writeSound;
     private Queue<string> sentencesQue;
     private string sentence;
-  
+
     public bool isEndDialogue = false;
     private bool isDialogueStart;
 
@@ -56,8 +57,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = "";
 
+
         foreach (char letter in sentence.ToCharArray())
         {
+            if (!writeSound.isPlaying) writeSound.Play();
             dialogueText.text += letter;
             yield return null;
         }

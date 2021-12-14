@@ -21,9 +21,19 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            IncreaseHralth(health);
+        }
+    }
+
     public void Died()
     {
-        AudioManager.instance.Play("GaveOver");
+        if(isPlayerDye) return;
+        AudioManager.instance.ModBG(0.07f);
+        AudioManager.instance.Play("GameOver");
         isPlayerDye = true;
         controlCanvas.SetActive(false);
         Invoke("SetGameOverActive", 2);

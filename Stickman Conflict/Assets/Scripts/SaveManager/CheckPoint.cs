@@ -10,6 +10,7 @@ public class CheckPoint : MonoBehaviour
 
     private void Start()
     {
+      //  PlayerPrefs.DeleteKey("PointCross" + transform.name);
         if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Close");
         else animator.Play("Open");
     }
@@ -38,6 +39,7 @@ public class CheckPoint : MonoBehaviour
             if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Cross");
             onCheckPointCross();
             PlayerPrefs.SetInt("PointCross" + transform.name, 1);
+            AudioManager.instance.Play("Button");
         }
     }
 

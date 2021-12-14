@@ -417,138 +417,123 @@ MonoBehaviour:
   - name: MenuBG
     clip: {fileID: 8300000, guid: 997c321ffe661db4a8f370ab7823e9e7, type: 3}
     volume: 0.5
-    pitch: 1
     audioSource: {fileID: 0}
   - name: IdelBG
     clip: {fileID: 8300000, guid: 24caf4e7820f8ae4a9e99c529c4fc5ad, type: 3}
     volume: 0.5
-    pitch: 1
-    audioSource: {fileID: 0}
-  - name: Boss
-    clip: {fileID: 8300000, guid: 0c9ae98715a55f6418e1efe012811b2c, type: 3}
-    volume: 0.5
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Desert
     clip: {fileID: 8300000, guid: a7e5fc410b5a56e42a635bd3b0a925a2, type: 3}
     volume: 0.5
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Dungeon
     clip: {fileID: 8300000, guid: a67db28f08d3a164195bd02313d9b014, type: 3}
     volume: 0.5
-    pitch: 1
     audioSource: {fileID: 0}
   - name: GrassLand
     clip: {fileID: 8300000, guid: ecfcd6c058ba1e84a84606f4fd4c5c02, type: 3}
     volume: 0.5
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Iceland
     clip: {fileID: 8300000, guid: 74cf01eaa5917494da7108bfef28b1e0, type: 3}
     volume: 0.5
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Mushroom
     clip: {fileID: 8300000, guid: 00b145df4e8cc0c49b34ebec61359fe3, type: 3}
     volume: 0.5
-    pitch: 1
+    audioSource: {fileID: 0}
+  - name: 2D MUSIC LOOP
+    clip: {fileID: 8300000, guid: 60d670b02c0804f4f8ca5c4dded0bbe3, type: 3}
+    volume: 0.5
+    audioSource: {fileID: 0}
+  - name: RPG Music
+    clip: {fileID: 8300000, guid: 87ee1cdb35a68d9438c716dabcc8f00b, type: 3}
+    volume: 0.5
+    audioSource: {fileID: 0}
+  - name: GamePlay Music
+    clip: {fileID: 8300000, guid: 4ebb9f533e0bf3647b359f1402b5e68c, type: 3}
+    volume: 0.5
     audioSource: {fileID: 0}
   sounds:
   - name: Button
     clip: {fileID: 8300000, guid: 0c118605b90598c4e9e98aea7af5f84a, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: ButtonSmall
     clip: {fileID: 8300000, guid: adecd884a9e50874d9a174f92d7ff29a, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: ButtonBig
     clip: {fileID: 8300000, guid: ad585a9483b08064c8a3314069945b36, type: 3}
     volume: 1
-    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Walk
+    clip: {fileID: 8300000, guid: 6de29d1e4c7e332469d74a1656d0b607, type: 3}
+    volume: 0.5
     audioSource: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 846787e2c70eb3e4a9a9610ec56a17d9, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: PlayerHurt
     clip: {fileID: 8300000, guid: 26d624250fc9ea54498e7c83e579ba13, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: HealthIncrease
     clip: {fileID: 8300000, guid: 7974011b8d8e5a64583218a41a5fe433, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Fall
     clip: {fileID: 8300000, guid: dbaa5f8489d8d0c4a89562e1ef40d9a3, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Throw
     clip: {fileID: 8300000, guid: 93ee9b4099214b945b0580edeceb738f, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Pick
     clip: {fileID: 8300000, guid: 9f48643dfd6410142b899ce4633a730e, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Hit
     clip: {fileID: 8300000, guid: 42c0db822b088434fb34b9167492dd77, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: BigJump
     clip: {fileID: 8300000, guid: 6d5550be29c7f61499b075855ba9cff1, type: 3}
     volume: 1
-    pitch: 1
+    audioSource: {fileID: 0}
+  - name: MovingPlatform
+    clip: {fileID: 8300000, guid: e8c1161ef01fb1c408f8b20dc20ed3f7, type: 3}
+    volume: 1
     audioSource: {fileID: 0}
   - name: Magic
     clip: {fileID: 8300000, guid: 60f9769763ab8944eb2fbdd4932898ee, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Chest
     clip: {fileID: 8300000, guid: 775ba910d72ef2e4db112ff3fc838c03, type: 3}
     volume: 1
-    pitch: 1
-    audioSource: {fileID: 0}
-  - name: Key
-    clip: {fileID: 8300000, guid: c17bfd007dedd0f4cb9da77478b48f81, type: 3}
-    volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Coin
     clip: {fileID: 8300000, guid: 88ba4d91469bcd44594734956966f988, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 6afb944071f277741b8c495559499252, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: NPCHurt
     clip: {fileID: 8300000, guid: 4571d04acde21be41b67ee107e81f613, type: 3}
-    volume: 0.5
-    pitch: 1
+    volume: 0.2
     audioSource: {fileID: 0}
   - name: Cannon
     clip: {fileID: 8300000, guid: 89777b22c40793b4380b5296ce268221, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
   - name: Destroy
     clip: {fileID: 8300000, guid: 41b558ab28c4b6847b6e3ba7b5754f3f, type: 3}
     volume: 1
-    pitch: 1
     audioSource: {fileID: 0}
 --- !u!1 &1594426882
 GameObject:

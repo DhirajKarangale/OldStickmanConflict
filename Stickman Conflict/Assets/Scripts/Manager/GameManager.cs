@@ -10,9 +10,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-      //  AudioManager.instance.StopBG();
-     //   AudioManager.instance.Play("IdelBG");
-
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
@@ -33,7 +30,7 @@ public class GameManager : MonoBehaviour
         isPause = true;
         pausePanel.SetActive(true);
         controlPanel.SetActive(false);
-        AudioManager.instance.ModBG(0.08f, 1);
+        AudioManager.instance.ModBG(0.08f);
         Time.timeScale = 0;
     }
 
@@ -43,7 +40,7 @@ public class GameManager : MonoBehaviour
         isPause = false;
         pausePanel.SetActive(false);
         controlPanel.SetActive(true);
-        AudioManager.instance.ModBG(0.5f, 1);
+        AudioManager.instance.ModBG(0.5f);
         Time.timeScale = 1;
     }
 
@@ -51,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.instance.Play("ButtonBig");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
+        ResumeButton();
     }
 
     public void MenuButton()

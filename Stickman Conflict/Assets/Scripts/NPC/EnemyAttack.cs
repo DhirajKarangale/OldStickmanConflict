@@ -17,7 +17,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((enemyHealth != null) && enemyHealth.currState == EnemyHealth.State.Dead) return;
+        if ((enemyHealth != null) &&( enemyHealth.currState == EnemyHealth.State.Dead)) return;
 
         if (collision.gameObject.layer == 7)
         {

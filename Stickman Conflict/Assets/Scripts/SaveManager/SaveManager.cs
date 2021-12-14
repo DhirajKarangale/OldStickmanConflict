@@ -70,7 +70,6 @@ public class SaveData
 {
     public float[] playerSpwanPos = new float[3];
     public float[,] weaponsPosition;
-    public bool isWeaponPicked;
     public string pickedWeaponName;
     public float currHealth;
     public int coin;

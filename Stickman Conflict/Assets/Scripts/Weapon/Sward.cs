@@ -13,6 +13,12 @@ public class Sward : MonoBehaviour
     {
         if (!isCollisionAllow) return;
 
+        if (collision.gameObject.layer != 6)
+        {
+            AudioManager.instance.Play("Hit");
+            Instantiate(hitEffect, collision.transform.position, Quaternion.identity);
+        }
+
         if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(PlayerMovement.weaponRotation, 0, 0) * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 9, 25), ForceMode2D.Impulse);
@@ -21,8 +27,6 @@ public class Sward : MonoBehaviour
         emenyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (emenyHealth != null && (emenyHealth.currState != EnemyHealth.State.Dead))
         {
-            AudioManager.instance.Play("Hit");
-            Instantiate(hitEffect, collision.transform.position, Quaternion.identity);
             emenyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, 30));
         }
 
