@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    [SerializeField] EnemyHealth enemyHealth;
     [SerializeField] PlayerHealth playerHealth;
     [SerializeField] Transform cannonUp;
 
@@ -17,7 +16,7 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        if ((enemyHealth.currState == EnemyHealth.State.Dead) || playerHealth.isPlayerDye) return;
+        if (playerHealth.isPlayerDye) return;
 
         cannonUp.right = cannonUp.position - playerHealth.transform.position + new Vector3(0, -1.7f, 0);
         cannonUp.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(cannonUp.rotation.eulerAngles.z, 270, 360));
