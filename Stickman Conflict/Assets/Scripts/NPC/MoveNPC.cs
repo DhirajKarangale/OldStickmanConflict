@@ -3,16 +3,16 @@ using UnityEngine;
 public class MoveNPC : MonoBehaviour
 {
     [Header("Refrence")]
-    [SerializeField] PlayerHealth player;
+    [SerializeField] Transform player;
     public Animator animator;
     public Rigidbody2D rigidBody;
 
     [Header("Attributes")]
     [SerializeField] float moveSpeed;
     [SerializeField] float leftDist, rightDist;
-    private float curreLeftDist, currRightDist;
     [SerializeField] float followDist, attackDist;
     private bool moveFront = true;
+    private float curreLeftDist, currRightDist;
     private float playerDist;
 
     private void Start()
@@ -22,36 +22,28 @@ public class MoveNPC : MonoBehaviour
         currRightDist = rightDist;
     }
 
-    // private void Update()
-    // {
-    //     if (player.isPlayerDye || ((npcDialogue != null) && (npcDialogue.isDialogueAllow))) return;
-
-    //     if (weapon != null)
-    //     {
-    //         weapon.localPosition = Vector3.zero;
-    //         weapon.localRotation = Quaternion.Euler(0, 0, -90);
-    //         grab.localPosition = new Vector3(0, -0.503f, 0);
-    //         grab.localRotation = Quaternion.Euler(0, 0, 0);
-    //     }
-    // }
+    private void Update()
+    {
+        if (attackDist == -1) Move();
+    }
 
     public void Move()
     {
-        playerDist = Mathf.Abs(player.transform.position.x - transform.position.x);
+        playerDist = Mathf.Abs(player.position.x - transform.position.x);
         if (playerDist < followDist)
         {
-            if (playerDist < attackDist)
-            {
-                //  Debug.Log("Attack !!!");
-            }
-            else
+            if (playerDist >= attackDist) // Follow Player
             {
                 //  Debug.Log("Follow !!!");
-                curreLeftDist = currRightDist = player.transform.position.x;
+                curreLeftDist = currRightDist = player.position.x;
                 Walk();
             }
+            else // Attack
+            {
+              //  Debug.Log("Attack !!!");
+            }
         }
-        else
+        else // Petrol
         {
             // Debug.Log("Petrol !!!");
             currRightDist = rightDist;
@@ -86,7 +78,7 @@ public class MoveNPC : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(new Vector3(leftDist, transform.localPosition.y + 4, 0), 1);
-        Gizmos.DrawSphere(new Vector3(rightDist, transform.localPosition.y + 4, 0), 1);
+        Gizmos.DrawSphere(new Vector3(leftDist, (transform.localPosition.y + 4), 0), 1);
+        Gizmos.DrawSphere(new Vector3(rightDist, (transform.localPosition.y + 4), 0), 1);
     }
 }

@@ -4,18 +4,19 @@ public class NPCDialogue : MonoBehaviour
 {
     [Header("Refrence")]
     [SerializeField] Transform player;
+    [SerializeField] DialogueManager dialogueManager;
 
     [Header("Dialogues")]
-    [SerializeField] DialogueManager dialogueManager;
-    [SerializeField] bool isRandomDialogue, isOnlyOnce;
+    [SerializeField] bool isRandomDialogue;
+    [SerializeField] float dist;
     [SerializeField] Dialogue[] dialogues;
     private Dialogue pickedDialogue;
-    private static int dialoguePicker;
-    public bool isDialogueAllow;
+    private int dialoguePicker = 0;
+    public bool isDialogueAllow = true;
 
     private void Update()
     {
-        if (isOnlyOnce) 
+        if (dialogues.Length == 1)
         {
             DialogueShow();
             return;
@@ -25,21 +26,21 @@ public class NPCDialogue : MonoBehaviour
 
     private void DialogueShow()
     {
-        if ((Mathf.Abs(player.transform.position.x - transform.position.x) < 10) && !dialogueManager.isEndDialogue)
+        if ((Mathf.Abs(player.transform.position.x - transform.position.x) < dist) && !dialogueManager.isEndDialogue)
         {
-            if (!isDialogueAllow)
+            if (isDialogueAllow)
             {
-                isDialogueAllow = true;
                 dialogueManager.StartDialogue(DialogueToSent().sentences);
+                isDialogueAllow = false;
             }
         }
         else
         {
-            if (isDialogueAllow)
+            if (!isDialogueAllow)
             {
                 dialogueManager.EndDialogue();
-                isDialogueAllow = false;
-                if (isOnlyOnce) enabled = false;
+                Invoke("AllowDialogue", 20);
+                if (dialogues.Length == 1) enabled = false;
             }
         }
     }
@@ -66,10 +67,14 @@ public class NPCDialogue : MonoBehaviour
         }
         else
         {
-            if (dialoguePicker < (dialogues.Length - 1)) dialoguePicker++;
-            else dialoguePicker = 0;
+            dialoguePicker = (dialoguePicker + 1) % dialogues.Length;
         }
 
         return pickedDialogue;
+    }
+
+    private void AllowDialogue()
+    {
+        isDialogueAllow = true;
     }
 }

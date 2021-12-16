@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((playerHealth != null) && playerHealth.isPlayerDye) return;
         if (transform.position.y < -100) playerHealth.Died();
-
+       
         if (Input.GetAxis("Horizontal") != 0)
         {
             DustEffect();

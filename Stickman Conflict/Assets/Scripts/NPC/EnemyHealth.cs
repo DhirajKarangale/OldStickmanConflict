@@ -4,22 +4,41 @@ using TMPro;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public enum State { Move, Hurt, Dead }
+    public State currState;
+
     [Header("Refrence")]
-    public EnemyManager enemyManager;
     [SerializeField] MoveNPC moveNPC;
     [SerializeField] TMP_Text damageText;
     [SerializeField] SpriteRenderer spriteRenderer;
 
     [Header("Health")]
+    [SerializeField] float health;
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject destroyEffect;
-    [SerializeField] float health;
     private float currHealth;
 
     private void Start()
     {
         currHealth = health;
         healthSlider.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        switch (currState)
+        {
+            case State.Move:
+                if (moveNPC) moveNPC.Move();
+                break;
+            case State.Hurt:
+                Hurt();
+                break;
+            case State.Dead:
+                if (currState != State.Dead)
+                    Dead();
+                break;
+        }
     }
 
     public void TakeDamage(float damage)
@@ -30,41 +49,37 @@ public class EnemyHealth : MonoBehaviour
             currHealth -= damage;
             Hurt();
 
-            if (spriteRenderer.color == Color.white) damageText.color = Color.yellow;
-            else damageText.color = spriteRenderer.color;
+            damageText.color = spriteRenderer.color;
             damageText.text = damage.ToString();
             Destroy(Instantiate(damageText.gameObject, new Vector3(Random.Range(transform.position.x - 1, transform.position.x + 1), transform.position.y + 1, 0), transform.rotation), 1);
         }
     }
 
-    public void Hurt()
+    private void Hurt()
     {
-        if (enemyManager) enemyManager.currState = EnemyManager.State.Hurt;
+        currState = State.Hurt;
         healthSlider.gameObject.SetActive(true);
         healthSlider.value = currHealth / health;
         if (moveNPC) moveNPC.animator.Play("Hurt");
+        if(currHealth <= 0) Dead();
         Invoke("ExitHurt", 0.5f);
     }
 
     private void ExitHurt()
     {
-        if (enemyManager)
-        {
-            if (currHealth <= 0) enemyManager.currState = EnemyManager.State.Dead;
-            else enemyManager.currState = EnemyManager.State.Move;
-        }
+        if (currHealth <= 0) currState = State.Dead;
+        else currState = State.Move;
     }
 
     public void Dead()
     {
-        if (enemyManager) enemyManager.currState = EnemyManager.State.Dead;
         healthSlider.gameObject.SetActive(false);
         if (moveNPC)
         {
             moveNPC.rigidBody.velocity = Vector2.zero;
             moveNPC.animator.Play("Dead");
-            moveNPC.rigidBody.isKinematic = true;
             Destroy(this.gameObject, 20);
+            //moveNPC.rigidBody.isKinematic = true;
         }
         else
         {
@@ -72,5 +87,6 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+        currState = State.Dead;
     }
 }

@@ -448,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 9372147}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!233 &9372145
@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 78205332}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &78205330
@@ -2925,7 +2925,6 @@ GameObject:
   - component: {fileID: 95425611}
   - component: {fileID: 95425610}
   - component: {fileID: 95425609}
-  - component: {fileID: 95425616}
   m_Layer: 9
   m_Name: Scorpio (2)
   m_TagString: Untagged
@@ -2960,7 +2959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ae2ced6940a584a8554a4aa332c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 95425616}
+  enemyHealth: {fileID: 95425610}
   playerMovement: {fileID: 1063791341289058038}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
@@ -2978,13 +2977,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 95425616}
+  currState: 0
   moveNPC: {fileID: 95425611}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 95425615}
+  health: 30
   healthSlider: {fileID: 366163307}
   destroyEffect: {fileID: 0}
-  health: 30
 --- !u!114 &95425611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2997,12 +2996,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 95425614}
   rigidBody: {fileID: 95425612}
   moveSpeed: 10
-  leftDist: 5.1
-  rightDist: 41.98
+  leftDist: 1270
+  rightDist: 1310
   followDist: 0
   attackDist: 0
 --- !u!50 &95425612
@@ -3123,21 +3122,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &95425616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95425607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 95425611}
-  enemyHealth: {fileID: 95425610}
 --- !u!1 &95651427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,7 +3466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 107947298}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!233 &107947296
@@ -4364,7 +4348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 125006902}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &125006900
@@ -7099,7 +7083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 231560534}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!255 &231560536
@@ -7493,7 +7477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 238572053}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &238572051
@@ -7771,7 +7755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259900151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1840, y: 0, z: 0}
+  m_LocalPosition: {x: 1788.1, y: -0.9, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 107947294}
@@ -7824,20 +7808,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6192421921179393771}
   dialogueManager: {fileID: 1362455836}
-  isRandomDialogue: 1
-  isOnlyOnce: 1
+  isRandomDialogue: 0
+  dist: 20
   dialogues:
   - rarity: 50
     sentences:
-    - 'Shubham : Hey Om be aware they have big weapons.'
-    - 'Chintu : Some one arrest our king and start taking control on our region.'
-  - rarity: 25
-    sentences:
-    - 'Chintu : Some stupid dumm developer use me as NPC, Nonsence!!!'
-  - rarity: 25
-    sentences:
-    - 'Chintu : Actually I didn''t have any work just stop you for TP hahaha ....'
-  isDialogueAllow: 0
+    - 'Guard : Hey you are Om right '
+    - 'Guard : You came up to here but cant go away from this.'
+  isDialogueAllow: 1
 --- !u!114 &259900155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7850,14 +7828,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 259900156}
   rigidBody: {fileID: 259900153}
-  moveSpeed: 5
-  leftDist: 1826
-  rightDist: 1860
+  moveSpeed: 10
+  leftDist: 1775
+  rightDist: 1810
   followDist: 30
-  attackDist: 10
+  attackDist: 2
 --- !u!95 &259900156
 Animator:
   serializedVersion: 3
@@ -7889,13 +7867,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 259900158}
+  currState: 0
   moveNPC: {fileID: 259900155}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 107947299}
+  health: 50
   healthSlider: {fileID: 2097944422}
   destroyEffect: {fileID: 0}
-  health: 100
 --- !u!114 &259900158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7905,12 +7883,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 259900151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
+  m_Script: {fileID: 11500000, guid: b061e95b2ee5f984cbd5a1bb92d5c583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 259900155}
-  enemyHealth: {fileID: 259900157}
+  attackRate: 1
+  smooth: 1
+  grab: {fileID: 1639335241}
+  weapon: {fileID: 338357408}
+  armUp: {fileID: 1373583584}
+  armlow: {fileID: 1475415178}
 --- !u!1 &262683666
 GameObject:
   m_ObjectHideFlags: 0
@@ -8969,7 +8950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284930114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1858.8, y: -6, z: 0}
+  m_LocalPosition: {x: 1807.6001, y: -6, z: 0}
   m_LocalScale: {x: 5.982425, y: 6, z: 6}
   m_Children:
   - {fileID: 1823460561}
@@ -10422,7 +10403,7 @@ MonoBehaviour:
   player: {fileID: 6192421921179393771}
   dialogueManager: {fileID: 1362455836}
   isRandomDialogue: 1
-  isOnlyOnce: 0
+  dist: 10
   dialogues:
   - rarity: 30
     sentences:
@@ -10439,7 +10420,7 @@ MonoBehaviour:
   - rarity: 40
     sentences:
     - 'Old Man : Enjoy your adventure Gamerr!!!'
-  isDialogueAllow: 0
+  isDialogueAllow: 1
 --- !u!1 &334567218
 GameObject:
   m_ObjectHideFlags: 0
@@ -11507,7 +11488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 351557494}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &351557497
@@ -11782,7 +11763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 356898496}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &356898499
@@ -12083,7 +12064,6 @@ GameObject:
   - component: {fileID: 362056205}
   - component: {fileID: 362056206}
   - component: {fileID: 362056208}
-  - component: {fileID: 362056209}
   m_Layer: 9
   m_Name: Chintu
   m_TagString: Untagged
@@ -12149,14 +12129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 362056207}
   rigidBody: {fileID: 362056205}
   moveSpeed: 7
   leftDist: 0
   rightDist: 40
   followDist: 0
-  attackDist: 0
+  attackDist: -1
 --- !u!95 &362056207
 Animator:
   serializedVersion: 3
@@ -12191,7 +12171,7 @@ MonoBehaviour:
   player: {fileID: 6192421921179393771}
   dialogueManager: {fileID: 1362455836}
   isRandomDialogue: 1
-  isOnlyOnce: 0
+  dist: 10
   dialogues:
   - rarity: 50
     sentences:
@@ -12206,22 +12186,7 @@ MonoBehaviour:
     sentences:
     - 'Chintu : What''s Up Gamer !!!!!'
     - 'Chintu : Actually I didn''t have any work just stop you for TP hahaha ....'
-  isDialogueAllow: 0
---- !u!114 &362056209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362056203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 362056206}
-  enemyHealth: {fileID: 0}
+  isDialogueAllow: 1
 --- !u!1 &364611052
 GameObject:
   m_ObjectHideFlags: 0
@@ -14241,7 +14206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 430429648}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &430429646
@@ -15012,7 +14977,6 @@ GameObject:
   - component: {fileID: 456074439}
   - component: {fileID: 456074438}
   - component: {fileID: 456074437}
-  - component: {fileID: 456074444}
   m_Layer: 9
   m_Name: Snake
   m_TagString: Untagged
@@ -15047,7 +15011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ae2ced6940a584a8554a4aa332c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 456074444}
+  enemyHealth: {fileID: 456074438}
   playerMovement: {fileID: 1063791341289058038}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
@@ -15065,13 +15029,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 456074444}
+  currState: 0
   moveNPC: {fileID: 456074439}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 456074443}
+  health: 50
   healthSlider: {fileID: 14812267}
   destroyEffect: {fileID: 0}
-  health: 50
 --- !u!114 &456074439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15084,12 +15048,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 456074442}
   rigidBody: {fileID: 456074440}
   moveSpeed: 10
-  leftDist: 5.1
-  rightDist: 41.98
+  leftDist: 475
+  rightDist: 515
   followDist: 0
   attackDist: 0
 --- !u!50 &456074440
@@ -15210,21 +15174,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &456074444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456074435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 456074439}
-  enemyHealth: {fileID: 456074438}
 --- !u!1 &463582394
 GameObject:
   m_ObjectHideFlags: 0
@@ -26322,7 +26271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 545024718}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &545024716
@@ -26487,7 +26436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 545513158}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &545513156
@@ -26766,7 +26715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 552820868}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &552820866
@@ -28138,7 +28087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 603960311}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &603960309
@@ -28866,7 +28815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 632657753}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &632657755
@@ -30080,7 +30029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 673430578}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &673430580
@@ -30451,7 +30400,7 @@ Transform:
   m_Children:
   - {fileID: 259900152}
   m_Father: {fileID: 2113470478}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684539339
 GameObject:
@@ -30509,7 +30458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 684539340}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &684539342
@@ -33535,7 +33484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 812090725}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &812090728
@@ -36631,7 +36580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 890457732}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &890457730
@@ -36886,7 +36835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 894011484}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &894011486
@@ -37134,7 +37083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 898438289}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &898438291
@@ -37575,7 +37524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 917449706}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &917449708
@@ -38438,7 +38387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 944443356}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &944443354
@@ -39333,7 +39282,7 @@ MonoBehaviour:
   leftStandPos: 1688
   rightStandPos: 1708
   pos1: {x: 1685, y: -5, z: 0}
-  pos2: {x: 1785, y: -5, z: 0}
+  pos2: {x: 1738, y: -5, z: 0}
   movingPlatform: {fileID: 972157794}
 --- !u!61 &972157793
 BoxCollider2D:
@@ -40620,13 +40569,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 0}
+  currState: 0
   moveNPC: {fileID: 0}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 1650734710}
+  health: 30
   healthSlider: {fileID: 2039860946}
   destroyEffect: {fileID: 6107106786972260988, guid: 3fe92db826438fb4eb8ea1f643304259, type: 3}
-  health: 30
 --- !u!61 &1014210560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41306,7 +41255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1037963603}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1037963601
@@ -41999,7 +41948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1068012497}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1068012495
@@ -42171,7 +42120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1070842721}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!255 &1070842723
@@ -49151,7 +49100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1137786149}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1137786151
@@ -50345,7 +50294,7 @@ Transform:
   - {fileID: 95425608}
   - {fileID: 1296549574}
   m_Father: {fileID: 2113470478}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180693896
 GameObject:
@@ -56883,7 +56832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1255447223}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1255447225
@@ -57551,7 +57500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1264421197}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &1264421195
@@ -58206,7 +58155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273945943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1810.6, y: -0.8, z: 0}
+  m_LocalPosition: {x: 1759.4, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 817770036}
@@ -58577,7 +58526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1292513983}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &1292513985
@@ -58785,7 +58734,6 @@ GameObject:
   - component: {fileID: 1296549577}
   - component: {fileID: 1296549576}
   - component: {fileID: 1296549575}
-  - component: {fileID: 1296549582}
   m_Layer: 9
   m_Name: Snake (2)
   m_TagString: Untagged
@@ -58820,7 +58768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ae2ced6940a584a8554a4aa332c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 1296549582}
+  enemyHealth: {fileID: 1296549576}
   playerMovement: {fileID: 1063791341289058038}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
@@ -58838,13 +58786,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 1296549582}
+  currState: 0
   moveNPC: {fileID: 1296549577}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 1296549581}
+  health: 50
   healthSlider: {fileID: 1201081945}
   destroyEffect: {fileID: 0}
-  health: 50
 --- !u!114 &1296549577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58857,13 +58805,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 1296549580}
   rigidBody: {fileID: 1296549578}
   moveSpeed: 10
-  leftDist: -12
-  rightDist: 19
-  followDist: 0
+  leftDist: 1330
+  rightDist: 1380
+  followDist: 10
   attackDist: 0
 --- !u!50 &1296549578
 Rigidbody2D:
@@ -58983,21 +58931,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1296549582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296549573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 1296549577}
-  enemyHealth: {fileID: 1296549576}
 --- !u!1 &1301846972
 GameObject:
   m_ObjectHideFlags: 0
@@ -60470,7 +60403,6 @@ GameObject:
   - component: {fileID: 1343033504}
   - component: {fileID: 1343033506}
   - component: {fileID: 1343033505}
-  - component: {fileID: 1343033508}
   m_Layer: 9
   m_Name: Shubham
   m_TagString: Untagged
@@ -60539,7 +60471,7 @@ MonoBehaviour:
   player: {fileID: 6192421921179393771}
   dialogueManager: {fileID: 1362455836}
   isRandomDialogue: 1
-  isOnlyOnce: 0
+  dist: 10
   dialogues:
   - rarity: 50
     sentences:
@@ -60551,7 +60483,7 @@ MonoBehaviour:
   - rarity: 25
     sentences:
     - 'Chintu : Actually I didn''t have any work just stop you for TP hahaha ....'
-  isDialogueAllow: 0
+  isDialogueAllow: 1
 --- !u!114 &1343033506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60564,14 +60496,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 1343033507}
   rigidBody: {fileID: 1343033504}
-  moveSpeed: 7
+  moveSpeed: 15
   leftDist: 275
   rightDist: 315
   followDist: 0
-  attackDist: 0
+  attackDist: -1
 --- !u!95 &1343033507
 Animator:
   serializedVersion: 3
@@ -60591,21 +60523,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1343033508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343033502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 1343033506}
-  enemyHealth: {fileID: 0}
 --- !u!1 &1344702606
 GameObject:
   m_ObjectHideFlags: 0
@@ -61073,7 +60990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1366787205}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1366787203
@@ -61245,7 +61162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1373583579}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &1373583581
@@ -63069,7 +62986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1437332651}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1437332653
@@ -63398,7 +63315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452592810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1831.6, y: -6, z: 0}
+  m_LocalPosition: {x: 1780.4, y: -6, z: 0}
   m_LocalScale: {x: 5.982425, y: 6, z: 6}
   m_Children:
   - {fileID: 1831113029}
@@ -63847,7 +63764,7 @@ Transform:
   - {fileID: 1606705404}
   - {fileID: 1014210557}
   m_Father: {fileID: 2113470478}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1465561264
 GameObject:
@@ -64056,7 +63973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1475415182}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &1475415180
@@ -64504,7 +64421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1485432363}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!255 &1485432365
@@ -69719,7 +69636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1510698594}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1510698592
@@ -70001,7 +69918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1520810062}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!255 &1520810064
@@ -70843,7 +70760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1545790985}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 259900158}
+  enemyHealth: {fileID: 259900157}
   force: 750
   targetRotation: 0
 --- !u!70 &1545790987
@@ -72129,7 +72046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1594339153}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &1594339151
@@ -72974,13 +72891,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 0}
+  currState: 0
   moveNPC: {fileID: 0}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 1329200797}
+  health: 30
   healthSlider: {fileID: 121971837}
   destroyEffect: {fileID: 6107106786972260988, guid: 3fe92db826438fb4eb8ea1f643304259, type: 3}
-  health: 30
 --- !u!1 &1610350615
 GameObject:
   m_ObjectHideFlags: 0
@@ -73385,7 +73302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1614621232}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1614621230
@@ -79001,7 +78918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1637532076}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1637532078
@@ -79617,7 +79534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1649333211}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1649333209
@@ -80423,7 +80340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1679577358}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1679577360
@@ -80782,7 +80699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1688242615}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1688242617
@@ -81054,7 +80971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1694918156}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &1694918154
@@ -81219,7 +81136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1698376077}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1698376075
@@ -81661,7 +81578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1708789676}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1708789674
@@ -81999,7 +81916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1712564444}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1712564446
@@ -82267,7 +82184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1715368590}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1715368588
@@ -83744,7 +83661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1782540652}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1782540650
@@ -84922,7 +84839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1847235871}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1847235874
@@ -86313,7 +86230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1879039760}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1879039762
@@ -86747,7 +86664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1892710656}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!233 &1892710654
@@ -87109,7 +87026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1906233212}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1906233210
@@ -87984,7 +87901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1943431113}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!70 &1943431115
@@ -88499,7 +88416,6 @@ GameObject:
   - component: {fileID: 1979701413}
   - component: {fileID: 1979701412}
   - component: {fileID: 1979701411}
-  - component: {fileID: 1979701418}
   m_Layer: 9
   m_Name: Scorpio (1)
   m_TagString: Untagged
@@ -88534,7 +88450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ae2ced6940a584a8554a4aa332c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 1979701418}
+  enemyHealth: {fileID: 1979701412}
   playerMovement: {fileID: 1063791341289058038}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
@@ -88552,13 +88468,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 1979701418}
+  currState: 0
   moveNPC: {fileID: 1979701413}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 1979701417}
+  health: 30
   healthSlider: {fileID: 24881421}
   destroyEffect: {fileID: 0}
-  health: 30
 --- !u!114 &1979701413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88571,13 +88487,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 1979701416}
   rigidBody: {fileID: 1979701414}
   moveSpeed: 10
-  leftDist: 5.1
-  rightDist: 41.98
-  followDist: 0
+  leftDist: 540
+  rightDist: 585.2
+  followDist: 10
   attackDist: 0
 --- !u!50 &1979701414
 Rigidbody2D:
@@ -88697,21 +88613,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1979701418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979701409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 1979701413}
-  enemyHealth: {fileID: 1979701412}
 --- !u!1 &1981002285
 GameObject:
   m_ObjectHideFlags: 0
@@ -96040,7 +95941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 2037055102}
   playerHealth: {fileID: 0}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!255 &2037055104
@@ -97529,7 +97430,6 @@ GameObject:
   - component: {fileID: 2094341295}
   - component: {fileID: 2094341294}
   - component: {fileID: 2094341300}
-  - component: {fileID: 2094341301}
   m_Layer: 9
   m_Name: Scorpio
   m_TagString: Untagged
@@ -97564,13 +97464,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f6e2b0b90225c448de9be37f80d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 2094341301}
+  currState: 0
   moveNPC: {fileID: 2094341295}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 2094341299}
+  health: 40
   healthSlider: {fileID: 1747746870}
   destroyEffect: {fileID: 0}
-  health: 40
 --- !u!114 &2094341295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97583,12 +97483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9306610813c359c4baed503b74b4c9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1063791341289058040}
+  player: {fileID: 6192421921179393771}
   animator: {fileID: 2094341298}
   rigidBody: {fileID: 2094341296}
   moveSpeed: 10
-  leftDist: -11
-  rightDist: 9
+  leftDist: 120
+  rightDist: 150
   followDist: 0
   attackDist: 0
 --- !u!50 &2094341296
@@ -97721,27 +97621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ae2ced6940a584a8554a4aa332c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 2094341301}
+  enemyHealth: {fileID: 2094341294}
   playerMovement: {fileID: 1063791341289058038}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
   damage: 0.8
   impactForce: 3500
---- !u!114 &2094341301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094341292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a64c948cccf9564fb9d28f3559f0d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currState: 0
-  moveNPC: {fileID: 2094341295}
-  enemyHealth: {fileID: 2094341294}
 --- !u!1 &2094570026
 GameObject:
   m_ObjectHideFlags: 0
@@ -97768,7 +97653,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094570026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1804.6, y: -6, z: 0}
+  m_LocalPosition: {x: 1753.4, y: -6, z: 0}
   m_LocalScale: {x: 5.982425, y: 6, z: 6}
   m_Children:
   - {fileID: 1241679376}
@@ -97872,7 +97757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2097944421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -98639,9 +98524,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1205376570}
-  - {fileID: 684520356}
   - {fileID: 1177456776}
   - {fileID: 1463334691}
+  - {fileID: 684520356}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -98662,10 +98547,10 @@ MonoBehaviour:
   NPC:
   - {fileID: 362056204}
   - {fileID: 324637543}
-  - {fileID: 1257678708}
   - {fileID: 1853855848}
   - {fileID: 1734864128}
   - {fileID: 1343033503}
+  - {fileID: 259900152}
   - {fileID: 2094341293}
   - {fileID: 456074436}
   - {fileID: 1979701410}
@@ -98789,7 +98674,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
@@ -101020,7 +100905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791340499406905}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!1 &1063791340499406904
@@ -101335,7 +101220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791340552430900}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!114 &1063791340609061000
@@ -101369,7 +101254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791340609061007}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!1 &1063791340609061006
@@ -101535,7 +101420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791341051215029}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!1 &1063791341051215028
@@ -101954,7 +101839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791341434369846}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!114 &1063791341536223345
@@ -101971,7 +101856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791341536223354}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!1 &1063791341536223350
@@ -102285,7 +102170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791341985578417}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!1 &1063791342165374834
@@ -102469,7 +102354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791342165374835}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!1 &1063791342166917642
@@ -102653,7 +102538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1063791342166917643}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!4 &1334024843675727148
@@ -109304,7 +109189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 8746136901324208795}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!198 &6122680182271046048
@@ -114092,7 +113977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063791341289058039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1838.6, y: 2.32, z: 0}
+  m_LocalPosition: {x: -27, y: 2.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1063791340552430897}
@@ -114308,7 +114193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 76385549651772342}
   playerHealth: {fileID: 1063791341289058040}
-  enemyManager: {fileID: 0}
+  enemyHealth: {fileID: 0}
   force: 750
   targetRotation: 0
 --- !u!4 &6861738502230392032
@@ -114666,7 +114551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7660126083802107951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1846.7067, y: 8.319999, z: -10}
+  m_LocalPosition: {x: -18.893333, y: 8.319999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7660126085312365335}
@@ -114732,7 +114617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7660126084372420267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1846.7067, y: 8.319999, z: -10}
+  m_LocalPosition: {x: -18.893333, y: 8.319999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 598497800}
@@ -114995,7 +114880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7660126084852150146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1844.1111, y: 7.590001, z: -10}
+  m_LocalPosition: {x: -21.48889, y: 7.590001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7660126085514377023}
