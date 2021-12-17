@@ -1,36 +1,46 @@
 using UnityEngine;
+using System.Linq;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] float attackRate, smooth;
-    [SerializeField] Transform grab, weapon;
-    [SerializeField] Transform armUp, armlow;
-    private float timeToAttack;
-    private Vector3 targetAngles;
+    [SerializeField] Rigidbody2D weapon;
+    [SerializeField] EnemyHealth enemyHealth;
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject playerweapon;
 
     private void Update()
     {
-        weapon.localPosition = Vector3.zero;
-        weapon.localRotation = Quaternion.Euler(0, 0, -90);
-        grab.localPosition = new Vector3(0, -0.503f, 0);
-        grab.localRotation = Quaternion.Euler(0, 0, 0);
-
-        if (Time.time > timeToAttack)
+        if (enemyHealth.currState == EnemyHealth.State.Dead)
         {
-            timeToAttack = Time.time + 1 / attackRate;
-            Attack();
+            SetPlayerWeapon();
+            Destroy(this.gameObject.GetComponent<EnemyAttack>());
+            return;
+        }
+
+        if (weapon)
+        {
+            weapon.transform.localPosition = new Vector3(0, -0.503f, 0);
+            weapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
         }
     }
 
     public void Attack()
     {
-        Rotate(armUp);
-        Rotate(armlow);
+        SwardAttack();
     }
 
-    private void Rotate(Transform arm)
+    private void SwardAttack()
     {
-        targetAngles = arm.eulerAngles + 180 * Vector3.up;
-        arm.eulerAngles = Vector3.Lerp(arm.eulerAngles, targetAngles, smooth * Time.deltaTime);
+        animator.Play("SwardAttack");
+    }
+
+    private void SetPlayerWeapon()
+    {
+        Rigidbody2D tempWeapon = WeaponPickThrow.instance.weapons.Where(temp => temp.name == playerweapon.name).SingleOrDefault();
+        if (tempWeapon != null) return;
+        Destroy(weapon.gameObject);
+        GameObject currPlayerWeapon = Instantiate(playerweapon, transform.position, Quaternion.identity, WeaponPickThrow.instance.transform);
+        currPlayerWeapon.name = playerweapon.name;
+        WeaponPickThrow.instance.weapons.Add(currPlayerWeapon.GetComponent<Rigidbody2D>());
     }
 }

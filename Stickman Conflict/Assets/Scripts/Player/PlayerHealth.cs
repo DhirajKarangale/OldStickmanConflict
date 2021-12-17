@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             IncreaseHralth(health);
         }
@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Died()
     {
-        if(isPlayerDye) return;
+        if (isPlayerDye) return;
         AudioManager.instance.ModBG(0.07f);
         AudioManager.instance.Play("GameOver");
         isPlayerDye = true;
@@ -56,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currHealth += amount;
         currHealth = Mathf.Clamp(currHealth, 0, health);
+        healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
         healthSlider.value = currHealth / health;
         SaveManager.instance.saveData.currHealth = currHealth;
     }

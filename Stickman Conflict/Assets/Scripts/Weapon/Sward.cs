@@ -4,6 +4,7 @@ public class Sward : MonoBehaviour
 {
     [SerializeField] float impactForce;
     [SerializeField] float damage;
+    [SerializeField] float maxDamage;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject enemyBloodEffect;
     private EnemyHealth enemyHealth;
@@ -28,7 +29,7 @@ public class Sward : MonoBehaviour
         enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
-            enemyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, 30));
+            enemyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage));
         }
 
         if (collision.gameObject.layer == 9)
@@ -42,7 +43,7 @@ public class Sward : MonoBehaviour
                 enemyHealth = balance.enemyHealth;
                 if (enemyHealth)
                 {
-                    enemyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, 30));
+                    enemyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage));
                 }
             }
         }

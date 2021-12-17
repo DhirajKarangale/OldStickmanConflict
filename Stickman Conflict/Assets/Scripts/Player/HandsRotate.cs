@@ -16,8 +16,6 @@ public class HandsRotate : MonoBehaviour
         {
             balanceScript.enabled = false;
             rigidBody.MoveRotation(Mathf.LerpAngle(rigidBody.rotation, Mathf.Atan2(joystickHandRotate.Horizontal(), -joystickHandRotate.Vertical()) * Mathf.Rad2Deg + offset, 300 * Time.fixedDeltaTime));
-            // Debug.Log("Horrizontal : " + joystickHandRotate.Horizontal());
-            // Debug.Log("Vertical : " + joystickHandRotate.Vertical());
         }
         else
         {

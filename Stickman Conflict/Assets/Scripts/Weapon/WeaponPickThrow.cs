@@ -1,14 +1,22 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class WeaponPickThrow : MonoBehaviour
 {
+    public static WeaponPickThrow instance = null;
+    public static WeaponPickThrow Instance
+    {
+        get { return instance; }
+    }
+
     [Header("Refrence")]
     [SerializeField] Transform player;
+    [SerializeField] EasyJoystick.Joystick handRotateJoystick;
     [SerializeField] Grab grabLeft, grabRight;
     [SerializeField] GameObject weaponPickDropButton;
     [SerializeField] Text weaponPickDropButtonText;
-    [SerializeField] Rigidbody2D[] weapons;
+    public List<Rigidbody2D> weapons = new List<Rigidbody2D>();
     private Rigidbody2D closestWeapon;
 
     [Header("PickUp")]
@@ -25,10 +33,11 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
         isWeaponPicked = false;
         if (SaveManager.instance.isDataLoaded)
         {
-            for (int i = 0; i < weapons.Length; i++)
+            for (int i = 0; i < weapons.Count; i++)
             {
                 if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
                 {
@@ -46,6 +55,11 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PickDropButton();
+        }
+
         // Calcuate Distance Butween Player and Weapons
         if (isDistCalcAllow) CalculateDistance();
 
@@ -71,7 +85,7 @@ public class WeaponPickThrow : MonoBehaviour
     {
         shortestDistance = Mathf.Infinity;
         closestWeapon = weapons[0];
-        for (var i = 0; i < weapons.Length; i++)
+        for (var i = 0; i < weapons.Count; i++)
         {
             distance = Mathf.Abs(player.position.x - weapons[i].transform.position.x);
             if (distance < shortestDistance)
@@ -116,7 +130,8 @@ public class WeaponPickThrow : MonoBehaviour
         grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        closestWeapon.AddForce(new Vector3(player.localScale.x, 1.5f, 0) * throwForce, ForceMode2D.Impulse);
+        // closestWeapon.AddForce(new Vector3(player.localScale.x, 1.5f, 0) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce(Vector2.one * Mathf.Atan2(handRotateJoystick.Horizontal(), handRotateJoystick.Vertical()) * throwForce, ForceMode2D.Impulse);
 
         SaveManager.instance.saveData.pickedWeaponName = null;
     }

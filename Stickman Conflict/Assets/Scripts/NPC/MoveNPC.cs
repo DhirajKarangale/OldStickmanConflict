@@ -4,6 +4,7 @@ public class MoveNPC : MonoBehaviour
 {
     [Header("Refrence")]
     [SerializeField] Transform player;
+    [SerializeField] EnemyAttack enemyAttack;
     public Animator animator;
     public Rigidbody2D rigidBody;
 
@@ -34,18 +35,16 @@ public class MoveNPC : MonoBehaviour
         {
             if (playerDist >= attackDist) // Follow Player
             {
-                //  Debug.Log("Follow !!!");
                 curreLeftDist = currRightDist = player.position.x;
                 Walk();
             }
             else // Attack
             {
-              //  Debug.Log("Attack !!!");
+                            
             }
         }
         else // Petrol
         {
-            // Debug.Log("Petrol !!!");
             currRightDist = rightDist;
             curreLeftDist = leftDist;
             Walk();
