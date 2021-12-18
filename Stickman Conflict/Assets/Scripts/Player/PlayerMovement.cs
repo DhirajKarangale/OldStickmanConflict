@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((playerHealth != null) && playerHealth.isPlayerDye) return;
         if (transform.position.y < -100) playerHealth.Died();
-       
+
         if (Input.GetAxis("Horizontal") != 0)
         {
             DustEffect();
@@ -104,6 +104,8 @@ public class PlayerMovement : MonoBehaviour
                 AudioManager.instance.Play("Fall");
                 playerHealth.TakeDamage(fallDamage);
                 velocity = 0;
+                CamShake.Instance.Shake(6, 0.25f);
+                return;
             }
         }
         else

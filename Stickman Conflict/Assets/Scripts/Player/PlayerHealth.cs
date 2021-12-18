@@ -17,8 +17,7 @@ public class PlayerHealth : MonoBehaviour
         SaveManager.instance.saveData.currHealth = currHealth;
 
         isPlayerDye = false;
-        healthSlider.value = currHealth / health;
-        healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
+        SetHealthBar();
     }
 
     private void Update()
@@ -32,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     public void Died()
     {
         if (isPlayerDye) return;
-        AudioManager.instance.ModBG(0.07f);
+        AudioManager.instance.ModBG(0.07f, 1);
         AudioManager.instance.Play("GameOver");
         isPlayerDye = true;
         controlCanvas.SetActive(false);
@@ -46,8 +45,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             currHealth -= damage;
-            healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
-            healthSlider.value = currHealth / health;
+            SetHealthBar();
             SaveManager.instance.saveData.currHealth = currHealth;
         }
     }
@@ -56,13 +54,18 @@ public class PlayerHealth : MonoBehaviour
     {
         currHealth += amount;
         currHealth = Mathf.Clamp(currHealth, 0, health);
-        healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
-        healthSlider.value = currHealth / health;
+        SetHealthBar();
         SaveManager.instance.saveData.currHealth = currHealth;
     }
 
     private void SetGameOverActive()
     {
         gameOverPanel.SetActive(true);
+    }
+
+    private void SetHealthBar()
+    {
+        healthSlider.value = currHealth / health;
+        healthSlider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(low, high, healthSlider.normalizedValue);
     }
 }

@@ -23,16 +23,23 @@ public class PickItem : MonoBehaviour
         else isPickAllow = true;
     }
 
+    private void Update()
+    {
+        if (transform.position.y < -100)
+        {
+            transform.position += new Vector3(10, 110, 0);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.layer == 7) && isPickAllow)
         {
-
             Instantiate(pickEffect, transform.position, Quaternion.identity);
             switch (itemPick)
             {
                 case Item.PowerUps:
-                    if (playerHealth.currHealth >= playerHealth.health) return;
+                    //  if (playerHealth.currHealth >= playerHealth.health) return;
                     AudioManager.instance.Play("HealthIncrease");
                     currEffect = Instantiate(healthEffect, transform.position, Quaternion.identity).main;
                     currEffect.startColor = effectColor;

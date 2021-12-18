@@ -130,8 +130,7 @@ public class WeaponPickThrow : MonoBehaviour
         grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        // closestWeapon.AddForce(new Vector3(player.localScale.x, 1.5f, 0) * throwForce, ForceMode2D.Impulse);
-        closestWeapon.AddForce(Vector2.one * Mathf.Atan2(handRotateJoystick.Horizontal(), handRotateJoystick.Vertical()) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce(new Vector2((Mathf.Clamp(handRotateJoystick.Horizontal(), -1, 1)), Mathf.Clamp(handRotateJoystick.Vertical(), -1, 1)) * throwForce, ForceMode2D.Impulse);
 
         SaveManager.instance.saveData.pickedWeaponName = null;
     }

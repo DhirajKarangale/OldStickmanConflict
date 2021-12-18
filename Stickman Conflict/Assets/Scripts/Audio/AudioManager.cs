@@ -58,17 +58,20 @@ public class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         selectedSound = Array.Find(sounds, sound => sound.name == name);
-       // if (selectedSound.audioSource.isPlaying) selectedSound.audioSource.Stop();
+        // if (selectedSound.audioSource.isPlaying) selectedSound.audioSource.Stop();
         selectedSound.audioSource.Play();
     }
 
-    public void ModBG(float volume)
+    public void ModBG(float volume, float pitch)
     {
         foreach (Sound sound in soundsBG)
         {
             if (sound.audioSource.isPlaying)
             {
                 sound.audioSource.volume = volume;
+                sound.audioSource.pitch = pitch;
+                sound.audioSource.volume = Mathf.Clamp(sound.audioSource.volume, 0.08f, 0.5f);
+                sound.audioSource.pitch = Mathf.Clamp(sound.audioSource.pitch, 0, 1);
             }
         }
     }

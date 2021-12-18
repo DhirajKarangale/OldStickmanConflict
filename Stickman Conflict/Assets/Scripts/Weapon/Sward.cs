@@ -11,6 +11,14 @@ public class Sward : MonoBehaviour
     private Balance balance;
     private bool isCollisionAllow = true;
 
+    private void Update()
+    {
+        if (transform.position.y < -100)
+        {
+            transform.position += new Vector3(10, 110, 0);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!isCollisionAllow) return;

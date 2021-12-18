@@ -35,9 +35,13 @@ public class EnemyHealth : MonoBehaviour
                 Hurt();
                 break;
             case State.Dead:
-                if (currState != State.Dead)
-                    Dead();
+                Dead();
                 break;
+        }
+
+        if (transform.position.y < -100)
+        {
+            Dead();
         }
     }
 
@@ -61,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
         healthSlider.gameObject.SetActive(true);
         healthSlider.value = currHealth / health;
         if (moveNPC) moveNPC.animator.Play("Hurt");
-        if(currHealth <= 0) Dead();
+        if (currHealth <= 0) Dead();
         Invoke("ExitHurt", 0.5f);
     }
 
@@ -73,7 +77,10 @@ public class EnemyHealth : MonoBehaviour
 
     public void Dead()
     {
+        if (currState == State.Dead) return;
         healthSlider.gameObject.SetActive(false);
+        CamShake.Instance.Shake(8, 0.3f);
+        GameManager.Instance.SlowMo(0.05f, 5);
         if (moveNPC)
         {
             moveNPC.rigidBody.velocity = Vector2.zero;
