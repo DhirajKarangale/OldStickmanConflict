@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Slider healthSlider;
     [SerializeField] Color low, high;
     public float currHealth;
-    public bool isPlayerDye;
+    public static bool isPlayerDye;
 
     private void Start()
     {

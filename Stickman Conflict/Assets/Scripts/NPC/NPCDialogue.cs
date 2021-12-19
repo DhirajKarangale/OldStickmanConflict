@@ -12,7 +12,7 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] Dialogue[] dialogues;
     private Dialogue pickedDialogue;
     private int dialoguePicker = 0;
-    public bool isDialogueAllow = true;
+    private bool isDialogueAllow = true;
 
     private void Update()
     {

@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject controlPanel;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
-    private float defaultSlowTime = -1;
 
     private void Awake()
     {
@@ -26,20 +25,6 @@ public class GameManager : MonoBehaviour
             if (isPause) ResumeButton();
             else PauseButton();
         }
-
-        if (!isPause && (Time.timeScale < 1) && (defaultSlowTime != -1))
-        {
-            Time.timeScale += (1 / defaultSlowTime) * Time.unscaledDeltaTime;
-            AudioManager.instance.ModBG((0.4f + (1 / defaultSlowTime) * Time.unscaledDeltaTime), (0.5f + (1 / defaultSlowTime) * Time.unscaledDeltaTime));
-        }
-    }
-
-    public void SlowMo(float slowFactor, float slowTime)
-    {
-        AudioManager.instance.ModBG(0.4f, 0.5f);
-        Time.timeScale = slowFactor;
-        Time.fixedDeltaTime = Time.timeScale * 0.02f;
-        defaultSlowTime = slowTime;
     }
 
     public void PauseButton()

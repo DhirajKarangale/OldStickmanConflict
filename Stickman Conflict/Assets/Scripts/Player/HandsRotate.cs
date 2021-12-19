@@ -11,7 +11,7 @@ public class HandsRotate : MonoBehaviour
 
     private void Update()
     {
-        if ((playerHealth != null) && playerHealth.isPlayerDye) return;
+        if (PlayerHealth.isPlayerDye) return;
         if ((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0))
         {
             balanceScript.enabled = false;

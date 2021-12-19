@@ -3,14 +3,13 @@ using UnityEngine;
 public class Balance : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rigidBody;
-    [SerializeField] PlayerHealth playerHealth;
     public EnemyHealth enemyHealth;
     [SerializeField] float force;
     [SerializeField] float targetRotation;
 
     private void Update()
     {
-        if ((playerHealth && playerHealth.isPlayerDye) || (enemyHealth && (enemyHealth.currState == EnemyHealth.State.Dead)))
+        if ((PlayerHealth.isPlayerDye && this.transform.parent.name == "Player") || (enemyHealth && (enemyHealth.currState == EnemyHealth.State.Dead)))
         {
             enabled = false;
             return;

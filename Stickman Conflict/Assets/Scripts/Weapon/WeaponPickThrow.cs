@@ -39,14 +39,17 @@ public class WeaponPickThrow : MonoBehaviour
         {
             for (int i = 0; i < weapons.Count; i++)
             {
-                if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
+                if (weapons[i] != null)
                 {
-                    closestWeapon = weapons[i];
-                    PickUp();
-                }
-                else
-                {
-                    weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], SaveManager.instance.saveData.weaponsPosition[i, 2]);
+                    if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
+                    {
+                        closestWeapon = weapons[i];
+                        PickUp();
+                    }
+                    else
+                    {
+                        weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], SaveManager.instance.saveData.weaponsPosition[i, 2]);
+                    }
                 }
             }
         }

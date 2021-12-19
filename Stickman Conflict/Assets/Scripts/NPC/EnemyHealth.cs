@@ -80,7 +80,6 @@ public class EnemyHealth : MonoBehaviour
         if (currState == State.Dead) return;
         healthSlider.gameObject.SetActive(false);
         CamShake.Instance.Shake(8, 0.3f);
-        GameManager.Instance.SlowMo(0.05f, 5);
         if (moveNPC)
         {
             moveNPC.rigidBody.velocity = Vector2.zero;

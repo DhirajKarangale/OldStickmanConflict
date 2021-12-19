@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if ((playerHealth != null) && playerHealth.isPlayerDye) return;
+        if (PlayerHealth.isPlayerDye) return;
         if (transform.position.y < -100) playerHealth.Died();
 
         if (Input.GetAxis("Horizontal") != 0)

@@ -6,6 +6,7 @@ public class Interact : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] GameObject effect;
     [SerializeField] GameObject item;
+    [SerializeField] bool isActiveItem;
     [SerializeField] int numberOfItem;
     [SerializeField] string[] getDialogue, findDialogue;
     private int open;
@@ -16,8 +17,22 @@ public class Interact : MonoBehaviour
         //PlayerPrefs.DeleteKey("Interact" + transform.name);
         CheckPoint.onCheckPointCross += OnCheckPointCross;
         open = PlayerPrefs.GetInt("Interact" + transform.name, 0);
-        if (open == 0) animator.Play("Close");
-        else animator.Play("Open");
+        if (open == 0)
+        {
+            if (isActiveItem)
+            {
+                item.SetActive(false);
+            }
+            animator.Play("Close");
+        }
+        else
+        {
+            if (isActiveItem)
+            {
+                item.SetActive(true);
+            }
+            animator.Play("Open");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,8 +46,15 @@ public class Interact : MonoBehaviour
                 Instantiate(effect, transform.position, Quaternion.identity);
                 for (int i = 0; i < numberOfItem; i++)
                 {
-                    Instantiate(item, new Vector3(Random.Range(transform.position.x - 1, transform.position.x + 1),
-                    Random.Range(transform.position.y + 3, transform.position.y + 6), transform.position.z), Quaternion.identity);
+                    if (isActiveItem)
+                    {
+                        item.SetActive(true);
+                    }
+                    else
+                    {
+                        Instantiate(item, new Vector3(Random.Range(transform.position.x - 1, transform.position.x + 1),
+                        Random.Range(transform.position.y + 3, transform.position.y + 6), transform.position.z), Quaternion.identity);
+                    }
                 }
                 dialogueManager.StartDialogue(getDialogue);
                 open = 1;

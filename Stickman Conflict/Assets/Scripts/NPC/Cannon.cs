@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] Transform player;
     [SerializeField] Transform cannonUp;
 
     [Header("Fire")]
@@ -16,12 +16,12 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        if (playerHealth.isPlayerDye) return;
+        if (PlayerHealth.isPlayerDye) return;
 
-        cannonUp.right = cannonUp.position - playerHealth.transform.position + new Vector3(0, -1.7f, 0);
+        cannonUp.right = cannonUp.position - player.position + new Vector3(0, -1.7f, 0);
         cannonUp.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(cannonUp.rotation.eulerAngles.z, 270, 360));
 
-        if (((transform.position.x - playerHealth.transform.position.x) < fireDist) && (transform.position.x - playerHealth.transform.position.x > 0) && (Time.time > timeToFire))
+        if (((transform.position.x - player.position.x) < fireDist) && (transform.position.x - player.position.x > 0) && (Time.time > timeToFire))
         {
             timeToFire = Time.time + 1 / fireRate;
             Shoot();
