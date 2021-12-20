@@ -37,6 +37,8 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(PlayerHealth.isPlayerDye) return;
+
         if ((collision.gameObject.layer == 7) && (open == 0) && isCollisionAllow)
         {
             if (item != null)

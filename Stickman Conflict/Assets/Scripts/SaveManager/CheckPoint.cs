@@ -10,13 +10,15 @@ public class CheckPoint : MonoBehaviour
 
     private void Start()
     {
-      //  PlayerPrefs.DeleteKey("PointCross" + transform.name);
+        //  PlayerPrefs.DeleteKey("PointCross" + transform.name);
         if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Close");
         else animator.Play("Open");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (PlayerHealth.isPlayerDye) return;
+
         if (collision.gameObject.layer == 7 && isDataSaveAllow)
         {
             isDataSaveAllow = false;

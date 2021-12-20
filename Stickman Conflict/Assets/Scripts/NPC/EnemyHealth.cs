@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool headShot)
     {
         if (currHealth <= 0) Dead();
         else
@@ -54,8 +54,16 @@ public class EnemyHealth : MonoBehaviour
             Hurt();
 
             damageText.color = spriteRenderer.color;
+            if (headShot)
+            {
+                damageText.text = "Pattse";
+                GameObject currentDamageText = Instantiate(damageText.gameObject, new Vector3(Random.Range(transform.position.x - 1.5f, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
+                currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
+                Destroy(currentDamageText, 1);
+                CamShake.Instance.Shake(8, 0.3f);
+            }
             damageText.text = damage.ToString();
-            Destroy(Instantiate(damageText.gameObject, new Vector3(Random.Range(transform.position.x - 1, transform.position.x + 1), transform.position.y + 1, 0), transform.rotation), 1);
+            Destroy(Instantiate(damageText.gameObject, new Vector3(Random.Range(transform.position.x - 1.5f, transform.position.x + 2), transform.position.y + 2, 0), transform.rotation), 1);
         }
     }
 
@@ -79,7 +87,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currState == State.Dead) return;
         healthSlider.gameObject.SetActive(false);
-        CamShake.Instance.Shake(8, 0.3f);
+        CamShake.Instance.Shake(9, 0.4f);
         if (moveNPC)
         {
             moveNPC.rigidBody.velocity = Vector2.zero;

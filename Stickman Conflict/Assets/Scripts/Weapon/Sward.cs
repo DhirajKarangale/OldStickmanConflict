@@ -10,6 +10,7 @@ public class Sward : MonoBehaviour
     private EnemyHealth enemyHealth;
     private Balance balance;
     private bool isCollisionAllow = true;
+    private float applyDamage;
 
     private void Update()
     {
@@ -22,6 +23,7 @@ public class Sward : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!isCollisionAllow) return;
+        applyDamage = Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage);
 
         if (collision.gameObject.layer != 6)
         {
@@ -37,7 +39,7 @@ public class Sward : MonoBehaviour
         enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
-            enemyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage));
+            enemyHealth.TakeDamage((int)applyDamage, false);
         }
 
         if (collision.gameObject.layer == 9)
@@ -51,7 +53,14 @@ public class Sward : MonoBehaviour
                 enemyHealth = balance.enemyHealth;
                 if (enemyHealth)
                 {
-                    enemyHealth.TakeDamage((int)Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage));
+                    if (collision.gameObject.name == "head")
+                    {
+                        enemyHealth.TakeDamage((int)applyDamage * 2, true);
+                    }
+                    else
+                    {
+                        enemyHealth.TakeDamage((int)applyDamage, false);
+                    }
                 }
             }
         }

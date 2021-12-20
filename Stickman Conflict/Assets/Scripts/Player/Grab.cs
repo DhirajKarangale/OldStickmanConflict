@@ -7,11 +7,6 @@ public class Grab : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.isPlayerDye) 
-        {
-            DeAttachObject();
-            return;
-        }
         if ((!((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0))))
         {
             DeAttachObject();
@@ -26,7 +21,7 @@ public class Grab : MonoBehaviour
         if (((joystickHandRotate.Horizontal() != 0) || (joystickHandRotate.Vertical() != 0)))
         {
             Rigidbody2D rigidbody2D = collision.transform.GetComponent<Rigidbody2D>();
-            if(GetComponent<FixedJoint2D>() == null) AttachObject(rigidbody2D);
+            if (GetComponent<FixedJoint2D>() == null) AttachObject(rigidbody2D);
         }
     }
 

@@ -36,6 +36,8 @@ public class FirstTalk : MonoBehaviour
      
     private void Update()
     {
+        if(PlayerHealth.isPlayerDye) return;
+
         if ((firstTalk == 0) && (transform.position.x - player.transform.position.x) <= 0)
         {
             if (dialogueManager.isEndDialogue) TalkEnd();

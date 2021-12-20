@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!PlayerHealth.isPlayerDye && Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause) ResumeButton();
             else PauseButton();

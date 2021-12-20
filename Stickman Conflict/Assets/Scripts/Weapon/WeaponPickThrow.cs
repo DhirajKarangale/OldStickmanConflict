@@ -58,6 +58,12 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Update()
     {
+        if(PlayerHealth.isPlayerDye)
+        {
+            Throw();
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             PickDropButton();

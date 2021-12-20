@@ -38,15 +38,12 @@ public class EnemyWeapon : MonoBehaviour
                 }
                 playerMovement.playerHealth.TakeDamage(damage);
                 Instantiate(playerBloodEffect, collision.transform.position, Quaternion.identity);
-                if (enemyHealth == null) Destroy(this.gameObject);
             }
-            else
+
+            if (destroyEffect)
             {
-                if (enemyHealth == null)
-                {
-                    Instantiate(destroyEffect, transform.position, Quaternion.identity);
-                    Destroy(this.gameObject);
-                }
+                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
             }
 
             isAllowCollision = false;

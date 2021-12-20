@@ -693,6 +693,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 41b558ab28c4b6847b6e3ba7b5754f3f, type: 3}
     volume: 1
     audioSource: {fileID: 0}
+  - name: DestroyGround
+    clip: {fileID: 8300000, guid: a2c6844dffdccab41b36757272a57c98, type: 3}
+    volume: 1
+    audioSource: {fileID: 0}
 --- !u!1 &1594426882
 GameObject:
   m_ObjectHideFlags: 0
