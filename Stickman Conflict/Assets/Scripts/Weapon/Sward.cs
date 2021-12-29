@@ -4,7 +4,7 @@ public class Sward : MonoBehaviour
 {
     [SerializeField] float impactForce;
     [SerializeField] float damage;
-    [SerializeField] float maxDamage;
+    public float maxDamage = 30;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject enemyBloodEffect;
     private EnemyHealth enemyHealth;
@@ -31,7 +31,7 @@ public class Sward : MonoBehaviour
             Instantiate(hitEffect, collision.transform.position, Quaternion.identity);
         }
 
-        if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
+        if (collision.gameObject.GetComponent<Rigidbody2D>())
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(PlayerMovement.weaponRotation, 0, 0) * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 9, 25), ForceMode2D.Impulse);
         }
@@ -39,7 +39,7 @@ public class Sward : MonoBehaviour
         enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
-            enemyHealth.TakeDamage((int)applyDamage, false);
+            enemyHealth.TakeDamage((int)applyDamage, -1);
         }
 
         if (collision.gameObject.layer == 9)
@@ -55,11 +55,22 @@ public class Sward : MonoBehaviour
                 {
                     if (collision.gameObject.name == "head")
                     {
-                        enemyHealth.TakeDamage((int)applyDamage * 2, true);
+                        if (applyDamage >= maxDamage)
+                        {
+                            enemyHealth.TakeDamage((int)applyDamage * 2, 2);
+                        }
+                        else if (applyDamage >= (maxDamage / 2))
+                        {
+                            enemyHealth.TakeDamage((int)applyDamage * 2, 1);
+                        }
+                        else
+                        {
+                            enemyHealth.TakeDamage((int)applyDamage * 2, 0);
+                        }
                     }
                     else
                     {
-                        enemyHealth.TakeDamage((int)applyDamage, false);
+                        enemyHealth.TakeDamage((int)applyDamage, -1);
                     }
                 }
             }

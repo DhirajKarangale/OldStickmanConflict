@@ -17,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject destroyEffect;
     private float currHealth;
+    private string[] headShotText = { "Head", "Shot", "HeadShot", "Pattse", "Op" };
+    private Color[] headShotTextColor = { Color.black, Color.blue, Color.red, };
 
     private void Start()
     {
@@ -45,7 +47,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, bool headShot)
+    public void TakeDamage(float damage, int headShot)
     {
         if (currHealth <= 0) Dead();
         else
@@ -53,17 +55,25 @@ public class EnemyHealth : MonoBehaviour
             currHealth -= damage;
             Hurt();
 
-            damageText.color = spriteRenderer.color;
-            if (headShot)
+            if (headShot != -1)
             {
-                damageText.text = "Pattse";
-                GameObject currentDamageText = Instantiate(damageText.gameObject, new Vector3(Random.Range(transform.position.x - 1.5f, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
+                damageText.color = headShotTextColor[headShot];
+                damageText.text = headShotText[Random.Range(0, headShotText.Length)];
+
+                GameObject currentDamageText = Instantiate(damageText.gameObject,
+                new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
                 currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
-                Destroy(currentDamageText, 1);
+
+                Destroy(currentDamageText, 1.5f);
                 CamShake.Instance.Shake(8, 0.3f);
             }
-            damageText.text = damage.ToString();
-            Destroy(Instantiate(damageText.gameObject, new Vector3(Random.Range(transform.position.x - 1.5f, transform.position.x + 2), transform.position.y + 2, 0), transform.rotation), 1);
+            else
+            {
+                damageText.color = spriteRenderer.color;
+                damageText.text = damage.ToString();
+                Destroy(Instantiate(damageText.gameObject,
+                new Vector3(Random.Range(transform.position.x - 3, transform.position.x + 3), transform.position.y + 2, 0), transform.rotation), 0.9f);
+            }
         }
     }
 
@@ -83,7 +93,7 @@ public class EnemyHealth : MonoBehaviour
         else currState = State.Move;
     }
 
-    public void Dead()
+    private void Dead()
     {
         if (currState == State.Dead) return;
         healthSlider.gameObject.SetActive(false);
@@ -93,7 +103,6 @@ public class EnemyHealth : MonoBehaviour
             moveNPC.rigidBody.velocity = Vector2.zero;
             moveNPC.animator.Play("Dead");
             Destroy(this.gameObject, 20);
-            //moveNPC.rigidBody.isKinematic = true;
         }
         else
         {

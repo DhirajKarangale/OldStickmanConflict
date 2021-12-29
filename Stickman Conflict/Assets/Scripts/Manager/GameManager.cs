@@ -29,36 +29,36 @@ public class GameManager : MonoBehaviour
 
     public void PauseButton()
     {
-        AudioManager.instance.Play("ButtonSmall");
         isPause = true;
+        AudioManager.instance.Play("ButtonSmall");
         pausePanel.SetActive(true);
         controlPanel.SetActive(false);
-        AudioManager.instance.ModBG(0.08f, 0.8f);
+        AudioManager.instance.ModBG(0.08f);
         Time.timeScale = 0;
     }
 
     public void ResumeButton()
     {
-        AudioManager.instance.Play("ButtonSmall");
         isPause = false;
-        pausePanel.SetActive(false);
+        AudioManager.instance.Play("ButtonSmall");
         controlPanel.SetActive(true);
-        AudioManager.instance.ModBG(0.5f, 1);
+        pausePanel.SetActive(false);
+        AudioManager.instance.ModBG(0.5f);
         Time.timeScale = 1;
     }
 
     public void RestartButton()
     {
+        Time.timeScale = 1;
         AudioManager.instance.Play("ButtonBig");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        ResumeButton();
     }
 
     public void MenuButton()
     {
+        Time.timeScale = 1;
         AudioManager.instance.Play("Button");
         SceneManager.LoadScene(0);
-        Time.timeScale = 1;
     }
 
     public void QuitButton()

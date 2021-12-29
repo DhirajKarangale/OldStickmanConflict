@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     public void Died()
     {
         if (isPlayerDye) return;
-        AudioManager.instance.ModBG(0.07f, 1);
+        AudioManager.instance.ModBG(0.07f);
         AudioManager.instance.Play("GameOver");
         isPlayerDye = true;
         controlCanvas.SetActive(false);

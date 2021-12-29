@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -822027633981317387}
   - component: {fileID: -4167719482658253854}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: CannonBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,8 +140,8 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
-  damage: 1
-  impactForce: -9000
+  damage: 5
+  impactForce: -10000
 --- !u!1 &6824388968032296359
 GameObject:
   m_ObjectHideFlags: 0

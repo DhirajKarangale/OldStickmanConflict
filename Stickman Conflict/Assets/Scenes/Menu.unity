@@ -572,10 +572,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundsBG:
-  - name: GamePlay Music
-    clip: {fileID: 8300000, guid: 4ebb9f533e0bf3647b359f1402b5e68c, type: 3}
-    volume: 0.5
-    audioSource: {fileID: 0}
   - name: RPG Music
     clip: {fileID: 8300000, guid: 87ee1cdb35a68d9438c716dabcc8f00b, type: 3}
     volume: 0.5

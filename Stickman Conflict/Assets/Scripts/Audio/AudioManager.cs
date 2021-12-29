@@ -62,16 +62,13 @@ public class AudioManager : MonoBehaviour
         selectedSound.audioSource.Play();
     }
 
-    public void ModBG(float volume, float pitch)
+    public void ModBG(float volume)
     {
         foreach (Sound sound in soundsBG)
         {
             if (sound.audioSource.isPlaying)
             {
                 sound.audioSource.volume = volume;
-                sound.audioSource.pitch = pitch;
-                sound.audioSource.volume = Mathf.Clamp(sound.audioSource.volume, 0.08f, 0.5f);
-                sound.audioSource.pitch = Mathf.Clamp(sound.audioSource.pitch, 0, 1);
             }
         }
     }
