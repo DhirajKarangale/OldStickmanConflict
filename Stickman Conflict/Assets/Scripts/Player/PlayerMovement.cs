@@ -33,23 +33,6 @@ public class PlayerMovement : MonoBehaviour
         if (PlayerHealth.isPlayerDye) return;
         if (transform.position.y < -100) playerHealth.Died();
 
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            DustEffect();
-            animator.Play("Walk");
-            rigidBody.AddForce(Vector2.right * moveSpeed * Input.GetAxis("Horizontal"));
-            weaponRotation = 1;
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            DustEffect();
-            animator.speed = 0.3f;
-            rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -15, 12));
-            rigidBody.AddForce(jumpForce * Vector2.up * Input.GetAxis("Vertical"), ForceMode2D.Impulse);
-        }
-
         if ((moveJoystick.Horizontal() == 0) && (moveJoystick.Vertical() == 0))
         {
             animator.Play("Idel");
@@ -102,9 +85,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 fallEffect.Play();
                 AudioManager.instance.Play("Fall");
-                playerHealth.TakeDamage(fallDamage);
-                velocity = 0;
                 CamShake.Instance.Shake(6, 0.25f);
+                playerHealth.TakeDamage(fallDamage * -velocity);
+                velocity = 0;
                 return;
             }
         }

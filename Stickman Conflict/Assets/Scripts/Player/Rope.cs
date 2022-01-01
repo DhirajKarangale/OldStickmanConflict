@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EasyJoystick;
 
 public class Rope : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class Rope : MonoBehaviour
     [SerializeField] LineRenderer line;
     [SerializeField] float lineWidth = 0.1f, speed = 75;
     [SerializeField] float pullForce = 50;
-    [SerializeField] float stayTime = 1;
-    private IEnumerator timer;
+    [SerializeField] Joystick joystickHandRotate;
+    //  [SerializeField] float stayTime = 1;
+    // private IEnumerator timer;
     private Vector3 velocity;
     private bool pull = false;
     private bool update = false;
@@ -24,6 +26,15 @@ public class Rope : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RopePointerDown();
+        }
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            RopePointerUp();
+        }
+
         if (!update)
         {
             return;
@@ -32,7 +43,7 @@ public class Rope : MonoBehaviour
         if (pull)
         {
             Vector2 dir = (Vector2)transform.position - origin.position;
-            // dir = dir.normalized; spring force remove
+            dir = dir.normalized;
             origin.AddForce(dir * pullForce);
         }
         else
@@ -52,34 +63,48 @@ public class Rope : MonoBehaviour
         line.SetPosition(1, origin.position);
     }
 
-    IEnumerator reset(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        update = false;
-        line.SetPosition(0, Vector2.zero);
-        line.SetPosition(1, Vector2.zero);
-    }
+    // IEnumerator reset(float delay)
+    // {
+    //     yield return new WaitForSeconds(delay);
+    //     update = false;
+    //     line.SetPosition(0, Vector2.zero);
+    //     line.SetPosition(1, Vector2.zero);
+    // }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         velocity = Vector3.zero;
         pull = true;
-        timer =reset(stayTime);
-        StartCoroutine(timer);
+        //  timer =reset(stayTime);
+        //  StartCoroutine(timer);
     }
 
     public void SetRope(Vector2 targetPos)
     {
-        Vector2 dir = targetPos - origin.position;
+     //   Vector2 dir = targetPos - origin.position;
+        Vector2 dir = targetPos;
         dir = dir.normalized;
         velocity = dir * speed;
         transform.position = origin.position + dir;
         pull = false;
         update = true;
-        if(timer != null)
-        {
-            StopCoroutine(timer);
-            timer = null;
-        }
+        // if(timer != null)
+        // {
+        //     StopCoroutine(timer);
+        //     timer = null;
+        // }
+    }
+
+    public void RopePointerDown()
+    {
+        Vector2 pos = new Vector2(joystickHandRotate.Horizontal(), joystickHandRotate.Vertical()) * 100;
+        SetRope(pos);
+    }
+
+    public void RopePointerUp()
+    {
+        update = false;
+        line.SetPosition(0, Vector2.zero);
+        line.SetPosition(1, Vector2.zero);
     }
 }
