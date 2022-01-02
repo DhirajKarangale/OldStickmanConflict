@@ -1,50 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EasyJoystick;
 
 public class Rope : MonoBehaviour
 {
-    [SerializeField] Material mat;
     [SerializeField] Rigidbody2D origin;
     [SerializeField] LineRenderer line;
-    [SerializeField] float lineWidth = 0.1f, speed = 75;
-    [SerializeField] float pullForce = 50;
     [SerializeField] Joystick joystickHandRotate;
-    //  [SerializeField] float stayTime = 1;
-    // private IEnumerator timer;
     private Vector3 velocity;
-    private bool pull = false;
-    private bool update = false;
-
-    private void Start()
-    {
-        line.material = mat;
-        line.startWidth = lineWidth;
-        line.endWidth = lineWidth;
-    }
+    private bool isPullRope = false;
+    private bool isRopeActive = false;
+    private Rigidbody2D objectToPull;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            RopePointerDown();
+            ActiveRope();
         }
         if (Input.GetKeyUp(KeyCode.R))
         {
-            RopePointerUp();
+            DeactiveRope();
         }
 
-        if (!update)
-        {
-            return;
-        }
+        if (!isRopeActive) return;
 
-        if (pull)
+        if (isPullRope)
         {
-            Vector2 dir = (Vector2)transform.position - origin.position;
-            dir = dir.normalized;
-            origin.AddForce(dir * pullForce);
+            float pullForce = 1500; // 1500 is pullForce
+            Vector2 pullDirection = (Vector2)transform.position - origin.position;
+            pullDirection = pullDirection.normalized;
+            if (objectToPull != origin)
+            {
+                pullForce = -30; // -pullForce/50
+                transform.position = objectToPull.position;
+
+                if (Mathf.Abs(transform.position.x - origin.position.x) < 2.3f)
+                {
+                    objectToPull.velocity = Vector2.zero;
+                    DeactiveRope();
+                    return;
+                }
+            }
+            objectToPull.AddForce(pullDirection * pullForce);
         }
         else
         {
@@ -52,9 +49,7 @@ public class Rope : MonoBehaviour
             float distance = Vector2.Distance(transform.position, origin.position);
             if (distance > 50)
             {
-                update = false;
-                line.SetPosition(0, Vector2.zero);
-                line.SetPosition(1, Vector2.zero);
+                DeactiveRope();
                 return;
             }
         }
@@ -63,47 +58,37 @@ public class Rope : MonoBehaviour
         line.SetPosition(1, origin.position);
     }
 
-    // IEnumerator reset(float delay)
-    // {
-    //     yield return new WaitForSeconds(delay);
-    //     update = false;
-    //     line.SetPosition(0, Vector2.zero);
-    //     line.SetPosition(1, Vector2.zero);
-    // }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         velocity = Vector3.zero;
-        pull = true;
-        //  timer =reset(stayTime);
-        //  StartCoroutine(timer);
+
+        Rigidbody2D rigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
+        if (rigidBody && (rigidBody.mass < 1.5f)) objectToPull = rigidBody;
+        else objectToPull = origin;
+
+        isPullRope = true;
     }
 
-    public void SetRope(Vector2 targetPos)
+    private void SetRope(Vector2 targetPos)
     {
-     //   Vector2 dir = targetPos - origin.position;
-        Vector2 dir = targetPos;
-        dir = dir.normalized;
-        velocity = dir * speed;
-        transform.position = origin.position + dir;
-        pull = false;
-        update = true;
-        // if(timer != null)
-        // {
-        //     StopCoroutine(timer);
-        //     timer = null;
-        // }
+        Vector2 throughDirection = targetPos;
+        throughDirection = throughDirection.normalized;
+        velocity = throughDirection * 75; // 75 is speed
+        transform.position = origin.position + throughDirection;
+        isPullRope = false;
+        isRopeActive = true;
     }
 
-    public void RopePointerDown()
+    public void ActiveRope()
     {
-        Vector2 pos = new Vector2(joystickHandRotate.Horizontal(), joystickHandRotate.Vertical()) * 100;
-        SetRope(pos);
+        Vector2 joystickPos = new Vector2(joystickHandRotate.Horizontal(), joystickHandRotate.Vertical());
+        if (joystickPos == Vector2.zero) return;
+        SetRope(joystickPos * 100);
     }
 
-    public void RopePointerUp()
+    public void DeactiveRope()
     {
-        update = false;
+        isRopeActive = false;
         line.SetPosition(0, Vector2.zero);
         line.SetPosition(1, Vector2.zero);
     }
