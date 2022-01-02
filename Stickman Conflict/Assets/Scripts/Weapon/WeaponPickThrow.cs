@@ -13,7 +13,7 @@ public class WeaponPickThrow : MonoBehaviour
     [Header("Refrence")]
     [SerializeField] Transform player;
     [SerializeField] EasyJoystick.Joystick handRotateJoystick;
-    [SerializeField] Grab grabLeft, grabRight;
+    [SerializeField] Grab grabLeft;
     [SerializeField] GameObject weaponPickDropButton;
     [SerializeField] Text weaponPickDropButtonText;
     public List<Rigidbody2D> weapons = new List<Rigidbody2D>();
@@ -120,7 +120,6 @@ public class WeaponPickThrow : MonoBehaviour
         isReturning = true;
         closestWeapon.transform.parent = grabLeft.transform;
         grabLeft.AttachObject(closestWeapon);
-        grabRight.AttachObject(closestWeapon);
 
         weaponPickDropButton.SetActive(true);
         weaponPickDropButtonText.text = "Drop";
@@ -136,7 +135,6 @@ public class WeaponPickThrow : MonoBehaviour
         Invoke("DesableWeaponButton", buttonActiveTime);
 
         grabLeft.DeAttachObject();
-        grabRight.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
         closestWeapon.AddForce(new Vector2((Mathf.Clamp(handRotateJoystick.Horizontal(), -1, 1)), Mathf.Clamp(handRotateJoystick.Vertical(), -1, 1)) * throwForce, ForceMode2D.Impulse);
