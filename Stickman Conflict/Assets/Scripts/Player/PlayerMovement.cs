@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (SaveManager.instance.isDataLoaded)
         {
-            transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0] + 5, SaveManager.instance.saveData.playerSpwanPos[1], SaveManager.instance.saveData.playerSpwanPos[2]);
+            transform.position = new Vector3(SaveManager.instance.saveData.playerSpwanPos[0] + 5, SaveManager.instance.saveData.playerSpwanPos[1], 0);
         }
     }
 

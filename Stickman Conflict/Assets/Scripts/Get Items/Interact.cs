@@ -14,12 +14,12 @@ public class Interact : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.DeleteKey("Interact" + transform.name);
+        // PlayerPrefs.DeleteKey("Interact" + transform.name);
         CheckPoint.onCheckPointCross += OnCheckPointCross;
         open = PlayerPrefs.GetInt("Interact" + transform.name, 0);
         if (open == 0)
         {
-            if (isActiveItem)
+            if (isActiveItem && item)
             {
                 item.SetActive(false);
             }
@@ -27,7 +27,7 @@ public class Interact : MonoBehaviour
         }
         else
         {
-            if (isActiveItem)
+            if (isActiveItem && item)
             {
                 item.SetActive(true);
             }
@@ -37,7 +37,7 @@ public class Interact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(PlayerHealth.isPlayerDye) return;
+        if (PlayerHealth.isPlayerDye) return;
 
         if ((collision.gameObject.layer == 7) && (open == 0) && isCollisionAllow)
         {

@@ -68,7 +68,7 @@ public class SaveManager : MonoBehaviour
 [System.Serializable]
 public class SaveData
 {
-    public float[] playerSpwanPos = new float[3];
+    public float[] playerSpwanPos = new float[2];
     public float[,] weaponsPosition;
     public string pickedWeaponName;
     public float currHealth;

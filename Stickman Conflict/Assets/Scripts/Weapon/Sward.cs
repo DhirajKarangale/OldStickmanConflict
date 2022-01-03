@@ -7,13 +7,13 @@ public class Sward : MonoBehaviour
     public float maxDamage = 30;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject enemyBloodEffect;
-    private EnemyHealth enemyHealth;
-    private Balance balance;
     private bool isCollisionAllow = true;
     private float applyDamage;
 
     private void Update()
     {
+        if (PlayerHealth.isPlayerDye) return;
+
         if (transform.position.y < -100)
         {
             transform.position += new Vector3(10, 110, 0);
@@ -36,7 +36,7 @@ public class Sward : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(PlayerMovement.weaponRotation, 0, 0) * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 9, 25), ForceMode2D.Impulse);
         }
 
-        enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
             enemyHealth.TakeDamage((int)applyDamage, -1);
@@ -44,15 +44,19 @@ public class Sward : MonoBehaviour
 
         if (collision.gameObject.layer == 9)
         {
-            AudioManager.instance.Play("NPCHurt");
-            Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
-
-            balance = collision.gameObject.GetComponent<Balance>();
+            Balance balance = collision.gameObject.GetComponent<Balance>();
             if (balance)
             {
                 enemyHealth = balance.enemyHealth;
                 if (enemyHealth)
                 {
+
+                    if (enemyHealth.currState != EnemyHealth.State.Dead)
+                    {
+                        AudioManager.instance.Play("NPCHurt");
+                        Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
+                    }
+
                     if (collision.gameObject.name == "head")
                     {
                         if (applyDamage >= maxDamage)
@@ -72,6 +76,11 @@ public class Sward : MonoBehaviour
                     {
                         enemyHealth.TakeDamage((int)applyDamage, -1);
                     }
+                }
+                else
+                {
+                    AudioManager.instance.Play("NPCHurt");
+                    Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
                 }
             }
         }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4016405056505037104}
   - component: {fileID: 1623091666765696012}
   - component: {fileID: 619764048621076928}
-  - component: {fileID: 405357919}
   m_Layer: 0
   m_Name: PopTMPText
   m_TagString: Untagged
@@ -110,8 +109,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -192,11 +191,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!33 &405357919
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6999312769263592924}
-  m_Mesh: {fileID: 0}

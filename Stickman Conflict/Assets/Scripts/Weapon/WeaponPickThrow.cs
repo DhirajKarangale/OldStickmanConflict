@@ -18,6 +18,8 @@ public class WeaponPickThrow : MonoBehaviour
     [SerializeField] Text weaponPickDropButtonText;
     public List<Rigidbody2D> weapons = new List<Rigidbody2D>();
     private Rigidbody2D closestWeapon;
+    public GameObject ropeButton;
+    public GameObject ropeEmmiter;
 
     [Header("PickUp")]
     [SerializeField] float pickRange;
@@ -33,6 +35,7 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void Start()
     {
+        //PlayerPrefs.DeleteKey("RopeGet");
         instance = this;
         isWeaponPicked = false;
         if (SaveManager.instance.isDataLoaded)
@@ -48,19 +51,25 @@ public class WeaponPickThrow : MonoBehaviour
                     }
                     else
                     {
-                        weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], SaveManager.instance.saveData.weaponsPosition[i, 2]);
+                        weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], 0);
                     }
                 }
             }
+        }
+
+        if (PlayerPrefs.GetInt("RopeGet", 0) != 1)
+        {
+            ropeButton.SetActive(false);
+            ropeEmmiter.SetActive(false);
         }
     }
 
 
     private void Update()
     {
-        if(PlayerHealth.isPlayerDye)
+        if (PlayerHealth.isPlayerDye)
         {
-            Throw();
+            if (!isWeaponPicked) Throw();
             return;
         }
 

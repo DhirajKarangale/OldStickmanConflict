@@ -12,26 +12,28 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] Dialogue[] dialogues;
     private Dialogue pickedDialogue;
     private int dialoguePicker = 0;
-    private bool isDialogueAllow = true;
+    private bool isDialogueAllow = true, isActivateAllowDialogue;
+    private float currTime = 0;
 
     private void Update()
     {
         if (dialogues.Length == 1)
         {
-            DialogueShow();
+            ShowDialogue();
             return;
         }
-        if (Random.value > 0.5f) DialogueShow();
+        if (isActivateAllowDialogue) AllowDialogue();
+        if (Random.value > 0.5f) ShowDialogue();
     }
 
-    private void DialogueShow()
+    private void ShowDialogue()
     {
-        if ((Mathf.Abs(player.transform.position.x - transform.position.x) < dist) && !dialogueManager.isEndDialogue)
+        if (Mathf.Abs(player.transform.position.x - transform.position.x) < dist)
         {
             if (isDialogueAllow)
             {
-                dialogueManager.StartDialogue(DialogueToSent().sentences);
                 isDialogueAllow = false;
+                dialogueManager.StartDialogue(DialogueToSent().sentences);
             }
         }
         else
@@ -39,7 +41,7 @@ public class NPCDialogue : MonoBehaviour
             if (!isDialogueAllow)
             {
                 dialogueManager.EndDialogue();
-                Invoke("AllowDialogue", 20);
+                isActivateAllowDialogue = true;
                 if (dialogues.Length == 1) enabled = false;
             }
         }
@@ -75,6 +77,22 @@ public class NPCDialogue : MonoBehaviour
 
     private void AllowDialogue()
     {
-        isDialogueAllow = true;
+        if (!isDialogueAllow)
+        {
+            if (currTime >= 20)
+            {
+                currTime = 0;
+                isDialogueAllow = true;
+            }
+            else
+            {
+                currTime += Time.deltaTime;
+            }
+        }
+        else
+        {
+            currTime = 0;
+            isActivateAllowDialogue = false;
+        }
     }
 }
