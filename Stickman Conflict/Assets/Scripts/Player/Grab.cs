@@ -4,6 +4,7 @@ using EasyJoystick;
 public class Grab : MonoBehaviour
 {
     [SerializeField] Joystick joystickHandRotate;
+    public Rigidbody2D rigidBody;
 
     private void Update()
     {

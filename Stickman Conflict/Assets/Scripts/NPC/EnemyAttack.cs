@@ -17,12 +17,13 @@ public class EnemyAttack : MonoBehaviour
         if (weapon)
         {
             weapon.transform.localPosition = new Vector3(0, -0.503f, 0);
-            weapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
+            weapon.angularVelocity = 0.5f;
         }
     }
 
     public void Attack()
     {
+        weapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
         SwardAttack();
     }
 

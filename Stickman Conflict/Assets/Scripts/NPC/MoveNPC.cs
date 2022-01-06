@@ -14,7 +14,6 @@ public class MoveNPC : MonoBehaviour
     [SerializeField] float followDist, attackDist;
     private bool moveFront = true;
     private float curreLeftDist, currRightDist;
-    private float playerDist;
 
     private void Start()
     {
@@ -30,7 +29,7 @@ public class MoveNPC : MonoBehaviour
 
     public void Move()
     {
-        playerDist = Mathf.Abs(player.position.x - transform.position.x);
+        float playerDist = Mathf.Abs(player.position.x - transform.position.x);
         if (playerDist < followDist)
         {
             if (playerDist >= attackDist) // Follow Player
@@ -40,7 +39,7 @@ public class MoveNPC : MonoBehaviour
             }
             else // Attack
             {
-                            
+                enemyAttack.Attack();
             }
         }
         else // Petrol

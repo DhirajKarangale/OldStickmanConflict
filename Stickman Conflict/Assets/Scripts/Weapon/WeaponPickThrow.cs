@@ -20,6 +20,7 @@ public class WeaponPickThrow : MonoBehaviour
     private Rigidbody2D closestWeapon;
     public GameObject ropeButton;
     public GameObject ropeEmmiter;
+    private float weaponTimer = 1;
 
     [Header("PickUp")]
     [SerializeField] float pickRange;
@@ -84,10 +85,28 @@ public class WeaponPickThrow : MonoBehaviour
         // Fix the Position and rotation of (left & right grab) and this game object
         if (isWeaponPicked)
         {
+            grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
             closestWeapon.transform.localPosition = Vector3.zero;
             closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
-            grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
-            grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+            if ((handRotateJoystick.Vertical() != 0) || (handRotateJoystick.Horizontal() != 0))
+            {
+                grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                weaponTimer = 1;
+            }
+            else
+            {
+                weaponTimer -= Time.deltaTime;
+                if (weaponTimer > 0)
+                {
+                    grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    //grabLeft.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(grabLeft.transform.localRotation.z, -160, 10));
+                    grabLeft.rigidBody.angularVelocity = 0.5f;
+                }
+            }
         }
 
         // Pick Up Object

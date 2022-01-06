@@ -193,7 +193,7 @@ MonoBehaviour:
   moveNPC: {fileID: 6827780452578457738}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 6827780452578457750}
-  health: 40
+  health: 10
   healthSlider: {fileID: 6827780452920779795}
   destroyEffect: {fileID: 0}
 --- !u!114 &6827780452578457745
@@ -212,8 +212,8 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
-  damage: 0.8
-  impactForce: 5000
+  damage: 1
+  impactForce: 8000
 --- !u!1 &6827780452588014105
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,11 +4,11 @@ public class Sward : MonoBehaviour
 {
     [SerializeField] float impactForce;
     [SerializeField] float damage;
-    public float maxDamage = 30;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject enemyBloodEffect;
+    [SerializeField] EasyJoystick.Joystick handRotateJoystick;
+    public float maxDamage = 30;
     private bool isCollisionAllow = true;
-    private float applyDamage;
 
     private void Update()
     {
@@ -23,9 +23,10 @@ public class Sward : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!isCollisionAllow) return;
-        applyDamage = Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage);
+        float applyDamage = Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage);
+        Vector2 handJoystick = new Vector2(handRotateJoystick.Vertical(), handRotateJoystick.Horizontal());
 
-        if (collision.gameObject.layer != 6)
+        if (collision.gameObject.layer != 6) // If not Ground
         {
             AudioManager.instance.Play("Hit");
             Instantiate(hitEffect, collision.transform.position, Quaternion.identity);
@@ -33,55 +34,67 @@ public class Sward : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Rigidbody2D>())
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(PlayerMovement.weaponRotation, 0, 0) * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 9, 25), ForceMode2D.Impulse);
+            Vector2 forceDir = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().position.x - transform.position.x, 0.6f);
+            forceDir = forceDir.normalized;
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(forceDir * Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * impactForce, 9, 25), ForceMode2D.Impulse);
         }
 
         EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth)
         {
-            enemyHealth.TakeDamage((int)applyDamage, -1);
-        }
-
-        if (collision.gameObject.layer == 9)
-        {
-            Balance balance = collision.gameObject.GetComponent<Balance>();
-            if (balance)
+            if (handJoystick == Vector2.zero)
             {
-                enemyHealth = balance.enemyHealth;
-                if (enemyHealth)
+                enemyHealth.TakeDamage((int)applyDamage / 2, -1);
+            }
+            else
+            {
+                enemyHealth.TakeDamage((int)applyDamage, -1);
+            }
+        }
+        else if (collision.gameObject.layer == 9)
+        {
+            enemyHealth = collision.gameObject.GetComponent<Balance>().enemyHealth;
+            if (enemyHealth)
+            {
+                if (enemyHealth.currState != EnemyHealth.State.Dead)
                 {
+                    AudioManager.instance.Play("NPCHurt");
+                    Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
+                }
 
-                    if (enemyHealth.currState != EnemyHealth.State.Dead)
+                if ((collision.gameObject.name == "head"))
+                {
+                    if (handJoystick == Vector2.zero) return;
+
+                    if (applyDamage >= maxDamage)
                     {
-                        AudioManager.instance.Play("NPCHurt");
-                        Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
+                        enemyHealth.TakeDamage((int)applyDamage * 2, 2);
                     }
-
-                    if (collision.gameObject.name == "head")
+                    else if (applyDamage >= (maxDamage / 2))
                     {
-                        if (applyDamage >= maxDamage)
-                        {
-                            enemyHealth.TakeDamage((int)applyDamage * 2, 2);
-                        }
-                        else if (applyDamage >= (maxDamage / 2))
-                        {
-                            enemyHealth.TakeDamage((int)applyDamage * 2, 1);
-                        }
-                        else
-                        {
-                            enemyHealth.TakeDamage((int)applyDamage * 2, 0);
-                        }
+                        enemyHealth.TakeDamage((int)applyDamage * 2, 1);
+                    }
+                    else
+                    {
+                        enemyHealth.TakeDamage((int)applyDamage * 2, 0);
+                    }
+                }
+                else
+                {
+                    if (handJoystick == Vector2.zero)
+                    {
+                        enemyHealth.TakeDamage((int)applyDamage / 2, -1);
                     }
                     else
                     {
                         enemyHealth.TakeDamage((int)applyDamage, -1);
                     }
                 }
-                else
-                {
-                    AudioManager.instance.Play("NPCHurt");
-                    Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
-                }
+            }
+            else
+            {
+                AudioManager.instance.Play("NPCHurt");
+                Instantiate(enemyBloodEffect, collision.transform.position + new Vector3(0, 0.5f, 0), collision.transform.rotation);
             }
         }
 

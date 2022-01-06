@@ -6016,7 +6016,7 @@ GameObject:
   - component: {fileID: 6723561433772529471}
   - component: {fileID: 6723561433772529459}
   m_Layer: 9
-  m_Name: Enemy 1 (1)
+  m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6108,7 +6108,7 @@ MonoBehaviour:
   leftDist: 1998
   rightDist: 2031
   followDist: 30
-  attackDist: 4
+  attackDist: 3
 --- !u!114 &6723561433772529471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6125,7 +6125,7 @@ MonoBehaviour:
   moveNPC: {fileID: 6723561433772529469}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 6723561434205352533}
-  health: 50
+  health: 30
   healthSlider: {fileID: 6723561434175679094}
   destroyEffect: {fileID: 0}
 --- !u!114 &6723561433772529459
@@ -11996,7 +11996,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6723561434575192821}
-  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.81915206, w: 0.57357645}
   m_LocalPosition: {x: 0, y: -0.50300014, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_Children:
@@ -12004,7 +12004,7 @@ Transform:
   - {fileID: 6723561434023294657}
   m_Father: {fileID: 6723561433197444051}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 110}
 --- !u!212 &6723561434575192777
 SpriteRenderer:
   m_ObjectHideFlags: 0

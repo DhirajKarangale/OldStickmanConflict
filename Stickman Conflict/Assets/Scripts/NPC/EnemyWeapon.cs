@@ -28,14 +28,10 @@ public class EnemyWeapon : MonoBehaviour
         {
             if (collision.gameObject.layer == 7)
             {
-                if (enemyHealth)
-                {
-                    playerMovement.rigidBody.AddForce(new Vector2(enemyHealth.transform.localScale.x, 0.5f) * impactForce, ForceMode2D.Force);
-                }
-                else
-                {
-                    playerMovement.rigidBody.AddForce(new Vector2(transform.localScale.x, 0.5f) * impactForce, ForceMode2D.Force);
-                }
+                Vector2 forceDir = new Vector2(playerMovement.transform.position.x - transform.position.x, 0.7f);
+                forceDir = forceDir.normalized;
+                playerMovement.rigidBody.AddForce(forceDir * impactForce, ForceMode2D.Force);
+
                 playerMovement.playerHealth.TakeDamage(damage);
                 Instantiate(playerBloodEffect, collision.transform.position, Quaternion.identity);
             }

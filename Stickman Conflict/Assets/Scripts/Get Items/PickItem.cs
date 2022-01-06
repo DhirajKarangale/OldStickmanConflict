@@ -47,14 +47,14 @@ public class PickItem : MonoBehaviour
                     Destroy(gameObject);
                     break;
                 case Item.Coin:
-                    SaveManager.instance.saveData.coin++;
                     AudioManager.instance.Play("Coin");
-                    Destroy(gameObject);
+                    SaveManager.instance.saveData.coin = SaveManager.instance.saveData.coin + 1;
+                    Destroy(this.gameObject);
                     break;
                 case Item.Key:
-                    SaveManager.instance.saveData.key++;
                     AudioManager.instance.Play("Coin");
-                    Destroy(gameObject);
+                    SaveManager.instance.saveData.key = SaveManager.instance.saveData.key + 1;
+                    Destroy(this.gameObject);
                     break;
             }
             Destroy(gameObject);
