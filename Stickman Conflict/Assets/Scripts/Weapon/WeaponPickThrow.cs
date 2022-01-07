@@ -58,7 +58,7 @@ public class WeaponPickThrow : MonoBehaviour
             }
         }
 
-        if (PlayerPrefs.GetInt("RopeGet", 0) != 1)
+        if (PlayerPrefs.GetInt("WeaponGetter" + "GetRope", 0) != 1)
         {
             ropeButton.SetActive(false);
             ropeEmmiter.SetActive(false);

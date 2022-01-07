@@ -65,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
                 currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
 
                 Destroy(currentDamageText, 1.5f);
-                CamShake.Instance.Shake(8, 0.3f);
+                CamManager.Instance.Shake(8, 0.3f);
             }
             else
             {
@@ -97,7 +97,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currState == State.Dead) return;
         healthSlider.gameObject.SetActive(false);
-        CamShake.Instance.Shake(9, 0.4f);
+        CamManager.Instance.Shake(9, 0.4f);
         if (moveNPC)
         {
             moveNPC.rigidBody.velocity = Vector2.zero;

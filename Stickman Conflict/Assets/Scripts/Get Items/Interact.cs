@@ -14,7 +14,7 @@ public class Interact : MonoBehaviour
 
     private void Start()
     {
-        // PlayerPrefs.DeleteKey("Interact" + transform.name);
+        //PlayerPrefs.DeleteKey("Interact" + transform.name);
         CheckPoint.onCheckPointCross += OnCheckPointCross;
         open = PlayerPrefs.GetInt("Interact" + transform.name, 0);
         if (open == 0)

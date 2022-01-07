@@ -1,9 +1,10 @@
 using UnityEngine;
 using Cinemachine;
 
-public class CamShake : MonoBehaviour
+public class CamManager : MonoBehaviour
 {
-    public static CamShake Instance { get; private set; }
+    public static CamManager Instance { get; private set; }
+    [SerializeField] CinemachineStateDrivenCamera stateDrivenCamera;
     [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
     private CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
     private float startingIntensity;
@@ -13,6 +14,7 @@ public class CamShake : MonoBehaviour
     {
         Instance = this;
         cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        ReserOrtho();
     }
 
     private void Update()
@@ -34,4 +36,20 @@ public class CamShake : MonoBehaviour
         shakeStartTimer = shakeTimer = time;
     }
 
+    public void OrthoSize(float size)
+    {
+       // cinemachineVirtualCamera.m_Lens.OrthographicSize = size;
+    }
+
+    public void ReserOrtho()
+    {
+        if (transform.name == "CM vcam Idel")
+        {
+            cinemachineVirtualCamera.m_Lens.OrthographicSize = 12;
+        }
+        else
+        {
+            cinemachineVirtualCamera.m_Lens.OrthographicSize = 15.5f;
+        }
+    }
 }

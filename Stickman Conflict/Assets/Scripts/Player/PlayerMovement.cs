@@ -9,14 +9,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     [SerializeField] Animator animator;
     [SerializeField] CapsuleCollider2D legCollider;
-    [SerializeField] ParticleSystem dustEffectLeft, dustEffectRight, fallEffect;
+    [SerializeField] ParticleSystem walkEffect, fallEffect;
 
     [Header("Attributes")]
     [SerializeField] float jumpForce;
     [SerializeField] float downForce;
     [SerializeField] float moveSpeed;
     [SerializeField] float fallDamage;
-    public static int weaponRotation = 1;
     private float velocity = 0;
     public bool isLegUp;
 
@@ -44,28 +43,24 @@ public class PlayerMovement : MonoBehaviour
             // Move
             if (moveJoystick.Horizontal() > 0.4F) // Move Front
             {
-                DustEffect();
                 animator.Play("Walk");
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
-                weaponRotation = 1;
                 transform.localScale = new Vector3(1, 1, 1);
-                WalkSound();
+                WalkEffect();
             }
             else if (moveJoystick.Horizontal() < -0.4F) // Move Back
             {
-                DustEffect();
                 animator.Play("Walk Back");
                 rigidBody.AddForce(Vector2.right * moveSpeed * moveJoystick.Horizontal());
-                weaponRotation = -1;
                 transform.localScale = new Vector3(-1, 1, 1);
-                WalkSound();
+                WalkEffect();
             }
 
 
             // Jump & Crounch
             if ((moveJoystick.Vertical() > 0.6f) && (Physics2D.IsTouchingLayers(legCollider, 64))) // Jump 
             {
-                DustEffect();
+                walkEffect.Play();
                 animator.speed = 0.3f;
                 AudioManager.instance.Play("Jump");
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -15, 12));
@@ -85,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 fallEffect.Play();
                 AudioManager.instance.Play("Fall");
-                CamShake.Instance.Shake(6, 0.25f);
+                CamManager.Instance.Shake(6, 0.25f);
                 playerHealth.TakeDamage(fallDamage * -velocity);
                 velocity = 0;
                 return;
@@ -97,23 +92,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void WalkSound()
+    private void WalkEffect()
     {
+        walkEffect.Play();
         if (!Physics2D.IsTouchingLayers(legCollider, 64))
         {
             isLegUp = true;
         }
-
-        if (isLegUp && Physics2D.IsTouchingLayers(legCollider, 64))
+        else if (isLegUp)
         {
             isLegUp = false;
             AudioManager.instance.Play("Walk");
         }
-    }
-
-    private void DustEffect()
-    {
-        dustEffectLeft.Play();
-        dustEffectRight.Play();
     }
 }
