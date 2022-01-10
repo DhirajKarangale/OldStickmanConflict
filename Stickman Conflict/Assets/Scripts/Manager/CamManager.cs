@@ -14,7 +14,6 @@ public class CamManager : MonoBehaviour
     {
         Instance = this;
         cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        ReserOrtho();
     }
 
     private void Update()
@@ -34,22 +33,5 @@ public class CamManager : MonoBehaviour
     {
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = startingIntensity = intensity;
         shakeStartTimer = shakeTimer = time;
-    }
-
-    public void OrthoSize(float size)
-    {
-       // cinemachineVirtualCamera.m_Lens.OrthographicSize = size;
-    }
-
-    public void ReserOrtho()
-    {
-        if (transform.name == "CM vcam Idel")
-        {
-            cinemachineVirtualCamera.m_Lens.OrthographicSize = 12;
-        }
-        else
-        {
-            cinemachineVirtualCamera.m_Lens.OrthographicSize = 15.5f;
-        }
     }
 }
