@@ -28,7 +28,8 @@ public class NPCDialogue : MonoBehaviour
 
     private void ShowDialogue()
     {
-        if (Mathf.Abs(player.transform.position.x - transform.position.x) < dist)
+        float playerDist = Vector2.Distance(player.position, transform.position);
+        if (playerDist < dist)
         {
             if (isDialogueAllow)
             {

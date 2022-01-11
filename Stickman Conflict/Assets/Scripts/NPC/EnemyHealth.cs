@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] MoveNPC moveNPC;
     [SerializeField] TMP_Text damageText;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Animator cageAnimator;
 
     [Header("Health")]
     [SerializeField] float health;
@@ -22,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
+        if (cageAnimator) cageAnimator.Play("Close");
         currHealth = health;
         healthSlider.gameObject.SetActive(false);
     }
@@ -110,6 +112,7 @@ public class EnemyHealth : MonoBehaviour
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+        if (cageAnimator) cageAnimator.Play("Open");
         currState = State.Dead;
     }
 }
