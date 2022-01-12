@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
+
+        SaveManager.instance.saveData.level = (byte)SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()

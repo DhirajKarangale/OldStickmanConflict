@@ -4,9 +4,22 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject[] screens;
+    private byte level;
 
     private void Start()
     {
+        level = SaveManager.instance.saveData.level;
+        if (level != 0)
+        {
+            level = SaveManager.instance.saveData.level;
+        }
+        else
+        {
+            level = 1;
+            SaveManager.instance.saveData.level = level;
+            SaveManager.instance.Save();
+        }
+
         DesableScreens();
         screens[0].SetActive(true);
     }
@@ -24,7 +37,7 @@ public class Menu : MonoBehaviour
         AudioManager.instance.Play("ButtonBig");
         DesableScreens();
         loadScreen.SetActive(true);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(level);
     }
 
     public void QuitButton()

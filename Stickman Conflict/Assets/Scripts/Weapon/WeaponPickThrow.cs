@@ -52,7 +52,7 @@ public class WeaponPickThrow : MonoBehaviour
                     }
                     else
                     {
-                        weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], 0);
+                        if (SaveManager.instance.isDataLoaded) weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], 0);
                     }
                 }
             }

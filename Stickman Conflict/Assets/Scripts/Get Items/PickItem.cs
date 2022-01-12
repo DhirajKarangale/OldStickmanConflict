@@ -48,12 +48,12 @@ public class PickItem : MonoBehaviour
                     break;
                 case Item.Coin:
                     AudioManager.instance.Play("Coin");
-                    SaveManager.instance.saveData.coin = SaveManager.instance.saveData.coin + 1;
+                    SaveManager.instance.saveData.coin++;
                     Destroy(this.gameObject);
                     break;
                 case Item.Key:
                     AudioManager.instance.Play("Coin");
-                    SaveManager.instance.saveData.key = SaveManager.instance.saveData.key + 1;
+                    SaveManager.instance.saveData.key++;
                     Destroy(this.gameObject);
                     break;
             }

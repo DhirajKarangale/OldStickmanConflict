@@ -5,14 +5,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveManager : MonoBehaviour
 {
-    public static SaveManager instance;
+    public static SaveManager instance = null;
+    public static SaveManager Instance
+    {
+        get { return instance; }
+    }
 
     public SaveData saveData;
     public bool isDataLoaded;
 
     private void Awake()
     {
-        instance = this;
+        MakeSingleton();
         Load();
     }
 
@@ -24,6 +28,20 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    private void MakeSingleton()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     public void Save()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -32,7 +50,7 @@ public class SaveManager : MonoBehaviour
 
         binaryFormatter.Serialize(stream, saveData);
         stream.Close();
-       // Debug.Log("Data Save");
+        // Debug.Log("Data Save");
     }
 
     public void Load()
@@ -46,11 +64,11 @@ public class SaveManager : MonoBehaviour
             saveData = binaryFormatter.Deserialize(stream) as SaveData;
             stream.Close();
             isDataLoaded = true;
-           // Debug.Log("Data Load");
+            // Debug.Log("Data Load");
         }
         else
         {
-          //  Debug.Log("Data not found");
+            //  Debug.Log("Data not found");
         }
     }
 
@@ -60,7 +78,7 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
-          //  Debug.Log("Data Delete");
+            //  Debug.Log("Data Delete");
         }
     }
 }
@@ -73,5 +91,6 @@ public class SaveData
     public string pickedWeaponName;
     public float currHealth;
     public int coin;
-    public int key;
+    public byte key;
+    public byte level;
 }

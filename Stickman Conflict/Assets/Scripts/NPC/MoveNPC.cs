@@ -29,7 +29,8 @@ public class MoveNPC : MonoBehaviour
 
     public void Move()
     {
-        float playerDist = Mathf.Abs(player.position.x - transform.position.x);
+        float playerDist = Vector2.Distance(player.position, transform.position);
+        //float playerDist = Mathf.Abs(player.position.x - transform.position.x);
         if (playerDist < followDist)
         {
             if (playerDist >= attackDist) // Follow Player

@@ -31,7 +31,7 @@ public class NextLevPortal : MonoBehaviour
         player.isKinematic = true;
         player.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         player.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         loadingPanel.SetActive(true);
