@@ -1,0 +1,4452 @@
+fileFormatVersion: 2
+guid: 66ab383392bb3cd4e8e3a9e460c9ab4f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4017211297434771885
+    second: Blue Sprite_0
+  - first:
+      213: 4291990480127535743
+    second: Blue Sprite_1
+  - first:
+      213: 8612223914960464776
+    second: Blue Sprite_2
+  - first:
+      213: 2414444448651055294
+    second: Blue Sprite_3
+  - first:
+      213: -3534198679159587168
+    second: Blue Sprite_4
+  - first:
+      213: -246059850266691372
+    second: Blue Sprite_5
+  - first:
+      213: 4701659983957334162
+    second: Blue Sprite_6
+  - first:
+      213: 6955890107248694727
+    second: Blue Sprite_7
+  - first:
+      213: -2896554404078701981
+    second: Blue Sprite_8
+  - first:
+      213: -1959262037594050427
+    second: Blue Sprite_9
+  - first:
+      213: 2497839560642342
+    second: Blue Sprite_10
+  - first:
+      213: -5155289340869625715
+    second: Blue Sprite_11
+  - first:
+      213: 779589588052862007
+    second: Blue Sprite_12
+  - first:
+      213: -5295513147614795918
+    second: Blue Sprite_13
+  - first:
+      213: 1927724390611725465
+    second: Blue Sprite_14
+  - first:
+      213: -8906583721332505602
+    second: Blue Sprite_15
+  - first:
+      213: -5332843718221896825
+    second: Blue Sprite_16
+  - first:
+      213: -2923418248233518447
+    second: Blue Sprite_17
+  - first:
+      213: -8115639125823099146
+    second: Blue Sprite_18
+  - first:
+      213: 7883026787010312515
+    second: Blue Sprite_19
+  - first:
+      213: -6877719973735239095
+    second: Blue Sprite_20
+  - first:
+      213: -8502948286717398639
+    second: Blue Sprite_21
+  - first:
+      213: -1971718413733985877
+    second: Blue Sprite_22
+  - first:
+      213: -2486513181939663014
+    second: Blue Sprite_23
+  - first:
+      213: -6965756656834585521
+    second: Blue Sprite_24
+  - first:
+      213: -2871296614166873979
+    second: Blue Sprite_25
+  - first:
+      213: -5678594400732301967
+    second: Blue Sprite_26
+  - first:
+      213: -2649986324891024913
+    second: Blue Sprite_27
+  - first:
+      213: 1349487149881769757
+    second: Blue Sprite_28
+  - first:
+      213: 3115921187444373358
+    second: Blue Sprite_29
+  - first:
+      213: -8269634050302982096
+    second: Blue Sprite_30
+  - first:
+      213: 8203898062468008928
+    second: Blue Sprite_31
+  - first:
+      213: -4183607169949946482
+    second: Blue Sprite_32
+  - first:
+      213: 1956430488669277280
+    second: Blue Sprite_33
+  - first:
+      213: -2168742796674412049
+    second: Blue Sprite_34
+  - first:
+      213: -7946189454655341102
+    second: Blue Sprite_35
+  - first:
+      213: 2369636584828857555
+    second: Blue Sprite_36
+  - first:
+      213: 3738685145795944439
+    second: Blue Sprite_37
+  - first:
+      213: 2552210767084343087
+    second: Blue Sprite_38
+  - first:
+      213: -9160562302532640648
+    second: Blue Sprite_39
+  - first:
+      213: -1173886881789573272
+    second: Blue Sprite_40
+  - first:
+      213: -3440277148274776909
+    second: Blue Sprite_41
+  - first:
+      213: 7539620053142846786
+    second: Blue Sprite_42
+  - first:
+      213: -8946210967056467454
+    second: Blue Sprite_43
+  - first:
+      213: 3111062532785363972
+    second: Blue Sprite_44
+  - first:
+      213: -4354154339958223059
+    second: Blue Sprite_45
+  - first:
+      213: -2211468674123407054
+    second: Blue Sprite_46
+  - first:
+      213: -1178153568264320344
+    second: Blue Sprite_47
+  - first:
+      213: 3115375972986465106
+    second: Blue Sprite_48
+  - first:
+      213: -785264619451730556
+    second: Blue Sprite_49
+  - first:
+      213: -168665020319745250
+    second: Blue Sprite_50
+  - first:
+      213: 4326973178082747220
+    second: Blue Sprite_51
+  - first:
+      213: 1291890636270951020
+    second: Blue Sprite_52
+  - first:
+      213: 5469580311388278707
+    second: Blue Sprite_53
+  - first:
+      213: -5841759459510777899
+    second: Blue Sprite_54
+  - first:
+      213: 994021279234715057
+    second: Blue Sprite_55
+  - first:
+      213: -5848713767393415486
+    second: Blue Sprite_56
+  - first:
+      213: -936529230012697276
+    second: Blue Sprite_57
+  - first:
+      213: -5621466776532950031
+    second: Blue Sprite_58
+  - first:
+      213: 7625454958802907993
+    second: Blue Sprite_59
+  - first:
+      213: -5139329092537785146
+    second: Blue Sprite_60
+  - first:
+      213: -3102371991786581655
+    second: Blue Sprite_61
+  - first:
+      213: 235902914223077985
+    second: Blue Sprite_62
+  - first:
+      213: 6776433598800380923
+    second: Blue Sprite_63
+  - first:
+      213: -1938673462123016988
+    second: Blue Sprite_64
+  - first:
+      213: 3519488401226900492
+    second: Blue Sprite_65
+  - first:
+      213: 2447385466565577493
+    second: Blue Sprite_66
+  - first:
+      213: -7775479028072171340
+    second: Blue Sprite_67
+  - first:
+      213: 2325306628953267367
+    second: Blue Sprite_68
+  - first:
+      213: -1588524015073441508
+    second: Blue Sprite_69
+  - first:
+      213: -7559180541831494133
+    second: Blue Sprite_70
+  - first:
+      213: 2311980280708785712
+    second: Blue Sprite_71
+  - first:
+      213: -8660906128877625857
+    second: Blue Sprite_72
+  - first:
+      213: 3006106165189247356
+    second: Blue Sprite_73
+  - first:
+      213: -6612439270841229577
+    second: Blue Sprite_74
+  - first:
+      213: 4522553978513890937
+    second: Blue Sprite_75
+  - first:
+      213: 5603968141003132255
+    second: Blue Sprite_76
+  - first:
+      213: -4550330093666521402
+    second: Blue Sprite_77
+  - first:
+      213: 202571406656699538
+    second: Blue Sprite_78
+  - first:
+      213: -553140508221717056
+    second: Blue Sprite_79
+  - first:
+      213: 4823640362979102975
+    second: Blue Sprite_80
+  - first:
+      213: 2786487963439822487
+    second: Blue Sprite_81
+  - first:
+      213: 6917381571413703975
+    second: Blue Sprite_82
+  - first:
+      213: -5064473652294713727
+    second: Blue Sprite_83
+  - first:
+      213: 4244250192289566551
+    second: Blue Sprite_84
+  - first:
+      213: -5036059484078732093
+    second: Blue Sprite_85
+  - first:
+      213: -6173152927933119832
+    second: Blue Sprite_86
+  - first:
+      213: -2416644074259197930
+    second: Blue Sprite_87
+  - first:
+      213: -7817023000661138806
+    second: Blue Sprite_88
+  - first:
+      213: -9079558263416880636
+    second: Blue Sprite_89
+  - first:
+      213: -4993860510392052117
+    second: Blue Sprite_90
+  - first:
+      213: -4507097464158575788
+    second: Blue Sprite_91
+  - first:
+      213: 1894332089674542449
+    second: Blue Sprite_92
+  - first:
+      213: 5186754519674451479
+    second: Blue Sprite_93
+  - first:
+      213: -2146491529521034789
+    second: Blue Sprite_94
+  - first:
+      213: -1589651342628334493
+    second: Blue Sprite_95
+  - first:
+      213: 7962006228894816150
+    second: Blue Sprite_96
+  - first:
+      213: -1133121354211124110
+    second: Blue Sprite_97
+  - first:
+      213: 6604804493435836900
+    second: Blue Sprite_98
+  - first:
+      213: -6400335264956007207
+    second: Blue Sprite_99
+  - first:
+      213: 7676259091624931933
+    second: Blue Sprite_100
+  - first:
+      213: 7514753305592850868
+    second: Blue Sprite_101
+  - first:
+      213: 740468830562129341
+    second: Blue Sprite_102
+  - first:
+      213: -7457508733594638380
+    second: Blue Sprite_103
+  - first:
+      213: 2456684002827346507
+    second: Blue Sprite_104
+  - first:
+      213: 199472336523676528
+    second: Blue Sprite_105
+  - first:
+      213: -5869533459494295610
+    second: Blue Sprite_106
+  - first:
+      213: -1388405263239052474
+    second: Blue Sprite_107
+  - first:
+      213: 4071203330983709425
+    second: Blue Sprite_108
+  - first:
+      213: -6266616564722468696
+    second: Blue Sprite_109
+  - first:
+      213: -3902858329663815696
+    second: Blue Sprite_110
+  - first:
+      213: -149580493945967195
+    second: Blue Sprite_111
+  - first:
+      213: -2730978892515724797
+    second: Blue Sprite_112
+  - first:
+      213: 6125715769770965344
+    second: Blue Sprite_113
+  - first:
+      213: -8915242751485751629
+    second: Blue Sprite_114
+  - first:
+      213: -6767085116705994501
+    second: Blue Sprite_115
+  - first:
+      213: 5016793658696537209
+    second: Blue Sprite_116
+  - first:
+      213: 1509233834927852318
+    second: Blue Sprite_117
+  - first:
+      213: -5346375620914831840
+    second: Blue Sprite_118
+  - first:
+      213: -8195720132223163504
+    second: Blue Sprite_119
+  - first:
+      213: 5829621194927008903
+    second: Blue Sprite_120
+  - first:
+      213: -6190004235555183234
+    second: Blue Sprite_121
+  - first:
+      213: 8794854450485510200
+    second: Blue Sprite_122
+  - first:
+      213: 4584563571057719910
+    second: Blue Sprite_123
+  - first:
+      213: 2795326843203428117
+    second: Blue Sprite_124
+  - first:
+      213: 560992330476757006
+    second: Blue Sprite_125
+  - first:
+      213: -930634770112891476
+    second: Blue Sprite_126
+  - first:
+      213: -2175214695132595246
+    second: Blue Sprite_127
+  - first:
+      213: -2127261381687873149
+    second: Blue Sprite_128
+  - first:
+      213: 7245437460768015840
+    second: Blue Sprite_129
+  - first:
+      213: 7713200876397090021
+    second: Blue Sprite_130
+  - first:
+      213: 4163368573781800948
+    second: Blue Sprite_131
+  - first:
+      213: -2387704240041022929
+    second: Blue Sprite_132
+  - first:
+      213: -6393206649092226389
+    second: Blue Sprite_133
+  - first:
+      213: -254687772685242483
+    second: Blue Sprite_134
+  - first:
+      213: -8989471036340319702
+    second: Blue Sprite_135
+  - first:
+      213: -1727334194085508590
+    second: Blue Sprite_136
+  - first:
+      213: -2634493487859595688
+    second: Blue Sprite_137
+  - first:
+      213: 6072249759152512457
+    second: Blue Sprite_138
+  - first:
+      213: -1786770411888760721
+    second: Blue Sprite_139
+  - first:
+      213: -4807839526821438988
+    second: Blue Sprite_140
+  - first:
+      213: -2410542797452279211
+    second: Blue Sprite_141
+  - first:
+      213: -7051290632224049194
+    second: Blue Sprite_142
+  - first:
+      213: -5308180955795210298
+    second: Blue Sprite_143
+  - first:
+      213: -8146972990163906731
+    second: Blue Sprite_144
+  - first:
+      213: 1927612088284750716
+    second: Blue Sprite_145
+  - first:
+      213: 5542243918942109737
+    second: Blue Sprite_146
+  - first:
+      213: -4498132563458840012
+    second: Blue Sprite_147
+  - first:
+      213: 5986595042219773463
+    second: Blue Sprite_148
+  - first:
+      213: -7411590716221220758
+    second: Blue Sprite_149
+  - first:
+      213: 9083403202258847383
+    second: Blue Sprite_150
+  - first:
+      213: -1804614279002316851
+    second: Blue Sprite_151
+  - first:
+      213: -4294890069739868932
+    second: Blue Sprite_152
+  - first:
+      213: -7767143719561294262
+    second: Blue Sprite_153
+  - first:
+      213: 2638650032540984
+    second: Blue Sprite_154
+  - first:
+      213: 8565851571139241514
+    second: Blue Sprite_155
+  - first:
+      213: -1562697229445760461
+    second: Blue Sprite_156
+  - first:
+      213: -1358339810408166775
+    second: Blue Sprite_157
+  - first:
+      213: -8532071378683527005
+    second: Blue Sprite_158
+  - first:
+      213: 8302591470750257822
+    second: Blue Sprite_159
+  - first:
+      213: -1128455040030574848
+    second: Blue Sprite_160
+  - first:
+      213: -3291607119526890411
+    second: Blue Sprite_161
+  - first:
+      213: 577724402985370631
+    second: Blue Sprite_162
+  - first:
+      213: -7676919191179536006
+    second: Blue Sprite_163
+  - first:
+      213: -4189117078117335820
+    second: Blue Sprite_164
+  - first:
+      213: -1830689576953507513
+    second: Blue Sprite_165
+  - first:
+      213: 1117876752314724925
+    second: Blue Sprite_166
+  - first:
+      213: 4071793844355407582
+    second: Blue Sprite_167
+  - first:
+      213: -3934039833178519962
+    second: Blue Sprite_168
+  - first:
+      213: -1063879279345883195
+    second: Blue Sprite_169
+  - first:
+      213: 2163009724745827529
+    second: Blue Sprite_170
+  - first:
+      213: -6580843561282849724
+    second: Blue Sprite_171
+  - first:
+      213: -6996495866110293246
+    second: Blue Sprite_172
+  - first:
+      213: -1406169001944393472
+    second: Blue Sprite_173
+  - first:
+      213: -6598174752526829733
+    second: Blue Sprite_174
+  - first:
+      213: 387473422562477977
+    second: Blue Sprite_175
+  - first:
+      213: 6957805863034561736
+    second: Blue Sprite_176
+  - first:
+      213: -5666790875746735405
+    second: Blue Sprite_177
+  - first:
+      213: -283166727575766807
+    second: Blue Sprite_178
+  - first:
+      213: 8220105217048049320
+    second: Blue Sprite_179
+  - first:
+      213: -160229142278227799
+    second: Blue Sprite_180
+  - first:
+      213: -988753767569296747
+    second: Blue Sprite_181
+  - first:
+      213: -5049429552737896076
+    second: Blue Sprite_182
+  - first:
+      213: 6451616007663928468
+    second: Blue Sprite_183
+  - first:
+      213: -8728709967884687386
+    second: Blue Sprite_184
+  - first:
+      213: 2104913021879306207
+    second: Blue Sprite_185
+  - first:
+      213: 1579221291245045707
+    second: Blue Sprite_186
+  - first:
+      213: -7791938943082773227
+    second: Blue Sprite_187
+  - first:
+      213: -7495313998870498494
+    second: Blue Sprite_188
+  - first:
+      213: -9109010177373933444
+    second: Blue Sprite_189
+  - first:
+      213: 8217117459681736172
+    second: Blue Sprite_190
+  - first:
+      213: -4076085022576106479
+    second: Blue Sprite_191
+  - first:
+      213: 3920358966149671861
+    second: Blue Sprite_192
+  - first:
+      213: 3502801427788576248
+    second: Blue Sprite_193
+  - first:
+      213: -3074185055416522851
+    second: Blue Sprite_194
+  - first:
+      213: -4005182262283193087
+    second: Blue Sprite_195
+  - first:
+      213: -3631623125267416309
+    second: Blue Sprite_196
+  - first:
+      213: -7386862070279384754
+    second: Blue Sprite_197
+  - first:
+      213: 8844697025954352936
+    second: Blue Sprite_198
+  - first:
+      213: 8461318534581977298
+    second: Blue Sprite_199
+  - first:
+      213: 1255268596558958438
+    second: Blue Sprite_200
+  - first:
+      213: -2053034605092729193
+    second: Blue Sprite_201
+  - first:
+      213: 1912933484255927458
+    second: Blue Sprite_202
+  - first:
+      213: -6671722148806846279
+    second: Blue Sprite_203
+  - first:
+      213: 7432834922127968209
+    second: Blue Sprite_204
+  - first:
+      213: 253741848875695001
+    second: Blue Sprite_205
+  - first:
+      213: 489409541023921592
+    second: Blue Sprite_206
+  - first:
+      213: -9084058624019927976
+    second: Blue Sprite_207
+  - first:
+      213: 5347358549320058179
+    second: Blue Sprite_208
+  - first:
+      213: 6209483745997044777
+    second: Blue Sprite_209
+  - first:
+      213: 7784084869010278094
+    second: Blue Sprite_210
+  - first:
+      213: 5576560322414277409
+    second: Blue Sprite_211
+  - first:
+      213: 594500266874254053
+    second: Blue Sprite_212
+  - first:
+      213: 4654232496848987956
+    second: Blue Sprite_213
+  - first:
+      213: 5782747457488790516
+    second: Blue Sprite_214
+  - first:
+      213: 3335412381010993414
+    second: Blue Sprite_215
+  - first:
+      213: -7091141879332527369
+    second: Blue Sprite_216
+  - first:
+      213: -9204513719093983914
+    second: Blue Sprite_217
+  - first:
+      213: 4587964335513812704
+    second: Blue Sprite_218
+  - first:
+      213: 4936572453579639048
+    second: Blue Sprite_219
+  - first:
+      213: 1928370390241268111
+    second: Blue Sprite_220
+  - first:
+      213: -2291360351942881195
+    second: Blue Sprite_221
+  - first:
+      213: 8447506820326430530
+    second: Blue Sprite_222
+  - first:
+      213: 3342126617226422658
+    second: Blue Sprite_223
+  - first:
+      213: 8733226712267710555
+    second: Blue Sprite_224
+  - first:
+      213: -7162710508869413189
+    second: Blue Sprite_225
+  - first:
+      213: 2501316791998347032
+    second: Blue Sprite_226
+  - first:
+      213: -1745172120546250162
+    second: Blue Sprite_227
+  - first:
+      213: 5737429483104381975
+    second: Blue Sprite_228
+  - first:
+      213: 851909240504652373
+    second: Blue Sprite_229
+  - first:
+      213: 2961244940478286268
+    second: Blue Sprite_230
+  - first:
+      213: 3054960972290370692
+    second: Blue Sprite_231
+  - first:
+      213: 8736366998359505932
+    second: Blue Sprite_232
+  - first:
+      213: 4245112796507917176
+    second: Blue Sprite_233
+  - first:
+      213: -5742652094208450440
+    second: Blue Sprite_234
+  - first:
+      213: -8902786812042429320
+    second: Blue Sprite_235
+  - first:
+      213: -6776325330567330340
+    second: Blue Sprite_236
+  - first:
+      213: -1545804321940975810
+    second: Blue Sprite_237
+  - first:
+      213: -3427234316777698636
+    second: Blue Sprite_238
+  - first:
+      213: -7402461603351890424
+    second: Blue Sprite_239
+  - first:
+      213: -2197984914063568004
+    second: Blue Sprite_240
+  - first:
+      213: -6281311789355612282
+    second: Blue Sprite_241
+  - first:
+      213: -83046871320685549
+    second: Blue Sprite_242
+  - first:
+      213: 3363156899185203720
+    second: Blue Sprite_243
+  - first:
+      213: -4309295466302155312
+    second: Blue Sprite_244
+  - first:
+      213: 361799667246131171
+    second: Blue Sprite_245
+  - first:
+      213: 5558337896921565697
+    second: Blue Sprite_246
+  - first:
+      213: -4532068355905331436
+    second: Blue Sprite_247
+  - first:
+      213: -3592639127431080027
+    second: Blue Sprite_248
+  - first:
+      213: 3080773194186239122
+    second: Blue Sprite_249
+  - first:
+      213: 5704339625501520814
+    second: Blue Sprite_250
+  - first:
+      213: -4112336382444887779
+    second: Blue Sprite_251
+  - first:
+      213: -140885712889225222
+    second: Blue Sprite_252
+  - first:
+      213: -2993889341808129982
+    second: Blue Sprite_253
+  - first:
+      213: 5843131146320256212
+    second: Blue Sprite_254
+  - first:
+      213: 4872065696856529250
+    second: Blue Sprite_255
+  - first:
+      213: -2709555165012616284
+    second: Blue Sprite_256
+  - first:
+      213: 3485280475491240711
+    second: Blue Sprite_257
+  - first:
+      213: 5697687445931394125
+    second: Blue Sprite_258
+  - first:
+      213: -8506205186240847572
+    second: Blue Sprite_259
+  - first:
+      213: -1457111828389144487
+    second: Blue Sprite_260
+  - first:
+      213: -6817554630060079129
+    second: Blue Sprite_261
+  - first:
+      213: -3921446505576160612
+    second: Blue Sprite_262
+  - first:
+      213: 644197406174460072
+    second: Blue Sprite_263
+  - first:
+      213: 4646429428869044495
+    second: Blue Sprite_264
+  - first:
+      213: -5960621079821764927
+    second: Blue Sprite_265
+  - first:
+      213: -1693430510333959477
+    second: Blue Sprite_266
+  - first:
+      213: -5662358506443077880
+    second: Blue Sprite_267
+  - first:
+      213: 3026239583118624474
+    second: Blue Sprite_268
+  - first:
+      213: -3944423899987935703
+    second: Blue Sprite_269
+  - first:
+      213: 1707163415302628735
+    second: Blue Sprite_270
+  - first:
+      213: -7330313522242053879
+    second: Blue Sprite_271
+  - first:
+      213: -3255294634200480984
+    second: Blue Sprite_272
+  - first:
+      213: 8568644943378026352
+    second: Blue Sprite_273
+  - first:
+      213: 7087953729069399888
+    second: Blue Sprite_274
+  - first:
+      213: -1454937087110888239
+    second: Blue Sprite_275
+  - first:
+      213: -3240216117604007508
+    second: Blue Sprite_276
+  - first:
+      213: -8480760339855326002
+    second: Blue Sprite_277
+  - first:
+      213: 1381695110553082959
+    second: Blue Sprite_278
+  - first:
+      213: 1851490629795028734
+    second: Blue Sprite_279
+  - first:
+      213: -2313564668295186166
+    second: Blue Sprite_280
+  - first:
+      213: -6575324489786923431
+    second: Blue Sprite_281
+  - first:
+      213: -4028622514590825068
+    second: Blue Sprite_282
+  - first:
+      213: -3807610464646425962
+    second: Blue Sprite_283
+  - first:
+      213: -5268220158986572415
+    second: Blue Sprite_284
+  - first:
+      213: 7417884079791860414
+    second: Blue Sprite_285
+  - first:
+      213: 3501119603574808234
+    second: Blue Sprite_286
+  - first:
+      213: -3913027949778810674
+    second: Blue Sprite_287
+  - first:
+      213: -7321757614711647816
+    second: Blue Sprite_288
+  - first:
+      213: -4649739415894146918
+    second: Blue Sprite_289
+  - first:
+      213: -5343319705275222759
+    second: Blue Sprite_290
+  - first:
+      213: 1647057798066633703
+    second: Blue Sprite_291
+  - first:
+      213: 6691962935011590227
+    second: Blue Sprite_292
+  - first:
+      213: -9036234195139869809
+    second: Blue Sprite_293
+  - first:
+      213: 8554703172856279134
+    second: Blue Sprite_294
+  - first:
+      213: 8790214736724312778
+    second: Blue Sprite_295
+  - first:
+      213: -4080078603775337733
+    second: Blue Sprite_296
+  - first:
+      213: -9091614461650499772
+    second: Blue Sprite_297
+  - first:
+      213: -4744945006173738195
+    second: Blue Sprite_298
+  - first:
+      213: 3271026571801329274
+    second: Blue Sprite_299
+  - first:
+      213: 140344903627865160
+    second: Blue Sprite_300
+  - first:
+      213: 1714333359050698429
+    second: Blue Sprite_301
+  - first:
+      213: -6139797654194978036
+    second: Blue Sprite_302
+  - first:
+      213: 5739894805376800304
+    second: Blue Sprite_303
+  - first:
+      213: -2028222191343034813
+    second: Blue Sprite_304
+  - first:
+      213: -3430237429970097795
+    second: Blue Sprite_305
+  - first:
+      213: 2052597858952659997
+    second: Blue Sprite_306
+  - first:
+      213: 3064443111454162510
+    second: Blue Sprite_307
+  - first:
+      213: -1525478883946490062
+    second: Blue Sprite_308
+  - first:
+      213: -4577759359651510303
+    second: Blue Sprite_309
+  - first:
+      213: 1007641365757697229
+    second: Blue Sprite_310
+  - first:
+      213: -6714835375414021298
+    second: Blue Sprite_311
+  - first:
+      213: -8542106906238424009
+    second: Blue Sprite_312
+  - first:
+      213: 449783643467308446
+    second: Blue Sprite_313
+  - first:
+      213: 1163720672381947591
+    second: Blue Sprite_314
+  - first:
+      213: -5852750854214232856
+    second: Blue Sprite_315
+  - first:
+      213: -7599889769124258613
+    second: Blue Sprite_316
+  - first:
+      213: 2028550194835958684
+    second: Blue Sprite_317
+  - first:
+      213: 8211272547100238525
+    second: Blue Sprite_318
+  - first:
+      213: -3229976999806284110
+    second: Blue Sprite_319
+  - first:
+      213: -2562503760728302315
+    second: Blue Sprite_320
+  - first:
+      213: -3949031703326356532
+    second: Blue Sprite_321
+  - first:
+      213: -2752876455126434945
+    second: Blue Sprite_322
+  - first:
+      213: -7055889532365535453
+    second: Blue Sprite_323
+  - first:
+      213: -7304716419232197472
+    second: Blue Sprite_324
+  - first:
+      213: -4904497165909479242
+    second: Blue Sprite_325
+  - first:
+      213: -5056541795417511719
+    second: Blue Sprite_326
+  - first:
+      213: 721510088216319709
+    second: Blue Sprite_327
+  - first:
+      213: 2019516877987864511
+    second: Blue Sprite_328
+  - first:
+      213: 3907421618341065599
+    second: Blue Sprite_329
+  - first:
+      213: -7925662736287228605
+    second: Blue Sprite_330
+  - first:
+      213: -4636343148763325896
+    second: Blue Sprite_331
+  - first:
+      213: 8594773268695587961
+    second: Blue Sprite_332
+  - first:
+      213: 1509116533007067378
+    second: Blue Sprite_333
+  - first:
+      213: 5031848599668304970
+    second: Blue Sprite_334
+  - first:
+      213: 8665096506815259355
+    second: Blue Sprite_335
+  - first:
+      213: -6902090691454856460
+    second: Blue Sprite_336
+  - first:
+      213: 3126381055479716297
+    second: Blue Sprite_337
+  - first:
+      213: -4512704585553978953
+    second: Blue Sprite_338
+  - first:
+      213: 3183978359110936964
+    second: Blue Sprite_339
+  - first:
+      213: -2470439157096813511
+    second: Blue Sprite_340
+  - first:
+      213: -115038204727321083
+    second: Blue Sprite_341
+  - first:
+      213: -2648897690795900546
+    second: Blue Sprite_342
+  - first:
+      213: 8219060972969228688
+    second: Blue Sprite_343
+  - first:
+      213: 7065187650977933495
+    second: Blue Sprite_344
+  - first:
+      213: 6330218267288403473
+    second: Blue Sprite_345
+  - first:
+      213: -3842735281784050347
+    second: Blue Sprite_346
+  - first:
+      213: 2212590683389104440
+    second: Blue Sprite_347
+  - first:
+      213: -5937085203691920494
+    second: Blue Sprite_348
+  - first:
+      213: 7677870433604660807
+    second: Blue Sprite_349
+  - first:
+      213: 1964292481480514146
+    second: Blue Sprite_350
+  - first:
+      213: -1020204706111270490
+    second: Blue Sprite_351
+  - first:
+      213: 7190710181527443342
+    second: Blue Sprite_352
+  - first:
+      213: 8511743867258034939
+    second: Blue Sprite_353
+  - first:
+      213: 4724884753653050247
+    second: Blue Sprite_354
+  - first:
+      213: 1338924760176943515
+    second: Blue Sprite_355
+  - first:
+      213: 1356575308875805347
+    second: Blue Sprite_356
+  - first:
+      213: 1735229821920627925
+    second: Blue Sprite_357
+  - first:
+      213: 2598228084271120648
+    second: Blue Sprite_358
+  - first:
+      213: -8908238607959755326
+    second: Blue Sprite_359
+  - first:
+      213: -8836882454463790558
+    second: Blue Sprite_360
+  - first:
+      213: -8413193988468972022
+    second: Blue Sprite_361
+  - first:
+      213: -1286748439628646903
+    second: Blue Sprite_362
+  - first:
+      213: 1372949455856677956
+    second: Blue Sprite_363
+  - first:
+      213: -4304675675611309458
+    second: Blue Sprite_364
+  - first:
+      213: -6871334925504750250
+    second: Blue Sprite_365
+  - first:
+      213: -1075324703598843621
+    second: Blue Sprite_366
+  - first:
+      213: 1725732133803985273
+    second: Blue Sprite_367
+  - first:
+      213: -954615579184955667
+    second: Blue Sprite_368
+  - first:
+      213: -1179358907036701574
+    second: Blue Sprite_369
+  - first:
+      213: 5907392346721584985
+    second: Blue Sprite_370
+  - first:
+      213: -7322011140314065197
+    second: Blue Sprite_371
+  - first:
+      213: 4098009292845506486
+    second: Blue Sprite_372
+  - first:
+      213: -196895616334579819
+    second: Blue Sprite_373
+  - first:
+      213: -2238617502870099356
+    second: Blue Sprite_374
+  - first:
+      213: 2699927440550252008
+    second: Blue Sprite_375
+  - first:
+      213: -1526248636095740876
+    second: Blue Sprite_376
+  - first:
+      213: 2895221322847649757
+    second: Blue Sprite_377
+  - first:
+      213: -1117236781289968085
+    second: Blue Sprite_378
+  - first:
+      213: -8205752985843661074
+    second: Blue Sprite_379
+  - first:
+      213: -2110112905595313923
+    second: Blue Sprite_380
+  - first:
+      213: -1966290727330654567
+    second: Blue Sprite_381
+  - first:
+      213: 6980656057036002704
+    second: Blue Sprite_382
+  - first:
+      213: -475703830802759043
+    second: Blue Sprite_383
+  - first:
+      213: -1952780085361347329
+    second: Blue Sprite_384
+  - first:
+      213: -3443662700101318954
+    second: Blue Sprite_385
+  - first:
+      213: -4317701837447160509
+    second: Blue Sprite_386
+  - first:
+      213: -6977031805915124185
+    second: Blue Sprite_387
+  - first:
+      213: -3336187927312296116
+    second: Blue Sprite_388
+  - first:
+      213: -4645226840923619051
+    second: Blue Sprite_389
+  - first:
+      213: -8372951577357891256
+    second: Blue Sprite_390
+  - first:
+      213: -5485256965132475079
+    second: Blue Sprite_391
+  - first:
+      213: -1313838028254167487
+    second: Blue Sprite_392
+  - first:
+      213: -7515740386325882494
+    second: Blue Sprite_393
+  - first:
+      213: 3964348861258068096
+    second: Blue Sprite_394
+  - first:
+      213: 4431440046148194573
+    second: Blue Sprite_395
+  - first:
+      213: 8525495488566515265
+    second: Blue Sprite_396
+  - first:
+      213: -7391814801651701697
+    second: Blue Sprite_397
+  - first:
+      213: -6699538890932809872
+    second: Blue Sprite_398
+  - first:
+      213: -8240865996075294380
+    second: Blue Sprite_399
+  - first:
+      213: -278534748097272365
+    second: Blue Sprite_400
+  - first:
+      213: 3583378230318933258
+    second: Blue Sprite_401
+  - first:
+      213: -7481782216094170371
+    second: Blue Sprite_402
+  - first:
+      213: 3282680651334338361
+    second: Blue Sprite_403
+  - first:
+      213: 5157911224230911488
+    second: Blue Sprite_404
+  - first:
+      213: 7152266157633718711
+    second: Blue Sprite_405
+  - first:
+      213: 3046384262453658247
+    second: Blue Sprite_406
+  - first:
+      213: -8764809872896779617
+    second: Blue Sprite_407
+  - first:
+      213: -8310399160313797758
+    second: Blue Sprite_408
+  - first:
+      213: -3394004829588603892
+    second: Blue Sprite_409
+  - first:
+      213: -3423895815406595612
+    second: Blue Sprite_410
+  - first:
+      213: -3176367024916078053
+    second: Blue Sprite_411
+  - first:
+      213: 3619283571033047182
+    second: Blue Sprite_412
+  - first:
+      213: -3717093871350797355
+    second: Blue Sprite_413
+  - first:
+      213: 8219432371386268911
+    second: Blue Sprite_414
+  - first:
+      213: 3455873371866226770
+    second: Blue Sprite_415
+  - first:
+      213: 7777938088525616255
+    second: Blue Sprite_416
+  - first:
+      213: -3485168470674490616
+    second: Blue Sprite_417
+  - first:
+      213: -7645608962180147496
+    second: Blue Sprite_418
+  - first:
+      213: 6129979355028433343
+    second: Blue Sprite_419
+  - first:
+      213: 1504521211215008776
+    second: Blue Sprite_420
+  - first:
+      213: -6527393180717570513
+    second: Blue Sprite_421
+  - first:
+      213: 7709984244008015681
+    second: Blue Sprite_422
+  - first:
+      213: -3284784973150656205
+    second: Blue Sprite_423
+  - first:
+      213: -8167339372259286039
+    second: Blue Sprite_424
+  - first:
+      213: -4025889821195668910
+    second: Blue Sprite_425
+  - first:
+      213: -2753719130528107889
+    second: Blue Sprite_426
+  - first:
+      213: 6739027913746380856
+    second: Blue Sprite_427
+  - first:
+      213: 7937471968010967516
+    second: Blue Sprite_428
+  - first:
+      213: 252858670578145817
+    second: Blue Sprite_429
+  - first:
+      213: 8249930728994732555
+    second: Blue Sprite_430
+  - first:
+      213: 2177439115872768671
+    second: Blue Sprite_431
+  - first:
+      213: -6997042908201930838
+    second: Blue Sprite_432
+  - first:
+      213: -7944120736054417293
+    second: Blue Sprite_433
+  - first:
+      213: 7961387414422955339
+    second: Blue Sprite_434
+  - first:
+      213: 4104853135564083288
+    second: Blue Sprite_435
+  - first:
+      213: 6683484031049445898
+    second: Blue Sprite_436
+  - first:
+      213: 5371684442702648171
+    second: Blue Sprite_437
+  - first:
+      213: -7651993885598702487
+    second: Blue Sprite_438
+  - first:
+      213: 8253875868063382756
+    second: Blue Sprite_439
+  - first:
+      213: 7082022447324481668
+    second: Blue Sprite_440
+  - first:
+      213: -6718820032036439979
+    second: Blue Sprite_441
+  - first:
+      213: -7441025793475267061
+    second: Blue Sprite_442
+  - first:
+      213: 800523858801393459
+    second: Blue Sprite_443
+  - first:
+      213: 4905238893231056679
+    second: Blue Sprite_444
+  - first:
+      213: 8442797888083767662
+    second: Blue Sprite_445
+  - first:
+      213: 2948581103650195444
+    second: Blue Sprite_446
+  - first:
+      213: 7027426798910662362
+    second: Blue Sprite_447
+  - first:
+      213: 6723969223955490486
+    second: Blue Sprite_448
+  - first:
+      213: -2363773575374872388
+    second: Blue Sprite_449
+  - first:
+      213: -3406394021635804371
+    second: Blue Sprite_450
+  - first:
+      213: -1202735977886221879
+    second: Blue Sprite_451
+  - first:
+      213: -5698504731367212902
+    second: Blue Sprite_452
+  - first:
+      213: -5513851655729194139
+    second: Blue Sprite_453
+  - first:
+      213: 3311002087931923598
+    second: Blue Sprite_454
+  - first:
+      213: 7803498653468128988
+    second: Blue Sprite_455
+  - first:
+      213: 8455423325041758218
+    second: Blue Sprite_456
+  - first:
+      213: 1386263900511650465
+    second: Blue Sprite_457
+  - first:
+      213: 3074904497077959926
+    second: Blue Sprite_458
+  - first:
+      213: 7259431177153086108
+    second: Blue Sprite_459
+  - first:
+      213: -2095636852230020803
+    second: Blue Sprite_460
+  - first:
+      213: 4043267049287317428
+    second: Blue Sprite_461
+  - first:
+      213: 2259230370558244388
+    second: Blue Sprite_462
+  - first:
+      213: 6197480739115998250
+    second: Blue Sprite_463
+  - first:
+      213: 1384645847233239625
+    second: Blue Sprite_464
+  - first:
+      213: -4992906103892695561
+    second: Blue Sprite_465
+  - first:
+      213: 2163349290524732549
+    second: Blue Sprite_466
+  - first:
+      213: -8626193194645661575
+    second: Blue Sprite_467
+  - first:
+      213: 3439494651976047670
+    second: Blue Sprite_468
+  - first:
+      213: 8750323751843866622
+    second: Blue Sprite_469
+  - first:
+      213: -197701533239782509
+    second: Blue Sprite_470
+  - first:
+      213: 4836195545340407440
+    second: Blue Sprite_471
+  - first:
+      213: -560061496272885602
+    second: Blue Sprite_472
+  - first:
+      213: 6002532389685388425
+    second: Blue Sprite_473
+  - first:
+      213: -7327916805251270535
+    second: Blue Sprite_474
+  - first:
+      213: -5039580205554163391
+    second: Blue Sprite_475
+  - first:
+      213: -3476692206457176411
+    second: Blue Sprite_476
+  - first:
+      213: -2494685537866699127
+    second: Blue Sprite_477
+  - first:
+      213: -4084925022877060116
+    second: Blue Sprite_478
+  - first:
+      213: 8652602264958673476
+    second: Blue Sprite_479
+  - first:
+      213: 3176567109868141994
+    second: Blue Sprite_480
+  - first:
+      213: -5727849556199975166
+    second: Blue Sprite_481
+  - first:
+      213: 4820352666210119782
+    second: Blue Sprite_482
+  - first:
+      213: -8050898971574617509
+    second: Blue Sprite_483
+  - first:
+      213: -8139813489653843412
+    second: Blue Sprite_484
+  - first:
+      213: 2467317153509369029
+    second: Blue Sprite_485
+  - first:
+      213: 1446225047699821703
+    second: Blue Sprite_486
+  - first:
+      213: -504433081523294059
+    second: Blue Sprite_487
+  - first:
+      213: -558762715552870862
+    second: Blue Sprite_488
+  - first:
+      213: -8456568195750634166
+    second: Blue Sprite_489
+  - first:
+      213: 2998611779886370644
+    second: Blue Sprite_490
+  - first:
+      213: 5112840891188602883
+    second: Blue Sprite_491
+  - first:
+      213: -1714972371709665013
+    second: Blue Sprite_492
+  - first:
+      213: -3766958871024211043
+    second: Blue Sprite_493
+  - first:
+      213: -4110565676105917108
+    second: Blue Sprite_494
+  - first:
+      213: -6217801076818038711
+    second: Blue Sprite_495
+  - first:
+      213: 5339154312725097179
+    second: Blue Sprite_496
+  - first:
+      213: -4352210589059469424
+    second: Blue Sprite_497
+  - first:
+      213: -2382566467229938306
+    second: Blue Sprite_498
+  - first:
+      213: 2323476215086548117
+    second: Blue Sprite_499
+  - first:
+      213: -8084870218626022312
+    second: Blue Sprite_500
+  - first:
+      213: 7253825506356106113
+    second: Blue Sprite_501
+  - first:
+      213: -5219701058107439107
+    second: Blue Sprite_502
+  - first:
+      213: 6251661577869652235
+    second: Blue Sprite_503
+  - first:
+      213: -3888470470024167488
+    second: Blue Sprite_504
+  - first:
+      213: -2924794384740359632
+    second: Blue Sprite_505
+  - first:
+      213: 6016050246666845698
+    second: Blue Sprite_506
+  - first:
+      213: -7341512574405642010
+    second: Blue Sprite_507
+  - first:
+      213: -9097902596608262973
+    second: Blue Sprite_508
+  - first:
+      213: -919322312595456519
+    second: Blue Sprite_509
+  - first:
+      213: 1144867444768344830
+    second: Blue Sprite_510
+  - first:
+      213: 6709822188437454462
+    second: Blue Sprite_511
+  - first:
+      213: -9015353082124091163
+    second: Blue Sprite_512
+  - first:
+      213: 2423696862415335237
+    second: Blue Sprite_513
+  - first:
+      213: -7787208380337572842
+    second: Blue Sprite_514
+  - first:
+      213: -762490003143226052
+    second: Blue Sprite_515
+  - first:
+      213: 4275254928913160665
+    second: Blue Sprite_516
+  - first:
+      213: -5055678000292416498
+    second: Blue Sprite_517
+  - first:
+      213: -712430630702997383
+    second: Blue Sprite_518
+  - first:
+      213: 9114656082791907140
+    second: Blue Sprite_519
+  - first:
+      213: -6896799230238039543
+    second: Blue Sprite_520
+  - first:
+      213: 2218510524606805085
+    second: Blue Sprite_521
+  - first:
+      213: 6730613619902146326
+    second: Blue Sprite_522
+  - first:
+      213: 891331954390184063
+    second: Blue Sprite_523
+  - first:
+      213: 6481591722568343879
+    second: Blue Sprite_524
+  - first:
+      213: -3695684708251154438
+    second: Blue Sprite_525
+  - first:
+      213: -614373568053338607
+    second: Blue Sprite_526
+  - first:
+      213: -6848980629375517378
+    second: Blue Sprite_527
+  - first:
+      213: -317589906945949690
+    second: Blue Sprite_528
+  - first:
+      213: -8843319043310341810
+    second: Blue Sprite_529
+  - first:
+      213: 3388708794925517418
+    second: Blue Sprite_530
+  - first:
+      213: -5566666531574465966
+    second: Blue Sprite_531
+  - first:
+      213: -2994396167818104314
+    second: Blue Sprite_532
+  - first:
+      213: 7529106361175350644
+    second: Blue Sprite_533
+  - first:
+      213: 1884195483196504751
+    second: Blue Sprite_534
+  - first:
+      213: -9143651786993146664
+    second: Blue Sprite_535
+  - first:
+      213: 6315570650435991488
+    second: Blue Sprite_536
+  - first:
+      213: 5608031316360474851
+    second: Blue Sprite_537
+  - first:
+      213: -5943756459889812997
+    second: Blue Sprite_538
+  - first:
+      213: -7694417766708313076
+    second: Blue Sprite_539
+  - first:
+      213: 9089813874973130442
+    second: Blue Sprite_540
+  - first:
+      213: 3180684147901042409
+    second: Blue Sprite_541
+  - first:
+      213: -2466318068795890515
+    second: Blue Sprite_542
+  - first:
+      213: 2048953190990806308
+    second: Blue Sprite_543
+  - first:
+      213: 253727217199790163
+    second: Blue Sprite_544
+  - first:
+      213: -898884165872941993
+    second: Blue Sprite_545
+  - first:
+      213: 2414373405787507236
+    second: Blue Sprite_546
+  - first:
+      213: 7887104818632895941
+    second: Blue Sprite_547
+  - first:
+      213: 3093687236063477046
+    second: Blue Sprite_548
+  - first:
+      213: -1921354093233193279
+    second: Blue Sprite_549
+  - first:
+      213: 3736153223465800234
+    second: Blue Sprite_550
+  - first:
+      213: -8597220421022228887
+    second: Blue Sprite_551
+  - first:
+      213: 2593381364845426306
+    second: Blue Sprite_552
+  - first:
+      213: 5125447900732771484
+    second: Blue Sprite_553
+  - first:
+      213: -8046961145488464740
+    second: Blue Sprite_554
+  - first:
+      213: -6410378500952112475
+    second: Blue Sprite_555
+  - first:
+      213: -8755158079383889219
+    second: Blue Sprite_556
+  - first:
+      213: -4430464189105665454
+    second: Blue Sprite_557
+  - first:
+      213: -7571507419337587001
+    second: Blue Sprite_558
+  - first:
+      213: 4368154383149339819
+    second: Blue Sprite_559
+  - first:
+      213: 7595846709788201111
+    second: Blue Sprite_560
+  - first:
+      213: 8156802682362039434
+    second: Blue Sprite_561
+  - first:
+      213: 2661783456303046698
+    second: Blue Sprite_562
+  - first:
+      213: 2778368000014382253
+    second: Blue Sprite_563
+  - first:
+      213: 3853916895891116433
+    second: Blue Sprite_564
+  - first:
+      213: -3174117833117245268
+    second: Blue Sprite_565
+  - first:
+      213: 4521366155661015894
+    second: Blue Sprite_566
+  - first:
+      213: -7244518723080036547
+    second: Blue Sprite_567
+  - first:
+      213: 4118375149619024099
+    second: Blue Sprite_568
+  - first:
+      213: -2731547721147231594
+    second: Blue Sprite_569
+  - first:
+      213: -145474465393254838
+    second: Blue Sprite_570
+  - first:
+      213: -1752327431651924622
+    second: Blue Sprite_571
+  - first:
+      213: -8289184801534885236
+    second: Blue Sprite_572
+  - first:
+      213: -4368461932490534170
+    second: Blue Sprite_573
+  - first:
+      213: -4805373624932607851
+    second: Blue Sprite_574
+  - first:
+      213: 4917084167511640097
+    second: Blue Sprite_575
+  - first:
+      213: -6303979067552229667
+    second: Blue Sprite_576
+  - first:
+      213: 3328637273400678646
+    second: Blue Sprite_577
+  - first:
+      213: -6671662304735345883
+    second: Blue Sprite_578
+  - first:
+      213: -8249522484143201735
+    second: Blue Sprite_579
+  - first:
+      213: -5931391770600409403
+    second: Blue Sprite_580
+  - first:
+      213: 6056618469739174499
+    second: Blue Sprite_581
+  - first:
+      213: 5553820039101276815
+    second: Blue Sprite_582
+  - first:
+      213: -8919622898840883668
+    second: Blue Sprite_583
+  - first:
+      213: 4712229478244657825
+    second: Blue Sprite_584
+  - first:
+      213: -5888089404339288044
+    second: Blue Sprite_585
+  - first:
+      213: -717248425074803951
+    second: Blue Sprite_586
+  - first:
+      213: 8327056921996234001
+    second: Blue Sprite_587
+  - first:
+      213: -3461873312256701722
+    second: Blue Sprite_588
+  - first:
+      213: 6546660215820224487
+    second: Blue Sprite_589
+  - first:
+      213: 1811852649465645666
+    second: Blue Sprite_590
+  - first:
+      213: 6706737499443584996
+    second: Blue Sprite_591
+  - first:
+      213: -579064394248024685
+    second: Blue Sprite_592
+  - first:
+      213: -1802315035984745009
+    second: Blue Sprite_593
+  - first:
+      213: 2135389261853407904
+    second: Blue Sprite_594
+  - first:
+      213: 2406572907581202173
+    second: Blue Sprite_595
+  - first:
+      213: -2992393305703317024
+    second: Blue Sprite_596
+  - first:
+      213: -3926259944019769767
+    second: Blue Sprite_597
+  - first:
+      213: -4659068526804877290
+    second: Blue Sprite_598
+  - first:
+      213: -8250206842315332396
+    second: Blue Sprite_599
+  - first:
+      213: -5684043550281924827
+    second: Blue Sprite_600
+  - first:
+      213: -6516405732342425877
+    second: Blue Sprite_601
+  - first:
+      213: 1697639353237932220
+    second: Blue Sprite_602
+  - first:
+      213: 3831475216294497442
+    second: Blue Sprite_603
+  - first:
+      213: 5149424863530570430
+    second: Blue Sprite_604
+  - first:
+      213: -4499544926848066641
+    second: Blue Sprite_605
+  - first:
+      213: -3241349262665444979
+    second: Blue Sprite_606
+  - first:
+      213: 6949565997755481034
+    second: Blue Sprite_607
+  - first:
+      213: -5732488088515339057
+    second: Blue Sprite_608
+  - first:
+      213: -6606032649340272804
+    second: Blue Sprite_609
+  - first:
+      213: 3535539496785113485
+    second: Blue Sprite_610
+  - first:
+      213: -1735083834731740786
+    second: Blue Sprite_611
+  - first:
+      213: 2787842655738659359
+    second: Blue Sprite_612
+  - first:
+      213: -9206120335954702968
+    second: Blue Sprite_613
+  - first:
+      213: 8033645851299944372
+    second: Blue Sprite_614
+  - first:
+      213: -5118829868327747593
+    second: Blue Sprite_615
+  - first:
+      213: 3009544771920696810
+    second: Blue Sprite_616
+  - first:
+      213: -816869348612743813
+    second: Blue Sprite_617
+  - first:
+      213: -1299544176447295467
+    second: Blue Sprite_618
+  - first:
+      213: 4199813994979142083
+    second: Blue Sprite_619
+  - first:
+      213: -8152690744671968599
+    second: Blue Sprite_620
+  - first:
+      213: -1825694467423038672
+    second: Blue Sprite_621
+  - first:
+      213: -5534473857035196527
+    second: Blue Sprite_622
+  - first:
+      213: -5726162926929247867
+    second: Blue Sprite_623
+  - first:
+      213: 914038112599203552
+    second: Blue Sprite_624
+  - first:
+      213: 893475440766428857
+    second: Blue Sprite_625
+  - first:
+      213: -9100035862638851637
+    second: Blue Sprite_626
+  - first:
+      213: 1523301154901338053
+    second: Blue Sprite_627
+  - first:
+      213: -3717292161404328774
+    second: Blue Sprite_628
+  - first:
+      213: 8811486567573017955
+    second: Blue Sprite_629
+  - first:
+      213: -1487214005058737810
+    second: Blue Sprite_630
+  - first:
+      213: -3524221788266841917
+    second: Blue Sprite_631
+  - first:
+      213: -2751273468503487709
+    second: Blue Sprite_632
+  - first:
+      213: 880761244456621727
+    second: Blue Sprite_633
+  - first:
+      213: -5733921714565478299
+    second: Blue Sprite_634
+  - first:
+      213: -8767951843675320397
+    second: Blue Sprite_635
+  - first:
+      213: 7587973075027686606
+    second: Blue Sprite_636
+  - first:
+      213: -2245661587364506453
+    second: Blue Sprite_637
+  - first:
+      213: -5903294865210506756
+    second: Blue Sprite_638
+  - first:
+      213: -2833601034539482591
+    second: Blue Sprite_639
+  - first:
+      213: 2630139910032125424
+    second: Blue Sprite_640
+  - first:
+      213: -7558587250988634282
+    second: Blue Sprite_641
+  - first:
+      213: -1969173391108634885
+    second: Blue Sprite_642
+  - first:
+      213: 2450321497962229812
+    second: Blue Sprite_643
+  - first:
+      213: 1077519346969733515
+    second: Blue Sprite_644
+  - first:
+      213: 8506653340408651688
+    second: Blue Sprite_645
+  - first:
+      213: 5232022370581471279
+    second: Blue Sprite_646
+  - first:
+      213: 5472280680729875671
+    second: Blue Sprite_647
+  - first:
+      213: -7030444024502040780
+    second: Blue Sprite_648
+  - first:
+      213: -7810065717064042397
+    second: Blue Sprite_649
+  - first:
+      213: -8121457656850293195
+    second: Blue Sprite_650
+  - first:
+      213: 1702349453270581983
+    second: Blue Sprite_651
+  - first:
+      213: -7186926792860806144
+    second: Blue Sprite_652
+  - first:
+      213: 4912997550667775707
+    second: Blue Sprite_653
+  - first:
+      213: -4304839861146019684
+    second: Blue Sprite_654
+  - first:
+      213: -1278305846873066827
+    second: Blue Sprite_655
+  - first:
+      213: 1510738296547302029
+    second: Blue Sprite_656
+  - first:
+      213: -4338081217844114583
+    second: Blue Sprite_657
+  - first:
+      213: -4916002279640643335
+    second: Blue Sprite_658
+  - first:
+      213: -7244304382779984212
+    second: Blue Sprite_659
+  - first:
+      213: 887607298743488322
+    second: Blue Sprite_660
+  - first:
+      213: 1735605761663961853
+    second: Blue Sprite_661
+  - first:
+      213: 4989339802092222942
+    second: Blue Sprite_662
+  - first:
+      213: 25098474059424216
+    second: Blue Sprite_663
+  - first:
+      213: -8960185504184811644
+    second: Blue Sprite_664
+  - first:
+      213: -2947816580325328929
+    second: Blue Sprite_665
+  - first:
+      213: 4315840239737703124
+    second: Blue Sprite_666
+  - first:
+      213: 3534136672731502839
+    second: Blue Sprite_667
+  - first:
+      213: -3637446569018094655
+    second: Blue Sprite_668
+  - first:
+      213: -6226746813170629757
+    second: Blue Sprite_669
+  - first:
+      213: 5670144659602300877
+    second: Blue Sprite_670
+  - first:
+      213: -2543610881599434303
+    second: Blue Sprite_671
+  - first:
+      213: 2468030280971196444
+    second: Blue Sprite_672
+  - first:
+      213: 7210459309162084983
+    second: Blue Sprite_673
+  - first:
+      213: 3315490435553016848
+    second: Blue Sprite_674
+  - first:
+      213: -4699408242792485493
+    second: Blue Sprite_675
+  - first:
+      213: 6723245682804222860
+    second: Blue Sprite_676
+  - first:
+      213: 8099782181155432190
+    second: Blue Sprite_677
+  - first:
+      213: 6231031246337961130
+    second: Blue Sprite_678
+  - first:
+      213: -5966611889013243878
+    second: Blue Sprite_679
+  - first:
+      213: -2170995979848323316
+    second: Blue Sprite_680
+  - first:
+      213: -5269775537404981059
+    second: Blue Sprite_681
+  - first:
+      213: 543549882680144202
+    second: Blue Sprite_682
+  - first:
+      213: 8322755105553392165
+    second: Blue Sprite_683
+  - first:
+      213: 3528901737183899025
+    second: Blue Sprite_684
+  - first:
+      213: 4535245905477738004
+    second: Blue Sprite_685
+  - first:
+      213: 6873573051322290173
+    second: Blue Sprite_686
+  - first:
+      213: 2811897228621483798
+    second: Blue Sprite_687
+  - first:
+      213: -6099414586589720396
+    second: Blue Sprite_688
+  - first:
+      213: 4587264937910492534
+    second: Blue Sprite_689
+  - first:
+      213: 8663300613912365937
+    second: Blue Sprite_690
+  - first:
+      213: -3748977963444956968
+    second: Blue Sprite_691
+  - first:
+      213: -6485327519818589258
+    second: Blue Sprite_692
+  - first:
+      213: -7462483127128512999
+    second: Blue Sprite_693
+  - first:
+      213: -1903497321060534229
+    second: Blue Sprite_694
+  - first:
+      213: 4045092189947795711
+    second: Blue Sprite_695
+  - first:
+      213: -8753361834054734990
+    second: Blue Sprite_696
+  - first:
+      213: 8076003226810660755
+    second: Blue Sprite_697
+  - first:
+      213: -5285640372976562229
+    second: Blue Sprite_698
+  - first:
+      213: 1588319042043290054
+    second: Blue Sprite_699
+  - first:
+      213: -6487200295609685437
+    second: Blue Sprite_700
+  - first:
+      213: 2686537720938861925
+    second: Blue Sprite_701
+  - first:
+      213: -5319971694095447243
+    second: Blue Sprite_702
+  - first:
+      213: 79407075462588237
+    second: Blue Sprite_703
+  - first:
+      213: 1169588325313857315
+    second: Blue Sprite_704
+  - first:
+      213: 8371258717562950960
+    second: Blue Sprite_705
+  - first:
+      213: -5593026515509450477
+    second: Blue Sprite_706
+  - first:
+      213: 1585871911564555231
+    second: Blue Sprite_707
+  - first:
+      213: 395672266046809324
+    second: Blue Sprite_708
+  - first:
+      213: -6236130245232908740
+    second: Blue Sprite_709
+  - first:
+      213: -4711362281606099353
+    second: Blue Sprite_710
+  - first:
+      213: 5263025531918302440
+    second: Blue Sprite_711
+  - first:
+      213: -399730282092296811
+    second: Blue Sprite_712
+  - first:
+      213: 7554368186235026522
+    second: Blue Sprite_713
+  - first:
+      213: -4441937376313810499
+    second: Blue Sprite_714
+  - first:
+      213: 4213758385248860818
+    second: Blue Sprite_715
+  - first:
+      213: -2946995505589560516
+    second: Blue Sprite_716
+  - first:
+      213: -3709467122180629500
+    second: Blue Sprite_717
+  - first:
+      213: -6716791392239125979
+    second: Blue Sprite_718
+  - first:
+      213: 5599055695232313372
+    second: Blue Sprite_719
+  - first:
+      213: -5349820009037214502
+    second: Blue Sprite_720
+  - first:
+      213: 5019413721495807685
+    second: Blue Sprite_721
+  - first:
+      213: -1662858982176206946
+    second: Blue Sprite_722
+  - first:
+      213: -6056103743501460193
+    second: Blue Sprite_723
+  - first:
+      213: 4767455977253951680
+    second: Blue Sprite_724
+  - first:
+      213: 4442899547774824817
+    second: Blue Sprite_725
+  - first:
+      213: -7868456828218209245
+    second: Blue Sprite_726
+  - first:
+      213: 6807568507464154343
+    second: Blue Sprite_727
+  - first:
+      213: -8287237475959346961
+    second: Blue Sprite_728
+  - first:
+      213: 6815037596294689800
+    second: Blue Sprite_729
+  - first:
+      213: 2550059160871096275
+    second: Blue Sprite_730
+  - first:
+      213: 4642802049571156643
+    second: Blue Sprite_731
+  - first:
+      213: -2920892548911360453
+    second: Blue Sprite_732
+  - first:
+      213: 537231769548651934
+    second: Blue Sprite_733
+  - first:
+      213: -5219964362398088374
+    second: Blue Sprite_734
+  - first:
+      213: -469943476964312790
+    second: Blue Sprite_735
+  - first:
+      213: 6605223301146156754
+    second: Blue Sprite_736
+  - first:
+      213: 4960211059884702875
+    second: Blue Sprite_737
+  - first:
+      213: -8697502403415867895
+    second: Blue Sprite_738
+  - first:
+      213: 4454161449286696900
+    second: Blue Sprite_739
+  - first:
+      213: -8201492545450953919
+    second: Blue Sprite_740
+  - first:
+      213: -827452812489226689
+    second: Blue Sprite_741
+  - first:
+      213: 4783749863947534533
+    second: Blue Sprite_742
+  - first:
+      213: -5870754216794311811
+    second: Blue Sprite_743
+  - first:
+      213: 5100002082607376395
+    second: Blue Sprite_744
+  - first:
+      213: -3604818216461964288
+    second: Blue Sprite_745
+  - first:
+      213: -4148063487353690824
+    second: Blue Sprite_746
+  - first:
+      213: 32438120353322107
+    second: Blue Sprite_747
+  - first:
+      213: 199763793001285211
+    second: Blue Sprite_748
+  - first:
+      213: 6939563220657976723
+    second: Blue Sprite_749
+  - first:
+      213: -8572906480871888671
+    second: Blue Sprite_750
+  - first:
+      213: -5775388558633882620
+    second: Blue Sprite_751
+  - first:
+      213: -1772386531391674917
+    second: Blue Sprite_752
+  - first:
+      213: -2687008184464021633
+    second: Blue Sprite_753
+  - first:
+      213: 4954854136829228867
+    second: Blue Sprite_754
+  - first:
+      213: 167885904458088281
+    second: Blue Sprite_755
+  - first:
+      213: 6093956161866637715
+    second: Blue Sprite_756
+  - first:
+      213: 6801856056234667357
+    second: Blue Sprite_757
+  - first:
+      213: -7816300196310897023
+    second: Blue Sprite_758
+  - first:
+      213: -8533134179937657707
+    second: Blue Sprite_759
+  - first:
+      213: 2037166127084556464
+    second: Blue Sprite_760
+  - first:
+      213: -2165698368546661931
+    second: Blue Sprite_761
+  - first:
+      213: -6513299688009341408
+    second: Blue Sprite_762
+  - first:
+      213: 6514289536225131675
+    second: Blue Sprite_763
+  - first:
+      213: 6106083489155607168
+    second: Blue Sprite_764
+  - first:
+      213: 2999489316660955313
+    second: Blue Sprite_765
+  - first:
+      213: -4165170751975004492
+    second: Blue Sprite_766
+  - first:
+      213: 1517974305440970252
+    second: Blue Sprite_767
+  - first:
+      213: -5109268104783644988
+    second: Blue Sprite_768
+  - first:
+      213: 8033221225690959019
+    second: Blue Sprite_769
+  - first:
+      213: 6247177721233912060
+    second: Blue Sprite_770
+  - first:
+      213: -3132695211303215537
+    second: Blue Sprite_771
+  - first:
+      213: 2510243181337666167
+    second: Blue Sprite_772
+  - first:
+      213: 5670918440961146699
+    second: Blue Sprite_773
+  - first:
+      213: 9165122248609854878
+    second: Blue Sprite_774
+  - first:
+      213: 218338079111603882
+    second: Blue Sprite_775
+  - first:
+      213: -4779393585448436036
+    second: Blue Sprite_776
+  - first:
+      213: 1837839693691723662
+    second: Blue Sprite_777
+  - first:
+      213: 2362814554275867002
+    second: Blue Sprite_778
+  - first:
+      213: -171386558695538904
+    second: Blue Sprite_779
+  - first:
+      213: -7964057752035474997
+    second: Blue Sprite_780
+  - first:
+      213: -5937022903993101102
+    second: Blue Sprite_781
+  - first:
+      213: -312524830541773907
+    second: Blue Sprite_782
+  - first:
+      213: -395336818285916050
+    second: Blue Sprite_783
+  - first:
+      213: 829345773377496400
+    second: Blue Sprite_784
+  - first:
+      213: 4307347888060635322
+    second: Blue Sprite_785
+  - first:
+      213: -909868392464009165
+    second: Blue Sprite_786
+  - first:
+      213: -521145197727665055
+    second: Blue Sprite_787
+  - first:
+      213: -6994768746764302402
+    second: Blue Sprite_788
+  - first:
+      213: -4886864123015487262
+    second: Blue Sprite_789
+  - first:
+      213: -8877944778159954569
+    second: Blue Sprite_790
+  - first:
+      213: -8261985991551608912
+    second: Blue Sprite_791
+  - first:
+      213: -2317014779516208892
+    second: Blue Sprite_792
+  - first:
+      213: 1451490527403882242
+    second: Blue Sprite_793
+  - first:
+      213: -8692524155816102721
+    second: Blue Sprite_794
+  - first:
+      213: 8859329165596146749
+    second: Blue Sprite_795
+  - first:
+      213: -373209896535329674
+    second: Blue Sprite_796
+  - first:
+      213: 1172051910963987639
+    second: Blue Sprite_797
+  - first:
+      213: -9126659362874508253
+    second: Blue Sprite_798
+  - first:
+      213: -6970882975185966739
+    second: Blue Sprite_799
+  - first:
+      213: 1009575824240538018
+    second: Blue Sprite_800
+  - first:
+      213: -4769269057213712107
+    second: Blue Sprite_801
+  - first:
+      213: -7351684251247902699
+    second: Blue Sprite_802
+  - first:
+      213: 91925657194215821
+    second: Blue Sprite_803
+  - first:
+      213: 4625429709452538662
+    second: Blue Sprite_804
+  - first:
+      213: 3137304568644557754
+    second: Blue Sprite_805
+  - first:
+      213: 3292417158667593699
+    second: Blue Sprite_806
+  - first:
+      213: -6490063868554491175
+    second: Blue Sprite_807
+  - first:
+      213: -91816464655374605
+    second: Blue Sprite_808
+  - first:
+      213: -8943106398148503525
+    second: Blue Sprite_809
+  - first:
+      213: 7254390360118072815
+    second: Blue Sprite_810
+  - first:
+      213: 5362240018253102199
+    second: Blue Sprite_811
+  - first:
+      213: -1337331075366641975
+    second: Blue Sprite_812
+  - first:
+      213: 2803362902415029076
+    second: Blue Sprite_813
+  - first:
+      213: -2147156145126690608
+    second: Blue Sprite_814
+  - first:
+      213: -5206413246407095930
+    second: Blue Sprite_815
+  - first:
+      213: -7461699788073259211
+    second: Blue Sprite_816
+  - first:
+      213: 1659184425924691263
+    second: Blue Sprite_817
+  - first:
+      213: -9138675589395660762
+    second: Blue Sprite_818
+  - first:
+      213: 2340630308710335608
+    second: Blue Sprite_819
+  - first:
+      213: 7107059148753478590
+    second: Blue Sprite_820
+  - first:
+      213: 5397349913460655798
+    second: Blue Sprite_821
+  - first:
+      213: -1978294952091833088
+    second: Blue Sprite_822
+  - first:
+      213: -3413070614390355261
+    second: Blue Sprite_823
+  - first:
+      213: -5753892031312353651
+    second: Blue Sprite_824
+  - first:
+      213: 8743767421674268499
+    second: Blue Sprite_825
+  - first:
+      213: -2107330653235562410
+    second: Blue Sprite_826
+  - first:
+      213: -7967053752348897742
+    second: Blue Sprite_827
+  - first:
+      213: 2109898192236836657
+    second: Blue Sprite_828
+  - first:
+      213: -6987319729395457987
+    second: Blue Sprite_829
+  - first:
+      213: 8662360488908435664
+    second: Blue Sprite_830
+  - first:
+      213: -1832110511846602798
+    second: Blue Sprite_831
+  - first:
+      213: -8861898811251255290
+    second: Blue Sprite_832
+  - first:
+      213: 3287159714554671920
+    second: Blue Sprite_833
+  - first:
+      213: 8890075869572711813
+    second: Blue Sprite_834
+  - first:
+      213: 5340974071853376754
+    second: Blue Sprite_835
+  - first:
+      213: 7308799897033542178
+    second: Blue Sprite_836
+  - first:
+      213: 2012325322596057038
+    second: Blue Sprite_837
+  - first:
+      213: -1051187107939174725
+    second: Blue Sprite_838
+  - first:
+      213: -5996121117628974011
+    second: Blue Sprite_839
+  - first:
+      213: -2353746246954534717
+    second: Blue Sprite_840
+  - first:
+      213: -2936832428961356944
+    second: Blue Sprite_841
+  - first:
+      213: 6298151621571326701
+    second: Blue Sprite_842
+  - first:
+      213: -2047435528561297916
+    second: Blue Sprite_843
+  - first:
+      213: -4058934763544113182
+    second: Blue Sprite_844
+  - first:
+      213: -1881217314959584128
+    second: Blue Sprite_845
+  - first:
+      213: -3947116261788225737
+    second: Blue Sprite_846
+  - first:
+      213: 4908439775109307862
+    second: Blue Sprite_847
+  - first:
+      213: -4796165634801627268
+    second: Blue Sprite_848
+  - first:
+      213: 4646229795243555943
+    second: Blue Sprite_849
+  - first:
+      213: -1341699507454769871
+    second: Blue Sprite_850
+  - first:
+      213: -452112441207662472
+    second: Blue Sprite_851
+  - first:
+      213: 4523569720061641748
+    second: Blue Sprite_852
+  - first:
+      213: -6842736905297086258
+    second: Blue Sprite_853
+  - first:
+      213: 4890405466841793228
+    second: Blue Sprite_854
+  - first:
+      213: 8602527424478304716
+    second: Blue Sprite_855
+  - first:
+      213: -282038230129305341
+    second: Blue Sprite_856
+  - first:
+      213: 4914429213296990081
+    second: Blue Sprite_857
+  - first:
+      213: -6824728454009569304
+    second: Blue Sprite_858
+  - first:
+      213: -1906009165046115600
+    second: Blue Sprite_859
+  - first:
+      213: 4225137489639408530
+    second: Blue Sprite_860
+  - first:
+      213: 4830548741656720981
+    second: Blue Sprite_861
+  - first:
+      213: 6046785498093976921
+    second: Blue Sprite_862
+  - first:
+      213: -146114066056704090
+    second: Blue Sprite_863
+  - first:
+      213: -3277172612107150312
+    second: Blue Sprite_864
+  - first:
+      213: -947811283392030878
+    second: Blue Sprite_865
+  - first:
+      213: 4014432662102417195
+    second: Blue Sprite_866
+  - first:
+      213: 4625487131993735026
+    second: Blue Sprite_867
+  - first:
+      213: -2884341375364687350
+    second: Blue Sprite_868
+  - first:
+      213: -5370223741395396773
+    second: Blue Sprite_869
+  - first:
+      213: -5437301591149726779
+    second: Blue Sprite_870
+  - first:
+      213: 5907689962550859497
+    second: Blue Sprite_871
+  - first:
+      213: -2771649501935342239
+    second: Blue Sprite_872
+  - first:
+      213: -8611522726992804152
+    second: Blue Sprite_873
+  - first:
+      213: -1389879647783974173
+    second: Blue Sprite_874
+  - first:
+      213: 3405032926402632068
+    second: Blue Sprite_875
+  - first:
+      213: -8165429544294753153
+    second: Blue Sprite_876
+  - first:
+      213: -7356670732335657334
+    second: Blue Sprite_877
+  - first:
+      213: -24654006029489168
+    second: Blue Sprite_878
+  - first:
+      213: 959266633040141428
+    second: Blue Sprite_879
+  - first:
+      213: 6159251381197305402
+    second: Blue Sprite_880
+  - first:
+      213: 7584242933671846696
+    second: Blue Sprite_881
+  - first:
+      213: 2830114703371549100
+    second: Blue Sprite_882
+  - first:
+      213: -8266446499028316269
+    second: Blue Sprite_883
+  - first:
+      213: 3184643066045329531
+    second: Blue Sprite_884
+  - first:
+      213: -6139173160652536555
+    second: Blue Sprite_885
+  - first:
+      213: 4924279962807659352
+    second: Blue Sprite_886
+  - first:
+      213: 9188492756465270080
+    second: Blue Sprite_887
+  - first:
+      213: -2078053625817282350
+    second: Blue Sprite_888
+  - first:
+      213: 7727917212228747518
+    second: Blue Sprite_889
+  - first:
+      213: -4788870388852947158
+    second: Blue Sprite_890
+  - first:
+      213: 817248779718267833
+    second: Blue Sprite_891
+  - first:
+      213: -4043285171291714180
+    second: Blue Sprite_892
+  - first:
+      213: 3103478145464879605
+    second: Blue Sprite_893
+  - first:
+      213: -5595262204367232489
+    second: Blue Sprite_894
+  - first:
+      213: -695936968351312421
+    second: Blue Sprite_895
+  - first:
+      213: -3146808081504705003
+    second: Blue Sprite_896
+  - first:
+      213: -7674849668676988422
+    second: Blue Sprite_897
+  - first:
+      213: -1128615710179219249
+    second: Blue Sprite_898
+  - first:
+      213: -1828857768749372017
+    second: Blue Sprite_899
+  - first:
+      213: -2907228149370841994
+    second: Blue Sprite_900
+  - first:
+      213: 4442135915847452
+    second: Blue Sprite_901
+  - first:
+      213: 1942324218234589028
+    second: Blue Sprite_902
+  - first:
+      213: 2748863511401790091
+    second: Blue Sprite_903
+  - first:
+      213: -2821247248588255182
+    second: Blue Sprite_904
+  - first:
+      213: 2548539180757875962
+    second: Blue Sprite_905
+  - first:
+      213: 1245217392346174057
+    second: Blue Sprite_906
+  - first:
+      213: -4916194972395630914
+    second: Blue Sprite_907
+  - first:
+      213: -9066398506986863043
+    second: Blue Sprite_908
+  - first:
+      213: -6556901688059791108
+    second: Blue Sprite_909
+  - first:
+      213: -6255816314891349090
+    second: Blue Sprite_910
+  - first:
+      213: 2862677617534168207
+    second: Blue Sprite_911
+  - first:
+      213: -4892922066948145506
+    second: Blue Sprite_912
+  - first:
+      213: 968952594355570925
+    second: Blue Sprite_913
+  - first:
+      213: 7983635539150992384
+    second: Blue Sprite_914
+  - first:
+      213: -6516714198151966856
+    second: Blue Sprite_915
+  - first:
+      213: 8285077205369735285
+    second: Blue Sprite_916
+  - first:
+      213: 3298944894396025148
+    second: Blue Sprite_917
+  - first:
+      213: -6478699334397157642
+    second: Blue Sprite_918
+  - first:
+      213: 2538484862494446867
+    second: Blue Sprite_919
+  - first:
+      213: -6801420759347068161
+    second: Blue Sprite_920
+  - first:
+      213: -3771103178660397272
+    second: Blue Sprite_921
+  - first:
+      213: 5294850338676139958
+    second: Blue Sprite_922
+  - first:
+      213: 3089331338733479320
+    second: Blue Sprite_923
+  - first:
+      213: 5209265310200063852
+    second: Blue Sprite_924
+  - first:
+      213: 4844816452289755946
+    second: Blue Sprite_925
+  - first:
+      213: -2868608532449517661
+    second: Blue Sprite_926
+  - first:
+      213: -1517949418641496041
+    second: Blue Sprite_927
+  - first:
+      213: 5474022039145818631
+    second: Blue Sprite_928
+  - first:
+      213: -2424615128656850649
+    second: Blue Sprite_929
+  - first:
+      213: -8619986907427831379
+    second: Blue Sprite_930
+  - first:
+      213: 5946931775583283793
+    second: Blue Sprite_931
+  - first:
+      213: 6064803269294931160
+    second: Blue Sprite_932
+  - first:
+      213: -3635543299003374012
+    second: Blue Sprite_933
+  - first:
+      213: -1412486993220133711
+    second: Blue Sprite_934
+  - first:
+      213: 1762052764197021823
+    second: Blue Sprite_935
+  - first:
+      213: 8233625627835091903
+    second: Blue Sprite_936
+  - first:
+      213: 4390716232232660913
+    second: Blue Sprite_937
+  - first:
+      213: 7707751498008284911
+    second: Blue Sprite_938
+  - first:
+      213: -6193982941274409393
+    second: Blue Sprite_939
+  - first:
+      213: -3808089158279116196
+    second: Blue Sprite_940
+  - first:
+      213: 7982292513295245840
+    second: Blue Sprite_941
+  - first:
+      213: -7337947421757965616
+    second: Blue Sprite_942
+  - first:
+      213: -5893660354978317830
+    second: Blue Sprite_943
+  - first:
+      213: 8586564310531429680
+    second: Blue Sprite_944
+  - first:
+      213: -4885396206229585651
+    second: Blue Sprite_945
+  - first:
+      213: 602506907806724212
+    second: Blue Sprite_946
+  - first:
+      213: -2728159723161799070
+    second: Blue Sprite_947
+  - first:
+      213: 7137500779654192554
+    second: Blue Sprite_948
+  - first:
+      213: 4307567500375819691
+    second: Blue Sprite_949
+  - first:
+      213: -7710465489154001588
+    second: Blue Sprite_950
+  - first:
+      213: 4810678885135477228
+    second: Blue Sprite_951
+  - first:
+      213: -1302953260326083632
+    second: Blue Sprite_952
+  - first:
+      213: 5367215006299048033
+    second: Blue Sprite_953
+  - first:
+      213: 4936842168821501015
+    second: Blue Sprite_954
+  - first:
+      213: -2259381455222728718
+    second: Blue Sprite_955
+  - first:
+      213: -3299154309844803212
+    second: Blue Sprite_956
+  - first:
+      213: -3699549349473203193
+    second: Blue Sprite_957
+  - first:
+      213: -6509678539188268855
+    second: Blue Sprite_958
+  - first:
+      213: 2330705129171806817
+    second: Blue Sprite_959
+  - first:
+      213: 1792050403661648737
+    second: Blue Sprite_960
+  - first:
+      213: -263571102941160130
+    second: Blue Sprite_961
+  - first:
+      213: 2892203009604688157
+    second: Blue Sprite_962
+  - first:
+      213: -9035913016896885887
+    second: Blue Sprite_963
+  - first:
+      213: 753720331537777649
+    second: Blue Sprite_964
+  - first:
+      213: 2127354918741016868
+    second: Blue Sprite_965
+  - first:
+      213: 9060197129720017609
+    second: Blue Sprite_966
+  - first:
+      213: 344056376366560260
+    second: Blue Sprite_967
+  - first:
+      213: 7189386618116721474
+    second: Blue Sprite_968
+  - first:
+      213: 1851964814017814963
+    second: Blue Sprite_969
+  - first:
+      213: -1944641094882284549
+    second: Blue Sprite_970
+  - first:
+      213: 3034972930740131408
+    second: Blue Sprite_971
+  - first:
+      213: 4926939006458209003
+    second: Blue Sprite_972
+  - first:
+      213: -5564995125409310399
+    second: Blue Sprite_973
+  - first:
+      213: 8179400247822216261
+    second: Blue Sprite_974
+  - first:
+      213: 3453768332974021221
+    second: Blue Sprite_975
+  - first:
+      213: 151677428602925009
+    second: Blue Sprite_976
+  - first:
+      213: 5370771977778745665
+    second: Blue Sprite_977
+  - first:
+      213: 6222777650301292074
+    second: Blue Sprite_978
+  - first:
+      213: 7888280238301331695
+    second: Blue Sprite_979
+  - first:
+      213: -2115506834288747066
+    second: Blue Sprite_980
+  - first:
+      213: -4107706470166579702
+    second: Blue Sprite_981
+  - first:
+      213: 1310641396549664353
+    second: Blue Sprite_982
+  - first:
+      213: -312665811647624364
+    second: Blue Sprite_983
+  - first:
+      213: -6084666613535069231
+    second: Blue Sprite_984
+  - first:
+      213: 4050401165135042841
+    second: Blue Sprite_985
+  - first:
+      213: -4616975317172720417
+    second: Blue Sprite_986
+  - first:
+      213: -1122246066024007053
+    second: Blue Sprite_987
+  - first:
+      213: 5299858183863125044
+    second: Blue Sprite_988
+  - first:
+      213: -7132518031250192013
+    second: Blue Sprite_989
+  - first:
+      213: 26519325852414590
+    second: Blue Sprite_990
+  - first:
+      213: -7184504336622647034
+    second: Blue Sprite_991
+  - first:
+      213: 8130603646925523622
+    second: Blue Sprite_992
+  - first:
+      213: -2518936392959374678
+    second: Blue Sprite_993
+  - first:
+      213: 8558490059644551118
+    second: Blue Sprite_994
+  - first:
+      213: 6862801246156901095
+    second: Blue Sprite_995
+  - first:
+      213: -5606385187423566117
+    second: Blue Sprite_996
+  - first:
+      213: -1155018245054819333
+    second: Blue Sprite_997
+  - first:
+      213: 5975220581852079464
+    second: Blue Sprite_998
+  - first:
+      213: -947312368843290957
+    second: Blue Sprite_999
+  - first:
+      213: -317244200093559868
+    second: Blue Sprite_1000
+  - first:
+      213: 6979268348792032203
+    second: Blue Sprite_1001
+  - first:
+      213: 7542168763150418126
+    second: Blue Sprite_1002
+  - first:
+      213: -2117709163616893704
+    second: Blue Sprite_1003
+  - first:
+      213: 7350232671853143037
+    second: Blue Sprite_1004
+  - first:
+      213: 1276833811945481829
+    second: Blue Sprite_1005
+  - first:
+      213: 4420140276860567976
+    second: Blue Sprite_1006
+  - first:
+      213: 1231414627732515786
+    second: Blue Sprite_1007
+  - first:
+      213: 5898821433855513508
+    second: Blue Sprite_1008
+  - first:
+      213: -2962746513707598450
+    second: Blue Sprite_1009
+  - first:
+      213: -8147573232125263158
+    second: Blue Sprite_1010
+  - first:
+      213: -3259192735166611415
+    second: Blue Sprite_1011
+  - first:
+      213: -3434842845578379292
+    second: Blue Sprite_1012
+  - first:
+      213: -4623597497725248884
+    second: Blue Sprite_1013
+  - first:
+      213: 7988158521838762707
+    second: Blue Sprite_1014
+  - first:
+      213: -1703829354505949579
+    second: Blue Sprite_1015
+  - first:
+      213: -5891822990395016226
+    second: Blue Sprite_1016
+  - first:
+      213: -817277912917194040
+    second: Blue Sprite_1017
+  - first:
+      213: -272209572666256468
+    second: Blue Sprite_1018
+  - first:
+      213: -3720408976435212370
+    second: Blue Sprite_1019
+  - first:
+      213: 3844510052762955206
+    second: Blue Sprite_1020
+  - first:
+      213: 4851701876230731533
+    second: Blue Sprite_1021
+  - first:
+      213: -1019001761521379296
+    second: Blue Sprite_1022
+  - first:
+      213: -8541752269463264143
+    second: Blue Sprite_1023
+  - first:
+      213: -613550173556187601
+    second: Blue Sprite_1024
+  - first:
+      213: 7300342703250322807
+    second: Blue Sprite_1025
+  - first:
+      213: 5895034850026044944
+    second: Blue Sprite_1026
+  - first:
+      213: 8240707259684604298
+    second: Blue Sprite_1027
+  - first:
+      213: 2797838952914603158
+    second: Blue Sprite_1028
+  - first:
+      213: 3854782546074803431
+    second: Blue Sprite_1029
+  - first:
+      213: 2804495174847395566
+    second: Blue Sprite_1030
+  - first:
+      213: -1012675071714233385
+    second: Blue Sprite_1031
+  - first:
+      213: 4070879725750607973
+    second: Blue Sprite_1032
+  - first:
+      213: 8508068964008371283
+    second: Blue Sprite_1033
+  - first:
+      213: 1045742402857045567
+    second: Blue Sprite_1034
+  - first:
+      213: -8510775414401753054
+    second: Blue Sprite_1035
+  - first:
+      213: 5135862572125018033
+    second: Blue Sprite_1036
+  - first:
+      213: 6123552714615572901
+    second: Blue Sprite_1037
+  - first:
+      213: -4705736564150502328
+    second: Blue Sprite_1038
+  - first:
+      213: 6048387025904109707
+    second: Blue Sprite_1039
+  - first:
+      213: -1106657174848567138
+    second: Blue Sprite_1040
+  - first:
+      213: 4002492317930984901
+    second: Blue Sprite_1041
+  - first:
+      213: -5270866089156045055
+    second: Blue Sprite_1042
+  - first:
+      213: -2487684668423050982
+    second: Blue Sprite_1043
+  - first:
+      213: 3941318840241482775
+    second: Blue Sprite_1044
+  - first:
+      213: -212596556413821678
+    second: Blue Sprite_1045
+  - first:
+      213: -1199359478171031180
+    second: Blue Sprite_1046
+  - first:
+      213: 7715048974953990155
+    second: Blue Sprite_1047
+  - first:
+      213: -7088650139606605903
+    second: Blue Sprite_1048
+  - first:
+      213: 8495663277929892610
+    second: Blue Sprite_1049
+  - first:
+      213: 1070931443155741877
+    second: Blue Sprite_1050
+  - first:
+      213: -8364027609725921246
+    second: Blue Sprite_1051
+  - first:
+      213: -2230218032780839464
+    second: Blue Sprite_1052
+  - first:
+      213: -2765121178449168884
+    second: Blue Sprite_1053
+  - first:
+      213: -8405067150613252307
+    second: Blue Sprite_1054
+  - first:
+      213: -5624296488306435513
+    second: Blue Sprite_1055
+  - first:
+      213: -5289715611471503949
+    second: Blue Sprite_1056
+  - first:
+      213: -4749800812026815663
+    second: Blue Sprite_1057
+  - first:
+      213: -806950611369279696
+    second: Blue Sprite_1058
+  - first:
+      213: 5974446738253461440
+    second: Blue Sprite_1059
+  - first:
+      213: -6610395018290286746
+    second: Blue Sprite_1060
+  - first:
+      213: 796413327201251313
+    second: Blue Sprite_1061
+  - first:
+      213: -1622326068880127267
+    second: Blue Sprite_1062
+  - first:
+      213: 5796433173824185527
+    second: Blue Sprite_1063
+  - first:
+      213: -6586357737174139849
+    second: Blue Sprite_1064
+  - first:
+      213: 9051373309584316581
+    second: Blue Sprite_1065
+  - first:
+      213: 2507430725638316340
+    second: Blue Sprite_1066
+  - first:
+      213: 7248674976165527025
+    second: Blue Sprite_1067
+  - first:
+      213: 3932601560604788473
+    second: Blue Sprite_1068
+  - first:
+      213: 7845361516190261158
+    second: Blue Sprite_1069
+  - first:
+      213: 1263095222963026571
+    second: Blue Sprite_1070
+  - first:
+      213: -1597489752754052859
+    second: Blue Sprite_1071
+  - first:
+      213: 6186807065588263374
+    second: Blue Sprite_1072
+  - first:
+      213: 6287212999124224030
+    second: Blue Sprite_1073
+  - first:
+      213: -4524507036664687551
+    second: Blue Sprite_1074
+  - first:
+      213: -7793364201913383182
+    second: Blue Sprite_1075
+  - first:
+      213: 1863521819429284744
+    second: Blue Sprite_1076
+  - first:
+      213: -3361449061345934307
+    second: Blue Sprite_1077
+  - first:
+      213: -3447250913067953113
+    second: Blue Sprite_1078
+  - first:
+      213: -4805006067825055582
+    second: Blue Sprite_1079
+  - first:
+      213: -868118178355170576
+    second: Blue Sprite_1080
+  - first:
+      213: -146805597347718927
+    second: Blue Sprite_1081
+  - first:
+      213: -5618124614140591619
+    second: Blue Sprite_1082
+  - first:
+      213: 5108792410163897701
+    second: Blue Sprite_1083
+  - first:
+      213: -9221694999241821308
+    second: Blue Sprite_1084
+  - first:
+      213: -3814547573170781509
+    second: Blue Sprite_1085
+  - first:
+      213: 2804530426976841213
+    second: Blue Sprite_1086
+  - first:
+      213: -7205000977294007301
+    second: Blue Sprite_1087
+  - first:
+      213: -993884444677851310
+    second: Blue Sprite_1088
+  - first:
+      213: 2558316001381271876
+    second: Blue Sprite_1089
+  - first:
+      213: 2661869537166956357
+    second: Blue Sprite_1090
+  - first:
+      213: 3442227664391875565
+    second: Blue Sprite_1091
+  - first:
+      213: -8766360545409001455
+    second: Blue Sprite_1092
+  - first:
+      213: 84134087780975957
+    second: Blue Sprite_1093
+  - first:
+      213: -7208437992141793794
+    second: Blue Sprite_1094
+  - first:
+      213: 8171349379950043307
+    second: Blue Sprite_1095
+  - first:
+      213: -8188775523360330957
+    second: Blue Sprite_1096
+  - first:
+      213: 1761089593633313258
+    second: Blue Sprite_1097
+  - first:
+      213: -2722119013714913824
+    second: Blue Sprite_1098
+  - first:
+      213: 140506063300259359
+    second: Blue Sprite_1099
+  - first:
+      213: -8802916408935713626
+    second: Blue Sprite_1100
+  - first:
+      213: 2640422416692127855
+    second: Blue Sprite_1101
+  - first:
+      213: -5871530178378406051
+    second: Blue Sprite_1102
+  - first:
+      213: 6084458411812593026
+    second: Blue Sprite_1103
+  - first:
+      213: 5989098054963861999
+    second: Blue Sprite_1104
+  - first:
+      213: -6243595606294612104
+    second: Blue Sprite_1105
+  - first:
+      213: 3110821967548147315
+    second: Blue Sprite_1106
+  - first:
+      213: -2613742292089336686
+    second: Blue Sprite_1107
+  - first:
+      213: 8023869719873348322
+    second: Blue Sprite_1108
+  - first:
+      213: 8139424675710108172
+    second: Blue Sprite_1109
+  - first:
+      213: 6880468334946729734
+    second: Blue Sprite_1110
+  - first:
+      213: -7819750948634761110
+    second: Blue Sprite_1111
+  - first:
+      213: 5802060013448510654
+    second: Blue Sprite_1112
+  - first:
+      213: -9160583770400249207
+    second: Blue Sprite_1113
+  - first:
+      213: 3138444281695402111
+    second: Blue Sprite_1114
+  - first:
+      213: 5953369735363119069
+    second: Blue Sprite_1115
+  - first:
+      213: 5919067557353792848
+    second: Blue Sprite_1116
+  - first:
+      213: -8914066468548516277
+    second: Blue Sprite_1117
+  - first:
+      213: -3822344421826468238
+    second: Blue Sprite_1118
+  - first:
+      213: 1258703293228132022
+    second: Blue Sprite_1119
+  - first:
+      213: 4278852914448964470
+    second: Blue Sprite_1120
+  - first:
+      213: -938415919927991683
+    second: Blue Sprite_1121
+  - first:
+      213: 5832946578384113641
+    second: Blue Sprite_1122
+  - first:
+      213: -3586785201099954022
+    second: Blue Sprite_1123
+  - first:
+      213: 8045405074907943699
+    second: Blue Sprite_1124
+  - first:
+      213: 934841378106321443
+    second: Blue Sprite_1125
+  - first:
+      213: -7790279299879328274
+    second: Blue Sprite_1126
+  - first:
+      213: 8723965165975823435
+    second: Blue Sprite_1127
+  - first:
+      213: 58568941530298652
+    second: Blue Sprite_1128
+  - first:
+      213: 837309179110195521
+    second: Blue Sprite_1129
+  - first:
+      213: -6066837418568851494
+    second: Blue Sprite_1130
+  - first:
+      213: -7725970653812045163
+    second: Blue Sprite_1131
+  - first:
+      213: 668925279668898505
+    second: Blue Sprite_1132
+  - first:
+      213: 7268352354493125522
+    second: Blue Sprite_1133
+  - first:
+      213: -2568020704619366779
+    second: Blue Sprite_1134
+  - first:
+      213: -6687836829866908637
+    second: Blue Sprite_1135
+  - first:
+      213: 6651598975254415766
+    second: Blue Sprite_1136
+  - first:
+      213: 4789408508111274212
+    second: Blue Sprite_1137
+  - first:
+      213: -452112084631574135
+    second: Blue Sprite_1138
+  - first:
+      213: 1764421924247140883
+    second: Blue Sprite_1139
+  - first:
+      213: -1675663181083104754
+    second: Blue Sprite_1140
+  - first:
+      213: -1848563007003385960
+    second: Blue Sprite_1141
+  - first:
+      213: 4440535003847672974
+    second: Blue Sprite_1142
+  - first:
+      213: 2387337353937418639
+    second: Blue Sprite_1143
+  - first:
+      213: 2571105005866100945
+    second: Blue Sprite_1144
+  - first:
+      213: 6129701070343733948
+    second: Blue Sprite_1145
+  - first:
+      213: -2659842067395329765
+    second: Blue Sprite_1146
+  - first:
+      213: -5780885770913382084
+    second: Blue Sprite_1147
+  - first:
+      213: 1426720262051859585
+    second: Blue Sprite_1148
+  - first:
+      213: 8130163011106368724
+    second: Blue Sprite_1149
+  - first:
+      213: -6909737851206214579
+    second: Blue Sprite_1150
+  - first:
+      213: -5259521224746205870
+    second: Blue Sprite_1151
+  - first:
+      213: 8359908939763553295
+    second: Blue Sprite_1152
+  - first:
+      213: -7446625705634081591
+    second: Blue Sprite_1153
+  - first:
+      213: -2818438300742432263
+    second: Blue Sprite_1154
+  - first:
+      213: 9052097668223966075
+    second: Blue Sprite_1155
+  - first:
+      213: -7374474650275590018
+    second: Blue Sprite_1156
+  - first:
+      213: 4964251054542213005
+    second: Blue Sprite_1157
+  - first:
+      213: -3192668872952971451
+    second: Blue Sprite_1158
+  - first:
+      213: -5387481980058445006
+    second: Blue Sprite_1159
+  - first:
+      213: -6430565469406792438
+    second: Blue Sprite_1160
+  - first:
+      213: -2011737114342219313
+    second: Blue Sprite_1161
+  - first:
+      213: 8323634052454170859
+    second: Blue Sprite_1162
+  - first:
+      213: 3746209195456312164
+    second: Blue Sprite_1163
+  - first:
+      213: 2206871506150967534
+    second: Blue Sprite_1164
+  - first:
+      213: -8594365945888491237
+    second: Blue Sprite_1165
+  - first:
+      213: -2810700517881722913
+    second: Blue Sprite_1166
+  - first:
+      213: 8661172135234870433
+    second: Blue Sprite_1167
+  - first:
+      213: -8618367954706073722
+    second: Blue Sprite_1168
+  - first:
+      213: -2840023993070573312
+    second: Blue Sprite_1169
+  - first:
+      213: -4611633142560183047
+    second: Blue Sprite_1170
+  - first:
+      213: -5901216684546347897
+    second: Blue Sprite_1171
+  - first:
+      213: 5415312446774492529
+    second: Blue Sprite_1172
+  - first:
+      213: 8576840921240642987
+    second: Blue Sprite_1173
+  - first:
+      213: 5842829912489980685
+    second: Blue Sprite_1174
+  - first:
+      213: -678911064753540020
+    second: Blue Sprite_1175
+  - first:
+      213: 1497786326944908844
+    second: Blue Sprite_1176
+  - first:
+      213: 1762647776616711233
+    second: Blue Sprite_1177
+  - first:
+      213: 3621476804782604491
+    second: Blue Sprite_1178
+  - first:
+      213: -6827129531106301268
+    second: Blue Sprite_1179
+  - first:
+      213: -18253782626884966
+    second: Blue Sprite_1180
+  - first:
+      213: 2687888214947381837
+    second: Blue Sprite_1181
+  - first:
+      213: -6099941751724685107
+    second: Blue Sprite_1182
+  - first:
+      213: 8590593921607164151
+    second: Blue Sprite_1183
+  - first:
+      213: -5283631995788657368
+    second: Blue Sprite_1184
+  - first:
+      213: 7682979613594140816
+    second: Blue Sprite_1185
+  - first:
+      213: -3591701469163440307
+    second: Blue Sprite_1186
+  - first:
+      213: 2512277458562115642
+    second: Blue Sprite_1187
+  - first:
+      213: -2292033183129874169
+    second: Blue Sprite_1188
+  - first:
+      213: 4995403416082698409
+    second: Blue Sprite_1189
+  - first:
+      213: -3658676671781608629
+    second: Blue Sprite_1190
+  - first:
+      213: 6293659239203794003
+    second: Blue Sprite_1191
+  - first:
+      213: -7252520193343303123
+    second: Blue Sprite_1192
+  - first:
+      213: 8846950429627490991
+    second: Blue Sprite_1193
+  - first:
+      213: 3432874563526340940
+    second: Blue Sprite_1194
+  - first:
+      213: -5137834372026060737
+    second: Blue Sprite_1195
+  - first:
+      213: -3640854238322691043
+    second: Blue Sprite_1196
+  - first:
+      213: -4638545192190324207
+    second: Blue Sprite_1197
+  - first:
+      213: -891478066748033236
+    second: Blue Sprite_1198
+  - first:
+      213: -8774128170396495726
+    second: Blue Sprite_1199
+  - first:
+      213: -2740939597530186398
+    second: Blue Sprite_1200
+  - first:
+      213: -8240506538570737236
+    second: Blue Sprite_1201
+  - first:
+      213: 8445059658778662307
+    second: Blue Sprite_1202
+  - first:
+      213: 1235374394265352624
+    second: Blue Sprite_1203
+  - first:
+      213: 8105828221202713373
+    second: Blue Sprite_1204
+  - first:
+      213: 5559986303042590239
+    second: Blue Sprite_1205
+  - first:
+      213: -8860024252211922395
+    second: Blue Sprite_1206
+  - first:
+      213: 1090030656394056246
+    second: Blue Sprite_1207
+  - first:
+      213: -8001706547236238370
+    second: Blue Sprite_1208
+  - first:
+      213: 5807612415059027685
+    second: Blue Sprite_1209
+  - first:
+      213: -4715605779646672758
+    second: Blue Sprite_1210
+  - first:
+      213: -3276379499496333589
+    second: Blue Sprite_1211
+  - first:
+      213: 8854791886926278310
+    second: Blue Sprite_1212
+  - first:
+      213: -2003403512666534648
+    second: Blue Sprite_1213
+  - first:
+      213: 8827243200692099363
+    second: Blue Sprite_1214
+  - first:
+      213: 6147011398552275050
+    second: Blue Sprite_1215
+  - first:
+      213: -1351395627631017116
+    second: Blue Sprite_1216
+  - first:
+      213: 1433926140176772006
+    second: Blue Sprite_1217
+  - first:
+      213: -5168288981552234328
+    second: Blue Sprite_1218
+  - first:
+      213: 7049545298779729633
+    second: Blue Sprite_1219
+  - first:
+      213: -1018542342543051101
+    second: Blue Sprite_1220
+  - first:
+      213: -8625566479617345879
+    second: Blue Sprite_1221
+  - first:
+      213: -5647977533961411506
+    second: Blue Sprite_1222
+  - first:
+      213: -8364212430896885497
+    second: Blue Sprite_1223
+  - first:
+      213: 6715355907640485701
+    second: Blue Sprite_1224
+  - first:
+      213: -6515731558898687438
+    second: Blue Sprite_1225
+  - first:
+      213: 8035345829343633165
+    second: Blue Sprite_1226
+  - first:
+      213: 4672560753094474071
+    second: Blue Sprite_1227
+  - first:
+      213: -1542596770987825542
+    second: Blue Sprite_1228
+  - first:
+      213: -2720284895226105193
+    second: Blue Sprite_1229
+  - first:
+      213: 504307693269008128
+    second: Blue Sprite_1230
+  - first:
+      213: 991461792380741190
+    second: Blue Sprite_1231
+  - first:
+      213: 5232388885209926266
+    second: Blue Sprite_1232
+  - first:
+      213: 2919977397441660440
+    second: Blue Sprite_1233
+  - first:
+      213: -63241863349597049
+    second: Blue Sprite_1234
+  - first:
+      213: 1872488233062652980
+    second: Blue Sprite_1235
+  - first:
+      213: 3177987627594491249
+    second: Blue Sprite_1236
+  - first:
+      213: 8144839436715564654
+    second: Blue Sprite_1237
+  - first:
+      213: 6334623617443150085
+    second: Blue Sprite_1238
+  - first:
+      213: -7997484608022453632
+    second: Blue Sprite_1239
+  - first:
+      213: 7817422082499461905
+    second: Blue Sprite_1240
+  - first:
+      213: 2914785993071333750
+    second: Blue Sprite_1241
+  - first:
+      213: 417518306261569270
+    second: Blue Sprite_1242
+  - first:
+      213: 7397264173383402220
+    second: Blue Sprite_1243
+  - first:
+      213: -622309630619063726
+    second: Blue Sprite_1244
+  - first:
+      213: -2136922977168147369
+    second: Blue Sprite_1245
+  - first:
+      213: -3184052849281191005
+    second: Blue Sprite_1246
+  - first:
+      213: 4212509360756816706
+    second: Blue Sprite_1247
+  - first:
+      213: -9011210404213696510
+    second: Blue Sprite_1248
+  - first:
+      213: 2637916529518517059
+    second: Blue Sprite_1249
+  - first:
+      213: -5662086982765614933
+    second: Blue Sprite_1250
+  - first:
+      213: -399088289808186150
+    second: Blue Sprite_1251
+  - first:
+      213: -6543673188897421442
+    second: Blue Sprite_1252
+  - first:
+      213: 8107710977673131507
+    second: Blue Sprite_1253
+  - first:
+      213: -5012380542000475510
+    second: Blue Sprite_1254
+  - first:
+      213: -5740576691629877014
+    second: Blue Sprite_1255
+  - first:
+      213: -4395546826855848091
+    second: Blue Sprite_1256
+  - first:
+      213: 1379014865364253981
+    second: Blue Sprite_1257
+  - first:
+      213: -2675680182148583309
+    second: Blue Sprite_1258
+  - first:
+      213: 5858601376064661902
+    second: Blue Sprite_1259
+  - first:
+      213: 4905209768482727496
+    second: Blue Sprite_1260
+  - first:
+      213: 8816144001624798624
+    second: Blue Sprite_1261
+  - first:
+      213: 5710596885027027032
+    second: Blue Sprite_1262
+  - first:
+      213: -3373391154543399005
+    second: Blue Sprite_1263
+  - first:
+      213: -7309140971671427201
+    second: Blue Sprite_1264
+  - first:
+      213: 4561664893887804313
+    second: Blue Sprite_1265
+  - first:
+      213: -1125650959739084035
+    second: Blue Sprite_1266
+  - first:
+      213: -7217546023309927852
+    second: Blue Sprite_1267
+  - first:
+      213: 8998352481807798938
+    second: Blue Sprite_1268
+  - first:
+      213: -7371508077067594808
+    second: Blue Sprite_1269
+  - first:
+      213: 1947859295774009502
+    second: Blue Sprite_1270
+  - first:
+      213: -2073263071870127287
+    second: Blue Sprite_1271
+  - first:
+      213: 4025974755846558812
+    second: Blue Sprite_1272
+  - first:
+      213: -9040384075102616155
+    second: Blue Sprite_1273
+  - first:
+      213: 5205246723568169551
+    second: Blue Sprite_1274
+  - first:
+      213: -8925815182544749531
+    second: Blue Sprite_1275
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blue Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2375
+        width: 470
+        height: 351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da12943146000c730800000000000000
+      internalID: 4017211297434771885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 2379
+        width: 457
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2c5b0a96309b30800000000000000
+      internalID: 4291990480127535743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 2367
+        width: 461
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ba7596504c48770800000000000000
+      internalID: 8612223914960464776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 2373
+        width: 462
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb092cb0f64d18120800000000000000
+      internalID: 2414444448651055294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1915
+        width: 474
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aeb90bb60104fec0800000000000000
+      internalID: -3534198679159587168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1907
+        width: 457
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d83e5faed1d59cf0800000000000000
+      internalID: -246059850266691372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1915
+        width: 465
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298127e48d6af3140800000000000000
+      internalID: 4701659983957334162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 1903
+        width: 463
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5563bd239488060800000000000000
+      internalID: 6955890107248694727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1425
+        width: 478
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362bb48bd1f5dc7d0800000000000000
+      internalID: -2896554404078701981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1425
+        width: 452
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5807c43be8d4fc4e0800000000000000
+      internalID: -1959262037594050427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1433
+        width: 453
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62fc7b795cfd80000800000000000000
+      internalID: 2497839560642342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1413
+        width: 451
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88bb1b88abb478b0800000000000000
+      internalID: -5155289340869625715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 937
+        width: 482
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734eb729998a1da00800000000000000
+      internalID: 779589588052862007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_13
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 921
+        width: 470
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277620d59de8286b0800000000000000
+      internalID: -5295513147614795918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_14
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 937
+        width: 486
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ca447ae17a0ca10800000000000000
+      internalID: 1927724390611725465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_15
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 917
+        width: 454
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef303b76b45756480800000000000000
+      internalID: -8906583721332505602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 472
+        width: 491
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 783e5b494eeedf5b0800000000000000
+      internalID: -5332843718221896825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_17
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 468
+        width: 462
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a7528979eed67d0800000000000000
+      internalID: -2923418248233518447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_18
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 472
+        width: 478
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe6d0ca6357f5f80800000000000000
+      internalID: -8115639125823099146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_19
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 472
+        width: 453
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34973a2c813266d60800000000000000
+      internalID: 7883026787010312515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 462
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942f6e4af1e6d80a0800000000000000
+      internalID: -6877719973735239095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_21
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 0
+        width: 482
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19171b275957ff980800000000000000
+      internalID: -8502948286717398639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_22
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 0
+        width: 458
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba10a40ac8c03a4e0800000000000000
+      internalID: -1971718413733985877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Sprite_23
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 0
+        width: 457
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ff8256f612e7dd0800000000000000
+      internalID: -2486513181939663014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,55 +1,49 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NextLevPortal : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer blue, gray;
-    [SerializeField] Rigidbody2D player;
+    [SerializeField] PlayerMovement player;
     [SerializeField] GameObject controlCanvas, panelCanvas, loadingPanel, playerWalkEffect;
+    [SerializeField] float leftPos,rightPos;
+    private bool isPlayerCollided;
 
     private void Start()
     {
         loadingPanel.SetActive(false);
-        StartCoroutine(AlterSprite());
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.layer == 7)
+        if (isPlayerCollided)
         {
-            StartCoroutine(LoadLevel());
+            if (player.transform.position.y <= 40)
+            {
+                player.rigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
+                player.rigidBody.isKinematic = true;
+                loadingPanel.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+
+            if (player.transform.position.x < leftPos)
+            {
+                player.rigidBody.AddForce(Vector2.right * 300);
+            }
+            else if (player.transform.position.x > rightPos)
+            {
+                player.rigidBody.AddForce(Vector2.left * 300);
+            }
         }
     }
 
-    IEnumerator LoadLevel()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        controlCanvas.SetActive(false);
-        panelCanvas.SetActive(false);
-        playerWalkEffect.SetActive(false);
-        player.constraints = RigidbodyConstraints2D.FreezePosition;
-        player.isKinematic = true;
-        player.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
-
-        yield return new WaitForSeconds(1);
-
-        player.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        loadingPanel.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    IEnumerator AlterSprite()
-    {
-        blue.sortingOrder = 8;
-        gray.sortingOrder = 7;
-
-        yield return new WaitForSeconds(0.25f);
-
-        blue.sortingOrder = 7;
-        gray.sortingOrder = 8;
-
-        yield return new WaitForSeconds(0.25f);
-
-        StartCoroutine(AlterSprite());
+        if (collision.gameObject.layer == 7)
+        {
+            controlCanvas.SetActive(false);
+            panelCanvas.SetActive(false);
+            playerWalkEffect.SetActive(false);
+            isPlayerCollided = true;
+        }
     }
 }
