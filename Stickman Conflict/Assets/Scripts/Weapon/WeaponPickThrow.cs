@@ -18,8 +18,6 @@ public class WeaponPickThrow : MonoBehaviour
     [SerializeField] Text weaponPickDropButtonText;
     public List<Rigidbody2D> weapons = new List<Rigidbody2D>();
     private Rigidbody2D closestWeapon;
-    public GameObject ropeButton;
-    public GameObject ropeEmmiter;
     private float weaponTimer = 1;
 
     [Header("PickUp")]
@@ -33,10 +31,23 @@ public class WeaponPickThrow : MonoBehaviour
     [SerializeField] float buttonActiveTime;
     [SerializeField] float throwForce;
 
+    [Header("Shield")]
+    [SerializeField] GameObject shield;
+    [SerializeField] Button shieldButton;
+    [SerializeField] Text shieldButtonText;
+    [SerializeField] float shieldTime;
+    private float currShieldTime;
+    [SerializeField] float shieldButtondesableTime;
+    private float currShieldButtondesableTime;
+    private bool isShieldEquip;
 
     private void Start()
     {
-        //PlayerPrefs.DeleteKey("RopeGet");
+        shieldButtonText.gameObject.SetActive(false);
+        currShieldTime = shieldTime;
+        currShieldButtondesableTime = shieldButtondesableTime;
+        shieldButton.interactable = true;
+
         instance = this;
         isWeaponPicked = false;
         if (SaveManager.instance.isDataLoaded)
@@ -57,12 +68,6 @@ public class WeaponPickThrow : MonoBehaviour
                 }
             }
         }
-
-        if (PlayerPrefs.GetInt("WeaponGetter" + "GetRope", 0) != 1)
-        {
-            ropeButton.SetActive(false);
-            ropeEmmiter.SetActive(false);
-        }
     }
 
 
@@ -77,6 +82,41 @@ public class WeaponPickThrow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             PickDropButton();
+        }
+
+        // Active Deactive Shield
+        if (!shieldButton.interactable)
+        {
+            if (isShieldEquip)
+            {
+                if (currShieldTime > 0)
+                {
+                    shieldButtonText.gameObject.SetActive(true);
+                    shieldButtonText.text = ((int)currShieldTime).ToString();
+                    currShieldTime -= Time.deltaTime;
+                }
+                else
+                {
+                    isShieldEquip = false;
+                    currShieldTime = shieldTime;
+                    shield.SetActive(false);
+                }
+            }
+            else
+            {
+                if (currShieldButtondesableTime > 0)
+                {
+                    shieldButtonText.gameObject.SetActive(true);
+                    shieldButtonText.text = ((int)currShieldButtondesableTime).ToString();
+                    currShieldButtondesableTime -= Time.deltaTime;
+                }
+                else
+                {
+                    shieldButtonText.gameObject.SetActive(false);
+                    currShieldButtondesableTime = shieldButtondesableTime;
+                    shieldButton.interactable = true;
+                }
+            }
         }
 
         // Calcuate Distance Butween Player and Weapons
@@ -180,5 +220,12 @@ public class WeaponPickThrow : MonoBehaviour
     {
         if (isWeaponPicked) Throw();
         else PickUp();
+    }
+
+    public void ShieldButton()
+    {
+        shield.SetActive(true);
+        shieldButton.interactable = false;
+        isShieldEquip = true;
     }
 }
