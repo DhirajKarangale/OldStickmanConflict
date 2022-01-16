@@ -1,6 +1,5 @@
 using UnityEngine.UI;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class WeaponPickThrow : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class WeaponPickThrow : MonoBehaviour
     [SerializeField] Grab grabLeft;
     [SerializeField] GameObject weaponPickDropButton;
     [SerializeField] Text weaponPickDropButtonText;
-    public List<Rigidbody2D> weapons = new List<Rigidbody2D>();
+    [SerializeField] Rigidbody2D[] weapons;
     private Rigidbody2D closestWeapon;
     private float weaponTimer = 1;
 
@@ -25,49 +24,18 @@ public class WeaponPickThrow : MonoBehaviour
     public static bool isWeaponPicked;
     private bool isReturning, isDistCalcAllow = !isWeaponPicked;
     private Vector3 oldPosition;
-    private float shortestDistance, time = 0;
+    private float time = 0;
 
     [Header("Throw")]
     [SerializeField] float buttonActiveTime;
     [SerializeField] float throwForce;
 
-    [Header("Shield")]
-    [SerializeField] GameObject shield;
-    [SerializeField] Button shieldButton;
-    [SerializeField] Text shieldButtonText;
-    [SerializeField] float shieldTime;
-    private float currShieldTime;
-    [SerializeField] float shieldButtondesableTime;
-    private float currShieldButtondesableTime;
-    private bool isShieldEquip;
-
     private void Start()
     {
-        shieldButtonText.gameObject.SetActive(false);
-        currShieldTime = shieldTime;
-        currShieldButtondesableTime = shieldButtondesableTime;
-        shieldButton.interactable = true;
-
         instance = this;
         isWeaponPicked = false;
-        if (SaveManager.instance.isDataLoaded)
-        {
-            for (int i = 0; i < weapons.Count; i++)
-            {
-                if (weapons[i] != null)
-                {
-                    if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
-                    {
-                        closestWeapon = weapons[i];
-                        PickUp();
-                    }
-                    else
-                    {
-                        if (SaveManager.instance.isDataLoaded) weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], 0);
-                    }
-                }
-            }
-        }
+
+        SetWeaponOldPos();
     }
 
 
@@ -79,75 +47,11 @@ public class WeaponPickThrow : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            PickDropButton();
-        }
-
-        // Active Deactive Shield
-        if (!shieldButton.interactable)
-        {
-            if (isShieldEquip)
-            {
-                if (currShieldTime > 0)
-                {
-                    shieldButtonText.gameObject.SetActive(true);
-                    shieldButtonText.text = ((int)currShieldTime).ToString();
-                    currShieldTime -= Time.deltaTime;
-                }
-                else
-                {
-                    isShieldEquip = false;
-                    currShieldTime = shieldTime;
-                    shield.SetActive(false);
-                }
-            }
-            else
-            {
-                if (currShieldButtondesableTime > 0)
-                {
-                    shieldButtonText.gameObject.SetActive(true);
-                    shieldButtonText.text = ((int)currShieldButtondesableTime).ToString();
-                    currShieldButtondesableTime -= Time.deltaTime;
-                }
-                else
-                {
-                    shieldButtonText.gameObject.SetActive(false);
-                    currShieldButtondesableTime = shieldButtondesableTime;
-                    shieldButton.interactable = true;
-                }
-            }
-        }
-
         // Calcuate Distance Butween Player and Weapons
         if (isDistCalcAllow) CalculateDistance();
 
         // Fix the Position and rotation of (left & right grab) and this game object
-        if (isWeaponPicked)
-        {
-            grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
-            closestWeapon.transform.localPosition = Vector3.zero;
-            closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
-
-            if ((handRotateJoystick.Vertical() != 0) || (handRotateJoystick.Horizontal() != 0))
-            {
-                grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                weaponTimer = 1;
-            }
-            else
-            {
-                weaponTimer -= Time.deltaTime;
-                if (weaponTimer > 0)
-                {
-                    grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                }
-                else
-                {
-                    //grabLeft.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Clamp(grabLeft.transform.localRotation.z, -160, 10));
-                    grabLeft.rigidBody.angularVelocity = 0.5f;
-                }
-            }
-        }
+        if (isWeaponPicked) FixWeaponPos();
 
         // Pick Up Object
         if (isReturning && (time < 1))
@@ -158,11 +62,58 @@ public class WeaponPickThrow : MonoBehaviour
         }
     }
 
+    private void FixWeaponPos()
+    {
+        grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
+        closestWeapon.transform.localPosition = Vector3.zero;
+        closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
+
+        if ((handRotateJoystick.Vertical() != 0) || (handRotateJoystick.Horizontal() != 0))
+        {
+            grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            weaponTimer = 1;
+        }
+        else
+        {
+            if (weaponTimer > 0)
+            {
+                grabLeft.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                weaponTimer -= Time.deltaTime;
+            }
+            else
+            {
+                grabLeft.rigidBody.angularVelocity = 0.5f;
+            }
+        }
+    }
+
+    private void SetWeaponOldPos()
+    {
+        if (SaveManager.instance.isDataLoaded)
+        {
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                if (weapons[i] != null)
+                {
+                    if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
+                    {
+                        closestWeapon = weapons[i];
+                        PickUp();
+                    }
+                    else
+                    {
+                        weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], 0);
+                    }
+                }
+            }
+        }
+    }
+
     private void CalculateDistance()
     {
-        shortestDistance = Mathf.Infinity;
+        float shortestDistance = Mathf.Infinity;
         closestWeapon = weapons[0];
-        for (var i = 0; i < weapons.Count; i++)
+        for (var i = 0; i < weapons.Length; i++)
         {
             float distance = Vector2.Distance(player.position, weapons[i].transform.position);
             if (distance < shortestDistance)
@@ -175,6 +126,7 @@ public class WeaponPickThrow : MonoBehaviour
         if (shortestDistance < pickRange) weaponPickDropButton.SetActive(true);
         else weaponPickDropButton.SetActive(false);
     }
+
 
     private void PickUp()
     {
@@ -220,12 +172,5 @@ public class WeaponPickThrow : MonoBehaviour
     {
         if (isWeaponPicked) Throw();
         else PickUp();
-    }
-
-    public void ShieldButton()
-    {
-        shield.SetActive(true);
-        shieldButton.interactable = false;
-        isShieldEquip = true;
     }
 }
