@@ -120,9 +120,9 @@ GameObject:
   - component: {fileID: 106091078860572113}
   - component: {fileID: 106091078860572112}
   - component: {fileID: 106091078860572114}
-  - component: {fileID: 106091078860572115}
+  - component: {fileID: 3665429852531850329}
   m_Layer: 0
-  m_Name: Silver 0
+  m_Name: Silver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &106091078860572115
+--- !u!114 &3665429852531850329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,15 +249,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 106091078860572116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76403a6ce91e5c74298ca81c5724e8f4, type: 3}
+  m_Script: {fileID: 11500000, guid: d0171a9ca2d8cb648ab056c2fc2ee4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   animator: {fileID: 106091078860572114}
   effect: {fileID: 3342629432127600043, guid: d48e1f759efb19047aa54fb4a7cab462, type: 3}
   item: {fileID: 8498303636209708657, guid: e99f15a697547704ea683aa47db81cf4, type: 3}
-  isActiveItem: 0
   numberOfItem: 1
-  getDialogue:
-  - Congratulations you Found Key !!!
-  findDialogue: []

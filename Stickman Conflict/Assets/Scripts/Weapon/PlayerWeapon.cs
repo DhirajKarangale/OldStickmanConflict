@@ -26,7 +26,7 @@ public class PlayerWeapon : MonoBehaviour
         float applyDamage = Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage);
         Vector2 handJoystick = new Vector2(handRotateJoystick.Vertical(), handRotateJoystick.Horizontal());
 
-        if (collision.gameObject.layer != 6) // If not Ground
+        if ((collision.gameObject.layer != 6) && (collision.gameObject.layer != 11)) // If not Ground
         {
             AudioManager.instance.Play("Hit");
             Instantiate(hitEffect, collision.transform.position, Quaternion.identity);

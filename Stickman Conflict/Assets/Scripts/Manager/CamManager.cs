@@ -4,7 +4,6 @@ using Cinemachine;
 public class CamManager : MonoBehaviour
 {
     public static CamManager Instance { get; private set; }
-    [SerializeField] CinemachineStateDrivenCamera stateDrivenCamera;
     [SerializeField] CinemachineVirtualCamera cinemachineVirtualCamera;
     private CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
     private float startingIntensity;

@@ -4,8 +4,7 @@ using UnityEngine.SceneManagement;
 public class NextLevPortal : MonoBehaviour
 {
     [SerializeField] PlayerMovement player;
-    [SerializeField] GameObject controlCanvas, panelCanvas, loadingPanel, playerWalkEffect;
-    [SerializeField] float leftPos,rightPos;
+    [SerializeField] GameObject controlCanvas, panelCanvas, loadingPanel;
     private bool isPlayerCollided;
 
     private void Start()
@@ -24,15 +23,6 @@ public class NextLevPortal : MonoBehaviour
                 loadingPanel.SetActive(true);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-
-            if (player.transform.position.x < leftPos)
-            {
-                player.rigidBody.AddForce(Vector2.right * 300);
-            }
-            else if (player.transform.position.x > rightPos)
-            {
-                player.rigidBody.AddForce(Vector2.left * 300);
-            }
         }
     }
 
@@ -42,7 +32,8 @@ public class NextLevPortal : MonoBehaviour
         {
             controlCanvas.SetActive(false);
             panelCanvas.SetActive(false);
-            playerWalkEffect.SetActive(false);
+            player.walkEffect.gameObject.SetActive(false);
+            player.rigidBody.constraints = RigidbodyConstraints2D.FreezePositionX;
             isPlayerCollided = true;
         }
     }

@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rigidBody;
     [SerializeField] Animator animator;
     [SerializeField] CapsuleCollider2D legCollider;
-    [SerializeField] ParticleSystem walkEffect, fallEffect;
+    public ParticleSystem walkEffect;
+    [SerializeField] ParticleSystem fallEffect;
 
     [Header("Attributes")]
     [SerializeField] float jumpForce;
