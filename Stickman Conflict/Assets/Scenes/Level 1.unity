@@ -116351,6 +116351,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4791950675861195}
     m_Modifications:
     - target: {fileID: 1410234093403476096, guid: ac5db9c1f7de5eb4eb62ef511ef0726a, type: 3}
+      propertyPath: force
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410234093403476096, guid: ac5db9c1f7de5eb4eb62ef511ef0726a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1481960884}
@@ -116366,6 +116370,14 @@ PrefabInstance:
       propertyPath: controlCanvas
       value: 
       objectReference: {fileID: 8655914303187016111}
+    - target: {fileID: 1410234093403476097, guid: ac5db9c1f7de5eb4eb62ef511ef0726a, type: 3}
+      propertyPath: m_Size.x
+      value: 8.952393
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410234093403476097, guid: ac5db9c1f7de5eb4eb62ef511ef0726a, type: 3}
+      propertyPath: m_Offset.x
+      value: 2.0196533
+      objectReference: {fileID: 0}
     - target: {fileID: 1410234093403476098, guid: ac5db9c1f7de5eb4eb62ef511ef0726a, type: 3}
       propertyPath: m_RootOrder
       value: 15

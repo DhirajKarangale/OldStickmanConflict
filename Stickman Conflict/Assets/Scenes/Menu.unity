@@ -1014,6 +1014,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a2c6844dffdccab41b36757272a57c98, type: 3}
     volume: 1
     audioSource: {fileID: 0}
+  - name: UsePortal
+    clip: {fileID: 8300000, guid: bb7684ada588def4f98d0f74965466c2, type: 3}
+    volume: 1
+    audioSource: {fileID: 0}
 --- !u!1 &1594426882
 GameObject:
   m_ObjectHideFlags: 0

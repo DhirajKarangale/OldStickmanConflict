@@ -9,11 +9,7 @@ public class Menu : MonoBehaviour
     private void Start()
     {
         level = SaveManager.instance.saveData.level;
-        if (level != 0)
-        {
-            level = SaveManager.instance.saveData.level;
-        }
-        else
+        if (level == 0)
         {
             level = 1;
             SaveManager.instance.saveData.level = level;

@@ -23,6 +23,15 @@ public class NextLevPortal : MonoBehaviour
                 loadingPanel.SetActive(true);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
+
+            if (player.transform.position.x < (transform.position.x - 3.5f))
+            {
+                player.rigidBody.AddForce(Vector2.right * 2);
+            }
+            else if (player.transform.position.x > (transform.position.x + 3.5f))
+            {
+                player.rigidBody.AddForce(Vector2.left * 2);
+            }
         }
     }
 
@@ -30,10 +39,10 @@ public class NextLevPortal : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
+            AudioManager.instance.Play("UsePortal");
             controlCanvas.SetActive(false);
             panelCanvas.SetActive(false);
             player.walkEffect.gameObject.SetActive(false);
-            player.rigidBody.constraints = RigidbodyConstraints2D.FreezePositionX;
             isPlayerCollided = true;
         }
     }

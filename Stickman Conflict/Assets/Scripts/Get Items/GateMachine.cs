@@ -11,6 +11,7 @@ public class GateMachine : MonoBehaviour
 
     private void Start()
     {
+        // PlayerPrefs.DeleteKey("GateMachine" + transform.name);
         keyNotFoundDialogue[0] = "Machine : Need a Key to open route.";
         keyNotFoundDialogue[1] = "Machine : Find a key behind this then come.";
 
@@ -39,9 +40,8 @@ public class GateMachine : MonoBehaviour
             return;
         }
 
-        if ((collision.gameObject.layer == 7) && (open == 0) && isDialogueAllow)
+        if ((collision.gameObject.layer == 7) && (open == 0))
         {
-            if (IsInvoking("EndDialogue")) CancelInvoke("EndDialogue");
             if (SaveManager.instance.saveData.key > 0)
             {
                 AudioManager.instance.Play("Coin");
@@ -52,13 +52,15 @@ public class GateMachine : MonoBehaviour
             }
             else
             {
-                dialogueManager.StartDialogue(keyNotFoundDialogue);
+                if (isDialogueAllow)
+                {
+                    dialogueManager.StartDialogue(keyNotFoundDialogue);
+                    isDialogueAllow = false;
+                }
             }
-            Invoke("EndDialogue", 2);
-            isDialogueAllow = false;
+            if (!IsInvoking("EndDialogue")) Invoke("EndDialogue", 5);
         }
     }
-
 
     private void OnDestroy()
     {

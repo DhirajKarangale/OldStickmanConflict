@@ -63,6 +63,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
+        yield return new WaitForSeconds(1);
+        DisplayNextSentence();
     }
 
     public void EndDialogue()
