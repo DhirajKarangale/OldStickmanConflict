@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,7 +35,7 @@ public class ControlsCustomizer : MonoBehaviour
         alphaSlider.value = alpha;
     }
 
-    public void SaveData()
+    private void SaveData()
     {
         foreach (var b in buttons)
         {
@@ -45,11 +43,26 @@ public class ControlsCustomizer : MonoBehaviour
         }
     }
 
-    public void ResetData()
+    private void ResetData()
     {
+        selectButton = null;
+        alphaSlider.value = 1;
+        sizeSlider.value = 1;
+
         foreach (var b in buttons)
         {
             b.Reset();
         }
+    }
+
+    public void ResetButton()
+    {
+        ResetData();
+    }
+
+    public void SaveExitButton()
+    {
+        SaveData();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

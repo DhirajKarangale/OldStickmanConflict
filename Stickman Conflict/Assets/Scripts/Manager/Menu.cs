@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
         level = SaveManager.instance.saveData.level;
         if (level == 0)
         {
-            level = 1;
+            level = 2;
             SaveManager.instance.saveData.level = level;
             SaveManager.instance.Save();
         }
@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
         AudioManager.instance.Play("ButtonBig");
         DesableScreens();
         loadScreen.SetActive(true);
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(2);
     }
 
     public void QuitButton()

@@ -118163,14 +118163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1023596046}
     m_Modifications:
-    - target: {fileID: 1286221546, guid: b043783d9387af540b0c353d083baea7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1481960886}
-    - target: {fileID: 1286221546, guid: b043783d9387af540b0c353d083baea7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShieldButton
-      objectReference: {fileID: 0}
     - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -118271,6 +118263,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1130490440}
+    - target: {fileID: 6811004315950814557, guid: b043783d9387af540b0c353d083baea7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481960886}
     - target: {fileID: 6811004316467946660, guid: b043783d9387af540b0c353d083baea7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -118290,7 +118286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &6811004315950814555 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1286221546, guid: b043783d9387af540b0c353d083baea7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6811004315950814557, guid: b043783d9387af540b0c353d083baea7, type: 3}
   m_PrefabInstance: {fileID: 6811004315950814553}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
