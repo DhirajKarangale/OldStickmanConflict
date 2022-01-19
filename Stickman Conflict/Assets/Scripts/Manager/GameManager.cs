@@ -54,13 +54,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         AudioManager.instance.Play("ButtonBig");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneLoader.instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void MenuButton()
     {
         Time.timeScale = 1;
         AudioManager.instance.Play("Button");
-        SceneManager.LoadScene(0);
+        SceneLoader.instance.LoadScene(0);
     }
 
     public void QuitButton()

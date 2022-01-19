@@ -63,6 +63,6 @@ public class ControlsCustomizer : MonoBehaviour
     public void SaveExitButton()
     {
         SaveData();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        SceneLoader.instance.LoadScene(0);
     }
 }

@@ -27,18 +27,10 @@ public class Menu : MonoBehaviour
         }
     }
 
-    // public void PlayButton(GameObject loadScreen)
-    // {
-    //     AudioManager.instance.Play("ButtonBig");
-    //     DesableScreens();
-    //     loadScreen.SetActive(true);
-    //     SceneManager.LoadScene(3);
-    // }
-
     public void SceneChangeButton(int sceneIndex)
     {
         AudioManager.instance.Play("ButtonBig");
-        if(sceneIndex == -1) sceneIndex = level;
+        if(sceneIndex == -1) sceneIndex = 2;
         SceneLoader.instance.LoadScene(sceneIndex);
     }
 

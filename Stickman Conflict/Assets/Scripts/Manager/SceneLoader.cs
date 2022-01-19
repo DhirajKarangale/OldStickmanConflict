@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader instance { get; private set; }
-    [SerializeField] GameObject loadingScreen;
     [SerializeField] GameObject sceneCanvas;
+    [SerializeField] GameObject loadingScreen;
     [SerializeField] Slider loadingSlider;
+    [SerializeField] Text loadingText;
 
     private void Awake()
     {
@@ -29,8 +30,9 @@ public class SceneLoader : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             loadingSlider.value = progress;
-
+            loadingText.text = "Loading : " + (int)(progress * 100) + "%";
             yield return null;
         }
+        Time.timeScale = 1;
     }
 }
