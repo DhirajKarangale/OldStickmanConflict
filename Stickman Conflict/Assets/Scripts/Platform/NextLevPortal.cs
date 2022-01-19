@@ -15,6 +15,7 @@ public class NextLevPortal : MonoBehaviour
                 player.rigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
                 player.rigidBody.isKinematic = true;
                 SceneLoader.instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                this.enabled = false;
             }
 
             if (player.transform.position.x < (transform.position.x - 3.5f))

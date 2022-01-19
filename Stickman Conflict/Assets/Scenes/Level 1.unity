@@ -79584,6 +79584,14 @@ PrefabInstance:
       value: SceneLoader
       objectReference: {fileID: 0}
     - target: {fileID: 2879836975999662889, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 7660126083671916897}
+    - target: {fileID: 2879836975999662889, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
+      propertyPath: eve
+      value: 
+      objectReference: {fileID: 1334024843675727155}
+    - target: {fileID: 2879836975999662889, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
       propertyPath: sceneCanvas
       value: 
       objectReference: {fileID: 1023596045}

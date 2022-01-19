@@ -24,8 +24,10 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadSceneAsync(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        Debug.Log("Loading");
         sceneCanvas.SetActive(false);
         loadingScreen.SetActive(true);
+
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
@@ -33,6 +35,5 @@ public class SceneLoader : MonoBehaviour
             loadingText.text = "Loading : " + (int)(progress * 100) + "%";
             yield return null;
         }
-        Time.timeScale = 1;
     }
 }
