@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager instance { get; private set; }
 
     private bool isPause;
     [SerializeField] GameObject controlPanel;
@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);

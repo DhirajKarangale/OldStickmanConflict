@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -28,12 +27,19 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void PlayButton(GameObject loadScreen)
+    // public void PlayButton(GameObject loadScreen)
+    // {
+    //     AudioManager.instance.Play("ButtonBig");
+    //     DesableScreens();
+    //     loadScreen.SetActive(true);
+    //     SceneManager.LoadScene(3);
+    // }
+
+    public void SceneChangeButton(int sceneIndex)
     {
         AudioManager.instance.Play("ButtonBig");
-        DesableScreens();
-        loadScreen.SetActive(true);
-        SceneManager.LoadScene(3);
+        if(sceneIndex == -1) sceneIndex = level;
+        SceneLoader.instance.LoadScene(sceneIndex);
     }
 
     public void QuitButton()
