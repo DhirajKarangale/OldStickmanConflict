@@ -2206,7 +2206,7 @@ MonoBehaviour:
   damage: 0.01
   hitEffect: {fileID: 2571799540916514908, guid: a9dc99ae3f5222d41834afe7befa9d92, type: 3}
   enemyBloodEffect: {fileID: 3697530900228688425, guid: c050914dc59bf17498bc0beffe7a72a2, type: 3}
-  handRotateJoystick: {fileID: 8757249028826512744}
+  handRotateJoystick: {fileID: 6811004315950814557}
   maxDamage: 30
 --- !u!1 &400148885
 GameObject:
@@ -10000,7 +10000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 1928019751}
   line: {fileID: 1130490441}
-  joystickHandRotate: {fileID: 8757249028826512744}
+  joystickHandRotate: {fileID: 6811004315950814557}
 --- !u!120 &1130490441
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -12717,7 +12717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6192421921179393771}
-  handRotateJoystick: {fileID: 8757249028826512744}
+  handRotateJoystick: {fileID: 6811004315950814557}
   grabLeft: {fileID: 1486054270886776392}
   weaponPickDropButton: {fileID: 1737214525}
   weaponPickDropButtonText: {fileID: 1060228526}
@@ -20173,11 +20173,11 @@ PrefabInstance:
     - target: {fileID: 5017258866318907024, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: joystickHandRotate
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 5854508160057714684, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: joystickHandRotate
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 5854508160126722315, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: button
       value: 
@@ -20189,23 +20189,23 @@ PrefabInstance:
     - target: {fileID: 5854508160473283949, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: handRotateJoystick
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 6916469861674146540, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: joystickHandRotate
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 6916469861674758052, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: joystickHandRotate
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 6916469862132176976, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: joystickHandRotate
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 6916469862293047548, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: joystickHandRotate
       value: 
-      objectReference: {fileID: 8757249028826512744}
+      objectReference: {fileID: 6811004315950814557}
     - target: {fileID: 6916469862543734304, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: healthSlider
       value: 
@@ -20221,7 +20221,7 @@ PrefabInstance:
     - target: {fileID: 6916469862543734318, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: moveJoystick
       value: 
-      objectReference: {fileID: 8757249028971126026}
+      objectReference: {fileID: 6811004315950814558}
     - target: {fileID: 6916469862543734319, guid: ef44af91c25f3684688bbc49d78f8ff7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -20274,6 +20274,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
@@ -20377,6 +20389,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1286221543, guid: b043783d9387af540b0c353d083baea7, type: 3}
   m_PrefabInstance: {fileID: 6811004315950814553}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6811004315950814557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2655803942849152651, guid: b043783d9387af540b0c353d083baea7, type: 3}
+  m_PrefabInstance: {fileID: 6811004315950814553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b522030e6b67fb4ea849be5450db1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6811004315950814558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3171146542063405395, guid: b043783d9387af540b0c353d083baea7, type: 3}
+  m_PrefabInstance: {fileID: 6811004315950814553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b522030e6b67fb4ea849be5450db1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7660126083671916896
 Transform:
   m_ObjectHideFlags: 0
@@ -21064,25 +21098,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2781659296000756982, guid: b043783d9387af540b0c353d083baea7, type: 3}
   m_PrefabInstance: {fileID: 6811004315950814553}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8757249028826512744 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810936449441998897, guid: b043783d9387af540b0c353d083baea7, type: 3}
-  m_PrefabInstance: {fileID: 6811004315950814553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b522030e6b67fb4ea849be5450db1f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8757249028971126026 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2810936449297533011, guid: b043783d9387af540b0c353d083baea7, type: 3}
-  m_PrefabInstance: {fileID: 6811004315950814553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b522030e6b67fb4ea849be5450db1f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

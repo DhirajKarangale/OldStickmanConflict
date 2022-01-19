@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
         AudioManager.instance.Play("ButtonBig");
         DesableScreens();
         loadScreen.SetActive(true);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void QuitButton()

@@ -3,13 +3,13 @@ using UnityEngine.EventSystems;
 
 public class DragButton : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
+    [SerializeField] ControlsCustomizer controlsCustomizer;
+    [SerializeField] Vector2 defaultPos;
+    
     private Vector2 currPos;
     private Vector3 newPos;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    [SerializeField] ControlsCustomizer controlsCustomizer;
-    [SerializeField] Vector2 defaultPos;
-    [SerializeField] Vector2 defaultSize;
     private UnityEngine.UI.Button button;
     private EventTrigger eventTrigger;
 
@@ -42,8 +42,8 @@ public class DragButton : MonoBehaviour, IDragHandler, IPointerDownHandler
     private void Update()
     {
         currPos = RectTransformUtility.WorldToScreenPoint(new Camera(), transform.position);
-        currPos.x = Mathf.Clamp(currPos.x, rectTransform.sizeDelta.x / 2, Screen.width - rectTransform.sizeDelta.x / 2);
-        currPos.y = Mathf.Clamp(currPos.y, rectTransform.sizeDelta.y / 2, Screen.height - rectTransform.sizeDelta.y / 2);
+        currPos.x = Mathf.Clamp(currPos.x, transform.localScale.x / 2, Screen.width - transform.localScale.x / 2);
+        currPos.y = Mathf.Clamp(currPos.y, transform.localScale.y / 2, Screen.height - transform.localScale.y / 2);
         RectTransformUtility.ScreenPointToWorldPointInRectangle(rectTransform, currPos, new Camera(), out newPos);
         transform.position = newPos;
     }
@@ -51,7 +51,7 @@ public class DragButton : MonoBehaviour, IDragHandler, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         controlsCustomizer.selectButton = this;
-        controlsCustomizer.SetButtonData(rectTransform.sizeDelta.x / defaultSize.x, canvasGroup.alpha);
+        controlsCustomizer.SetButtonData(transform.localScale.x, canvasGroup.alpha);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -61,17 +61,13 @@ public class DragButton : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void SetSizeAlpha(float size, float alpha)
     {
-        rectTransform.sizeDelta = defaultSize * size;
-        // foreach (var g in GetComponentsInChildren<RectTransform>())
-        // {
-        //     g.sizeDelta = defaultSize * size;
-        // }
+        transform.localScale = Vector2.one * size;
         canvasGroup.alpha = alpha;
     }
 
     public void SaveData()
     {
-        PlayerPrefs.SetFloat(transform.name + "ButtonSize", rectTransform.sizeDelta.x / defaultSize.x);
+        PlayerPrefs.SetFloat(transform.name + "ButtonSize", transform.localScale.x);
         PlayerPrefs.SetFloat(transform.name + "ButtonAlpha", canvasGroup.alpha);
         PlayerPrefs.SetFloat(transform.name + "ButtonXPos", rectTransform.anchoredPosition.x);
         PlayerPrefs.SetFloat(transform.name + "ButtonYPos", rectTransform.anchoredPosition.y);
@@ -85,7 +81,7 @@ public class DragButton : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void Load()
     {
-        SetSizeAlpha(PlayerPrefs.GetFloat(transform.name + "ButtonSize", rectTransform.sizeDelta.x / defaultSize.x), PlayerPrefs.GetFloat(transform.name + "ButtonAlpha", 1));
+        SetSizeAlpha(PlayerPrefs.GetFloat(transform.name + "ButtonSize", transform.localScale.x), PlayerPrefs.GetFloat(transform.name + "ButtonAlpha", 1));
         rectTransform.anchoredPosition = new Vector2(PlayerPrefs.GetFloat(transform.name + "ButtonXPos", defaultPos.x), PlayerPrefs.GetFloat(transform.name + "ButtonYPos", defaultPos.y));
     }
 }
