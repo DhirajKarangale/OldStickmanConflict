@@ -19,9 +19,10 @@ public class Cannon : MonoBehaviour
         if (PlayerHealth.isPlayerDye) return;
 
         cannonUp.right = cannonUp.position - player.position + new Vector3(0, -1.7f, 0);
-        cannonUp.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(cannonUp.rotation.eulerAngles.z, 270, 360));
+        cannonUp.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(cannonUp.rotation.eulerAngles.z, -270, 360));
 
-        if (((transform.position.x - player.position.x) < fireDist) && (transform.position.x - player.position.x > 0) && (Time.time > timeToFire))
+
+        if ((Vector2.Distance(player.position, transform.position) < fireDist) && (transform.position.x - player.position.x > 0) && (Time.time > timeToFire))
         {
             timeToFire = Time.time + 1 / fireRate;
             Shoot();

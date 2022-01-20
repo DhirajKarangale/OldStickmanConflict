@@ -24,7 +24,6 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadSceneAsync(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        Debug.Log("Loading");
         sceneCanvas.SetActive(false);
         loadingScreen.SetActive(true);
 

@@ -34,7 +34,7 @@ public class Balance : MonoBehaviour
             Vector2 forceDir = new Vector2(enemyRB.position.x - rigidBody.position.x, 0.5f);
             forceDir = forceDir.normalized;
             StartCoroutine(Collisions(enemyRB.GetComponent<Collider2D>()));
-            enemyRB.AddForce(forceDir * 5, ForceMode2D.Impulse);
+            enemyRB.AddForce(forceDir * 2, ForceMode2D.Impulse);
         }
     }
 

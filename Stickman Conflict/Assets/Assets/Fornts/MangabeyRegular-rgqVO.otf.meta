@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 279de16729b39164285c3cd3e1b05a61
+guid: f9655e780ed785243a0560cbf9955d5c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Transformers
+  - Mangabey
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

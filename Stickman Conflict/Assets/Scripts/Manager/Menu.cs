@@ -36,7 +36,7 @@ public class Menu : MonoBehaviour
     public void SceneChangeButton(int sceneIndex)
     {
         AudioManager.instance.Play("ButtonBig");
-        if (sceneIndex == -1) sceneIndex = 2;
+        if (sceneIndex == -1) sceneIndex = level;
         SceneLoader.instance.LoadScene(sceneIndex);
     }
 
@@ -48,21 +48,12 @@ public class Menu : MonoBehaviour
 
     IEnumerator GenerateTips()
     {
-        int tipCount = Random.Range(0, tips.Length);
-        tipText.text = tips[tipCount];
-        while (true)
-        {
-            // 5 sec
-            yield return new WaitForSeconds(5);
-            // fade to zero
-            tipText.CrossFadeAlpha(0, 0.5f, false); // Text fade (Gone)
-            // 1 sec
-            yield return new WaitForSeconds(1);
-            // new tip
-            tipCount = (tipCount + 1) % tips.Length;
-            tipText.text = tips[tipCount];
-            // fade to one
-            tipText.CrossFadeAlpha(1, 0.5f, false); // Text come 
-        }
+        tipText.text = tips[Random.Range(0, tips.Length)];
+        yield return new WaitForSeconds(5);
+        tipText.CrossFadeAlpha(0, 0.5f, false); // Text fade (Gone)
+        yield return new WaitForSeconds(1);
+        tipText.CrossFadeAlpha(1, 0.5f, false); // Text come 
+
+        StartCoroutine(GenerateTips());
     }
 }

@@ -193,6 +193,7 @@ MonoBehaviour:
   moveNPC: {fileID: 6827780452578457738}
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 6827780452578457750}
+  cageAnimator: {fileID: 0}
   health: 10
   healthSlider: {fileID: 6827780452920779795}
   destroyEffect: {fileID: 0}
@@ -245,10 +246,10 @@ RectTransform:
   m_Father: {fileID: 6827780452920779792}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.03560779, y: 0.18145956}
+  m_AnchorMax: {x: 0.96635145, y: 0.85763747}
+  m_AnchoredPosition: {x: 0.037511826, y: 0.1319654}
+  m_SizeDelta: {x: -0.11890796, y: -0.123701066}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &6827780452920779793
 GameObject:
@@ -335,7 +336,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.475
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -372,7 +373,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.475, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}

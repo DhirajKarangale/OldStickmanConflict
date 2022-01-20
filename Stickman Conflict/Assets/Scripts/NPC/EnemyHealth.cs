@@ -18,7 +18,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject destroyEffect;
     private float currHealth;
-    private string[] headShotText = { "Head", "Shot", "HeadShot", "Pattse", "Op" };
+    private string[] headShotText = { "Head", "Shot", "HeadShot", "Pattse", "Op", "Smack", "Bang" };
+    private string[] deadText = { "Finish", "Dead", "Over", "KO", "Down" };
     private Color[] headShotTextColor = { Color.black, Color.blue, Color.red, };
 
     private void Start()
@@ -51,22 +52,25 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float damage, int headShot)
     {
-        if (currHealth <= 0) Dead();
+        currHealth -= damage;
+        if (currHealth <= 0)
+        {
+            Dead();
+            return; 
+        }
         else
         {
-            currHealth -= damage;
             Hurt();
 
             if (headShot != -1)
             {
                 damageText.color = headShotTextColor[headShot];
                 damageText.text = headShotText[Random.Range(0, headShotText.Length)];
-
                 GameObject currentDamageText = Instantiate(damageText.gameObject,
                 new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
                 currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
-
                 Destroy(currentDamageText, 1.5f);
+
                 CamManager.Instance.Shake(8, 0.3f);
             }
             else
@@ -85,7 +89,7 @@ public class EnemyHealth : MonoBehaviour
         healthSlider.gameObject.SetActive(true);
         healthSlider.value = currHealth / health;
         if (moveNPC) moveNPC.animator.Play("Hurt");
-        if (currHealth <= 0) Dead();
+        // if (currHealth <= 0) Dead();
         Invoke("ExitHurt", 0.5f);
     }
 
@@ -98,6 +102,15 @@ public class EnemyHealth : MonoBehaviour
     private void Dead()
     {
         if (currState == State.Dead) return;
+
+        damageText.color = Color.white;
+        damageText.text = deadText[Random.Range(0, deadText.Length)];
+        GameObject currentDamageText = Instantiate(damageText.gameObject,
+        new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
+        currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
+        Destroy(currentDamageText, 1.5f);
+
+
         healthSlider.gameObject.SetActive(false);
         CamManager.Instance.Shake(9, 0.4f);
         if (moveNPC)
