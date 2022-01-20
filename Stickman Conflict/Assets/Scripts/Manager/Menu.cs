@@ -49,59 +49,20 @@ public class Menu : MonoBehaviour
     IEnumerator GenerateTips()
     {
         int tipCount = Random.Range(0, tips.Length);
-
-
-        // while (true)
-        // {
-        //     yield return new WaitForSeconds(5);
-
-        //     // StartCoroutine(FadeFullAlpha());
-        //     StartCoroutine(FadeZeroAlpha());
-
-        //     yield return new WaitForSeconds(1);
-
-        //     tipCount = (tipCount + 1) % tips.Length;
-        //     tipText.text = tips[tipCount];
-
-        //     StartCoroutine(FadeFullAlpha());
-        //     // StartCoroutine(FadeZeroAlpha());
-        // }
-
+        tipText.text = tips[tipCount];
         while (true)
         {
-            tipText.text = tips[tipCount];
-
             // 5 sec
             yield return new WaitForSeconds(5);
             // fade to zero
-            StopCoroutine(FadeTo0());
+            tipText.CrossFadeAlpha(0, 0.5f, false); // Text fade (Gone)
             // 1 sec
             yield return new WaitForSeconds(1);
             // new tip
             tipCount = (tipCount + 1) % tips.Length;
-            // tipText.text = tips[tipCount];
+            tipText.text = tips[tipCount];
             // fade to one
-            StopCoroutine(FadeTo1());
-        }
-    }
-
-    IEnumerator FadeTo1()
-    {
-        tipText.color = new Color(tipText.color.r, tipText.color.g, tipText.color.b, 0);
-        while (tipText.color.a < 1)
-        {
-            tipText.color = new Color(tipText.color.r, tipText.color.g, tipText.color.b, tipText.color.a + Time.deltaTime);
-            yield return null;
-        }
-    }
-
-    IEnumerator FadeTo0()
-    {
-        tipText.color = new Color(tipText.color.r, tipText.color.g, tipText.color.b, 1);
-        while (tipText.color.a > 0)
-        {
-            tipText.color = new Color(tipText.color.r, tipText.color.g, tipText.color.b, tipText.color.a - Time.deltaTime);
-            yield return null;
+            tipText.CrossFadeAlpha(1, 0.5f, false); // Text come 
         }
     }
 }
