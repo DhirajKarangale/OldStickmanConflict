@@ -13,8 +13,8 @@ public class WeaponPickThrow : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] EasyJoystick.Joystick handRotateJoystick;
     [SerializeField] Grab grabLeft;
-    [SerializeField] GameObject weaponPickDropButton;
-    [SerializeField] Text weaponPickDropButtonText;
+    [SerializeField] Button pickDropButton;
+    [SerializeField] Sprite pick,drop;
     [SerializeField] Rigidbody2D[] weapons;
     private Rigidbody2D closestWeapon;
     private float weaponTimer = 1;
@@ -123,8 +123,8 @@ public class WeaponPickThrow : MonoBehaviour
             }
         }
 
-        if (shortestDistance < pickRange) weaponPickDropButton.SetActive(true);
-        else weaponPickDropButton.SetActive(false);
+        if (shortestDistance < pickRange) pickDropButton.gameObject.SetActive(true);
+        else pickDropButton.gameObject.SetActive(false);
     }
 
 
@@ -141,8 +141,8 @@ public class WeaponPickThrow : MonoBehaviour
         closestWeapon.transform.parent = grabLeft.transform;
         grabLeft.AttachObject(closestWeapon);
 
-        weaponPickDropButton.SetActive(true);
-        weaponPickDropButtonText.text = "Drop";
+        pickDropButton.gameObject.SetActive(true);
+        pickDropButton.image.sprite = drop;
 
         SaveManager.instance.saveData.pickedWeaponName = closestWeapon.name;
     }
@@ -150,7 +150,7 @@ public class WeaponPickThrow : MonoBehaviour
     private void Throw()
     {
         AudioManager.instance.Play("Throw");
-        weaponPickDropButtonText.text = "Pick Up";
+        pickDropButton.image.sprite = pick;
         isWeaponPicked = false;
         Invoke("DesableWeaponButton", buttonActiveTime);
 
@@ -164,7 +164,7 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void DesableWeaponButton()
     {
-        weaponPickDropButton.SetActive(false);
+        pickDropButton.gameObject.SetActive(false);
         isDistCalcAllow = true;
     }
 

@@ -18,8 +18,8 @@ public class MoveNPC : MonoBehaviour
     private void Start()
     {
         animator.speed = 0.3f;
-        curreLeftDist = leftDist;
         currRightDist = rightDist;
+        curreLeftDist = leftDist;
     }
 
     private void Update()
@@ -77,7 +77,7 @@ public class MoveNPC : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(new Vector3(leftDist, (transform.localPosition.y + 4), 0), 1);
-        Gizmos.DrawSphere(new Vector3(rightDist, (transform.localPosition.y + 4), 0), 1);
+        Gizmos.DrawSphere(new Vector3(leftDist, (transform.position.y + 4), 0), 1);
+        Gizmos.DrawSphere(new Vector3(rightDist, (transform.position.y + 4), 0), 1);
     }
 }

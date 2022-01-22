@@ -56,11 +56,12 @@ public class EnemyHealth : MonoBehaviour
         if (currHealth <= 0)
         {
             Dead();
-            return; 
+            return;
         }
         else
         {
             Hurt();
+            if (transform.name == "Shield Object") return;
 
             if (headShot != -1)
             {
@@ -103,14 +104,6 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currState == State.Dead) return;
 
-        damageText.color = Color.white;
-        damageText.text = deadText[Random.Range(0, deadText.Length)];
-        GameObject currentDamageText = Instantiate(damageText.gameObject,
-        new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
-        currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
-        Destroy(currentDamageText, 1.5f);
-
-
         healthSlider.gameObject.SetActive(false);
         CamManager.Instance.Shake(9, 0.4f);
         if (moveNPC)
@@ -127,5 +120,13 @@ public class EnemyHealth : MonoBehaviour
         }
         if (cageAnimator) cageAnimator.Play("Open");
         currState = State.Dead;
+
+        if (transform.name == "Shield Object") return;
+        damageText.color = Color.white;
+        damageText.text = deadText[Random.Range(0, deadText.Length)];
+        GameObject currentDamageText = Instantiate(damageText.gameObject,
+        new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
+        currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
+        Destroy(currentDamageText, 1.5f);
     }
 }
