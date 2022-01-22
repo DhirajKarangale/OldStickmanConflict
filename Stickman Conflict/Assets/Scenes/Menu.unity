@@ -300,6 +300,7 @@ MonoBehaviour:
     coin: 0
     key: 0
     level: 0
+    palakCount: 0
   isDataLoaded: 0
 --- !u!4 &601401957
 Transform:
@@ -1017,11 +1018,15 @@ MonoBehaviour:
   - {fileID: 212909927}
   tipText: {fileID: 1804867085}
   tips:
-  - 'Tip : To use rope, Hand Rotate Joystick must be used....'
   - 'Tip : Enjoy the game, Gamerz!!!!'
+  - 'Tip : To use rope, Hand Rotate Joystick must be used....'
   - 'Tip : Controls can be change in About'
-  - 'Tip : DK Tip 4'
-  - 'Tip : DK Tip 5'
+  - 'Tip : Tap Palak Icon to use it (If it avaailable)'
+  - 'Tip : Palak can be found rarely.'
+  - 'Tip : Palak can increase full heath at single time.'
+  - 'Tip : Palak can be collected & use any time when needed.'
+  - 'Tip : You cannot stick to every tree.'
+  - 'Tip : You can stick to some of trees'
 --- !u!1 &1710385834
 GameObject:
   m_ObjectHideFlags: 0

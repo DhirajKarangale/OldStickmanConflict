@@ -28,7 +28,7 @@ public class CheckPoint : MonoBehaviour
 
             for (int i = 0; i < weapons.Length; i++)
             {
-                SaveManager.instance.saveData.weaponsPosition = new float[weapons.Length, 2];
+                // SaveManager.instance.saveData.weaponsPosition = new float[weapons.Length, 2];
 
                 SaveManager.instance.saveData.weaponsPosition[i, 0] = weapons[i].position.x;
                 SaveManager.instance.saveData.weaponsPosition[i, 1] = weapons[i].position.y;

@@ -29,7 +29,7 @@ public class MoveNPC : MonoBehaviour
 
     public void Move()
     {
-        float playerDist = Vector2.Distance(player.position, transform.position);
+        float playerDist = Mathf.Abs(Vector2.Distance(transform.position, player.position));
         //float playerDist = Mathf.Abs(player.position.x - transform.position.x);
         if (playerDist < followDist)
         {
@@ -54,7 +54,7 @@ public class MoveNPC : MonoBehaviour
     private void Walk()
     {
         // Move
-        if (transform.localPosition.x > currRightDist) moveFront = false;     // Move Back
+        if (transform.position.x > currRightDist) moveFront = false;     // Move Back
         else if (transform.position.x < curreLeftDist) moveFront = true;  // Move Front
 
 

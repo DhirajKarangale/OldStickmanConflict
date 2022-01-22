@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
 
     private bool isPause;
+    [SerializeField] PlayerHealth playerHealth;
     [SerializeField] GameObject controlPanel;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
+    [SerializeField] ParticleSystem healthEffect;
 
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         AudioManager.instance.Play("ButtonBig");
+        playerHealth.currHealth = 100;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SceneLoader.instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -68,5 +71,14 @@ public class GameManager : MonoBehaviour
     {
         AudioManager.instance.Play("Button");
         Application.Quit();
+    }
+
+    public void PalakButton()
+    {
+        SaveManager.instance.saveData.palakCount -= 1;
+        AudioManager.instance.Play("HealthIncrease");
+        ParticleSystem.MainModule currEffect = Instantiate(healthEffect, playerHealth.transform.position, Quaternion.identity).main;
+        currEffect.startColor = Color.green;
+        playerHealth.IncreaseHralth(100 - playerHealth.currHealth);
     }
 }

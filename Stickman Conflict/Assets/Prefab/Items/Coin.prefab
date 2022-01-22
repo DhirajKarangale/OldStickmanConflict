@@ -137,12 +137,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPick: 0
-  pickEffect: {fileID: 1755487218341388196, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
-  rigidBody: {fileID: 0}
+  rigidBody: {fileID: 1455904849503479108}
   playerHealth: {fileID: 0}
-  healthEffect: {fileID: 0}
-  effectColor: {r: 0, g: 0, b: 0, a: 0}
-  healthIncreaseAmount: 0
+  pickEffect: {fileID: 574609697048295851, guid: b9a3f22588033774da02ad89163d0ad0, type: 3}
+  healthEffect: {fileID: 3437295801473120137, guid: 9389bddff3e182c42b12e40b881a087a, type: 3}
 --- !u!1 &7771779645229163907
 GameObject:
   m_ObjectHideFlags: 0

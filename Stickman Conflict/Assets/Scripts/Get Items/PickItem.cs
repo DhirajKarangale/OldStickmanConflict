@@ -2,19 +2,13 @@ using UnityEngine;
 
 public class PickItem : MonoBehaviour
 {
-    private enum Item { Coin, Key, PowerUps }
+    private enum Item { Coin, Key, PowerUps, Palak, Bomb }
     [SerializeField] Item itemPick;
 
-    [Header("Pick Item")]
-    [SerializeField] GameObject pickEffect;
-
-    [Header("Power Ups")]
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] ParticleSystem pickEffect;
     [SerializeField] ParticleSystem healthEffect;
-    private ParticleSystem.MainModule currEffect;
-    [SerializeField] Color effectColor;
-    [SerializeField] float healthIncreaseAmount;
     private bool isPickAllow;
 
     private void Start()
@@ -35,26 +29,42 @@ public class PickItem : MonoBehaviour
     {
         if ((collision.gameObject.layer == 7) && isPickAllow)
         {
-            Instantiate(pickEffect, transform.position, Quaternion.identity);
+            ParticleSystem.MainModule currEffect = Instantiate(pickEffect, transform.position, Quaternion.identity).main;
             switch (itemPick)
             {
                 case Item.PowerUps:
                     //  if (playerHealth.currHealth >= playerHealth.health) return;
                     AudioManager.instance.Play("HealthIncrease");
                     currEffect = Instantiate(healthEffect, transform.position, Quaternion.identity).main;
-                    currEffect.startColor = effectColor;
-                    playerHealth.IncreaseHralth(healthIncreaseAmount);
+                    currEffect.startColor = Color.yellow;
+                    playerHealth.IncreaseHralth(20);
                     Destroy(gameObject);
+                    isPickAllow = false;
                     break;
                 case Item.Coin:
                     AudioManager.instance.Play("Coin");
                     SaveManager.instance.saveData.coin++;
                     Destroy(this.gameObject);
+                    isPickAllow = false;
                     break;
                 case Item.Key:
                     AudioManager.instance.Play("Coin");
                     SaveManager.instance.saveData.key++;
                     Destroy(this.gameObject);
+                    isPickAllow = false;
+                    break;
+                case Item.Palak:
+                    currEffect.startColor = Color.green;
+                    AudioManager.instance.Play("Coin");
+                    SaveManager.instance.saveData.palakCount++;
+                    Destroy(this.gameObject);
+                    isPickAllow = false;
+                    break;
+                case Item.Bomb:
+                    AudioManager.instance.Play("Coin");
+                    SaveManager.instance.saveData.bomb++;
+                    Destroy(this.gameObject);
+                    isPickAllow = false;
                     break;
             }
             Destroy(gameObject);

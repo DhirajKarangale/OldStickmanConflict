@@ -506,6 +506,10 @@ PrefabInstance:
       propertyPath: controlsCustomizer
       value: 
       objectReference: {fileID: 1373760272}
+    - target: {fileID: 1073543656, guid: b043783d9387af540b0c353d083baea7, type: 3}
+      propertyPath: controlsCustomizer
+      value: 
+      objectReference: {fileID: 1373760272}
     - target: {fileID: 1335727284, guid: b043783d9387af540b0c353d083baea7, type: 3}
       propertyPath: controlsCustomizer
       value: 

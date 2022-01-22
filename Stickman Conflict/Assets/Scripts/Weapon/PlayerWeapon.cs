@@ -4,19 +4,23 @@ public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] float impactForce;
     [SerializeField] float damage;
+    [SerializeField] Transform player;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject enemyBloodEffect;
     [SerializeField] EasyJoystick.Joystick handRotateJoystick;
     public float maxDamage = 30;
     private bool isCollisionAllow = true;
+    private bool isResetPosAllow = true;
 
     private void Update()
     {
         if (PlayerHealth.isPlayerDye) return;
 
-        if (transform.position.y < -100)
+        if (transform.position.y < -100 && isResetPosAllow)
         {
-            transform.position += new Vector3(10, 110, 0);
+            transform.position = player.position;
+            isResetPosAllow = false;
+            Invoke("AllowReset",10);
         }
     }
 
@@ -105,5 +109,10 @@ public class PlayerWeapon : MonoBehaviour
     private void ActiveColision()
     {
         isCollisionAllow = true;
+    }
+
+    private void AllowReset()
+    {
+        isResetPosAllow =true;
     }
 }

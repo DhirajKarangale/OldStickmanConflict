@@ -87,10 +87,12 @@ public class SaveManager : MonoBehaviour
 public class SaveData
 {
     public float[] playerSpwanPos = new float[2];
-    public float[,] weaponsPosition;
+    public float[,] weaponsPosition =  new float[2, 2];
     public string pickedWeaponName;
     public float currHealth;
     public int coin;
     public byte key;
     public byte level;
+    public int palakCount;
+    public int bomb;
 }
