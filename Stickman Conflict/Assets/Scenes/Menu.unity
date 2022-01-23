@@ -278,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &601401956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601401955}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e7aa00f6c72c7c4fb12965a3c95c4ac, type: 3}
   m_Name: 
@@ -301,6 +301,7 @@ MonoBehaviour:
     key: 0
     level: 0
     palakCount: 0
+    bomb: 0
   isDataLoaded: 0
 --- !u!4 &601401957
 Transform:
@@ -1027,6 +1028,9 @@ MonoBehaviour:
   - 'Tip : Palak can be collected & use any time when needed.'
   - 'Tip : You cannot stick to every tree.'
   - 'Tip : You can stick to some of trees'
+  - 'Tip : The Coin will be used in next Update, sorry of Inconvenience...'
+  - 'Tip : You can use Bomb to Jump Higher'
+  - 'Tip : Bomb cannot damage yourself.'
 --- !u!1 &1710385834
 GameObject:
   m_ObjectHideFlags: 0

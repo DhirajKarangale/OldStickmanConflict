@@ -10,17 +10,20 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] EasyJoystick.Joystick handRotateJoystick;
     public float maxDamage = 30;
     private bool isCollisionAllow = true;
-    private bool isResetPosAllow = true;
+    private Vector3 oldPos;
+
+    private void Start()
+    {
+        oldPos = transform.position;
+    }
 
     private void Update()
     {
         if (PlayerHealth.isPlayerDye) return;
 
-        if (transform.position.y < -100 && isResetPosAllow)
+        if (transform.position.y < -100)
         {
-            transform.position = player.position;
-            isResetPosAllow = false;
-            Invoke("AllowReset",10);
+            transform.position = oldPos;
         }
     }
 
@@ -109,10 +112,5 @@ public class PlayerWeapon : MonoBehaviour
     private void ActiveColision()
     {
         isCollisionAllow = true;
-    }
-
-    private void AllowReset()
-    {
-        isResetPosAllow =true;
     }
 }

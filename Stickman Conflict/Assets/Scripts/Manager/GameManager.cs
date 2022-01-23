@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject pausePanel;
     [SerializeField] ParticleSystem healthEffect;
+    [SerializeField] GameObject[] upLevelButtons;
 
     private void Awake()
     {
@@ -18,8 +19,15 @@ public class GameManager : MonoBehaviour
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            for (int i = 0; i < upLevelButtons.Length; i++)
+            {
+                upLevelButtons[i].SetActive(false);
+            }
+        }
 
-        SaveManager.instance.saveData.level = (byte)SceneManager.GetActiveScene().buildIndex;
+        GameSaveManager.instance.saveData.level = (byte)SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
@@ -55,7 +63,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         AudioManager.instance.Play("ButtonBig");
-        playerHealth.currHealth = 100;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         SceneLoader.instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -75,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void PalakButton()
     {
-        SaveManager.instance.saveData.palakCount -= 1;
+        GameSaveManager.instance.saveData.palakCount -= 1;
         AudioManager.instance.Play("HealthIncrease");
         ParticleSystem.MainModule currEffect = Instantiate(healthEffect, playerHealth.transform.position, Quaternion.identity).main;
         currEffect.startColor = Color.green;

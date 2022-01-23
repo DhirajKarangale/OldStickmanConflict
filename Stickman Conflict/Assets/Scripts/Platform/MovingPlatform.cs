@@ -27,14 +27,14 @@ public class MovingPlatform : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
 
-        if ((player.position.x > (transform.localPosition.x + leftStandPos)) && (player.position.x < (transform.localPosition.x + rightStandPos)))
+        if ((player.position.x >= (transform.position.x + leftStandPos)) && (player.position.x <= (transform.position.x + rightStandPos)))
         {
             if (!movingPlatform.isPlaying) movingPlatform.Play();
-            player.parent = this.transform;
+            player.SetParent(transform);
         }
         else
         {
-            player.parent = null;
+            player.SetParent(null);
         }
     }
 
@@ -45,7 +45,8 @@ public class MovingPlatform : MonoBehaviour
         Gizmos.DrawSphere(pos2, 1);
 
         Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + leftStandPos, transform.localPosition.y, 0), 1);
-        Gizmos.DrawSphere(new Vector3(transform.localPosition.x + rightStandPos, transform.localPosition.y, 0), 1);
+        Gizmos.DrawSphere(new Vector3(transform.position.x + leftStandPos, transform.position.y, 0), 1);
+        Gizmos.DrawSphere(new Vector3(transform.position.x + rightStandPos, transform.position.y, 0), 1);
     }
+
 }

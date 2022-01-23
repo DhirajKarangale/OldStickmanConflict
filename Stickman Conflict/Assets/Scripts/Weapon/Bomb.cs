@@ -14,6 +14,7 @@ public class Bomb : MonoBehaviour
     private void Explode()
     {
         Destroy(Instantiate(explosionEffect, transform.position, transform.rotation), 5);
+        CamManager.Instance.Shake(10, 0.5f);
 
         // Add Force & Damage
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);

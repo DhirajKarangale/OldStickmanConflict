@@ -12,10 +12,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        if (SaveManager.instance.isDataLoaded) currHealth = SaveManager.instance.saveData.currHealth;
+        if (GameSaveManager.instance.isDataLoaded) currHealth = GameSaveManager.instance.saveData.currHealth;
         else currHealth = health;
-        SaveManager.instance.saveData.currHealth = currHealth;
-
+        if(currHealth <= 2) currHealth = 100;
+        GameSaveManager.instance.saveData.currHealth = currHealth;
+        
         isPlayerDye = false;
         SetHealthBar();
     }
@@ -46,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
         {
             currHealth -= damage;
             SetHealthBar();
-            SaveManager.instance.saveData.currHealth = currHealth;
+            GameSaveManager.instance.saveData.currHealth = currHealth;
         }
     }
 
@@ -55,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
         currHealth += amount;
         currHealth = Mathf.Clamp(currHealth, 0, health);
         SetHealthBar();
-        SaveManager.instance.saveData.currHealth = currHealth;
+        GameSaveManager.instance.saveData.currHealth = currHealth;
     }
 
     private void SetGameOverActive()

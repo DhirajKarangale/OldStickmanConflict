@@ -10,18 +10,21 @@ public class PickItem : MonoBehaviour
     [SerializeField] ParticleSystem pickEffect;
     [SerializeField] ParticleSystem healthEffect;
     private bool isPickAllow;
+    private Vector3 oldPos;
 
     private void Start()
     {
         if (rigidBody != null) isPickAllow = !rigidBody.isKinematic;
         else isPickAllow = true;
+        oldPos = transform.position;
     }
 
     private void Update()
     {
         if (transform.position.y < -100)
         {
-            transform.position += new Vector3(10, 110, 0);
+            // transform.position += new Vector3(10, 110, 0);
+            transform.position = oldPos;
         }
     }
 
@@ -43,26 +46,26 @@ public class PickItem : MonoBehaviour
                     break;
                 case Item.Coin:
                     AudioManager.instance.Play("Coin");
-                    SaveManager.instance.saveData.coin++;
+                    GameSaveManager.instance.saveData.coin++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;
                 case Item.Key:
                     AudioManager.instance.Play("Coin");
-                    SaveManager.instance.saveData.key++;
+                    GameSaveManager.instance.saveData.key++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;
                 case Item.Palak:
                     currEffect.startColor = Color.green;
                     AudioManager.instance.Play("Coin");
-                    SaveManager.instance.saveData.palakCount++;
+                    GameSaveManager.instance.saveData.palakCount++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;
                 case Item.Bomb:
                     AudioManager.instance.Play("Coin");
-                    SaveManager.instance.saveData.bomb++;
+                    GameSaveManager.instance.saveData.bomb += 10;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;

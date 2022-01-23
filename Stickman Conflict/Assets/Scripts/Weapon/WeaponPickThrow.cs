@@ -34,7 +34,7 @@ public class WeaponPickThrow : MonoBehaviour
     {
         instance = this;
         isWeaponPicked = false;
-        SaveManager.instance.saveData.weaponsPosition = new float[weapons.Length, 2];
+        GameSaveManager.instance.saveData.weaponsPosition = new float[weapons.Length, 2];
         SetWeaponOldPos();
     }
 
@@ -89,18 +89,18 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void SetWeaponOldPos()
     {
-        if (SaveManager.instance.saveData.weaponsPosition.Length >= weapons.Length)
+        if (GameSaveManager.instance.saveData.weaponsPosition.Length >= weapons.Length)
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                if (SaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
+                if (GameSaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
                 {
                     closestWeapon = weapons[i];
                     PickUp();
                 }
                 else
                 {
-                    weapons[i].transform.position = new Vector3(SaveManager.instance.saveData.weaponsPosition[i, 0], SaveManager.instance.saveData.weaponsPosition[i, 1], 0);
+                    weapons[i].transform.position = new Vector3(GameSaveManager.instance.saveData.weaponsPosition[i, 0], GameSaveManager.instance.saveData.weaponsPosition[i, 1], 0);
                 }
             }
         }
@@ -141,7 +141,7 @@ public class WeaponPickThrow : MonoBehaviour
         pickDropButton.gameObject.SetActive(true);
         pickDropButton.image.sprite = drop;
 
-        SaveManager.instance.saveData.pickedWeaponName = closestWeapon.name;
+        GameSaveManager.instance.saveData.pickedWeaponName = closestWeapon.name;
     }
 
     private void Throw()
@@ -156,7 +156,7 @@ public class WeaponPickThrow : MonoBehaviour
 
         closestWeapon.AddForce(new Vector2((Mathf.Clamp(handRotateJoystick.Horizontal(), -1, 1)), Mathf.Clamp(handRotateJoystick.Vertical(), -1, 1)) * throwForce, ForceMode2D.Impulse);
 
-        SaveManager.instance.saveData.pickedWeaponName = null;
+        GameSaveManager.instance.saveData.pickedWeaponName = null;
     }
 
     private void DesableWeaponButton()

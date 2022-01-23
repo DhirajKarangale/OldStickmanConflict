@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 4794712439321267704}
   - component: {fileID: 4794712439321267706}
   - component: {fileID: 4794712439321267703}
-  - component: {fileID: 4794712439321267707}
   - component: {fileID: 5863111290167065111}
   m_Layer: 0
   m_Name: Weapon Chest
@@ -241,27 +240,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4794712439321267707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4794712439321267702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76403a6ce91e5c74298ca81c5724e8f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 0}
-  animator: {fileID: 4794712439321267703}
-  effect: {fileID: 3342629432127600043, guid: d48e1f759efb19047aa54fb4a7cab462, type: 3}
-  item: {fileID: 0}
-  isActiveItem: 1
-  numberOfItem: 1
-  getDialogue:
-  - Congratulations you get Rope !!!
-  findDialogue: []
 --- !u!114 &5863111290167065111
 MonoBehaviour:
   m_ObjectHideFlags: 0

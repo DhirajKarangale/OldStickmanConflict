@@ -11,12 +11,12 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        level = SaveManager.instance.saveData.level;
+        level = GameSaveManager.instance.saveData.level;
         if (level == 0)
         {
             level = 2;
-            SaveManager.instance.saveData.level = level;
-            SaveManager.instance.Save();
+            GameSaveManager.instance.saveData.level = level;
+            GameSaveManager.instance.Save();
         }
 
         DesableScreens();
@@ -36,8 +36,8 @@ public class Menu : MonoBehaviour
     public void SceneChangeButton(int sceneIndex)
     {
         AudioManager.instance.Play("ButtonBig");
-        if (sceneIndex == -1) sceneIndex = level;
-        SceneLoader.instance.LoadScene(sceneIndex);
+        // if (sceneIndex == -1) sceneIndex = level;
+        SceneLoader.instance.LoadScene(2);
     }
 
     public void QuitButton()

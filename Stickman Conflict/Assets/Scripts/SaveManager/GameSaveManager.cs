@@ -3,10 +3,10 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 
-public class SaveManager : MonoBehaviour
+public class GameSaveManager : MonoBehaviour
 {
-    public static SaveManager instance = null;
-    public static SaveManager Instance
+    public static GameSaveManager instance = null;
+    public static GameSaveManager Instance
     {
         get { return instance; }
     }
@@ -16,7 +16,8 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
-        MakeSingleton();
+        // MakeSingleton();
+        instance = this;
         Load();
     }
 
@@ -87,12 +88,12 @@ public class SaveManager : MonoBehaviour
 public class SaveData
 {
     public float[] playerSpwanPos = new float[2];
-    public float[,] weaponsPosition =  new float[2, 2];
+    public float[,] weaponsPosition = new float[2, 2];
     public string pickedWeaponName;
     public float currHealth;
     public int coin;
     public byte key;
     public byte level;
-    public int palakCount;
-    public int bomb;
+    public byte palakCount;
+    public byte bomb;
 }

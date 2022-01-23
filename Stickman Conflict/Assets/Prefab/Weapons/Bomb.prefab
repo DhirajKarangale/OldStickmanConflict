@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explodeTime: 3
   radius: 10
-  applyDamage: 0
+  applyDamage: 5
   explosionForce: 70
   explosionEffect: {fileID: 8546102299392322380, guid: 700394cb0f8d56b44a484f27e5dec1b1, type: 3}
   enemyBloodEffect: {fileID: 3697530900228688425, guid: c050914dc59bf17498bc0beffe7a72a2, type: 3}
