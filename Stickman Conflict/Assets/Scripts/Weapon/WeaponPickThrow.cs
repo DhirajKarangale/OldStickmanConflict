@@ -3,11 +3,7 @@ using UnityEngine;
 
 public class WeaponPickThrow : MonoBehaviour
 {
-    public static WeaponPickThrow instance = null;
-    public static WeaponPickThrow Instance
-    {
-        get { return instance; }
-    }
+    public static WeaponPickThrow instance;
 
     [Header("Refrence")]
     [SerializeField] Transform player;
@@ -15,7 +11,7 @@ public class WeaponPickThrow : MonoBehaviour
     [SerializeField] Grab grabLeft;
     [SerializeField] Button pickDropButton;
     [SerializeField] Sprite pick, drop;
-    [SerializeField] Rigidbody2D[] weapons;
+    public Rigidbody2D[] weapons;
     private Rigidbody2D closestWeapon;
     private float weaponTimer = 1;
 
@@ -34,7 +30,6 @@ public class WeaponPickThrow : MonoBehaviour
     {
         instance = this;
         isWeaponPicked = false;
-        GameSaveManager.instance.saveData.weaponsPosition = new float[weapons.Length, 2];
         SetWeaponOldPos();
     }
 
@@ -43,10 +38,9 @@ public class WeaponPickThrow : MonoBehaviour
     {
         if (PlayerHealth.isPlayerDye)
         {
-            if (!isWeaponPicked) Throw();
+            if (isWeaponPicked) Throw();
             return;
         }
-
         // Calcuate Distance Butween Player and Weapons
         if (isDistCalcAllow) CalculateDistance();
 
@@ -57,7 +51,6 @@ public class WeaponPickThrow : MonoBehaviour
         if (isReturning && (time < 1))
         {
             closestWeapon.transform.position = ((1 - time) * (1 - time) * oldPosition) + (2 * (1 - time) * time * grabLeft.transform.position) + (time * time * grabLeft.transform.position);
-            closestWeapon.transform.rotation = Quaternion.Slerp(closestWeapon.transform.rotation, grabLeft.transform.rotation, 0);
             time += Time.deltaTime;
         }
     }
@@ -89,18 +82,15 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void SetWeaponOldPos()
     {
-        if (GameSaveManager.instance.saveData.weaponsPosition.Length >= weapons.Length)
+        if (GameSave.instance.gameData.weaponsPosition.Length >= weapons.Length)
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                if (GameSaveManager.instance.saveData.pickedWeaponName == weapons[i].name)
+                weapons[i].transform.position = new Vector3(GameSave.instance.gameData.weaponsPosition[i, 0], GameSave.instance.gameData.weaponsPosition[i, 1], 0);
+                if (GameSave.instance.gameData.pickedWeaponName == weapons[i].name)
                 {
                     closestWeapon = weapons[i];
                     PickUp();
-                }
-                else
-                {
-                    weapons[i].transform.position = new Vector3(GameSaveManager.instance.saveData.weaponsPosition[i, 0], GameSaveManager.instance.saveData.weaponsPosition[i, 1], 0);
                 }
             }
         }
@@ -124,7 +114,6 @@ public class WeaponPickThrow : MonoBehaviour
         else pickDropButton.gameObject.SetActive(false);
     }
 
-
     private void PickUp()
     {
         AudioManager.instance.Play("Pick");
@@ -141,11 +130,12 @@ public class WeaponPickThrow : MonoBehaviour
         pickDropButton.gameObject.SetActive(true);
         pickDropButton.image.sprite = drop;
 
-        GameSaveManager.instance.saveData.pickedWeaponName = closestWeapon.name;
+        GameSave.instance.gameData.pickedWeaponName = closestWeapon.name;
     }
 
     private void Throw()
     {
+        if (PlayerHealth.isPlayerDye) return;
         AudioManager.instance.Play("Throw");
         pickDropButton.image.sprite = pick;
         isWeaponPicked = false;
@@ -154,9 +144,9 @@ public class WeaponPickThrow : MonoBehaviour
         grabLeft.DeAttachObject();
         closestWeapon.transform.parent = transform;
 
-        closestWeapon.AddForce(new Vector2((Mathf.Clamp(handRotateJoystick.Horizontal(), -1, 1)), Mathf.Clamp(handRotateJoystick.Vertical(), -1, 1)) * throwForce, ForceMode2D.Impulse);
+        closestWeapon.AddForce(new Vector2(handRotateJoystick.Horizontal(), handRotateJoystick.Vertical()) * throwForce, ForceMode2D.Impulse);
 
-        GameSaveManager.instance.saveData.pickedWeaponName = null;
+        GameSave.instance.gameData.pickedWeaponName = null;
     }
 
     private void DesableWeaponButton()

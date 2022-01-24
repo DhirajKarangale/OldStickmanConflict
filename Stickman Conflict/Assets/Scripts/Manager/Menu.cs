@@ -6,23 +6,29 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject[] screens;
     [SerializeField] Text tipText;
+    [SerializeField] Text coinText;
     [SerializeField] string[] tips;
     private byte level;
 
     private void Start()
     {
-        level = GameSaveManager.instance.saveData.level;
+        level = GlobalSave.instance.globalData.level;
         if (level == 0)
         {
             level = 2;
-            GameSaveManager.instance.saveData.level = level;
-            GameSaveManager.instance.Save();
+            GlobalSave.instance.globalData.level = level;
+            GlobalSave.instance.Save();
         }
 
         DesableScreens();
         screens[0].SetActive(true);
 
         StartCoroutine(GenerateTips());
+    }
+
+    private void Update()
+    {
+        coinText.text = GlobalSave.instance.globalData.coin.ToString();
     }
 
     private void DesableScreens()
@@ -36,8 +42,8 @@ public class Menu : MonoBehaviour
     public void SceneChangeButton(int sceneIndex)
     {
         AudioManager.instance.Play("ButtonBig");
-        // if (sceneIndex == -1) sceneIndex = level;
-        SceneLoader.instance.LoadScene(2);
+        if (sceneIndex == -1) sceneIndex = level;
+        SceneLoader.instance.LoadScene(level);
     }
 
     public void QuitButton()

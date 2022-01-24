@@ -9,17 +9,17 @@ public class ItemCollector : MonoBehaviour
 
     private void Update()
     {
-        if (GameSaveManager.instance.saveData.coin <= 0) coinText.gameObject.SetActive(false);
+        if (GameSave.instance.gameData.coin <= 0) coinText.gameObject.SetActive(false);
         else coinText.gameObject.SetActive(true);
 
-        if (GameSaveManager.instance.saveData.key <= 0) keyText.gameObject.SetActive(false);
+        if (GameSave.instance.gameData.key <= 0) keyText.gameObject.SetActive(false);
         else keyText.gameObject.SetActive(true);
 
-        if (GameSaveManager.instance.saveData.palakCount <= 0) palakText.gameObject.SetActive(false);
+        if (GameSave.instance.gameData.palakCount <= 0) palakText.gameObject.SetActive(false);
         else palakText.gameObject.SetActive(true);
 
-        palakText.text = GameSaveManager.instance.saveData.palakCount.ToString();
-        coinText.text = GameSaveManager.instance.saveData.coin.ToString();
-        keyText.text = GameSaveManager.instance.saveData.key.ToString();
+        palakText.text = GameSave.instance.gameData.palakCount.ToString();
+        coinText.text = GameSave.instance.gameData.coin.ToString();
+        keyText.text = GameSave.instance.gameData.key.ToString();
     }
 }

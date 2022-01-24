@@ -18,7 +18,7 @@ public class EnemyWeapon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (enemyHealth && (enemyHealth.currState == EnemyHealth.State.Dead))
+        if ((enemyHealth && (enemyHealth.currState == EnemyHealth.State.Dead)) || PlayerHealth.isPlayerDye)
         {
             this.enabled = false;
             return;

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance { get; private set; }
+    public static GameManager instance;
 
     private bool isPause;
     [SerializeField] PlayerHealth playerHealth;
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
+        
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             for (int i = 0; i < upLevelButtons.Length; i++)
@@ -26,8 +27,6 @@ public class GameManager : MonoBehaviour
                 upLevelButtons[i].SetActive(false);
             }
         }
-
-        GameSaveManager.instance.saveData.level = (byte)SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
@@ -82,7 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void PalakButton()
     {
-        GameSaveManager.instance.saveData.palakCount -= 1;
+        GameSave.instance.gameData.palakCount -= 1;
         AudioManager.instance.Play("HealthIncrease");
         ParticleSystem.MainModule currEffect = Instantiate(healthEffect, playerHealth.transform.position, Quaternion.identity).main;
         currEffect.startColor = Color.green;

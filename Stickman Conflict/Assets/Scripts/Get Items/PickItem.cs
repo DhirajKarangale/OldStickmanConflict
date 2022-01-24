@@ -23,7 +23,6 @@ public class PickItem : MonoBehaviour
     {
         if (transform.position.y < -100)
         {
-            // transform.position += new Vector3(10, 110, 0);
             transform.position = oldPos;
         }
     }
@@ -46,26 +45,26 @@ public class PickItem : MonoBehaviour
                     break;
                 case Item.Coin:
                     AudioManager.instance.Play("Coin");
-                    GameSaveManager.instance.saveData.coin++;
+                    GameSave.instance.gameData.coin++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;
                 case Item.Key:
                     AudioManager.instance.Play("Coin");
-                    GameSaveManager.instance.saveData.key++;
+                    GameSave.instance.gameData.key++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;
                 case Item.Palak:
                     currEffect.startColor = Color.green;
                     AudioManager.instance.Play("Coin");
-                    GameSaveManager.instance.saveData.palakCount++;
+                    GameSave.instance.gameData.palakCount++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;
                 case Item.Bomb:
                     AudioManager.instance.Play("Coin");
-                    GameSaveManager.instance.saveData.bomb += 10;
+                    GameSave.instance.gameData.bomb += 10;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;

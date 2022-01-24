@@ -10,9 +10,9 @@ public class BombThrow : MonoBehaviour
 
     private void Update()
     {
-        if (GameSaveManager.instance.saveData.bomb > 0) bombButton.SetActive(true);
+        if (GameSave.instance.gameData.bomb > 0) bombButton.SetActive(true);
         else bombButton.SetActive(false);
-        countText.text = GameSaveManager.instance.saveData.bomb.ToString();
+        countText.text = GameSave.instance.gameData.bomb.ToString();
 
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -23,9 +23,12 @@ public class BombThrow : MonoBehaviour
     public void ThrowBomb()
     {
         GameObject currBomb = Instantiate(bomb, transform.position, transform.rotation);
-        currBomb.GetComponent<Rigidbody2D>().
-        AddForce(new Vector2((Mathf.Clamp(handRotateJoystick.Horizontal(), -1, 1)), Mathf.Clamp(handRotateJoystick.Vertical(), -1, 1)) * throwForce, ForceMode2D.Impulse);
-        GameSaveManager.instance.saveData.bomb--;
+     
+        // currBomb.GetComponent<Rigidbody2D>().
+        // AddForce(new Vector2((Mathf.Clamp(handRotateJoystick.Horizontal(), -1, 1)), Mathf.Clamp(handRotateJoystick.Vertical(), -1, 1)) * throwForce, ForceMode2D.Impulse);
+     
+        currBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(handRotateJoystick.Horizontal(), handRotateJoystick.Vertical()) * throwForce, ForceMode2D.Impulse);
+        GameSave.instance.gameData.bomb--;
         return;
     }
 }

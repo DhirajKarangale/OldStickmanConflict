@@ -10,6 +10,7 @@ public class Rope : MonoBehaviour
     private bool isPullRope = false;
     private bool isRopeActive = false;
     private Rigidbody2D objectToPull;
+    [SerializeField] AudioSource rope;
 
     private void Update()
     {
@@ -61,7 +62,9 @@ public class Rope : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.isTrigger) return;
-
+        
+        rope.Stop();
+        AudioManager.instance.Play("Hit");
         velocity = Vector3.zero;
         Rigidbody2D rigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
         if (rigidBody && (rigidBody.mass < 1.5f)) objectToPull = rigidBody;
@@ -72,6 +75,7 @@ public class Rope : MonoBehaviour
 
     private void SetRope(Vector2 targetPos)
     {
+        rope.Play();
         Vector2 throughDirection = targetPos;
         throughDirection = throughDirection.normalized;
         velocity = throughDirection * 75; // 75 is speed

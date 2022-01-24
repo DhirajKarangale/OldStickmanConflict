@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5238521875281450329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3026.3, y: 52.63, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 5238521875960892148}
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60605637efefe04b8e44737539d243e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impactForce: 0.1
-  damage: 0.002
+  impactForce: 0.05
+  damage: 0.0005
   player: {fileID: 0}
   hitEffect: {fileID: 2571799540916514908, guid: a9dc99ae3f5222d41834afe7befa9d92, type: 3}
   enemyBloodEffect: {fileID: 3697530900228688425, guid: c050914dc59bf17498bc0beffe7a72a2, type: 3}

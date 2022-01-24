@@ -19,7 +19,11 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.isPlayerDye) return;
+        if (PlayerHealth.isPlayerDye) 
+        {
+            this.enabled = false;
+            return;
+        }
 
         if (transform.position.y < -100)
         {

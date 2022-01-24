@@ -3,29 +3,16 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
     public Sound[] soundsBG;
     public Sound[] sounds;
     private Sound selectedSound;
     private static int bgMusic = 0;
 
-    public static AudioManager instance = null;
-    public static AudioManager Instance
-    {
-        get { return instance; }
-    }
-
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
+        MakeSingleton();
 
         foreach (Sound sound in sounds)
         {
@@ -46,12 +33,35 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void MakeSingleton()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Update()
     {
         if (!soundsBG[bgMusic].audioSource.isPlaying)
         {
             bgMusic = UnityEngine.Random.Range(0, soundsBG.Length);
             soundsBG[bgMusic].audioSource.Play();
+            return;
+        }
+
+        for (int i = 0; i < soundsBG.Length; i++)
+        {
+            if (soundsBG[i].audioSource.isPlaying && (i != bgMusic))
+            {
+                soundsBG[i].audioSource.Stop();
+            }
         }
     }
 
@@ -66,10 +76,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound sound in soundsBG)
         {
-            if (sound.audioSource.isPlaying)
-            {
-                sound.audioSource.volume = volume;
-            }
+            sound.audioSource.volume = volume;
         }
     }
 
@@ -77,10 +84,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound sound in soundsBG)
         {
-            if (sound.audioSource.isPlaying)
-            {
-                sound.audioSource.Stop();
-            }
+            sound.audioSource.Stop();
         }
     }
 
@@ -88,10 +92,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound sound in soundsBG)
         {
-            if (sound.audioSource.isPlaying)
-            {
-                sound.audioSource.Pause();
-            }
+            sound.audioSource.Pause();
         }
     }
 }

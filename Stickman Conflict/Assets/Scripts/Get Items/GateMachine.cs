@@ -42,11 +42,11 @@ public class GateMachine : MonoBehaviour
 
         if ((collision.gameObject.layer == 7) && (open == 0))
         {
-            if (GameSaveManager.instance.saveData.key > 0)
+            if (GameSave.instance.gameData.key > 0)
             {
                 AudioManager.instance.Play("Coin");
                 dialogueManager.StartDialogue(keyFoundDialogue);
-                GameSaveManager.instance.saveData.key--;
+                GameSave.instance.gameData.key--;
                 GateAnimator.Play("Play");
                 open = 1;
             }

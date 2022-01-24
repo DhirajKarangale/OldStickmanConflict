@@ -2,23 +2,17 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-
-public class GameSaveManager : MonoBehaviour
+public class GlobalSave : MonoBehaviour
 {
-    public static GameSaveManager instance = null;
-    public static GameSaveManager Instance
-    {
-        get { return instance; }
-    }
+    public static GlobalSave instance;
 
-    public SaveData saveData;
     public bool isDataLoaded;
+    public GlobalData globalData;
 
     private void Awake()
     {
-        // MakeSingleton();
-        instance = this;
         Load();
+        MakeSingleton();
     }
 
     private void Update()
@@ -46,54 +40,36 @@ public class GameSaveManager : MonoBehaviour
     public void Save()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/StickMan.DK";
+        string path = Application.persistentDataPath + "/StickManConflictGlobal.DK";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        binaryFormatter.Serialize(stream, saveData);
+        binaryFormatter.Serialize(stream, globalData);
         stream.Close();
-        // Debug.Log("Data Save");
+        // Debug.Log("Game Data Save");
     }
 
     public void Load()
     {
-        string path = Application.persistentDataPath + "/StickMan.DK";
+        string path = Application.persistentDataPath + "/StickManConflictGlobal.DK";
         if (File.Exists(path))
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            saveData = binaryFormatter.Deserialize(stream) as SaveData;
+            globalData = binaryFormatter.Deserialize(stream) as GlobalData;
             stream.Close();
             isDataLoaded = true;
-            // Debug.Log("Data Load");
-        }
-        else
-        {
-            //  Debug.Log("Data not found");
+            // Debug.Log("Game Data Load");
         }
     }
 
     public void Delete()
     {
-        string path = Application.persistentDataPath + "/StickMan.DK";
+        string path = Application.persistentDataPath + "/StickManConflictGlobal.DK";
         if (File.Exists(path))
         {
             File.Delete(path);
-            //  Debug.Log("Data Delete");
+            //  Debug.Log("Data Game Delete");
         }
     }
-}
-
-[System.Serializable]
-public class SaveData
-{
-    public float[] playerSpwanPos = new float[2];
-    public float[,] weaponsPosition = new float[2, 2];
-    public string pickedWeaponName;
-    public float currHealth;
-    public int coin;
-    public byte key;
-    public byte level;
-    public byte palakCount;
-    public byte bomb;
 }

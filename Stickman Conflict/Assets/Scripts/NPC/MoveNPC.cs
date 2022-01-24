@@ -31,7 +31,7 @@ public class MoveNPC : MonoBehaviour
     {
         float playerDist = Mathf.Abs(Vector2.Distance(transform.position, player.position));
         //float playerDist = Mathf.Abs(player.position.x - transform.position.x);
-        if (playerDist < followDist)
+        if ((playerDist < followDist) && !PlayerHealth.isPlayerDye)
         {
             if (playerDist >= attackDist) // Follow Player
             {

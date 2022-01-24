@@ -12,11 +12,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
-        if (GameSaveManager.instance.isDataLoaded) currHealth = GameSaveManager.instance.saveData.currHealth;
+        if (GameSave.instance.isDataLoaded) currHealth = GameSave.instance.gameData.currHealth;
         else currHealth = health;
-        if(currHealth <= 2) currHealth = 100;
-        GameSaveManager.instance.saveData.currHealth = currHealth;
-        
+        if (currHealth <= 2) currHealth = 100;
+        GameSave.instance.gameData.currHealth = currHealth;
+
         isPlayerDye = false;
         SetHealthBar();
     }
@@ -34,9 +34,9 @@ public class PlayerHealth : MonoBehaviour
         if (isPlayerDye) return;
         AudioManager.instance.ModBG(0.07f);
         AudioManager.instance.Play("GameOver");
-        isPlayerDye = true;
         controlCanvas.SetActive(false);
         Invoke("SetGameOverActive", 2);
+        isPlayerDye = true;
     }
 
     public void TakeDamage(float damage)
@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
         {
             currHealth -= damage;
             SetHealthBar();
-            GameSaveManager.instance.saveData.currHealth = currHealth;
+            GameSave.instance.gameData.currHealth = currHealth;
         }
     }
 
@@ -56,12 +56,13 @@ public class PlayerHealth : MonoBehaviour
         currHealth += amount;
         currHealth = Mathf.Clamp(currHealth, 0, health);
         SetHealthBar();
-        GameSaveManager.instance.saveData.currHealth = currHealth;
+        GameSave.instance.gameData.currHealth = currHealth;
     }
 
     private void SetGameOverActive()
     {
         gameOverPanel.SetActive(true);
+        // AudioManager.instance.Stop();
     }
 
     private void SetHealthBar()
