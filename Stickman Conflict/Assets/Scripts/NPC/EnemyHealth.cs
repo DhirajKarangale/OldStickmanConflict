@@ -12,12 +12,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] TMP_Text damageText;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Animator cageAnimator;
+    public GameObject spwanObj;
 
     [Header("Health")]
     [SerializeField] float health;
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject destroyEffect;
-    private float currHealth;
+    public float currHealth;
     private string[] headShotText = { "Head", "Shot", "HeadShot", "Pattse", "Op", "Smack", "Bang" };
     private string[] deadText = { "Finish", "Dead", "Over", "KO", "Down" };
     private Color[] headShotTextColor = { Color.black, Color.blue, Color.red, };
@@ -103,7 +104,7 @@ public class EnemyHealth : MonoBehaviour
     private void Dead()
     {
         if (currState == State.Dead) return;
-
+  
         healthSlider.gameObject.SetActive(false);
         CamManager.Instance.Shake(9, 0.4f);
         if (moveNPC)
@@ -112,12 +113,15 @@ public class EnemyHealth : MonoBehaviour
             moveNPC.animator.Play("Dead");
             Destroy(this.gameObject, 20);
         }
-        else
+     
+        if (destroyEffect)
         {
             AudioManager.instance.Play("Destroy");
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+     
+        if (spwanObj) Instantiate(spwanObj, transform.position, Quaternion.identity);
         if (cageAnimator) cageAnimator.Play("Open");
         currState = State.Dead;
 

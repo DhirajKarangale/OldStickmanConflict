@@ -31516,7 +31516,7 @@ Transform:
   - {fileID: 1106646420}
   - {fileID: 411759502}
   - {fileID: 2138259020}
-  - {fileID: 6723561433216064297}
+  - {fileID: 1022553619}
   m_Father: {fileID: 2113470478}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54210,6 +54210,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1022553619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+  m_PrefabInstance: {fileID: 919842743699896825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1023596045
 GameObject:
   m_ObjectHideFlags: 0
@@ -64759,9 +64764,8 @@ MonoBehaviour:
     rarity: 0
     sentences:
     - 'Om : Hey Guys why are you looking sad.'
-    - 'Old Man : Did you here that, allies attack on us & we almost lost.'
-    - 'Old Man : They take most our region under control only some like our''s are
-      remain.'
+    - 'Old Man : Someone attack on us & we are loosing '
+    - 'Old Man : He capture most of our region & put his guards their.'
     - 'Old Man : You have to stop them & save all of us.'
     - 'Om : But why me ???? you are magecian you have to save us.'
     - 'Old Man : Ha ha ha ..... I''m going to give you Powers that can help you during
@@ -67044,12 +67048,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 938940597}
     - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.data[1].rarity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
       propertyPath: dialogues.Array.data[0].sentences.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
       propertyPath: dialogues.Array.data[2].sentences.Array.size
@@ -67061,11 +67073,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
       propertyPath: dialogues.Array.data[0].sentences.Array.data[1]
-      value: 'Chintu : Some one arrest our king and start taking control on our region.'
+      value: 'Om : Ok bro..'
       objectReference: {fileID: 0}
     - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
-      value: 'Chintu : Some stupid dumm developer use me as NPC, Nonsence!!!'
+      value: 'Shubham : Be aware of animals in jumgel.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
+      value: 'Om : Ok Thanks'
       objectReference: {fileID: 0}
     - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
       propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
@@ -90589,6 +90605,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
       propertyPath: dialogues.Array.data[2].sentences.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -90623,15 +90643,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[0]
-      value: 'Old Man : Don''t Forget to Carefully pick the Palak'
+      value: 'Old Man : Om listen... He want something to destroy all the univers'
       objectReference: {fileID: 0}
     - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[1]
-      value: 'Om : Yes, any thing else'
+      value: 'Om : What , what is that....'
       objectReference: {fileID: 0}
     - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[2]
-      value: 'Old Man : Just go .....'
+      value: 'Old Man : This is something this is split in five parts you have to
+        collect them before that'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[3]
+      value: 'Old Man : His army protecting those things till he come there.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[4]
+      value: 'Om : Where is it.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[5]
+      value: 'Old Man : Don''t know you have to find it and just go don''t make TP.'
       objectReference: {fileID: 0}
     - target: {fileID: 3325626638191342133, guid: 2c1b952b897d4814ebf3e9d6d370b65c, type: 3}
       propertyPath: dialogues.Array.data[2].sentences.Array.data[0]
@@ -103865,6 +103898,83 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
+--- !u!1001 &919842743699896825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 684520356}
+    m_Modifications:
+    - target: {fileID: 919842744170518496, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1481960880}
+    - target: {fileID: 919842744170518496, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 938940597}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2918.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 51.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518506, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518507, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: m_Name
+      value: Obsidian
+      objectReference: {fileID: 0}
+    - target: {fileID: 919842744170518509, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: cageAnimator
+      value: 
+      objectReference: {fileID: 1736228898}
+    - target: {fileID: 919842744170518511, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1481960880}
+    - target: {fileID: 919842744744487265, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1481960884}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa7dfd0a37f16274fa32f9f7ffb8ffe1, type: 3}
 --- !u!1 &979681882814141132
 GameObject:
   m_ObjectHideFlags: 0
@@ -104296,99 +104406,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1001 &1905811568040657740
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 684520356}
-    m_Modifications:
-    - target: {fileID: 1905811569623682903, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1481960880}
-    - target: {fileID: 1905811569623682903, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: dialogueManager
-      value: 
-      objectReference: {fileID: 938940597}
-    - target: {fileID: 5133028278690450832, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028278690450832, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: playerMovement
-      value: 
-      objectReference: {fileID: 1481960884}
-    - target: {fileID: 5133028279501510754, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_Name
-      value: Enemy 1 Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510756, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: health
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510756, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: cageAnimator
-      value: 
-      objectReference: {fileID: 1736228898}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2917.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 48.30007
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279501510758, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1481960880}
-    - target: {fileID: 5133028279893921737, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133028279893921737, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
 --- !u!4 &2054039897122190888
 Transform:
   m_ObjectHideFlags: 0
@@ -105988,11 +106005,6 @@ PrefabInstance:
       objectReference: {fileID: 1481960884}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc093a3b7e90b9d4c87ec665c5613cec, type: 3}
---- !u!4 &6723561433216064297 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5133028279501510757, guid: 17d7aa0d48942a1498aea18a453fdac8, type: 3}
-  m_PrefabInstance: {fileID: 1905811568040657740}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6811004315950814553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108172,5 +108184,21 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 938940597}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[2]
+      value: 'Chintu : Someone start taking control over our region.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[3]
+      value: 'Om : Wait... Who ???'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090164330064585457, guid: b3a4684324e4b834090685a64a83032f, type: 3}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[4]
+      value: 'Chintu : Don''t know abou him ask the old man.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3a4684324e4b834090685a64a83032f, type: 3}

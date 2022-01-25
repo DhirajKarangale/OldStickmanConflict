@@ -3,23 +3,20 @@ using UnityEngine;
 public class MoveNPC : MonoBehaviour
 {
     [Header("Refrence")]
-    [SerializeField] Transform player;
+    public Transform player;
     [SerializeField] EnemyAttack enemyAttack;
     public Animator animator;
     public Rigidbody2D rigidBody;
 
     [Header("Attributes")]
     [SerializeField] float moveSpeed;
-    [SerializeField] float leftDist, rightDist;
+    public float leftDist, rightDist;
     [SerializeField] float followDist, attackDist;
     private bool moveFront = true;
-    private float curreLeftDist, currRightDist;
 
     private void Start()
     {
-        animator.speed = 0.3f;
-        currRightDist = rightDist;
-        curreLeftDist = leftDist;
+        if (animator) animator.speed = 0.3f;
     }
 
     private void Update()
@@ -30,28 +27,24 @@ public class MoveNPC : MonoBehaviour
     public void Move()
     {
         float playerDist = Mathf.Abs(Vector2.Distance(transform.position, player.position));
-        //float playerDist = Mathf.Abs(player.position.x - transform.position.x);
         if ((playerDist < followDist) && !PlayerHealth.isPlayerDye)
         {
             if (playerDist >= attackDist) // Follow Player
             {
-                curreLeftDist = currRightDist = player.position.x;
-                Walk();
+                Walk(player.position.x, player.position.x);
             }
             else // Attack
             {
-                enemyAttack.Attack();
+                if (enemyAttack) enemyAttack.Attack();
             }
         }
         else // Petrol
         {
-            currRightDist = rightDist;
-            curreLeftDist = leftDist;
-            Walk();
+            Walk(rightDist, leftDist);
         }
     }
 
-    private void Walk()
+    private void Walk(float currRightDist, float curreLeftDist)
     {
         // Move
         if (transform.position.x > currRightDist) moveFront = false;     // Move Back
@@ -62,13 +55,13 @@ public class MoveNPC : MonoBehaviour
         // Move
         if (moveFront) // Move Front
         {
-            animator.Play("Walk");
+            if (animator) animator.Play("Walk");
             rigidBody.AddForce(Vector2.right * moveSpeed);
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         else // Move Back
         {
-            animator.Play("Walk Back");
+            if (animator) animator.Play("Walk Back");
             rigidBody.AddForce(Vector2.right * -moveSpeed);
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }

@@ -5378,6 +5378,7 @@ MonoBehaviour:
   handRotateJoystick: {fileID: 0}
   bomb: {fileID: 3808557005549396628, guid: 50ca35830e4c9ea4fb0b2a1811049bb6, type: 3}
   bombButton: {fileID: 0}
+  countText: {fileID: 0}
 --- !u!1 &5854508159360376360
 GameObject:
   m_ObjectHideFlags: 0

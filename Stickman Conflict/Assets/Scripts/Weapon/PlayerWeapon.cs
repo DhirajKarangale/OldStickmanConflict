@@ -19,7 +19,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.isPlayerDye) 
+        if (PlayerHealth.isPlayerDye)
         {
             this.enabled = false;
             return;
@@ -33,7 +33,8 @@ public class PlayerWeapon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isCollisionAllow) return;
+        if (!isCollisionAllow || (collision == null)) return;
+       
         float applyDamage = Mathf.Clamp(collision.relativeVelocity.sqrMagnitude * damage, 5, maxDamage);
         Vector2 handJoystick = new Vector2(handRotateJoystick.Vertical(), handRotateJoystick.Horizontal());
 

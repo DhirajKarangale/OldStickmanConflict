@@ -41,8 +41,15 @@ public class Menu : MonoBehaviour
 
     public void SceneChangeButton(int sceneIndex)
     {
-        AudioManager.instance.Play("ButtonBig");
-        if (sceneIndex == -1) sceneIndex = level;
+        if (sceneIndex == -1)
+        {
+            AudioManager.instance.Play("ButtonBig");
+            sceneIndex = level;
+        }
+        else
+        {
+            AudioManager.instance.Play("Button");
+        }
         SceneLoader.instance.LoadScene(level);
     }
 
