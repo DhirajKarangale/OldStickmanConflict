@@ -6128,7 +6128,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3305336959839413093}
   cageAnimator: {fileID: 0}
   spwanObj: {fileID: 0}
-  health: 60
+  health: 30
   healthSlider: {fileID: 3305336959818234694}
   destroyEffect: {fileID: 0}
   currHealth: 0
@@ -11962,7 +11962,7 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
-  damage: 3
+  damage: 1.5
   impactForce: 15000
 --- !u!1 &3305336960292338758
 GameObject:

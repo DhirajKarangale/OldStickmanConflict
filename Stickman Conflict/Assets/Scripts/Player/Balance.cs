@@ -28,6 +28,7 @@ public class Balance : MonoBehaviour
     {
         if (enemyHealth) return;
 
+        if (collision.gameObject.CompareTag("SpikeFace")) return;
         if (collision.gameObject.layer == 9)
         {
             Rigidbody2D enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();

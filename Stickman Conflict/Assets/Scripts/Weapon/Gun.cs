@@ -5,14 +5,17 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] EasyJoystick.Joystick handRotateJoystick;
     [SerializeField] GameObject bullet;
-    [SerializeField] float force;
     [SerializeField] Transform spwanPos;
+    [SerializeField] Transform grabLeft;
+    [SerializeField] float force;
     [SerializeField] int bulletNo;
     [SerializeField] float fireRate;
     private bool isShootAllow = true;
 
     private void Update()
     {
+        if (transform.parent != grabLeft) return;
+
         Vector2 joystick = new Vector2(handRotateJoystick.Vertical(), handRotateJoystick.Horizontal());
         if (joystick != Vector2.zero && isShootAllow)
         {

@@ -5083,7 +5083,7 @@ GameObject:
   - component: {fileID: 5871840492157669517}
   m_Layer: 9
   m_Name: 2D Mace View
-  m_TagString: Untagged
+  m_TagString: SpikeFace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5237,7 +5237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ae2ced6940a584a8554a4aa332c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: {fileID: 0}
+  enemyHealth: {fileID: 5871840492157669517}
   playerMovement: {fileID: 0}
   playerBloodEffect: {fileID: 5434483700191556529, guid: 9edfa63152a1b5c448735779e90ed5c0, type: 3}
   destroyEffect: {fileID: 0}
@@ -5257,6 +5257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 5871840492157669504}
   jumpForce: 10
+  enemyHealth: {fileID: 5871840492157669517}
 --- !u!114 &5871840492157669517
 MonoBehaviour:
   m_ObjectHideFlags: 0

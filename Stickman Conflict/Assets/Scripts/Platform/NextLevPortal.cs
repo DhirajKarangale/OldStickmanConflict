@@ -10,7 +10,7 @@ public class NextLevPortal : MonoBehaviour
     {
         if (isPlayerCollided)
         {
-            if (player.transform.position.y <= 40)
+            if ((player.transform.position.y - transform.position.y) <= -10)
             {
                 player.rigidBody.constraints = RigidbodyConstraints2D.FreezePosition;
                 player.rigidBody.isKinematic = true;

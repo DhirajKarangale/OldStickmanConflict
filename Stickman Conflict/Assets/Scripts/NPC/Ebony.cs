@@ -8,6 +8,7 @@ public class Ebony : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Animator animator;
     [SerializeField] EnemyHealth enemyHealth;
+    [SerializeField] GameObject stone;
     [SerializeField] string[] introDialogue, midDialogue;
     private bool isIntroAllow = true;
     private bool isMidDialogueAllow = true;
@@ -23,19 +24,28 @@ public class Ebony : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerHealth.isPlayerDye || enemyHealth.currState == EnemyHealth.State.Dead)
+        if (PlayerHealth.isPlayerDye)
         {
-            StopCoroutine(SpwanEen(spikeFace));
-            StopCoroutine(RockAttack());
             this.enabled = false;
             return;
         }
 
-        if (isIntroAllow) StartCoroutine(Intro());
+        if (enemyHealth.currState == EnemyHealth.State.Dead)
+        {
+            if (GameSave.instance.gameData.stone < 1)
+            {
+                Instantiate(stone, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+            }
+
+            this.enabled = false;
+            return;
+        }
+
         if (player.position.x - transform.position.x < 0)
         {
             transform.localScale = new Vector3(-1.55f, 1.3f, 1);
             rockDir = 90;
+            if (isIntroAllow) StartCoroutine(Intro());
         }
         else
         {
@@ -47,7 +57,7 @@ public class Ebony : MonoBehaviour
     IEnumerator Intro()
     {
         float dist = Vector2.Distance(player.position, transform.position);
-        if (dist < 50)
+        if (dist < 30)
         {
             dialogueManager.StartDialogue(introDialogue);
             isIntroAllow = false;
@@ -68,6 +78,10 @@ public class Ebony : MonoBehaviour
 
     IEnumerator RockAttack()
     {
+        if (PlayerHealth.isPlayerDye || enemyHealth.currState == EnemyHealth.State.Dead)
+        {
+            yield break;
+        }
         animator.Play("Attack");
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < 5; i++)
@@ -85,9 +99,13 @@ public class Ebony : MonoBehaviour
 
     IEnumerator SpwanEen(GameObject spwan)
     {
+        if (PlayerHealth.isPlayerDye || enemyHealth.currState == EnemyHealth.State.Dead)
+        {
+            yield break;
+        }
         animator.Play("Attack");
         yield return new WaitForSeconds(0.5f);
-
+        AudioManager.instance.Play("Spawns");
         for (int i = 0; i < spwanAmount; i++)
         {
             GameObject currEnemy = Instantiate(spwan, Pos(), Quaternion.identity);
@@ -96,10 +114,10 @@ public class Ebony : MonoBehaviour
             moveNPC.leftDist = transform.position.x - Random.Range(20, 50);
             moveNPC.rightDist = transform.position.x - Random.Range(5, 10);
 
-            if (Random.value < 0.5f)
+            if (Random.value < 0.35f)
             {
                 GameObject spwanObj;
-                if (Random.value < 0.5f) spwanObj = bombCaret;
+                if (Random.value < 0.25f) spwanObj = bombCaret;
                 else spwanObj = palak;
                 currEnemy.GetComponent<EnemyHealth>().spwanObj = spwanObj;
             }
@@ -108,15 +126,27 @@ public class Ebony : MonoBehaviour
         GameObject enemy;
         if (enemyHealth.currHealth < 200)
         {
-            if (Random.value < 0.5f) enemy = spikeFace;
-            else enemy = goblin;
             if (enemyHealth.currHealth < 50)
             {
                 spwanAmount = 6;
                 enemy = goblin;
             }
-            else if (enemyHealth.currHealth < 100) spwanAmount = 5;
-            else if (enemyHealth.currHealth < 150) spwanAmount = 4;
+            else if (enemyHealth.currHealth < 100)
+            {
+                spwanAmount = 5;
+                enemy = goblin;
+            }
+            else if (enemyHealth.currHealth < 150)
+            {
+                spwanAmount = 4;
+                if (Random.value < 0.5) enemy = goblin;
+                else enemy = spikeFace;
+            }
+            else
+            {
+                if (Random.value < 0.5) enemy = goblin;
+                else enemy = spikeFace;
+            }
             if (isMidDialogueAllow) dialogueManager.StartDialogue(midDialogue);
         }
         else enemy = spikeFace;

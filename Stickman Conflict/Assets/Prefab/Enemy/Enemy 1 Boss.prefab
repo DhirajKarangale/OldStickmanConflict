@@ -5913,7 +5913,6 @@ GameObject:
   - component: {fileID: 5133028279501510758}
   - component: {fileID: 5133028279501510756}
   - component: {fileID: 5133028279501510760}
-  - component: {fileID: 1905811569623682903}
   m_Layer: 9
   m_Name: Enemy 1 Boss
   m_TagString: Untagged
@@ -6025,9 +6024,11 @@ MonoBehaviour:
   damageText: {fileID: 1623091666765696012, guid: 7dd0413f06cefa643b8915842e0bce30, type: 3}
   spriteRenderer: {fileID: 5133028279395859726}
   cageAnimator: {fileID: 0}
-  health: 110
+  spwanObj: {fileID: 0}
+  health: 100
   healthSlider: {fileID: 5133028279366804781}
   destroyEffect: {fileID: 0}
+  currHealth: 0
 --- !u!114 &5133028279501510760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6043,28 +6044,6 @@ MonoBehaviour:
   weapon: {fileID: 5133028278690450833}
   enemyHealth: {fileID: 5133028279501510756}
   animator: {fileID: 5133028279501510761}
---- !u!114 &1905811569623682903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5133028279501510754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081632fb44350bd44a0b54fa72e96ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  dialogueManager: {fileID: 0}
-  isRandomDialogue: 0
-  dist: 30
-  dialogues:
-  - rarity: 0
-    sentences:
-    - 'Guard Leader : OOO You Come here also'
-    - 'Guard Leader : The next adventure from here is not so easy.'
-    - 'Om : Why I think all of you have problem with english ....'
 --- !u!1 &5133028279595707404
 GameObject:
   m_ObjectHideFlags: 0

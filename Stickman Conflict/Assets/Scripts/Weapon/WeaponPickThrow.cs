@@ -30,7 +30,7 @@ public class WeaponPickThrow : MonoBehaviour
     {
         instance = this;
         isWeaponPicked = false;
-        SetWeaponOldPos();
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 2) SetWeaponOldPos();
     }
 
 
@@ -59,7 +59,14 @@ public class WeaponPickThrow : MonoBehaviour
     {
         grabLeft.transform.localPosition = new Vector3(0, -0.503f, 0);
         closestWeapon.transform.localPosition = Vector3.zero;
-        closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
+        if (closestWeapon.transform.name == "Gun")
+        {
+            closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, 90);
+        }
+        else
+        {
+            closestWeapon.transform.localRotation = Quaternion.Euler(0, 0, -90);
+        }
 
         if ((handRotateJoystick.Vertical() != 0) || (handRotateJoystick.Horizontal() != 0))
         {

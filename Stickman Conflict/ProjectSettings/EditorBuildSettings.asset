@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ChangeControls.unity
     guid: ced6cdc2ea3b4264087a5f18336451fd
   - enabled: 1
+    path: Assets/Scenes/Survival.unity
+    guid: 7f3c20fca70e17b41a56923ae2906ea1
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: f5458ca57f825bc4b8aea8e18bb169a3
   - enabled: 1

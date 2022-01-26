@@ -132,5 +132,7 @@ public class EnemyHealth : MonoBehaviour
         new Vector3(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y + 4, 0), transform.rotation);
         currentDamageText.GetComponent<TMP_Text>().rectTransform.localScale *= 3;
         Destroy(currentDamageText, 1.5f);
+
+        // this.enabled = false;
     }
 }

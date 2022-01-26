@@ -9,4 +9,5 @@ public class GameData
     public byte key;
     public byte palakCount;
     public byte bomb;
+    public byte stone;
 }

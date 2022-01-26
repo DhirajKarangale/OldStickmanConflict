@@ -30,6 +30,7 @@ public class CheckPoint : MonoBehaviour
                 GameSave.instance.gameData.weaponsPosition[i, 0] = WeaponPickThrow.instance.weapons[i].position.x;
                 GameSave.instance.gameData.weaponsPosition[i, 1] = WeaponPickThrow.instance.weapons[i].position.y;
             }
+            GlobalSave.instance.globalData.stone = GameSave.instance.gameData.stone;
             GlobalSave.instance.globalData.level = (byte)UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
             GlobalSave.instance.globalData.coin = GameSave.instance.gameData.coin;
             GlobalSave.instance.Save();

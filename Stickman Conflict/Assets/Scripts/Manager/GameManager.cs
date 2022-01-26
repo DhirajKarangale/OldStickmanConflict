@@ -19,13 +19,11 @@ public class GameManager : MonoBehaviour
         controlPanel.SetActive(true);
         gameOverPanel.SetActive(false);
         pausePanel.SetActive(false);
-        
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+
+        // Desable Extra button in level
+        for (int i = 0; i < upLevelButtons.Length; i++)
         {
-            for (int i = 0; i < upLevelButtons.Length; i++)
-            {
-                upLevelButtons[i].SetActive(false);
-            }
+            upLevelButtons[i].SetActive(false);
         }
     }
 
@@ -85,6 +83,6 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.Play("HealthIncrease");
         ParticleSystem.MainModule currEffect = Instantiate(healthEffect, playerHealth.transform.position, Quaternion.identity).main;
         currEffect.startColor = Color.green;
-        playerHealth.IncreaseHralth(100 - playerHealth.currHealth);
+        playerHealth.IncreaseHralth(100);
     }
 }

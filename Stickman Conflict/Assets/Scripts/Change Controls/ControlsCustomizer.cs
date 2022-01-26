@@ -27,6 +27,11 @@ public class ControlsCustomizer : MonoBehaviour
             sizeSlider.interactable = false;
             alphaSlider.interactable = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SaveExitButton();
+        }
     }
 
     public void SetButtonData(float size, float alpha)

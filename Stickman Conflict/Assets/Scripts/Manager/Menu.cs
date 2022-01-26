@@ -4,9 +4,9 @@ using System.Collections;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] GameObject[] screens;
     [SerializeField] Text tipText;
     [SerializeField] Text coinText;
+    [SerializeField] GameObject[] screens;
     [SerializeField] string[] tips;
     private byte level;
 
@@ -15,19 +15,31 @@ public class Menu : MonoBehaviour
         level = GlobalSave.instance.globalData.level;
         if (level == 0)
         {
-            level = 2;
+            level = 3;
             GlobalSave.instance.globalData.level = level;
             GlobalSave.instance.Save();
         }
 
-        DesableScreens();
-        screens[0].SetActive(true);
-
+        PanelButton(screens[0]);
         StartCoroutine(GenerateTips());
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (screens[0].activeInHierarchy)
+            {
+                PanelButton(screens[1]);
+            }
+            else
+            {
+                PanelButton(screens[0]);
+            }
+        }
+
+        if (GlobalSave.instance.globalData.coin < 0) coinText.gameObject.SetActive(false);
+        else coinText.gameObject.SetActive(true);
         coinText.text = GlobalSave.instance.globalData.coin.ToString();
     }
 
@@ -39,7 +51,14 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void SceneChangeButton(int sceneIndex)
+    public void PanelButton(GameObject panel)
+    {
+        AudioManager.instance.Play("Button");
+        DesableScreens();
+        panel.SetActive(true);
+    }
+
+    public void SceneButton(int sceneIndex)
     {
         if (sceneIndex == -1)
         {
@@ -50,7 +69,13 @@ public class Menu : MonoBehaviour
         {
             AudioManager.instance.Play("Button");
         }
-        SceneLoader.instance.LoadScene(level);
+        SceneLoader.instance.LoadScene(sceneIndex);
+    }
+
+    public void LinkButton(string link)
+    {
+        AudioManager.instance.Play("Button");
+        Application.OpenURL(link);
     }
 
     public void QuitButton()

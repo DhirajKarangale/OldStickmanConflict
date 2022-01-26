@@ -9,12 +9,19 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Color low, high;
     public float currHealth;
     public static bool isPlayerDye;
+    private float previousHealth;
 
     private void Start()
     {
         if (GameSave.instance.isDataLoaded) currHealth = GameSave.instance.gameData.currHealth;
         else currHealth = health;
         if (currHealth <= 2) currHealth = 100;
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            previousHealth = currHealth;
+            health = 200;
+            currHealth = 200;
+        }
         GameSave.instance.gameData.currHealth = currHealth;
 
         isPlayerDye = false;
@@ -62,7 +69,8 @@ public class PlayerHealth : MonoBehaviour
     private void SetGameOverActive()
     {
         gameOverPanel.SetActive(true);
-        // AudioManager.instance.Stop();
+        GameSave.instance.gameData.currHealth = previousHealth;
+        GameSave.instance.Save();
     }
 
     private void SetHealthBar()

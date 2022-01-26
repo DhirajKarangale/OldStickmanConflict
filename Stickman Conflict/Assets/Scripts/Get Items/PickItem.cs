@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PickItem : MonoBehaviour
 {
-    private enum Item { Coin, Key, PowerUps, Palak, Bomb }
+    private enum Item { Coin, Key, PowerUps, Palak, Bomb, Stone }
     [SerializeField] Item itemPick;
 
     [SerializeField] Rigidbody2D rigidBody;
@@ -64,7 +64,20 @@ public class PickItem : MonoBehaviour
                     break;
                 case Item.Bomb:
                     AudioManager.instance.Play("Coin");
-                    GameSave.instance.gameData.bomb += 10;
+                    if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 2) 
+                    {
+                        GameSave.instance.gameData.bomb += 2;
+                    }
+                    else
+                    {
+                        GameSave.instance.gameData.bomb += 10;
+                    }
+                    Destroy(this.gameObject);
+                    isPickAllow = false;
+                    break;
+                case Item.Stone:
+                    AudioManager.instance.Play("Coin");
+                    GameSave.instance.gameData.stone++;
                     Destroy(this.gameObject);
                     isPickAllow = false;
                     break;

@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 31856278}
   - component: {fileID: 31856277}
   - component: {fileID: 31856276}
-  - component: {fileID: 31856279}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -185,9 +184,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.35257208, g: 0.44171897, b: 0.5377358, a: 1}
-    m_PressedColor: {r: 0.31817374, g: 0.32149416, b: 0.4716981, a: 1}
-    m_SelectedColor: {r: 0.22441262, g: 0.2677664, b: 0.38679248, a: 1}
+    m_HighlightedColor: {r: 0.7028302, g: 0.9917453, b: 1, a: 1}
+    m_PressedColor: {r: 0.6556604, g: 0.81217843, b: 1, a: 1}
+    m_SelectedColor: {r: 0.6556604, g: 0.89048356, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -257,20 +256,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31856274}
   m_CullTransparentMesh: 1
---- !u!114 &31856279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31856274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858a0d499bb1bbc409e147b568da4e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  from: {x: 1, y: 1, z: 1}
-  to: {x: 0.9, y: 0.9, z: 0.9}
 --- !u!1 &161079210
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,10 +288,10 @@ RectTransform:
   m_Father: {fileID: 1930270783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3655926}
-  m_AnchorMax: {x: 1, y: 0.9165926}
-  m_AnchoredPosition: {x: 0, y: -0.037719727}
-  m_SizeDelta: {x: 0, y: 2.528305}
+  m_AnchorMin: {x: 0, y: 0.2997778}
+  m_AnchorMax: {x: 1, y: 0.96018517}
+  m_AnchoredPosition: {x: 0, y: 1.3164978}
+  m_SizeDelta: {x: 0, y: 0.91529846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &161079212
 MonoBehaviour:
@@ -340,15 +325,16 @@ MonoBehaviour:
     m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.56
-  m_Text: 'Game is not over yet, Story will continue in next update which is coming
-    soon.
+    m_LineSpacing: 1.39
+  m_Text: 'You Completed the game till now. Game is not over yet, Story will continue
+    in next update which is coming soon.
 
 
     Sorry for Inconvenience...
 
 
-    To be continue....'
+    To
+    be continue....'
 --- !u!222 &161079213
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -478,6 +464,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 2879836975999662889, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
+      propertyPath: sceneCanvas
+      value: 
+      objectReference: {fileID: 886964404}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
 --- !u!1 &886964404

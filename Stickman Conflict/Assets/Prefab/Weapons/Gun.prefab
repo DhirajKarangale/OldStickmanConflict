@@ -133,7 +133,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 13.36, y: 4.14}
     newSize: {x: 13.36, y: 4.14}
     adaptiveTilingThreshold: 0.5
@@ -178,7 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handRotateJoystick: {fileID: 0}
   bullet: {fileID: 7494643742354268792, guid: 07995aaa54e42134286cc5677b514434, type: 3}
-  force: 50
   spwanPos: {fileID: 8651480385818568737}
+  grabLeft: {fileID: 0}
+  force: 50
   bulletNo: 2
   fireRate: 3
