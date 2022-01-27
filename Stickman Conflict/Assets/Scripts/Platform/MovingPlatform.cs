@@ -16,6 +16,11 @@ public class MovingPlatform : MonoBehaviour
 
     private void Update()
     {
+        if (Mathf.Abs(transform.position.x - player.position.x) >= 100)
+        {
+            return;
+        }
+
         if (transform.position == pos1)
         {
             nextPos = pos2;
@@ -30,7 +35,7 @@ public class MovingPlatform : MonoBehaviour
         if ((player.position.x >= (transform.position.x + leftStandPos)) && (player.position.x <= (transform.position.x + rightStandPos)))
         {
             if (!movingPlatform.isPlaying) movingPlatform.Play();
-            player.SetParent(transform);
+            player.SetParent(this.transform);
         }
         else
         {

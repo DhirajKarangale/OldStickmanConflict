@@ -12,6 +12,7 @@ public class GateMachine : MonoBehaviour
     private void Start()
     {
         // PlayerPrefs.DeleteKey("GateMachine" + transform.name);
+
         keyNotFoundDialogue[0] = "Machine : Need a Key to open route.";
         keyNotFoundDialogue[1] = "Machine : Find a key behind this then come.";
 

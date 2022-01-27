@@ -8,6 +8,7 @@ public class GetWeapon : MonoBehaviour
     private void Start()
     {
         // PlayerPrefs.DeleteKey("WeaponGetter" + transform.name);
+      
         weaponGetter = PlayerPrefs.GetInt("WeaponGetter" + transform.name, 0);
         CheckPoint.onCheckPointCross += OnCheckPointCross;
 

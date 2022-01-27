@@ -10,15 +10,17 @@ public class Chest : MonoBehaviour
     private string[] getItemDialogue = new string[1];
     private int open;
 
-    private void Start()
+    private void Awake()
     {
+        // PlayerPrefs.DeleteKey("Chest" + transform.name);
+
         getItemDialogue[0] = "Congratulations You Found " + item.name + "!!!";
         CheckPoint.onCheckPointCross += OnCheckPointCross;
         open = PlayerPrefs.GetInt("Chest" + transform.name, 0);
 
         if (open == 0)
         {
-            if ((numberOfItem == 0) && item)
+            if (numberOfItem == -1 && item)
             {
                 item.SetActive(false);
             }
@@ -26,7 +28,7 @@ public class Chest : MonoBehaviour
         }
         else
         {
-            if ((numberOfItem == 0) && item)
+            if (numberOfItem == -1 && item)
             {
                 item.SetActive(true);
             }
@@ -49,7 +51,7 @@ public class Chest : MonoBehaviour
             animator.Play("Play");
             Instantiate(effect, transform.position, Quaternion.identity);
 
-            if (numberOfItem == 0)
+            if ((numberOfItem == 0) || (numberOfItem == -1))
             {
                 item.SetActive(true);
             }

@@ -1,32 +1,29 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Button))]
-public class ButtonClick : MonoBehaviour
+public class ButtonClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     private Vector3 originalScale = Vector3.one;
-    private Vector3 changeScale = Vector3.one * 0.9f;
+    private Vector3 changeScale = Vector3.one * 1.15f;
 
     private void Start()
     {
-        GetComponent<Button>().onClick.AddListener(() => StartCoroutine(Scaling()));
-        StartCoroutine(GetScale());
+        Invoke("GetScale", 2);
     }
 
-    IEnumerator GetScale()
+    public void OnPointerDown(PointerEventData data)
     {
-        yield return new WaitForSeconds(2);
-      
-        originalScale = transform.localScale;
-        changeScale = 0.9f * originalScale;
+        transform.localScale = changeScale;
+    }
+    public void OnPointerUp(PointerEventData data)
+    {
         transform.localScale = originalScale;
     }
 
-    IEnumerator Scaling()
+    private void GetScale()
     {
-        transform.localScale = changeScale;
-        yield return new WaitForSeconds(Time.fixedDeltaTime * 3);
+        originalScale = transform.localScale;
+        changeScale = 1.3f * originalScale;
         transform.localScale = originalScale;
     }
 }

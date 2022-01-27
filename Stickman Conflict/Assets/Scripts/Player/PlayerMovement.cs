@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameSave.instance.isDataLoaded && UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 2)
         {
-            transform.position = new Vector3(GameSave.instance.gameData.playerSpwanPos[0] - 5, GameSave.instance.gameData.playerSpwanPos[1], 0);
+            transform.position = new Vector3(GameSave.instance.gameData.playerSpwanPos[0], GameSave.instance.gameData.playerSpwanPos[1], 0);
         }
     }
 

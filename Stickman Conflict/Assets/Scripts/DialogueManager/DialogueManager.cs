@@ -10,8 +10,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentencesQue;
     private string sentence;
 
-    public bool isEndDialogue = false;
-    private bool isDialogueStart;
+    public bool isDialogueStart;
 
     private void Start()
     {
@@ -70,13 +69,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         isDialogueStart = false;
-        isEndDialogue = true;
         animator.Play("DialogueClose");
-        Invoke("DeactiveEndDialogue", 10);
-    }
-
-    private void DeactiveEndDialogue()
-    {
-        isEndDialogue = false;
     }
 }

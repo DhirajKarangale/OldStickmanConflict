@@ -30,9 +30,11 @@ public class WeaponPickThrow : MonoBehaviour
     {
         instance = this;
         isWeaponPicked = false;
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 2) SetWeaponOldPos();
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            SetWeaponOldPos();
+        }
     }
-
 
     private void Update()
     {
@@ -89,7 +91,7 @@ public class WeaponPickThrow : MonoBehaviour
 
     private void SetWeaponOldPos()
     {
-        if (GameSave.instance.gameData.weaponsPosition.Length >= weapons.Length)
+        if (GameSave.instance.isDataLoaded)
         {
             for (int i = 0; i < weapons.Length; i++)
             {
@@ -99,6 +101,14 @@ public class WeaponPickThrow : MonoBehaviour
                     closestWeapon = weapons[i];
                     PickUp();
                 }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                GameSave.instance.gameData.weaponsPosition[i, 0] = weapons[i].position.x;
+                GameSave.instance.gameData.weaponsPosition[i, 1] = weapons[i].position.y;
             }
         }
     }

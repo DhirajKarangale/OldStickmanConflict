@@ -66,7 +66,7 @@ public class PickItem : MonoBehaviour
                     AudioManager.instance.Play("Coin");
                     if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 2) 
                     {
-                        GameSave.instance.gameData.bomb += 2;
+                        GameSave.instance.gameData.bomb++;
                     }
                     else
                     {

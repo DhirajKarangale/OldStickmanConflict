@@ -9,7 +9,8 @@ public class CheckPoint : MonoBehaviour
 
     private void Awake()
     {
-        //  PlayerPrefs.DeleteKey("PointCross" + transform.name);
+        // PlayerPrefs.DeleteKey("PointCross" + transform.name);
+     
         if (PlayerPrefs.GetInt("PointCross" + transform.name, 0) == 0) animator.Play("Close");
         else animator.Play("Open");
     }

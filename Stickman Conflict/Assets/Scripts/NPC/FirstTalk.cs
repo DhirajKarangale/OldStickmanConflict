@@ -16,7 +16,8 @@ public class FirstTalk : MonoBehaviour
 
     private void Start()
     {
-       // PlayerPrefs.DeleteKey("FirstTalk");
+        // PlayerPrefs.DeleteKey("FirstTalk");
+
         firstTalk = PlayerPrefs.GetInt("FirstTalk", 0);
         if (firstTalk == 0)
         {
@@ -30,23 +31,20 @@ public class FirstTalk : MonoBehaviour
         else
         {
             Destroy(gameObject);
-           // GivePowers();
+            // GivePowers();
         }
     }
-     
+
     private void Update()
     {
-        if(PlayerHealth.isPlayerDye) return;
+        if (PlayerHealth.isPlayerDye) return;
 
-        if ((firstTalk == 0) && (transform.position.x - player.transform.position.x) <= 0)
+        if ((firstTalk == 0) && ((transform.position.x - player.transform.position.x) <= 0))
         {
-            if (dialogueManager.isEndDialogue) TalkEnd();
+            if (isStartTalkAllow) TalkStart();
             else
             {
-                if (isStartTalkAllow)
-                {
-                    TalkStart();
-                }
+                if (!dialogueManager.isDialogueStart) TalkEnd();
             }
         }
     }
@@ -54,10 +52,10 @@ public class FirstTalk : MonoBehaviour
     private void TalkStart()
     {
         isStartTalkAllow = false;
+        player.rigidBody.constraints = RigidbodyConstraints2D.FreezePositionX;
         dialogueManager.StartDialogue(dialogue.sentences);
         player.moveJoystick.MouseUp();
         controlCanvas.SetActive(false);
-        player.rigidBody.constraints = RigidbodyConstraints2D.FreezePositionX;
     }
 
     private void TalkEnd()
