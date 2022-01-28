@@ -5,38 +5,40 @@ public class Survival : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] DialogueManager dialogueManager;
-    [SerializeField] Dialogue[] introDialogues, spwanDialogues;
+    [SerializeField] Dialogue[] introDialogues, byDialogue, spwanDialogues;
     [SerializeField] GameObject[] enemies;
     [SerializeField] GameObject[] spwanObjs;
     private static float spwanTime;
+    private bool isByDialogueAllow;
 
     private void Start()
     {
+        isByDialogueAllow = true;
         spwanTime = 20;
-        Invoke("IntroDialogue", 1);
+        StartCoroutine(ShowDialogue(introDialogues));
         StartCoroutine(SpwanEnemie());
     }
 
-    private void IntroDialogue()
+    private void Update()
     {
-        dialogueManager.StartDialogue(introDialogues[Random.Range(0, introDialogues.Length)].sentences);
-    }
-
-    private Vector3 EnemyPos()
-    {
-        return new Vector3(Random.Range(player.position.x - 10, player.position.x + 10), Random.Range(-5, 10), 0);
+        if (PlayerHealth.isPlayerDye && isByDialogueAllow)
+        {
+            StartCoroutine(ShowDialogue(byDialogue));
+            isByDialogueAllow = false;
+        }
     }
 
     IEnumerator SpwanEnemie()
     {
         if (PlayerHealth.isPlayerDye)
         {
-            this.enabled = false;
             yield break;
         }
 
-        yield return new WaitForSeconds(5);
-        dialogueManager.StartDialogue(spwanDialogues[Random.Range(0, spwanDialogues.Length)].sentences);
+        yield return new WaitForSeconds(3);
+        StartCoroutine(ShowDialogue(spwanDialogues));
+        yield return new WaitForSeconds(3);
+
         AudioManager.instance.Play("Spawns");
         int swpanRate = Random.Range(0, enemies.Length);
         for (int i = 0; i < swpanRate + 1; i++)
@@ -47,7 +49,7 @@ public class Survival : MonoBehaviour
             moveNPC.leftDist = currEnemy.transform.position.x - Random.Range(5, 20);
             moveNPC.rightDist = currEnemy.transform.position.x + Random.Range(5, 20);
 
-            if (Random.value < 0.8f)
+            if (Random.value < 0.5f)
             {
                 GameObject spwanObj = spwanObjs[Random.Range(0, spwanObjs.Length)];
                 currEnemy.GetComponent<EnemyHealth>().spwanObj = spwanObj;
@@ -57,5 +59,18 @@ public class Survival : MonoBehaviour
         yield return new WaitForSeconds(spwanTime);
         spwanTime -= 2;
         StartCoroutine(SpwanEnemie());
+    }
+
+
+    IEnumerator ShowDialogue(Dialogue[] dialogues)
+    {
+        yield return new WaitForSeconds(1);
+        dialogueManager.StartDialogue(dialogues[Random.Range(0, dialogues.Length)].sentences);
+        // StopCoroutine(ShowDialogue(introDialogues));
+    }
+
+    private Vector3 EnemyPos()
+    {
+        return new Vector3(Random.Range(player.position.x - 10, player.position.x + 10), Random.Range(-5, 10), 0);
     }
 }

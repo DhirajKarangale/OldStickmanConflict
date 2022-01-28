@@ -11,6 +11,11 @@ public class PlayerHealth : MonoBehaviour
     public static bool isPlayerDye;
     private float previousHealth;
 
+    private void Awake()
+    {
+        isPlayerDye = false;
+    }
+
     private void Start()
     {
         if (GameSave.instance.isDataLoaded) currHealth = GameSave.instance.gameData.currHealth;

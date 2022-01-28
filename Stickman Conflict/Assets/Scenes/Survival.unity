@@ -358,6 +358,19 @@ MonoBehaviour:
     - 'AI : Try to defeat me... ha ha ha.....'
     - 'Om : I will try...'
     - 'AI : Then come on...'
+  byDialogue:
+  - rarity: 0
+    sentences:
+    - 'AI : Good By Gamerz....'
+  - rarity: 0
+    sentences:
+    - 'AI : Defeated !!!'
+  - rarity: 0
+    sentences:
+    - 'AI : See What I said no one can defeat me ....HAHAHA'
+  - rarity: 0
+    sentences:
+    - 'AI : See You Again Gamerz!!!'
   spwanDialogues:
   - rarity: 0
     sentences:

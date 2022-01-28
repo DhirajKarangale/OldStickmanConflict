@@ -4610,9 +4610,11 @@ MonoBehaviour:
   - 'Tip : Bomb cannot damage yourself.'
   - 'Tip : Object can only be grab when hands are not to far & Hand Joystick is used.'
   - 'Tip : You cannot grab when weapon is picked.'
-  - 'Tip : Palak & Bomb collected in survival mode can only be used in Story mode
-    when player die.'
+  - 'Tip : Palak,Coin & Bomb collected in survival mode can only be used in Story
+    mode when player die.'
   - 'Tip : Bare the english....'
+  - 'Tip : To Increase damage hit on enemy head(Jumping towards head will help).'
+  - 'Tip : Damage of weapon depends on how hard you hit enemy.'
   - 'Tip : The Coin will be used in next Update, sorry of Inconvenience...'
 --- !u!1 &1618492569
 GameObject:
@@ -4816,7 +4818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053437505, y: 0.71133333}
   m_AnchorMax: {x: 0.19635415, y: 0.8083704}
-  m_AnchoredPosition: {x: 1.0599365, y: 0.62145996}
+  m_AnchoredPosition: {x: 1.0598145, y: 0.62145996}
   m_SizeDelta: {x: -0.54299927, y: 1.3580999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662630237
@@ -6125,7 +6127,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.053437505, y: 0.30100003}
   m_AnchorMax: {x: 0.19635415, y: 0.4}
-  m_AnchoredPosition: {x: 1.0599365, y: -0.5}
+  m_AnchoredPosition: {x: 1.0598145, y: -0.5}
   m_SizeDelta: {x: -0.5419998, y: -0.64190006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925807512
