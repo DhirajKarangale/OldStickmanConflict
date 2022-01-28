@@ -737,7 +737,7 @@ RectTransform:
   m_GameObject: {fileID: 2781659296000756982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 8616262055979665989}
   - {fileID: 6385863567433501947}
@@ -773,7 +773,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &2781659296000756980
 MonoBehaviour:
@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 6811004316467946660}
   - component: {fileID: 1335727281}
   - component: {fileID: 1335727284}
+  - component: {fileID: 5287436019892792933}
   m_Layer: 5
   m_Name: Pause Button
   m_TagString: Untagged
@@ -1406,6 +1407,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlsCustomizer: {fileID: 0}
   defaultPos: {x: -70, y: -70}
+--- !u!114 &5287436019892792933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811004316467946658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a0d499bb1bbc409e147b568da4e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7295615123388184976
 GameObject:
   m_ObjectHideFlags: 0
