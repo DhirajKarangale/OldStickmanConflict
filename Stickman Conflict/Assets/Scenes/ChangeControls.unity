@@ -139,7 +139,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &84861463
 MonoBehaviour:
@@ -187,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112677213
 GameObject:
@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 363329617}
   - component: {fileID: 363329616}
   - component: {fileID: 363329615}
+  - component: {fileID: 363329618}
   m_Layer: 5
   m_Name: SaveExit Button
   m_TagString: Untagged
@@ -545,6 +546,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363329613}
   m_CullTransparentMesh: 1
+--- !u!114 &363329618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363329613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858a0d499bb1bbc409e147b568da4e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &399400188
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2879836975999662807, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2879836975999662889, guid: f7ce46813013c7e4699b8ab07a16412e, type: 3}
       propertyPath: cam
@@ -1161,7 +1174,7 @@ GameObject:
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &829334495
 MonoBehaviour:
@@ -1538,7 +1551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2781659296000754442, guid: b043783d9387af540b0c353d083baea7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1794,7 +1807,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1373760268
 MonoBehaviour:

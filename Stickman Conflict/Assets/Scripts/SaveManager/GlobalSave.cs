@@ -11,7 +11,6 @@ public class GlobalSave : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 120;
         Load();
         MakeSingleton();
     }

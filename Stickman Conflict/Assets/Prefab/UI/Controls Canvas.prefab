@@ -37,9 +37,9 @@ RectTransform:
   m_Father: {fileID: 2781659296000754442}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36.73}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -498, y: -690}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 875, y: -1017}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1073543660
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsCustomizer: {fileID: 0}
-  defaultPos: {x: -498, y: -690}
+  defaultPos: {x: 875, y: -1017}
 --- !u!114 &390038630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -322, y: -62.7}
+  m_AnchoredPosition: {x: -875, y: -1017}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1286221548
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsCustomizer: {fileID: 0}
-  defaultPos: {x: -322, y: -62.7}
+  defaultPos: {x: -875, y: -1017}
 --- !u!114 &390038629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +518,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.5109, y: -1.5326}
-  m_SizeDelta: {x: 220, y: 220}
+  m_SizeDelta: {x: 260, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9184865351239815107
 CanvasRenderer:
@@ -594,7 +594,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.5108948, y: -1.5326}
-  m_SizeDelta: {x: 220, y: 220}
+  m_SizeDelta: {x: 260, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7119038989858013943
 CanvasRenderer:
@@ -669,7 +669,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7094174794922034491
 CanvasRenderer:
@@ -726,7 +726,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &2781659296000754442
 RectTransform:
@@ -850,7 +850,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6401189342560726336
 CanvasRenderer:
@@ -926,9 +926,9 @@ RectTransform:
   m_Father: {fileID: 2781659296000754442}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -169, y: 153}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 423, y: -529}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6811004315288559384
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsCustomizer: {fileID: 0}
-  defaultPos: {x: -169, y: 153}
+  defaultPos: {x: 423, y: -529}
 --- !u!114 &390038632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,9 +1088,9 @@ RectTransform:
   m_Father: {fileID: 2781659296000754442}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36.73}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -584, y: -180}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -423, y: -529}
   m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6811004315523051289
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlsCustomizer: {fileID: 0}
-  defaultPos: {x: -584, y: -180}
+  defaultPos: {x: -423, y: -529}
 --- !u!114 &390038631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 8276410749150611424}
   handle: {fileID: 6480981554293521125}
-  ArrowKeysSimulationEnabled: 0
+  ArrowKeysSimulationEnabled: 1
 --- !u!225 &390038622
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 6913480060668770135}
   handle: {fileID: 4400132896079208504}
-  ArrowKeysSimulationEnabled: 1
+  ArrowKeysSimulationEnabled: 0
 --- !u!225 &390038627
 CanvasGroup:
   m_ObjectHideFlags: 0
